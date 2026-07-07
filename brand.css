@@ -1,0 +1,10 @@
+/* ============================================================
+   FSI brand layer — Q2 2026 Global MI Pack
+   The ONLY file that sets the brand accent. Change --c-us to
+   re-skin the whole report. The neutral paper/ink shell and the
+   funnel palette (--c-a/-b/-c/-d) are shared across every brand.
+   ============================================================ */
+:root{
+  --c-us:    #61BDB1;                                        /* FSI brand accent */
+  --c-us-sr: color-mix(in srgb, var(--c-us) 16%, transparent);
+}

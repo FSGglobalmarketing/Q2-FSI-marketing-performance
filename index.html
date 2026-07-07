@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FSI — Global Marketing Impact Report — Q2 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="mi.css" />
+<link rel="stylesheet" href="present.css" />
+<link rel="stylesheet" href="brand.css" />
+</head>
+<body>
+
+<!-- ================= TOP NAV ================= -->
+<div class="p-nav" id="p-nav">
+  <div class="brandmark"><span class="glyph">F</span> FSI</div>
+  <nav class="nav-links" id="nav-links">
+    <button data-goto="1" class="on">Overview</button>
+    <button data-goto="2">Awareness</button>
+    <button data-goto="6">Consideration</button>
+    <button data-goto="10">Conversion</button>
+    <button data-goto="12">Service &amp; loyalty</button>
+    <button data-goto="14">Results</button>
+    <button data-goto="15">Framework</button>
+  </nav>
+  <div class="p-period">Q2 2026</div>
+</div>
+
+<div class="p-progress" id="p-progress"></div>
+
+<div class="scroll-hint" id="scroll-hint">
+  <div class="wheel"></div>
+  <span>Scroll to advance</span>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ===== 0 · COVER ===== -->
+  <section class="page dark cover-page" data-nav="dark" data-label="Cover">
+    <div class="page-bg"><image-slot id="hero-film" shape="rect" placeholder="Brand hero film or photo"></image-slot></div>
+    <div class="page-veil soft"></div>
+    <div class="cover-brand">
+      <div class="brandmark inv"><span class="glyph inv">F</span> FSI</div>
+      <span class="eyebrow inv">Q2 2026 · Apr – Jun</span>
+    </div>
+    <div class="page-inner">
+      <div class="cover-card" data-anim>
+        <div class="kick">A quarterly review of global marketing activities and performance</div>
+        <h1 class="cover-title">Global marketing<br/>impact report</h1>
+        <p class="cover-lede">Key data points in each activity along the journey with FSI — across awareness, consideration, conversion and service &amp; loyalty — measured against our goals and benchmarks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1 · OVERVIEW / FOCUS (slider Q1 ⟷ Q2) ===== -->
+  <section class="page dark" data-nav="dark" data-label="Our global focus">
+    <div class="page-bg"><image-slot id="bg-focus" shape="rect" placeholder="Backdrop — global / architectural"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag">Overview</span>
+        <h2 class="p-title">Our global focus</h2>
+        <p class="p-sub">What were we trying to achieve globally — drag between quarters.</p>
+      </div>
+      <div class="focus-wrap">
+        <div class="focus-slider" data-anim>
+          <button class="q-end" data-q="0">Q1 2026</button>
+          <div class="fs-track" id="fs-track">
+            <div class="fs-fill"></div>
+            <div class="fs-handle"></div>
+          </div>
+          <button class="q-end on" data-q="1">Q2 2026</button>
+        </div>
+        <div class="focus-row" id="focus-cards" data-anim></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2 · AWARENESS divider ===== -->
+  <section class="page dark divider" data-nav="dark" data-label="Awareness">
+    <div class="page-bg"><image-slot id="bg-awareness" shape="rect" placeholder="Awareness backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner center">
+      <div class="d-name" data-anim>Awareness</div>
+      <div class="d-rule" data-anim style="background:var(--c-us)"></div>
+      <div class="tax-pills" data-anim>
+        <span class="tax-pill">SEM</span>
+        <span class="tax-pill">Advertorials</span>
+        <span class="tax-pill">Search (organic)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3 · Awareness — featured campaign ===== -->
+  <section class="page dark" data-nav="dark" data-label="Featured campaign">
+    <div class="page-bg"><image-slot id="bg-aw-campaign" shape="rect" placeholder="Campaign backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag inv">Awareness · Highlight</span>
+        <h2 class="p-title">GEM Campaign (APAC)</h2>
+      </div>
+      <div class="cb-mount" data-cb="phaseII"></div>
+      <div class="asset-frame" data-anim style="min-height:0;aspect-ratio:16/7">
+        <image-slot id="camp-asset" shape="rect" placeholder="Campaign creative / photo"></image-slot>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4 · Awareness — search visibility ===== -->
+  <section class="page dark" data-nav="dark" data-label="Search visibility">
+    <div class="page-bg"><image-slot id="bg-aw-search" shape="rect" placeholder="Search backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag">Awareness</span>
+        <h2 class="p-title">Search engine visibility</h2>
+      </div>
+      <div class="cb-mount" data-cb="search"></div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="Our visibility vs peers">
+              <div class="chart-card">
+                <div class="card-head"><div class="card-title">Our visibility vs peers</div><span class="source-note">Search Console</span></div>
+                <div class="legend" style="margin-bottom:12px"><span><i class="ln" style="background:var(--c-us)"></i>Our brand</span><span><i class="ln" style="background:var(--c-muted)"></i>Peer average</span></div>
+                <div class="chart-wrap" id="search-visibility"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Top search terms">
+              <div class="chart-card">
+                <div class="card-head"><div class="card-title">Search terms bringing us the most attention</div><span class="source-note">Search Console</span></div>
+                <div class="slide-scroll" id="search-table"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5 · Awareness — competitors ===== -->
+  <section class="page dark" data-nav="dark" data-label="Competitor advertising">
+    <div class="page-bg"><image-slot id="bg-aw-comp" shape="rect" placeholder="Competitor backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag inv">Awareness · Competitors</span>
+        <h2 class="p-title">Competitor advertising</h2>
+      </div>
+      <div class="cb-mount" data-cb="competitors"></div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="Share of voice">
+              <div class="chart-card">
+                <div class="card-head">
+                  <div class="card-title">Share of voice — us vs competitors</div>
+                  <div class="seg" id="sov-toggle" role="group" aria-label="Share of voice channel">
+                    <button class="on" data-sov="search">Search</button>
+                    <button data-sov="paid">Paid ads</button>
+                  </div>
+                </div>
+                <p class="muted-txt" style="font-size:13.5px;margin-bottom:14px">Our slice of total activity across the brands we track. Bigger is better.</p>
+                <div class="chart-wrap" id="sov-chart"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Their live adverts">
+              <div class="chart-card">
+                <div class="p-controls" style="margin-bottom:14px">
+                  <div>
+                    <div class="card-title">Their live adverts right now</div>
+                    <p class="muted-txt" style="font-size:13px;margin-top:4px">Examples pulled from public ad libraries.</p>
+                  </div>
+                  <div class="seg" id="creative-view" role="group" aria-label="Creative layout">
+                    <button class="on" data-view="gallery">Gallery</button>
+                    <button data-view="list">List</button>
+                  </div>
+                </div>
+                <div class="stack-16" style="margin-bottom:16px">
+                  <div class="chips" id="comp-chips"></div>
+                  <div class="chips" id="fmt-chips"></div>
+                </div>
+                <div class="slide-scroll" id="creatives"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6 · CONSIDERATION divider ===== -->
+  <section class="page dark divider" data-nav="dark" data-label="Consideration">
+    <div class="page-bg"><image-slot id="bg-consideration" shape="rect" placeholder="Consideration backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner center">
+      <div class="d-name" data-anim>Consideration</div>
+      <div class="d-rule" data-anim style="background:var(--c-a)"></div>
+      <div class="tax-pills" data-anim>
+        <span class="tax-pill">LinkedIn (organic)</span>
+        <span class="tax-pill">Website</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7 · Consideration — website ===== -->
+  <section class="page dark" data-nav="dark" data-label="Always on — website">
+    <div class="page-bg"><image-slot id="bg-con-web" shape="rect" placeholder="Website backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag">Consideration</span>
+        <h2 class="p-title">Always on — website</h2>
+      </div>
+      <div class="cb-mount" data-cb="website"></div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="Website visits over time">
+              <div class="chart-card">
+                <div class="card-head"><div class="card-title">Website visits over time</div><span class="source-note">Website analytics</span></div>
+                <div class="legend" style="margin-bottom:12px"><span><i class="ln" style="background:var(--c-a)"></i>This quarter</span><span><i class="ln" style="background:var(--c-muted);opacity:.7"></i>Last quarter</span></div>
+                <div class="chart-wrap" id="chart-visits"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Most-read pages">
+              <div class="chart-card">
+                <div class="card-head"><div class="card-title">Most-read pages</div><span class="source-note">Website analytics</span></div>
+                <div class="slide-scroll" id="top-pages"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8 · Consideration — company insights (Alphix) ===== -->
+  <section class="page dark" data-nav="dark" data-label="Company-level web insights">
+    <div class="page-bg"><image-slot id="bg-con-insights" shape="rect" placeholder="Insights backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-controls" data-anim>
+        <div class="p-head">
+          <span class="tag">Consideration · New this quarter</span>
+          <h2 class="p-title" style="font-size:clamp(26px,3vw,40px)">Company-level web insights</h2>
+          <p class="p-sub">We can now identify the organisations whose staff are reading each page — so sales know exactly who is paying attention, not just how many.</p>
+        </div>
+        <div class="seg" id="alphix-view" role="group" aria-label="Alphix layout">
+          <button class="on" data-view="page">By page</button>
+          <button data-view="company">By company</button>
+        </div>
+      </div>
+      <div class="alphix" id="alphix" data-anim>
+        <div class="alphix-top">
+          <div id="alphix-summary" style="display:flex;gap:28px;flex-wrap:wrap"></div>
+          <span class="source-note">Company-level web insights · Alphix</span>
+        </div>
+        <div class="alphix-body">
+          <div id="alphix-pagepicker-wrap" style="padding:16px 0 6px">
+            <div class="cblk-label">Choose a page to see who has been reading it</div>
+            <div class="page-picker" id="page-picker"></div>
+          </div>
+          <div class="slide-scroll" id="alphix-table"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9 · Consideration — LinkedIn ===== -->
+  <section class="page dark" data-nav="dark" data-label="Always on — LinkedIn">
+    <div class="page-bg"><image-slot id="bg-con-li" shape="rect" placeholder="LinkedIn backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag inv">Consideration</span>
+        <h2 class="p-title">Always on — LinkedIn</h2>
+      </div>
+      <div class="cb-mount" data-cb="linkedin"></div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="Earned organic">
+              <div class="card">
+                <div class="card-head"><div class="card-title">Earned for free · organic</div><span class="tag ghost">Organic</span></div>
+                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)" id="li-organic"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Paid boost">
+              <div class="card">
+                <div class="card-head"><div class="card-title">Paid to boost · advertising</div><span class="tag ghost">Paid</span></div>
+                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)" id="li-paid"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="How we compare">
+              <div class="chart-card">
+                <div class="card-head"><div class="card-title">How our engagement compares</div><span class="source-note">LinkedIn</span></div>
+                <div class="chart-wrap" id="li-bench"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Best posts">
+              <div class="card">
+                <div class="card-head"><div class="card-title">Posts that performed best</div><span class="source-note">LinkedIn</span></div>
+                <div class="slide-scroll" id="li-posts"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10 · CONVERSION divider ===== -->
+  <section class="page dark divider" data-nav="dark" data-label="Conversion">
+    <div class="page-bg"><image-slot id="bg-conversion" shape="rect" placeholder="Conversion backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner center">
+      <div class="d-name" data-anim>Conversion</div>
+      <div class="d-rule" data-anim style="background:var(--c-b)"></div>
+      <div class="tax-pills" data-anim>
+        <span class="tax-pill">Events</span>
+        <span class="tax-pill">Email</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11 · Conversion — client engagement ===== -->
+  <section class="page dark" data-nav="dark" data-label="Client engagement">
+    <div class="page-bg"><image-slot id="bg-conv-client" shape="rect" placeholder="Conversion backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag inv">Conversion</span>
+        <h2 class="p-title">Client engagement</h2>
+      </div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="This quarter at a glance">
+              <div class="card">
+                <div class="card-head"><div class="card-title">This quarter at a glance</div><span class="source-note">Email &amp; CRM</span></div>
+                <div class="kpi-row" id="email-summary"></div>
+              </div>
+            </div>
+            <div class="cslide" data-label="Breakdown">
+              <div class="card">
+                <div class="card-head"><div class="card-title" id="camp-title">Email performance</div><span class="source-note" id="camp-source">Email platform</span></div>
+                <div class="seg" id="camp-tabs" role="group" aria-label="Conversion view">
+                  <button class="on" data-tab="email">Email performance</button>
+                  <button data-tab="tracker">Campaign tracker</button>
+                  <button data-tab="pipeline">Sales pipeline</button>
+                </div>
+                <div class="slide-scroll" id="camp-panel" style="max-height:34vh;margin-top:14px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12 · SERVICE & LOYALTY divider ===== -->
+  <section class="page dark divider" data-nav="dark" data-label="Service & loyalty">
+    <div class="page-bg"><image-slot id="bg-loyalty" shape="rect" placeholder="Loyalty backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner center">
+      <div class="d-name" data-anim>Service &amp; loyalty</div>
+      <div class="d-rule" data-anim style="background:var(--c-c)"></div>
+      <div class="tax-pills" data-anim>
+        <span class="tax-pill">Data capture</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 13 · Loyalty — events ===== -->
+  <section class="page dark" data-nav="dark" data-label="Events & sponsorships">
+    <div class="page-bg"><image-slot id="bg-loy-events" shape="rect" placeholder="Events backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-controls" data-anim>
+        <div class="p-head">
+          <span class="tag">Service &amp; loyalty</span>
+          <h2 class="p-title">Events &amp; sponsorships</h2>
+        </div>
+        <div class="events-head">
+          <div class="chart-wrap" id="events-donut" style="width:104px"></div>
+          <div><b style="font-size:15px">60% delivered</b><br/><span class="muted-txt" style="font-size:13px">of the 2026 plan</span></div>
+        </div>
+      </div>
+      <div class="carousel" data-anim>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="cslide" data-label="Where we showed up">
+              <div class="map-wrap"><div class="chart-wrap" id="events-map"></div></div>
+            </div>
+            <div class="cslide" data-label="Event schedule">
+              <div class="card">
+                <div class="card-head"><div class="card-title">Event schedule</div><span class="source-note">Campaign tracker</span></div>
+                <div class="slide-scroll" id="events-table"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-ui">
+          <button class="cbtn" data-cdir="-1" aria-label="Previous">‹</button>
+          <div class="cdots"></div>
+          <button class="cbtn" data-cdir="1" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 14 · RESULTS ===== -->
+  <section class="page dark" data-nav="dark" data-label="Performance & results">
+    <div class="page-bg"><image-slot id="bg-results" shape="rect" placeholder="Results backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="p-head" data-anim>
+        <span class="tag inv">Results</span>
+        <h2 class="p-title">Performance &amp; results</h2>
+      </div>
+      <div class="tree" data-anim>
+        <div class="tree-trunk">
+          <div class="kick">Outcomes by funnel stage</div>
+          <b>Performance<br/>&amp; results</b>
+          <p class="muted-txt" style="margin-top:16px;max-width:34ch">Most goals were met or exceeded. The measure to watch is search ranking, where two competitors out-invested us on paid.</p>
+        </div>
+        <div class="branches slide-scroll" id="branches" style="grid-template-columns:repeat(2,1fr);max-height:40vh"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 15 · KPI FRAMEWORK (at the back) ===== -->
+  <section class="page dark" data-nav="dark" data-label="KPI Framework">
+    <div class="page-bg"><image-slot id="bg-kpi" shape="rect" placeholder="Framework backdrop"></image-slot></div>
+    <div class="page-veil"></div>
+    <div class="page-inner">
+      <div class="kpi-fw-head" data-anim>
+        <div>
+          <span class="tag ghost">KPI Framework</span>
+          <h3 class="p-title" style="font-size:clamp(26px,3vw,40px);margin-top:12px">What does good look like?</h3>
+        </div>
+        <p class="muted-txt">Introducing our new framework. Looking at key data points in each activity along the journey with FSI.</p>
+      </div>
+      <div class="card kpi-fw-card" data-anim>
+        <table class="tbl kpi-fw">
+          <colgroup><col class="c-stage"/><col class="c-act"/><col class="c-metrics"/><col class="c-bench"/></colgroup>
+          <thead>
+            <tr><th>Stage</th><th>Activity</th><th>What we measure</th><th>Benchmarked against</th></tr>
+          </thead>
+          <tbody>
+            <tr class="fw-stage-start" style="--st:var(--c-us)">
+              <td class="fw-stage" rowspan="3"><span class="fw-bar"></span>Awareness</td>
+              <td class="fw-act">SEM</td>
+              <td class="fw-metrics"><span>Total impressions</span><span>Av click-through rate</span></td>
+              <td class="fw-bench">/ industry average</td>
+            </tr>
+            <tr style="--st:var(--c-us)">
+              <td class="fw-act">Advertorials</td>
+              <td class="fw-metrics"><span>Total impressions</span><span>Dwell time</span></td>
+              <td class="fw-bench">/ industry average</td>
+            </tr>
+            <tr style="--st:var(--c-us)">
+              <td class="fw-act">Search (organic)</td>
+              <td class="fw-metrics"><span>Total searches</span><span>Brand ranking</span></td>
+              <td class="fw-bench">/ competitor average</td>
+            </tr>
+            <tr class="fw-stage-start" style="--st:var(--c-a)">
+              <td class="fw-stage" rowspan="2"><span class="fw-bar"></span>Consideration</td>
+              <td class="fw-act">LinkedIn (organic)</td>
+              <td class="fw-metrics"><span>Impressions</span><span>Click-through rate</span><span>Engagement rate</span></td>
+              <td class="fw-bench">/ industry average</td>
+            </tr>
+            <tr style="--st:var(--c-a)">
+              <td class="fw-act">Website</td>
+              <td class="fw-metrics"><span>Active users</span><span>Dwell time</span></td>
+              <td class="fw-bench">/ QoQ average</td>
+            </tr>
+            <tr class="fw-stage-start" style="--st:var(--c-b)">
+              <td class="fw-stage" rowspan="2"><span class="fw-bar"></span>Conversion</td>
+              <td class="fw-act">Events</td>
+              <td class="fw-metrics"><span>Distribution feedback</span></td>
+              <td class="fw-bench none">—</td>
+            </tr>
+            <tr style="--st:var(--c-b)">
+              <td class="fw-act">Email</td>
+              <td class="fw-metrics"><span>Click-to-open rate</span><span>Open rates</span></td>
+              <td class="fw-bench">/ industry average</td>
+            </tr>
+            <tr class="fw-stage-start" style="--st:var(--c-c)">
+              <td class="fw-stage"><span class="fw-bar"></span>Service &amp; loyalty</td>
+              <td class="fw-act">Data capture</td>
+              <td class="fw-metrics"><span>Form completions</span></td>
+              <td class="fw-bench">/ 2 y internal average</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#191817"/>
+    <rect x="30" y="30" width="40" height="40" rx="6" fill="#fbfaf6"/>
+    <text x="50" y="58" font-size="20" font-family="monospace" text-anchor="middle" fill="#191817">F</text>
+  </svg>
+</template>
+
+<script src="image-slot.js"></script>
+<script src="mi-data.js"></script>
+<script src="mi-charts.js"></script>
+<script src="mi-app.js"></script>
+<script src="mi-present.js"></script>
+</body>
+</html>
