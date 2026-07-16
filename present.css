@@ -373,6 +373,40 @@ body { background: #14120f; color: var(--dark-ink); }
 .expand-btn:hover { background: rgba(255,255,255,.16); }
 .expand-btn svg { width: 15px; height: 15px; display: block; }
 
+/* ---- Discoverability pulse ----
+   Small looping accent circles that draw the eye to the interactive controls
+   people were missing: filters, tabs and the expand button. They loop until the
+   user engages ANY control, then every pulse stops (body.hints-seen) so they
+   never nag after the affordance is learned. Reduced-motion users see nothing. */
+@keyframes ui-ping { 0% { transform: scale(.6); opacity: .5; } 70%,100% { transform: scale(1.9); opacity: 0; } }
+@keyframes ui-dot  { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.28); opacity: .5; } }
+
+/* expand button — a pulsing accent ring around it */
+.expand-btn::before {
+  content: ''; position: absolute; inset: -3px; border-radius: 12px;
+  border: 2px solid var(--c-us); pointer-events: none;
+  animation: ui-ping 2.4s ease-out infinite;
+}
+/* filters & tabs — a small pulsing accent dot with a ping ring, top-right */
+.seg.ui-hint { position: relative; }
+.seg.ui-hint::after {
+  content: ''; position: absolute; top: -3px; right: -3px; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--c-us); pointer-events: none; z-index: 3;
+  animation: ui-dot 1.8s ease-in-out infinite;
+}
+.seg.ui-hint::before {
+  content: ''; position: absolute; top: -6px; right: -6px; width: 14px; height: 14px;
+  border-radius: 50%; border: 2px solid var(--c-us); pointer-events: none; z-index: 2;
+  animation: ui-ping 2.4s ease-out infinite;
+}
+.expand-btn:hover::before,
+body.hints-seen .expand-btn::before,
+body.hints-seen .seg.ui-hint::after,
+body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .expand-btn::before, .seg.ui-hint::after, .seg.ui-hint::before { animation: none; opacity: 0; }
+}
+
 .lightbox { position: fixed; inset: 0; z-index: 120; display: none; }
 .lightbox.open { display: block; }
 .lb-backdrop { position: absolute; inset: 0; background: rgba(10,9,8,.74); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); animation: lbFade .3s ease; }

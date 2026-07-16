@@ -341,12 +341,25 @@
     });
   }
 
+  /* ---------- discoverability pulse ----------
+     Tag the filter/tab controls so CSS can pulse them, and kill every pulse the
+     moment the user engages any control (they've learned the affordance). Skip
+     the lightbox — by the time it's open the user is already interacting. */
+  function hintControls(){
+    $$('.deck .seg').forEach(seg => { if(!seg.closest('.lb-scroll')) seg.classList.add('ui-hint'); });
+    const seen = () => document.body.classList.add('hints-seen');
+    document.addEventListener('pointerdown', e => {
+      if(e.target.closest('.seg, .expand-btn, .expandable, .chip, .chips')) seen();
+    }, { capture:true });
+  }
+
   /* ---------- init ---------- */
   pages[0].classList.add('active');
   stagger(pages[0]);
   focusSlider();
   LB = lightbox();
   addExpandButtons(LB);
+  hintControls();
   chrome();
   fitAll();
 })();
