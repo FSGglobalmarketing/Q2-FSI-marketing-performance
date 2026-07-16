@@ -78,7 +78,7 @@ body { background: #14120f; color: var(--dark-ink); }
 .p-title { font-size: clamp(30px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600; color: var(--dark-ink); }
 .p-sub { font-size: clamp(16px, 1.5vw, 19px); color: var(--dark-ink-2); max-width: 62ch; line-height: 1.5; text-wrap: pretty; }
 
-.lead-sum { font-size: clamp(17px, 1.7vw, 21px); line-height: 1.5; color: var(--dark-ink-2); max-width: 74ch; text-wrap: pretty; }
+.lead-sum { font-size: clamp(12px, 1.05vw, 13.5px); line-height: 1.55; color: var(--dark-ink-2); max-width: none; text-wrap: pretty; }
 
 /* ---------- FROSTED GLASS — cards over photography ---------- */
 .page .card,
@@ -175,6 +175,44 @@ body { background: #14120f; color: var(--dark-ink); }
   color: var(--dark-ink);
 }
 
+/* Divider stays centred with the big heading; small cards sit under it */
+.divider.has-stage .page-inner { gap: 20px; }
+.stage-mount { width: 100%; }
+.stage-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
+  width: 100%; max-width: 920px; margin: 4px auto 0; text-align: left;
+}
+@media (max-width: 820px){ .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px){ .stage-grid { grid-template-columns: 1fr; } }
+/* highlight pages: Goals + Marketing-activities cards (only two) */
+.hl-cards { width: 100%; margin: 2px 0; }
+.hl-cards .stage-grid { grid-template-columns: repeat(2, minmax(0,1fr)); margin: 0; max-width: 1000px; }
+@media (max-width: 620px){ .hl-cards .stage-grid { grid-template-columns: 1fr; } }
+/* highlight intro (copy) page — a little more room for the lead paragraphs */
+.hl-lead { max-width: 940px; }
+.hl-lead .lead-sum { font-size: clamp(13.5px, 1.2vw, 15.5px); }
+.hl-kpis { width: 100%; }
+.glass-card {
+  background: var(--glass); border: 1px solid var(--glass-brd); border-radius: 13px;
+  padding: 13px 15px;
+  -webkit-backdrop-filter: blur(12px) saturate(1.05); backdrop-filter: blur(12px) saturate(1.05);
+}
+.glass-card h4 {
+  margin: 0 0 8px; font-family: var(--font-body); font-weight: 600;
+  font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--dark-ink-2);
+}
+.glass-card ul, .glass-card ol { margin: 0; padding-left: 15px; display: flex; flex-direction: column; gap: 5px; }
+.glass-card li { font-size: 12px; line-height: 1.38; color: var(--dark-ink); }
+.glass-card ol { counter-reset: g; padding-left: 0; }
+.glass-card ol li { list-style: none; display: flex; gap: 8px; }
+.glass-card ol li::before {
+  counter-increment: g; content: counter(g);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--c-us); min-width: 12px;
+}
+/* multiple lead paragraphs on content pages — compact so charts stay in view */
+.cb-mount .lead-sum + .lead-sum { margin-top: 9px; }
+.lead-sum strong { color: var(--dark-ink); font-weight: 600; }
+
 /* ---------- FOCUS SLIDER (Q1 ⟷ Q2) ---------- */
 .focus-wrap { display: flex; flex-direction: column; gap: 40px; }
 .focus-slider { display: flex; align-items: center; gap: 22px; max-width: 620px; }
@@ -207,10 +245,11 @@ body { background: #14120f; color: var(--dark-ink); }
 
 /* ---------- CAROUSEL ---------- */
 .carousel { display: flex; flex-direction: column; gap: 18px; min-height: 0; }
-.carousel-viewport { overflow: hidden; }
-.carousel-track { display: flex; transition: transform .55s cubic-bezier(.22,.61,.36,1); }
+/* Height tracks the ACTIVE slide (set in JS) so a short slide — e.g. the 4-bar
+   activity chart — isn't padded out to the tall gallery slide's height. */
+.carousel-viewport { overflow: hidden; transition: height .5s cubic-bezier(.22,.61,.36,1); }
+.carousel-track { display: flex; align-items: flex-start; transition: transform .55s cubic-bezier(.22,.61,.36,1); }
 .cslide { flex: 0 0 100%; min-width: 0; padding: 2px; }
-.cslide .chart-card, .cslide .card { height: 100%; }
 .carousel-ui { display: flex; align-items: center; justify-content: center; gap: 18px; }
 .cdots { display: flex; gap: 9px; align-items: center; }
 .cdot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.28); border: 0; padding: 0; transition: all .3s; cursor: pointer; }
@@ -251,6 +290,37 @@ body { background: #14120f; color: var(--dark-ink); }
   background: rgba(255,255,255,.06); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
 @media (max-width: 940px){ .p-nav .nav-links { display: none; } .p-nav { padding: 18px 24px; } }
+
+/* ---------- MEGA MENU ---------- */
+.mega { position: absolute; top: 100%; left: 56px; right: 56px; height: 0; z-index: 41; }
+.mega-panel {
+  position: absolute; top: 4px; display: none; min-width: 262px; max-width: 96vw;
+  background: var(--glass-2); border: 1px solid var(--glass-brd); border-radius: 18px;
+  -webkit-backdrop-filter: blur(34px) saturate(1.1); backdrop-filter: blur(34px) saturate(1.1);
+  box-shadow: 0 34px 90px -34px rgba(0,0,0,.78);
+  padding: 12px; opacity: 0; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease;
+}
+.mega-panel::before { content: ''; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }  /* hover bridge */
+.mega.open .mega-panel.show { display: block; opacity: 1; transform: none; }
+.mega-head {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--dark-ink-2); padding: 2px 14px 10px; border-bottom: 1px solid var(--glass-brd); margin-bottom: 6px;
+}
+.mega-inner { display: grid; gap: 2px; }
+.mega-item {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+  background: transparent; border: 0; border-radius: 12px; padding: 9px 14px; cursor: pointer;
+  color: var(--dark-ink); transition: background .14s; white-space: nowrap;
+}
+.mega-item:hover { background: rgba(255,255,255,.09); }
+.mi-num { font-family: var(--font-mono); font-size: 11px; color: var(--dark-ink-2); min-width: 20px; text-align: right; }
+.mi-txt { display: flex; flex-direction: column; gap: 1px; overflow: hidden; }
+.mi-label { font-size: 14px; font-weight: 500; }
+.mi-sub { font-size: 11.5px; color: var(--dark-ink-2); white-space: normal; max-width: 300px; line-height: 1.3; }
+.mega-item[data-kind="section"] .mi-label { color: var(--c-us); }
+.mega-item[data-kind="cover"] .mi-label { color: var(--dark-ink-2); }
+.nav-links button.mega-on { color: var(--dark-ink); }
+@media (max-width: 940px){ .mega { display: none; } }
 
 /* ---------- PROGRESS RAIL ---------- */
 .p-progress {
@@ -341,4 +411,28 @@ body { background: #14120f; color: var(--dark-ink); }
 .lb-scroll .card-head, .lb-scroll .p-controls { padding-right: 0; }
 .lb-scroll .expand-btn { display: none; }
 .lb-scroll .chart-wrap svg { height: auto; }
+/* clones can carry data-anim (opacity:0 until .page.active); reveal them in the modal */
+.lb-scroll [data-anim] { opacity: 1; transform: none; }
+/* tall cards (e.g. the Alphix company list) must keep full height + let the
+   lightbox scroll — not shrink to fit and clip via overflow:hidden */
+.lb-scroll > * { flex-shrink: 0; }
+.lb-scroll .alphix { overflow: visible; }
+
+/* Alphix — standalone expandable card + its toolbar */
+.alphix { position: relative; }
+.alphix.expandable { cursor: zoom-in; }
+.alphix.expandable .alphix-top { padding-right: 56px; }
+.alphix.expandable button, .alphix.expandable .seg button, .alphix.expandable .page-tab, .alphix.expandable a { cursor: pointer; }
+.alphix-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; }
 @media (max-width: 720px){ .lb-panel { inset: 2vh 3vw; } .lb-scroll { padding: 20px; } }
+
+/* legend legible on the dark presentation bands */
+.page .legend { color: var(--dark-ink); }
+
+/* Q1<->Q2 slider inside an expanded (modal) chart header */
+.card-head:has(.chart-q-slider){ flex-wrap:wrap; gap:12px; }
+/* needs an explicit width, else the flex:1 track collapses to 0 inside the
+   shrink-to-fit card-head and the handle can't move */
+.chart-q-slider{ width:200px; max-width:100%; margin-left:auto; gap:12px; flex:none; }
+.chart-q-slider .fs-track{ min-width:90px; }
+.chart-q-slider .q-end{ font-size:12px; padding:0; }

@@ -299,10 +299,33 @@ window.MIDATA = (function () {
     },
   };
 
+  // LinkedIn competitor creatives come from window.MI_LINKEDIN (li-data.js);
+  // absent here until a brand LinkedIn snapshot lands, so these return empty.
+  function liCreatives(){
+    const L = (typeof window !== 'undefined' && window.MI_LINKEDIN) || {};
+    return Array.isArray(L.creatives) ? L.creatives : [];
+  }
+  function liActivity(){
+    const L = (typeof window !== 'undefined' && window.MI_LINKEDIN) || {};
+    if (Array.isArray(L.activity) && L.activity.length) return L.activity;
+    return liCreatives().map(c=>({ name:c.competitor, v:c.totalAds||0, color:c.color })).sort((a,b)=>b.v-a.v);
+  }
+  // Live competitor ad counts per quarter (Google Ads Transparency, via data.js);
+  // the chart's Q1/Q2 slider picks one. Falls back to a seeded estimate.
+  function adSoV(){
+    const R = (typeof window !== 'undefined' && window.MI_REMOTE) || {};
+    if (R.AD_SOV && ((R.AD_SOV.q1 && R.AD_SOV.q1.length) || (R.AD_SOV.q2 && R.AD_SOV.q2.length)))
+      return R.AD_SOV;
+    const rnd = seed('adsov-q2');
+    const mk = f => COMPETITORS.map(c=>({ name:c.name, v:Math.round(3+rnd()*30*f), color:c.color }))
+      .filter(r=>r.v>0).sort((a,b)=>b.v-a.v);
+    return { q1: mk(0.9), q2: mk(1) };
+  }
+
   return {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, shareOfVoice, searchVisibility,
+    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility,
   };
 })();

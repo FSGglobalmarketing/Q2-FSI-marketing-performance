@@ -47,12 +47,72 @@
     $$('.cdot', c.dotsEl).forEach((d,i)=> d.classList.toggle('on', i===idx));
     if(c.prev) c.prev.disabled = idx===0;
     if(c.next) c.next.disabled = idx===c.slides.length-1;
+    fitCarousel(c);
   }
+  // Size the viewport to the active slide so a short slide leaves no gap.
+  function fitCarousel(c){
+    if(!c) return;
+    const vp = $('.carousel-viewport', c.car), active = c.slides[c.idx];
+    if(vp && active){ const h = active.offsetHeight; if(h) vp.style.height = h + 'px'; }
+  }
+  const fitAll = () => pageCar.forEach(c => fitCarousel(c));
+  window.MI_fitCarousels = fitAll;   // mi-app calls this after the gallery re-renders
+  window.addEventListener('resize', fitAll);
 
   /* ---------- progress rail ---------- */
   rail.innerHTML = pages.map((p,i)=>`<button data-p="${i}" class="${i===0?'on':''}" aria-label="${p.dataset.label||('Page '+(i+1))}"></button>`).join('');
   $$('#p-progress button').forEach(b => b.onclick = () => goPage(+b.dataset.p));
   navBtns.forEach(b => b.onclick = () => goPage(+b.dataset.goto));
+
+  /* ---------- mega menu (Apple-style: hover a section, jump to any page) ---------- */
+  (function megaMenu(){
+    const navLinks = $('#nav-links');
+    if(!navLinks || !navBtns.length) return;
+    const gotos = navBtns.map(b => +b.dataset.goto);
+    const wrap = document.createElement('div'); wrap.className = 'mega'; wrap.id = 'mega';
+    navBtns.forEach((btn, i) => {
+      const start = i === 0 ? 0 : gotos[i];                       // first section also lists the Cover
+      const end   = i < gotos.length - 1 ? gotos[i + 1] : pages.length;
+      let items = '';
+      for(let p = start; p < end; p++){
+        const pg = pages[p];
+        const label = pg.dataset.label || ('Page ' + (p + 1));
+        const sub = (pg.querySelector('.p-sub')?.textContent || '').trim();
+        const kind = pg.classList.contains('divider') ? 'section' : pg.classList.contains('cover-page') ? 'cover' : 'page';
+        items += `<button class="mega-item" data-goto="${p}" data-kind="${kind}">
+            <span class="mi-num">${String(p + 1).padStart(2,'0')}</span>
+            <span class="mi-txt"><span class="mi-label">${label}</span>${sub?`<span class="mi-sub">${sub}</span>`:''}</span>
+          </button>`;
+      }
+      const panel = document.createElement('div'); panel.className = 'mega-panel'; panel.dataset.for = i;
+      panel.innerHTML = `<div class="mega-head">${btn.textContent}</div><div class="mega-inner">${items}</div>`;
+      wrap.appendChild(panel);
+    });
+    nav.appendChild(wrap);
+    const panels = $$('.mega-panel', wrap);
+    let t;
+    const clear = () => clearTimeout(t);
+    function open(i){
+      clear();
+      const wr = wrap.getBoundingClientRect(), br = navBtns[i].getBoundingClientRect();
+      panels[i].style.left = Math.round(br.left - wr.left) + 'px';   // align under the hovered section
+      wrap.classList.add('open');
+      panels.forEach(p => p.classList.toggle('show', +p.dataset.for === i));
+      navBtns.forEach((b, bi) => b.classList.toggle('mega-on', bi === i));
+    }
+    function shut(){ t = setTimeout(() => {
+      wrap.classList.remove('open'); panels.forEach(p => p.classList.remove('show'));
+      navBtns.forEach(b => b.classList.remove('mega-on'));
+    }, 160); }
+    navBtns.forEach((b, i) => { b.addEventListener('mouseenter', () => open(i)); b.addEventListener('focus', () => open(i)); });
+    navLinks.addEventListener('mouseleave', shut);
+    wrap.addEventListener('mouseenter', clear);
+    wrap.addEventListener('mouseleave', shut);
+    $$('.mega-item', wrap).forEach(it => it.addEventListener('click', () => {
+      clear(); wrap.classList.remove('open'); panels.forEach(p => p.classList.remove('show')); navBtns.forEach(b => b.classList.remove('mega-on'));
+      goPage(+it.dataset.goto);
+    }));
+  })();
 
   /* ---------- stagger entrance ---------- */
   function stagger(page){
@@ -200,7 +260,7 @@
     lb.className = 'lightbox'; lb.id = 'lightbox'; lb.setAttribute('aria-hidden','true');
     lb.innerHTML =
       '<div class="lb-backdrop"></div>' +
-      '<div class="lb-panel" role="dialog" aria-modal="true">' +
+      '<div class="lb-panel dark" role="dialog" aria-modal="true">' +
         '<div class="lb-head"><span class="lb-title"></span>' +
         '<button class="lb-close" aria-label="Close">' + ICON_CLOSE + '</button></div>' +
         '<div class="lb-scroll"></div>' +
@@ -209,18 +269,40 @@
     const scroll = $('.lb-scroll', lb);
     const titleEl = $('.lb-title', lb);
 
-    function open(carousel, title){
+    function open(source, title){
       scroll.innerHTML = '';
-      $$('.cslide', carousel).forEach(sl => {
-        const src = sl.firstElementChild; if(!src) return;
+      // a carousel expands each of its slides; a standalone card expands itself
+      const slides = $$('.cslide', source);
+      const sources = slides.length ? slides.map(sl => sl.firstElementChild) : [source];
+      sources.forEach(src => {
+        if(!src) return;
         const clone = src.cloneNode(true);
         clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+        clone.querySelectorAll('.expand-btn').forEach(b => b.remove());
+        // cloneNode copies ECharts' _echarts_instance_ marker, which would make
+        // getInstanceByDom(clone) resolve to the ORIGINAL chart's instance and
+        // redraw into the page instead of the modal. Strip it so each modal
+        // chart initialises fresh into its own (cloned) container.
+        [clone, ...clone.querySelectorAll('[_echarts_instance_]')].forEach(e => e.removeAttribute && e.removeAttribute('_echarts_instance_'));
         clone.classList.remove('on-dark');
         scroll.appendChild(clone);
       });
       titleEl.textContent = title || 'Charts';
       lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
       scroll.scrollTop = 0;
+      // Force a synchronous layout so the now-visible panel reports real
+      // dimensions, then render live charts + interactive widgets. Done
+      // synchronously (not via rAF, which is paused in background tabs) so
+      // ECharts sizes correctly and controls (country switcher, sliders)
+      // rebind fresh handlers. [data-chart]/[data-widget] keys survive the
+      // clone even though ids are stripped.
+      void scroll.offsetHeight;
+      scroll.querySelectorAll('[data-chart]').forEach(el => {
+        try { window.MI_renderChart && window.MI_renderChart(el.dataset.chart, el, { modal:true }); } catch(e){}
+      });
+      scroll.querySelectorAll('[data-widget]').forEach(el => {
+        try { window.MI_renderWidget && window.MI_renderWidget(el.dataset.widget, el); } catch(e){}
+      });
     }
     function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); scroll.innerHTML = ''; }
 
@@ -231,23 +313,31 @@
   }
 
   function addExpandButtons(lbox){
-    $$('.carousel').forEach(car => {
-      const page = car.closest('.page');
-      const title = (page && page.dataset.label) || 'Charts';
-      $$('.cslide > .card, .cslide > .chart-card, .cslide > .map-wrap', car).forEach(card => {
-        const btn = document.createElement('button');
-        btn.className = 'expand-btn'; btn.type = 'button';
-        btn.setAttribute('aria-label', 'Expand charts');
-        btn.innerHTML = ICON_EXPAND;
-        btn.addEventListener('click', e => { e.stopPropagation(); lbox.open(car, title); });
-        card.appendChild(btn);
-        // clicking anywhere on the widget (except interactive controls) opens it too
-        card.classList.add('expandable');
-        card.addEventListener('click', e => {
-          if(e.target.closest('button, a, input, select, textarea, .seg, .chip, .page-tab, .cdot')) return;
-          lbox.open(car, title);
-        });
+    function makeExpandable(card, source, title){
+      if($('.expand-btn', card)) return;
+      const btn = document.createElement('button');
+      btn.className = 'expand-btn'; btn.type = 'button';
+      btn.setAttribute('aria-label', 'Expand');
+      btn.innerHTML = ICON_EXPAND;
+      btn.addEventListener('click', e => { e.stopPropagation(); lbox.open(source, title); });
+      card.appendChild(btn);
+      // clicking anywhere on the widget (except interactive controls) opens it too
+      card.classList.add('expandable');
+      card.addEventListener('click', e => {
+        // never treat a click on an interactive control (incl. the Q1/Q2 slider)
+        // as an "expand" — dragging the slider must not open the lightbox.
+        if(e.target.closest('button, a, input, select, textarea, .seg, .chip, .page-tab, .cdot, .focus-slider, .chips')) return;
+        lbox.open(source, title);
       });
+    }
+    $$('.carousel').forEach(car => {
+      const title = (car.closest('.page')?.dataset.label) || 'Charts';
+      $$('.cslide > .card, .cslide > .chart-card, .cslide > .map-wrap', car).forEach(card => makeExpandable(card, car, title));
+    });
+    // standalone cards (e.g. Alphix) that aren't inside a carousel
+    $$('[data-expandable]').forEach(card => {
+      const title = (card.closest('.page')?.dataset.label) || 'Details';
+      makeExpandable(card, card, title);
     });
   }
 
@@ -258,4 +348,5 @@
   LB = lightbox();
   addExpandButtons(LB);
   chrome();
+  fitAll();
 })();

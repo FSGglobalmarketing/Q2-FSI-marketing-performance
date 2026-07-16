@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="mi.css" />
 <link rel="stylesheet" href="present.css" />
 <link rel="stylesheet" href="brand.css" />
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
 </head>
 <body>
 
@@ -126,7 +127,7 @@
               <div class="chart-card">
                 <div class="card-head"><div class="card-title">Our visibility vs peers</div><span class="source-note">Search Console</span></div>
                 <div class="legend" style="margin-bottom:12px"><span><i class="ln" style="background:var(--c-us)"></i>Our brand</span><span><i class="ln" style="background:var(--c-muted)"></i>Peer average</span></div>
-                <div class="chart-wrap" id="search-visibility"></div>
+                <div class="chart-wrap" id="search-visibility" data-chart="search-vis"></div>
               </div>
             </div>
             <div class="cslide" data-label="Top search terms">
@@ -159,36 +160,38 @@
       <div class="carousel" data-anim>
         <div class="carousel-viewport">
           <div class="carousel-track">
-            <div class="cslide" data-label="Share of voice">
+            <div class="cslide" data-label="Ad activity">
               <div class="chart-card">
                 <div class="card-head">
-                  <div class="card-title">Share of voice — us vs competitors</div>
-                  <div class="seg" id="sov-toggle" role="group" aria-label="Share of voice channel">
-                    <button class="on" data-sov="search">Search</button>
-                    <button data-sov="paid">Paid ads</button>
-                  </div>
+                  <div class="card-title">Competitor ad activity — Google</div>
                 </div>
-                <p class="muted-txt" style="font-size:13.5px;margin-bottom:14px">Our slice of total activity across the brands we track. Bigger is better.</p>
-                <div class="chart-wrap" id="sov-chart"></div>
+                <p class="muted-txt" style="font-size:13.5px;margin-bottom:14px">How many live ads each rival is running on Google, from the public Ads Transparency Center. Slide between Q1 and Q2 to see who's ramping up.</p>
+                <div class="chart-wrap" id="sov-chart" data-chart="sov"></div>
               </div>
             </div>
             <div class="cslide" data-label="Their live adverts">
-              <div class="chart-card">
+              <div class="chart-card" data-widget="creatives">
                 <div class="p-controls" style="margin-bottom:14px">
                   <div>
                     <div class="card-title">Their live adverts right now</div>
-                    <p class="muted-txt" style="font-size:13px;margin-top:4px">Examples pulled from public ad libraries.</p>
+                    <p class="muted-txt" style="font-size:13px;margin-top:4px">Real ad examples pulled from public ad libraries.</p>
                   </div>
-                  <div class="seg" id="creative-view" role="group" aria-label="Creative layout">
-                    <button class="on" data-view="gallery">Gallery</button>
-                    <button data-view="list">List</button>
+                  <div style="display:flex;gap:10px;flex-wrap:wrap">
+                    <div class="seg plat-toggle" id="plat-gal" role="group" aria-label="Ad platform">
+                      <button class="on" data-plat="google">Google</button>
+                      <button data-plat="linkedin">LinkedIn</button>
+                    </div>
+                    <div class="seg" id="creative-view" data-role="view" role="group" aria-label="Creative layout">
+                      <button class="on" data-view="gallery">Gallery</button>
+                      <button data-view="list">List</button>
+                    </div>
                   </div>
                 </div>
                 <div class="stack-16" style="margin-bottom:16px">
-                  <div class="chips" id="comp-chips"></div>
-                  <div class="chips" id="fmt-chips"></div>
+                  <div class="chips" id="comp-chips" data-role="comp-chips"></div>
+                  <div class="chips" id="fmt-chips" data-role="fmt-chips"></div>
                 </div>
-                <div class="slide-scroll" id="creatives"></div>
+                <div class="slide-scroll" id="creatives" data-role="creatives"></div>
               </div>
             </div>
           </div>
@@ -233,13 +236,14 @@
               <div class="chart-card">
                 <div class="card-head"><div class="card-title">Website visits over time</div><span class="source-note">Website analytics</span></div>
                 <div class="legend" style="margin-bottom:12px"><span><i class="ln" style="background:var(--c-a)"></i>This quarter</span><span><i class="ln" style="background:var(--c-muted);opacity:.7"></i>Last quarter</span></div>
-                <div class="chart-wrap" id="chart-visits"></div>
+                <div class="chart-wrap" id="chart-visits" data-chart="visits"></div>
               </div>
             </div>
             <div class="cslide" data-label="Most-read pages">
-              <div class="chart-card">
+              <div class="chart-card" data-widget="top-pages">
                 <div class="card-head"><div class="card-title">Most-read pages</div><span class="source-note">Website analytics</span></div>
-                <div class="slide-scroll" id="top-pages"></div>
+                <div class="seg" id="pages-country" data-seg="pages-country" role="group" aria-label="Country" style="margin:8px 0 12px"></div>
+                <div class="slide-scroll" id="top-pages" data-body="top-pages"></div>
               </div>
             </div>
           </div>
@@ -264,22 +268,18 @@
           <h2 class="p-title" style="font-size:clamp(26px,3vw,40px)">Company-level web insights</h2>
           <p class="p-sub">We can now identify the organisations whose staff are reading each page — so sales know exactly who is paying attention, not just how many.</p>
         </div>
-        <div class="seg" id="alphix-view" role="group" aria-label="Alphix layout">
-          <button class="on" data-view="page">By page</button>
-          <button data-view="company">By company</button>
-        </div>
       </div>
-      <div class="alphix" id="alphix" data-anim>
+      <div class="alphix" id="alphix" data-anim data-widget="alphix" data-expandable>
         <div class="alphix-top">
-          <div id="alphix-summary" style="display:flex;gap:28px;flex-wrap:wrap"></div>
+          <div data-alphix-summary style="display:flex;gap:28px;flex-wrap:wrap"></div>
           <span class="source-note">Company-level web insights · Alphix</span>
         </div>
         <div class="alphix-body">
-          <div id="alphix-pagepicker-wrap" style="padding:16px 0 6px">
-            <div class="cblk-label">Choose a page to see who has been reading it</div>
-            <div class="page-picker" id="page-picker"></div>
+          <div class="alphix-toolbar">
+            <span class="alx-hint">Click a company to see the pages they read</span>
+            <div class="seg" data-alphix-region role="group" aria-label="Region"></div>
           </div>
-          <div class="slide-scroll" id="alphix-table"></div>
+          <div class="slide-scroll" data-alphix-table></div>
         </div>
       </div>
     </div>
@@ -313,7 +313,7 @@
             <div class="cslide" data-label="How we compare">
               <div class="chart-card">
                 <div class="card-head"><div class="card-title">How our engagement compares</div><span class="source-note">LinkedIn</span></div>
-                <div class="chart-wrap" id="li-bench"></div>
+                <div class="chart-wrap" id="li-bench" data-chart="li-bench"></div>
               </div>
             </div>
             <div class="cslide" data-label="Best posts">
