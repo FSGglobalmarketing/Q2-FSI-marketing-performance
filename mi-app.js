@@ -15,6 +15,7 @@
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
     seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
+    emailDim: 'campaign',    // email engagement dimension (campaign/country/company)
     liGroup: 'All',          // LinkedIn ad-group tab (campaign id, or 'All')
     prospectDim: 'fund',    // slice the served prospects by 'fund' or 'date'
     prospectBucket: 'All',
@@ -793,6 +794,7 @@
       if(key === 'creatives'){ wireCreatives(el); renderCompChips(el); renderCreatives(el); return; }
       if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemChart(el, { modal:true }); return; }
       if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
+      if(key === 'email'){ renderEmailTabs(el); renderEmailChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
       if(key === 'prospects'){ renderProspectTabs(el); renderNaAudience(el.querySelector('[data-chart="na-audience"]'), { modal:true }); return; }
     }
@@ -896,6 +898,42 @@
   function renderEmailSummary(){
     $('#email-summary').innerHTML = D.EMAIL_SUMMARY.map(k=>`<div class="kpi on-dark"><b>${k.v}</b><div class="kl">${k.l}</div></div>`).join('');
   }
+
+  /* --- email engagement: who's opening/clicking, ranked most→least, sliced by
+     campaign / country / company. Stacked HBar = opens (light) + clicks (accent).
+     Root-scoped so it survives the modal; large dims (company) cap on the page. --- */
+  function emailEngData(){ return D.emailEng ? D.emailEng() : null; }
+  function emailCards(){ return $$('[data-role="email-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function currentEmailDim(){ const E=emailEngData(); if(!E) return null; return E.dims.find(d=>d.key===state.emailDim) || E.dims[0]; }
+  function renderAllEmail(){ emailCards().forEach(card=>{ renderEmailTabs(card); renderEmailChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function renderEmailTabs(card){
+    const E=emailEngData(); if(!E) return;
+    if(!E.dims.some(d=>d.key===state.emailDim)) state.emailDim = E.dims[0].key;
+    const host = card.querySelector('[data-role="email-dim"]');
+    if(host){
+      host.innerHTML = E.dims.map(d=>`<button class="${state.emailDim===d.key?'on':''}" data-dim="${d.key}">${d.label}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.emailDim=b.dataset.dim; renderAllEmail(); });
+    }
+    const note = card.querySelector('[data-role="email-note"]');
+    if(note){ const d=currentEmailDim(); const modal=!!card.closest('.lb-scroll'); const cap=modal?22:12;
+      const shown = d ? Math.min(cap, d.rows.length) : 0;
+      const plural = { campaign:'campaigns', country:'countries', company:'companies' };
+      const noun = d ? (plural[d.key] || d.label.toLowerCase()+'s') : '';
+      note.innerHTML = d
+        ? `Top ${shown} ${noun}${d.rows.length>shown?` of ${d.rows.length}`:''} by activity. ${E.note}`
+        : E.note;
+    }
+  }
+  function renderEmailChart(card){
+    const E=emailEngData(); if(!E) return;
+    const el = card.querySelector('[data-role="email-chart"]'); if(!el || !window.echarts) return;
+    const d = currentEmailDim(); if(!d) return;
+    const modal = !!card.closest('.lb-scroll'); const cap = modal?22:12;
+    const rows = d.rows.slice(0, cap).map(r=>({ name:r.n, impr:(r.o||0)+(r.c||0), clicks:(r.c||0), _o:r.o||0, _c:r.c||0, _e:r.e||0 }));
+    const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}<br/>Emails engaged ${r._e}`;
+    try { echartsStackedHBars(el, rows, { labelW: modal?280:214, hitName:'Clicks', tipRows, modal }); }
+    catch(e){ console.warn('email-eng', e); }
+  }
   function renderCampPanel(){
     const panel = $('#camp-panel');
     if(state.campTab==='email'){
@@ -994,7 +1032,7 @@
   renderVisits(); renderTopPages();
   renderAlphix();
   renderLinkedIn();
-  renderEmailSummary(); renderCampPanel();
+  renderEmailSummary(); renderCampPanel(); renderAllEmail();
   renderEvents(); renderResults();
   wire(); observers();
 })();

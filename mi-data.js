@@ -379,10 +379,69 @@ window.MIDATA = (function () {
   };
   function seoRankings(){ return SEO; }
 
+  const EMAIL_ENG = {
+    note: 'Opens are Apple-MPP inflated; clicks are the harder signal. Activity 17 Apr–30 Jun, external contacts only.',
+    dims: [
+      { key:'campaign', label:'Campaign', rows: [
+        { n:'GLIS / Listed Infra', o:1628, c:1552, e:86 },
+        { n:'Cash / ETF', o:1322, c:348, e:8 },
+        { n:'SMIDS / REITs', o:254, c:16, e:1 },
+        { n:'AEQ Growth', o:58, c:1, e:11 },
+        { n:'Reporting Season', o:20, c:0, e:6 },
+        { n:'Newsletters / updates', o:3, c:11, e:4 },
+        { n:'Fixed Income', o:10, c:4, e:5 },
+        { n:'Other', o:5, c:0, e:7 },
+        { n:'High Yield', o:1, c:0, e:1 },
+        { n:'Outlook', o:1, c:0, e:1 },
+      ] },
+      { key:'country', label:'Country', rows: [
+        { n:'Australia', o:1858, c:471, e:41 },
+        { n:'Hong Kong', o:445, c:784, e:53 },
+        { n:'Singapore', o:614, c:457, e:30 },
+        { n:'United Kingdom', o:163, c:53, e:13 },
+        { n:'Europe (ex-UK)', o:60, c:76, e:2 },
+        { n:'Germany', o:56, c:37, e:2 },
+        { n:'Other', o:39, c:15, e:5 },
+        { n:'New Zealand', o:41, c:2, e:2 },
+        { n:'France', o:11, c:30, e:1 },
+        { n:'Regional / multi', o:14, c:7, e:2 },
+        { n:'Ireland', o:1, c:0, e:1 },
+      ] },
+      { key:'company', label:'Company', rows: [
+        { n:'DBS BANK LTD SINGAPORE', o:56, c:159, e:13 },
+        { n:'DBS Bank (Hong Kong) Limited', o:36, c:123, e:17 },
+        { n:'AIA International Limited', o:34, c:122, e:13 },
+        { n:'IFAST FINANCIAL (HK) LIMITED', o:119, c:11, e:26 },
+        { n:'Shanghai Commercial Bank Limited', o:21, c:100, e:19 },
+        { n:'China Construction Bank (Asia) Corporat…', o:37, c:79, e:15 },
+        { n:'Bank of China (Hong Kong) Limited', o:41, c:65, e:12 },
+        { n:'Amundi Singapore Limited', o:20, c:76, e:14 },
+        { n:'Frontier Advisors', o:84, c:11, e:3 },
+        { n:'WING LUNG BANK LTD', o:12, c:75, e:19 },
+        { n:'AIA Singapore Private Limited', o:17, c:63, e:15 },
+        { n:'Great Eastern Life Assurance Co Ltd', o:34, c:35, e:11 },
+        { n:'Chiyu Banking Corporation Ltd', o:8, c:50, e:19 },
+        { n:'Amundi Asset Management - France', o:11, c:46, e:16 },
+        { n:'Nanyang Technological University', o:8, c:46, e:9 },
+        { n:'ENDOWUS', o:45, c:1, e:4 },
+        { n:'ICBC (ASIA) LIMITED', o:5, c:35, e:5 },
+        { n:'Industrial and Commercial Bank of China…', o:5, c:35, e:5 },
+        { n:'Shakespeare Financial Services Pty Ltd', o:31, c:8, e:2 },
+        { n:'Social Protection Fund', o:7, c:31, e:1 },
+        { n:'Blackadders Wealth Management LLP - Dun…', o:6, c:30, e:6 },
+        { n:'Shaw And Partners - Melbourne', o:35, c:1, e:3 },
+        { n:'Phillip Securities Pte Ltd', o:32, c:1, e:5 },
+        { n:'Mercer Financial Advice (Australia) Pty…', o:10, c:23, e:1 },
+        { n:'EML Payments', o:3, c:28, e:1 },
+      ] },
+    ],
+  };
+  function emailEng(){ return EMAIL_ENG; }
+
   return {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings,
+    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
   };
 })();
