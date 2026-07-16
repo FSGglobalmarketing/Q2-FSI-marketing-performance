@@ -14,6 +14,7 @@
     platform: 'google',      // competitor ads: 'google' (Ads Transparency) | 'linkedin' (Ad Library)
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
+    seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
     liGroup: 'All',          // LinkedIn ad-group tab (campaign id, or 'All')
     prospectDim: 'fund',    // slice the served prospects by 'fund' or 'date'
     prospectBucket: 'All',
@@ -119,6 +120,60 @@
         <td class="num">${pct1(r.ctr)}</td>
         <td class="num"><span class="pill ${r.pos<=5?'pos':''}">${r.pos.toFixed(1)}</span></td>
       </tr>`).join('')}</tbody></table>`;
+  }
+
+  /* --- SEO rankings: non-branded keywords on pages 1–3, us vs the whole field,
+     filtered by country (or strategy). One line per competitor over the tracked
+     months; our brand is the accent line. Root-scoped so it survives the modal. --- */
+  const SEO_PALETTE = ['#6b8cae','#c58a5a','#7fa67f','#a87f9e','#b0a06a','#5f9ea0','#9a8ca8',
+                       '#c08497','#7d97b8','#b5a072','#8aa1a8','#a98f7a','#88a06e','#9e8fb0','#7bb0a2'];
+  function seoData(){ return D.seoRankings ? D.seoRankings() : null; }
+  function seoCards(){ return $$('[data-role="seo-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function currentSeoScope(){ const S=seoData(); if(!S) return null; return S.scopes.find(s=>s.key===state.seoScope) || S.scopes[0]; }
+  function renderAllSeo(){ seoCards().forEach(card=>{ renderSeoTabs(card); renderSeoChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function renderSeoTabs(card){
+    const S=seoData(); if(!S) return;
+    if(!S.scopes.some(s=>s.key===state.seoScope)) state.seoScope = S.scopes[0].key;
+    const host = card.querySelector('[data-role="seo-scope"]');
+    if(host){
+      host.innerHTML = S.scopes.map(s=>`<button class="${state.seoScope===s.key?'on':''}" data-scope="${s.key}">${s.label}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.seoScope=b.dataset.scope; renderAllSeo(); });
+    }
+    const note = card.querySelector('[data-role="seo-note"]');
+    if(note){ const sc=currentSeoScope(); const us=sc&&sc.series.find(x=>x.us);
+      note.innerHTML = us
+        ? `<strong>${us.name}</strong> ranks <strong>${us.data[us.data.length-1]}</strong> non-branded keywords on pages 1–3 in ${sc.label}, tracked against ${sc.series.length-1} competitors.`
+        : `Non-branded keywords ranking on pages 1–3, us versus the field.`;
+    }
+  }
+  function renderSeoChart(card){
+    const S=seoData(); if(!S) return;
+    const el = card.querySelector('[data-role="seo-chart"]'); if(!el || !window.echarts) return;
+    const sc = currentSeoScope(); if(!sc) return;
+    const dark = echDark(el), t = echAxis(dark), modal = !!card.closest('.lb-scroll');
+    const cUs = chartColor('--c-us','#ff5424');
+    const inst = echInit(el, modal ? '62vh' : '248px');
+    const series = sc.series.map((s,i)=>{
+      const col = s.us ? cUs : SEO_PALETTE[i % SEO_PALETTE.length];
+      return { name:s.name, type:'line', smooth:true, showSymbol:false, data:s.data, z: s.us?10:2,
+        lineStyle:{ width: s.us?3.6:1.4, color:col, opacity: s.us?1:.8 },
+        itemStyle:{ color:col }, emphasis:{ focus:'series' } };
+    });
+    inst.setOption({ animationDuration:450,
+      grid:{ left:46, right:16, top:14, bottom: modal?96:82 },
+      tooltip: Object.assign(echTipBase(dark), { trigger:'axis', order:'valueDesc',
+        valueFormatter: v => Number(v).toLocaleString() }),
+      legend:{ type:'scroll', bottom:0, itemWidth:14, itemHeight:8, pageIconColor:dark?'#cfcabb':'#6b6a63',
+        pageTextStyle:{ color:dark?'#cfcabb':'#6b6a63' },
+        textStyle:{ color:dark?'#cfcabb':'#3a3833', fontFamily:'IBM Plex Sans', fontSize:11.5 } },
+      xAxis:{ type:'category', boundaryGap:false, data:S.months, axisTick:{show:false},
+        axisLine:{lineStyle:{color:t.line}},
+        axisLabel:{ color:t.label, fontFamily:'IBM Plex Mono', fontSize:10.5, interval: modal?0:2, hideOverlap:true } },
+      yAxis:{ type:'value', splitLine:{lineStyle:{color:t.split}},
+        axisLabel:{ color:t.label, fontFamily:'IBM Plex Mono', fontSize:11 } },
+      series,
+    }, true);
+    inst.resize(); bindResize(el, inst); return inst;
   }
   // Competitor ad activity — real live-ad counts per advertiser, Q1 vs Q2.
   // The slider (built into the card head) chooses the quarter.
@@ -737,6 +792,7 @@
       if(key === 'alphix')    return renderAlphix(el);
       if(key === 'creatives'){ wireCreatives(el); renderCompChips(el); renderCreatives(el); return; }
       if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemChart(el, { modal:true }); return; }
+      if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
       if(key === 'prospects'){ renderProspectTabs(el); renderNaAudience(el.querySelector('[data-chart="na-audience"]'), { modal:true }); return; }
     }
@@ -934,7 +990,7 @@
   renderStages();
   heroSlider();
   renderKPIs();
-  renderSearchVisibility(); renderSearchTable(); renderSoV(); renderAllCreatives();
+  renderSearchVisibility(); renderSearchTable(); renderAllSeo(); renderSoV(); renderAllCreatives();
   renderVisits(); renderTopPages();
   renderAlphix();
   renderLinkedIn();

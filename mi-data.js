@@ -322,10 +322,67 @@ window.MIDATA = (function () {
     return { q1: mk(0.9), q2: mk(1) };
   }
 
+  const SEO = {
+    scopeLabel: 'Strategy',
+    months: ['Apr-25','May-25','Jun-25','Jul-25','Aug-25','Sep-25','Oct-25','Nov-25','Dec-25','Jan-26','Feb-26','Mar-26','Apr-26','May-26','Jun-26'],
+    scopes: [
+      { key:'Equities Growth', label:'Equities Growth', series: [
+        { name:'Perpetual', data:[32,29,32,35,35,37,38,38,57,57,58,65,68,68,68] },
+        { name:'Schroders', data:[15,14,15,15,14,15,16,15,15,15,15,24,44,43,42] },
+        { name:'First Sentier', us:true, data:[10,14,15,14,15,16,15,14,11,12,11,20,28,27,28] },
+        { name:'BetaShares', data:[16,17,17,20,17,19,20,22,22,22,23,21,24,23,23] },
+        { name:'Fidelity', data:[11,10,8,8,8,9,9,11,11,11,10,11,12,15,15] },
+        { name:'Pendal', data:[9,9,8,9,8,11,12,16,17,18,17,15,11,14,14] },
+        { name:'Ausbil', data:[5,7,5,5,5,7,6,8,7,6,5,10,11,12,12] },
+        { name:'Yarra', data:[3,3,3,3,2,3,3,4,4,4,4,9,10,9,9] },
+        { name:'Bennelong', data:[1,1,1,2,2,2,2,1,1,1,2,6,6,6,6] },
+        { name:'Antares', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      ] },
+      { key:'Small & Mid Caps', label:'Small & Mid Caps', series: [
+        { name:'Vanguard', data:[33,36,38,44,48,51,51,51,49,51,52,55,51,51,51] },
+        { name:'BetaShares', data:[17,18,18,22,28,32,32,38,40,37,36,38,36,35,33] },
+        { name:'Perpetual', data:[18,17,19,19,24,28,28,28,26,27,28,27,28,29,29] },
+        { name:'Fidelity', data:[10,11,13,13,16,19,20,21,18,18,17,20,19,19,20] },
+        { name:'Ausbil', data:[2,2,0,3,8,11,9,11,12,11,12,14,13,14,14] },
+        { name:'First Sentier', us:true, data:[5,6,5,10,13,17,17,18,18,17,17,17,14,13,13] },
+        { name:'Schroders', data:[5,4,4,6,10,12,12,12,11,11,11,11,11,10,10] },
+        { name:'Pendal', data:[1,2,1,4,2,2,2,3,4,4,5,4,4,4,4] },
+        { name:'OC Funds', data:[0,0,0,1,1,2,2,2,2,2,2,2,2,2,2] },
+      ] },
+      { key:'Global Property', label:'Global Property', series: [
+        { name:'Vanguard', data:[7,7,7,7,10,11,13,12,11,12,14,16,15,16,16] },
+        { name:'First Sentier', us:true, data:[6,6,6,6,8,8,10,8,7,7,7,9,9,9,9] },
+        { name:'BlackRock', data:[6,6,6,6,7,7,7,6,5,5,5,5,6,6,6] },
+        { name:'Resolution Capital', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      ] },
+      { key:'Global Infra', label:'Global Infra', series: [
+        { name:'ClearBridge', data:[18,17,19,23,28,33,35,35,36,40,42,46,43,42,42] },
+        { name:'First Sentier', us:true, data:[29,27,28,26,29,30,31,30,32,34,32,32,28,31,30] },
+        { name:'Vanguard', data:[12,13,11,12,13,14,17,18,18,19,17,21,21,21,20] },
+        { name:'Maple-Brown Abbott', data:[17,18,14,15,13,14,16,17,18,19,19,19,16,16,17] },
+        { name:'Russell', data:[12,11,12,11,14,14,16,18,17,17,16,17,17,15,15] },
+        { name:'BlackRock', data:[8,8,9,10,11,10,10,10,11,13,13,16,15,13,13] },
+        { name:'Atlas', data:[6,8,7,8,6,6,8,10,9,8,8,6,7,10,10] },
+        { name:'BetaShares', data:[1,1,2,2,2,3,4,4,4,6,6,6,8,8,9] },
+        { name:'UBS', data:[4,5,3,4,2,2,3,4,4,4,4,4,4,4,5] },
+        { name:'Nomura', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1] },
+        { name:'Magellan', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      ] },
+      { key:'Short Term', label:'Short Term', series: [
+        { name:'Vanguard', data:[95,94,99,118,140,143,147,152,150,154,161,163,162,160,158] },
+        { name:'BetaShares', data:[46,49,49,54,69,72,73,75,89,95,93,100,92,86,82] },
+        { name:'BlackRock', data:[44,44,49,51,53,56,59,60,65,69,70,72,67,70,74] },
+        { name:'First Sentier', us:true, data:[49,50,48,49,69,68,69,76,79,78,76,70,64,65,64] },
+        { name:'UBS', data:[5,3,4,4,5,5,5,5,6,5,4,8,7,6,6] },
+      ] },
+    ],
+  };
+  function seoRankings(){ return SEO; }
+
   return {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility,
+    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings,
   };
 })();
