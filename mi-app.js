@@ -15,6 +15,7 @@
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
     seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
+    stTheme: 'All',          // search-terms theme filter
     emailDim: 'campaign',    // email engagement dimension (campaign/country/company)
     liGroup: 'All',          // LinkedIn ad-group tab (campaign id, or 'All')
     prospectDim: 'fund',    // slice the served prospects by 'fund' or 'date'
@@ -413,6 +414,41 @@
   function wireSem(card){
     if(!card) return;
     card.querySelectorAll('[data-role="sem-channel"] button').forEach(b => b.onclick = () => { state.semChannel = b.dataset.ch; renderAllSem(); });
+  }
+
+  /* --- What people actually typed: the real search queries that triggered our
+     ads, themed and ranked. The story: data centres dominate and a big slice is
+     retail intent (stocks/reits), not the institutional LPs NADIF wants. --- */
+  function stData(){ const s = D.HIGHLIGHTS && D.HIGHLIGHTS.naCampaign && D.HIGHLIGHTS.naCampaign.sem; return s && s.searchTerms; }
+  function stCards(){ return $$('[data-role="st-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function renderAllSearchTerms(){ stCards().forEach(card=>{ renderStTabs(card); renderStChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function stRows(theme){
+    const S = stData(); if(!S) return [];
+    const list = theme === 'All' ? S.terms : S.terms.filter(t=>t.b===theme);
+    return list.slice().sort((a,b)=>b.i-a.i);
+  }
+  function renderStTabs(card){
+    const S = stData(); if(!S) return;
+    const tabs = ['All'].concat(S.themes);
+    if(!tabs.includes(state.stTheme)) state.stTheme = 'All';
+    const host = card.querySelector('[data-role="st-tabs"]');
+    if(host){
+      host.innerHTML = tabs.map(t=>`<button class="${state.stTheme===t?'on':''}" data-th="${t}">${t}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.stTheme=b.dataset.th; renderAllSearchTerms(); });
+    }
+    const note = card.querySelector('[data-role="st-note"]');
+    if(note){
+      note.innerHTML = state.stTheme === 'All'
+        ? `2,400 distinct queries actually triggered our ads. <strong>Data centres are 56%</strong> of them — and 40% carry retail intent (“stocks”, “reits”, “etf”), not the institutional buyers NADIF targets. Brand terms are tiny but convert at <strong>26% CTR</strong>.`
+        : `Real queries in “${state.stTheme}”, ranked by impressions with clicks stacked inside.`;
+    }
+  }
+  function renderStChart(card, opts){
+    const el = card.querySelector('[data-role="st-chart"]'); if(!el) return;
+    const modal = !!(opts && opts.modal);
+    const rows = stRows(state.stTheme).slice(0, modal?16:12).map(t=>({ name:t.k, impr:t.i, clicks:t.c }));
+    if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No queries in that theme.</p>'; return; }
+    if(window.echarts){ try { return echartsStackedHBars(el, rows, Object.assign({ labelW: modal?330:250 }, opts)); } catch(e){ console.warn('searchterms', e); } }
   }
   // LinkedIn reach against the real SF pipeline — same stacked treatment as SEM
   // (bar = impressions served, clicks stacked inside).
@@ -829,6 +865,7 @@
       if(key === 'alphix')    return renderAlphix(el);
       if(key === 'creatives'){ wireCreatives(el); renderCompChips(el); renderCreatives(el); return; }
       if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemGallery(el); renderSemChart(el, { modal:true }); return; }
+      if(key === 'searchterms'){ renderStTabs(el); renderStChart(el, { modal:true }); return; }
       if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
       if(key === 'email'){ renderEmailTabs(el); renderEmailChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
@@ -1060,7 +1097,7 @@
   /* ================= GO ================= */
   renderContentBlocks();
   renderHighlightCards();
-  renderAllSem(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies();
+  renderAllSem(); renderAllSearchTerms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies();
   renderStages();
   heroSlider();
   renderKPIs();
