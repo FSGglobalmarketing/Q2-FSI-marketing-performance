@@ -343,12 +343,44 @@
   // toggle, non-technical ad-group buckets, and bars that stack clicks INSIDE
   // impressions so each bar reads as reach + how much of it clicked (CTR).
   function semCards(){ return $$('[data-role="sem-chart"]').map(h => h.closest('.chart-card')).filter(Boolean); }
-  function renderAllSem(){ semCards().forEach(card => { renderSemChips(card); renderSemChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
-  function semRows(){
+  function renderAllSem(){ semCards().forEach(card => { renderSemChips(card); renderSemGallery(card); renderSemChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function semRows(modal){
     const S = D.HIGHLIGHTS.naCampaign.sem;
-    if(state.semChannel === 'display') return S.display.map(r=>({ name:r.k, impr:r.i, clicks:r.c }));
+    // Display is a responsive display ad: the images are shown in the gallery, so
+    // the bars rank the COPY assets — which headline/description earned the clicks.
+    if(state.semChannel === 'display'){
+      const cap = modal ? 10 : 6;
+      return (S.displayCopy||[]).slice(0, cap).map(r=>({
+        name: r.x.length>42 ? r.x.slice(0,41)+'…' : r.x,
+        impr: r.i, clicks: r.c, _t: r.t, _full: r.x,
+      }));
+    }
     const kw = state.semBucket === 'All' ? S.keywords : S.keywords.filter(r => r.b === state.semBucket);
-    return kw.sort((a,b)=>b.i-a.i).slice(0,12).map(r=>({ name:r.k, impr:r.i, clicks:r.c }));
+    return kw.slice().sort((a,b)=>b.i-a.i).slice(0,12).map(r=>({ name:r.k, impr:r.i, clicks:r.c }));
+  }
+  // The display creatives themselves — same card treatment as the LinkedIn ads.
+  function renderSemGallery(card){
+    const host = card.querySelector('[data-role="sem-gallery"]'); if(!host) return;
+    const disp = state.semChannel === 'display';
+    host.style.display = disp ? '' : 'none';
+    if(!disp){ host.innerHTML = ''; return; }
+    const ads = (D.HIGHLIGHTS.naCampaign.sem.displayAds) || [];
+    const esc = s => String(s||'').replace(/"/g,'&quot;');
+    host.className = 'slide-scroll creative-grid';
+    host.innerHTML = ads.map(a=>{
+      const ctr = a.i ? (a.c/a.i*100).toFixed(2) : '0.00';
+      return `<div class="creative">
+        <div class="creative-thumb has-img"><span class="fmt">${esc(a.fmt)}</span>
+          <img src="display-ads/${esc(a.file)}.jpg" alt="Igneo display ad, ${esc(a.fmt)}" loading="lazy"
+               onerror="this.closest('.creative-thumb').classList.remove('has-img');this.remove()">
+          <span class="ph">${esc(a.fmt)}</span></div>
+        <div class="creative-meta">
+          <div class="mrow"><span>Served at</span><span class="mono">${a.w}&times;${a.h}</span></div>
+          <div class="mrow"><span>Impressions</span><span class="mono">${a.i.toLocaleString()}</span></div>
+          <div class="mrow"><span>Clicks</span><span class="mono">${a.c.toLocaleString()} · ${ctr}%</span></div>
+        </div>
+      </div>`;
+    }).join('');
   }
   function renderSemChips(card){
     card = card || semCards()[0]; if(!card) return;
@@ -364,15 +396,19 @@
     const note = card.querySelector('[data-role="sem-note"]'); if(note) note.style.display = disp ? '' : 'none';
     const sub = card.querySelector('[data-role="sem-sub"]');
     if(sub) sub.textContent = disp
-      ? 'Display placements — 271,631 impressions at 3.43% CTR for £1,081. Volume, cheaply.'
+      ? 'One responsive display ad — Google mixes these two images with six headlines and five descriptions. 271,631 impressions at 3.43% CTR for £1,081. Bars rank the copy that earned the clicks.'
       : 'Keywords by impressions, with clicks stacked inside the bar — 51,646 impressions at 6.89% CTR.';
   }
   function renderSemChart(card, opts){
     card = card || semCards()[0]; if(!card) return;
     const el = card.querySelector('[data-role="sem-chart"]'); if(!el) return;
-    const rows = semRows();
+    const modal = !!(opts && opts.modal);
+    const rows = semRows(modal);
     if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No keywords match those filters.</p>'; return; }
-    if(window.echarts){ try { return echartsStackedHBars(el, rows, Object.assign({ labelW:230 }, opts)); } catch(e){ console.warn('sem', e); } }
+    const disp = state.semChannel === 'display';
+    const o = Object.assign({ labelW: disp ? 300 : 230 }, opts);
+    if(disp) o.tipRows = r => `${r._t}<br/>${r._full}<br/>Impressions ${Number(r.impr).toLocaleString()}<br/>Clicks ${Number(r.clicks).toLocaleString()}<br/>CTR ${(r.clicks/r.impr*100).toFixed(2)}%`;
+    if(window.echarts){ try { return echartsStackedHBars(el, rows, o); } catch(e){ console.warn('sem', e); } }
   }
   function wireSem(card){
     if(!card) return;
@@ -792,7 +828,7 @@
       if(key === 'top-pages') return renderTopPages(el);
       if(key === 'alphix')    return renderAlphix(el);
       if(key === 'creatives'){ wireCreatives(el); renderCompChips(el); renderCreatives(el); return; }
-      if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemChart(el, { modal:true }); return; }
+      if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemGallery(el); renderSemChart(el, { modal:true }); return; }
       if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
       if(key === 'email'){ renderEmailTabs(el); renderEmailChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
