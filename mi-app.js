@@ -11,21 +11,26 @@
   const state = {
     sov: 'search',
     sovQ: 'q2',              // competitor-ad chart: which quarter is shown (slider)
-    platform: 'google',      // competitor ads: 'google' (Ads Transparency) | 'linkedin' (Ad Library)
+    platform: 'google',      // competitor tabs: 'google' | 'linkedin' | 'press'
+    pressQ: 'q2',            // press tab: which quarter of the Signal snapshot
+    pressView: 'chart',     // press tab: 'chart' (share of voice) | 'cards' (coverage)
+    pressComp: 'All',        // press cards: competitor filter
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
     seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
     stTheme: 'All',          // search-terms theme filter
+    liQ: 'q2',              // LinkedIn quarter slider
+    liAud: 'seniority',      // audience breakdown tab
+    liCat: 'All',            // post category filter
+    formDim: 'seniority',   // form submissions breakdown tab
     emailDim: 'campaign',    // email engagement dimension (campaign/country/company)
     liGroup: 'All',          // LinkedIn ad-group tab (campaign id, or 'All')
     prospectDim: 'fund',    // slice the served prospects by 'fund' or 'date'
     prospectBucket: 'All',
     alphixRegion: 'all',
     alphixOpen: new Set(),   // expanded company rows
-    creativeView: 'gallery',
     comp: new Set(D.creatives().map(c => c.competitor)),   // competitors actually running ads
     fmt: new Set(D.FORMATS),
-    campTab: 'email',
     pagesCountry: 'all',
   };
 
@@ -44,7 +49,11 @@
   }
   function contentKpis(key){
     const d = D.CB[key]; if(!d || !d.results) return '';
-    return `<div class="kr-grid" data-anim>${d.results.map(r=>`<div class="kr"><b>${r.v}</b><i>${r.l}</i>${r.b?`<span class="bench ${r.up?'pos':'neg'}">vs ${r.b} benchmark</span>`:''}</div>`).join('')}</div>`;
+    // r.d renders verbatim ("Past Antin · behind CIP"); r.b keeps the older
+    // "vs X benchmark" phrasing for blocks that still use it.
+    const sub = r => r.d ? `<span class="bench ${r.up?'pos':'neg'}">${r.d}</span>`
+                 : r.b ? `<span class="bench ${r.up?'pos':'neg'}">vs ${r.b} benchmark</span>` : '';
+    return `<div class="kr-grid" data-anim>${d.results.map(r=>`<div class="kr"><b>${r.v}</b><i>${r.l}</i>${sub(r)}</div>`).join('')}</div>`;
   }
   function contentBlock(key){ return contentLead(key) + contentKpis(key); }
   function renderContentBlocks(){
@@ -112,8 +121,10 @@
     C.lines(el, data, [{ key:'us', color:'var(--c-us)', us:true }, { key:'peer', color:'var(--c-muted)', dash:true }], { height:230, pct:true });
   }
   function renderSearchTable(){
+    // Igneo dropped this slide; other brands still carry it, so guard the mount.
+    const host = $('#search-table'); if(!host) return;
     const rows = D.SEARCH_QUERIES;
-    $('#search-table').innerHTML = `<table class="tbl"><thead><tr>
+    host.innerHTML = `<table class="tbl"><thead><tr>
       <th>Search term</th><th class="num">Times shown</th><th class="num">Clicks</th><th class="num">Click rate</th><th class="num">Avg. position</th>
       </tr></thead><tbody>${rows.map(r=>`<tr>
         <td class="strong">${r.q}</td>
@@ -154,7 +165,9 @@
     const sc = currentSeoScope(); if(!sc) return;
     const dark = echDark(el), t = echAxis(dark), modal = !!card.closest('.lb-scroll');
     const cUs = chartColor('--c-us','#ff5424');
-    const inst = echInit(el, modal ? '62vh' : '248px');
+    // The three paragraphs of section copy above this eat vertical room on a
+    // laptop, and .page clips silently — shorter chart there, full in the modal.
+    const inst = echInit(el, modal ? '62vh' : (window.innerHeight && window.innerHeight < 900 ? '132px' : '248px'));
     const series = sc.series.map((s,i)=>{
       const col = s.us ? cUs : SEO_PALETTE[i % SEO_PALETTE.length];
       return { name:s.name, type:'line', smooth:true, showSymbol:false, data:s.data, z: s.us?10:2,
@@ -194,7 +207,7 @@
   }
   function removeSovSlider(chartEl){
     const card = chartEl.closest('.chart-card, .card'); if(!card) return;
-    const sl = card.querySelector('.card-head .chart-q-slider'); if(sl) sl.remove();
+    const sl = card.querySelector('.chart-q-slider'); if(sl) sl.remove();
   }
   // A Q1<->Q2 slider mounted in the chart's card head. Rebuilt (not just synced)
   // whenever the live listeners are missing — e.g. the lightbox clones the card
@@ -216,8 +229,13 @@
     let cur = q==='q2'?1:0, drag=false;
     const paint = rt => { fill.style.width=(rt*100)+'%'; handle.style.left=(rt*100)+'%'; };
     const ratio = x => { const r=track.getBoundingClientRect(); return Math.max(0,Math.min(1,(x-r.left)/r.width)); };
+    // Always fire onCommit, don't gate on the cached `cur`. When a widget owns
+    // the quarter in `state` and re-renders itself, `cur` can drift out of sync
+    // with that state — and the guard then silently swallows the click, leaving
+    // the slider visually moved but the data unchanged. Re-committing the same
+    // quarter is just a cheap redundant render.
     const commit = qq => { qq=qq?1:0; ends.forEach(e=>e.classList.toggle('on', +e.dataset.q===qq)); paint(qq);
-      if(qq!==cur){ cur=qq; onCommit(qq?'q2':'q1'); } };
+      cur=qq; onCommit(qq?'q2':'q1'); };
     handle.addEventListener('pointerdown', e=>{ drag=true; sl.classList.remove('fs-anim'); handle.setPointerCapture(e.pointerId); e.preventDefault(); });
     handle.addEventListener('pointermove', e=>{ if(drag) paint(ratio(e.clientX)); });
     const endDrag = e=>{ if(!drag) return; drag=false; sl.classList.add('fs-anim'); commit(ratio(e.clientX)>0.5?1:0); };
@@ -229,6 +247,163 @@
     sl._miWired = true; sl._miPaint = paint; sl._miSetCur = v => { cur = v; };
     return sl;
   }
+  /* --- LinkedIn channel: organic vs paid, audience, top posts ---
+     Paid was dark in Q1 (NADIF relaunched in April), so Q1 shows organic only —
+     that's the real shape of the channel, not a missing number. --- */
+  function liData(){ return D.liChannel ? D.liChannel() : null; }
+  function liQuarter(){ const L=liData(); if(!L) return null;
+    return L.quarters.find(x=>x.key===state.liQ) || L.quarters[L.quarters.length-1]; }
+  // generic quarter slider for any card (the SoV one is hard-wired to renderSoV)
+  function ensureCardQuarterSlider(card, q, onCommit){
+    // most cards head with .card-head; the competitor gallery uses .p-controls
+    const head = card.querySelector('.card-head, .p-controls'); if(!head) return;
+    let sl = head.querySelector('.chart-q-slider');
+    if(sl && sl._miWired){ syncQuarterSlider(sl, q); return; }
+    if(sl) sl.remove();
+    head.appendChild(buildQuarterSlider(q, onCommit));
+  }
+
+  function liChannelCards(){ return $$('[data-role="lich-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function renderAllLiChannel(){ liChannelCards().forEach(renderLiChannel); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function renderLiChannel(card){
+    const L=liData(); if(!L) return;
+    const el = card.querySelector('[data-role="lich-chart"]'); if(!el) return;
+    ensureCardQuarterSlider(card, state.liQ, nq => { state.liQ = nq; renderAllLiChannel(); });
+    const Q = liQuarter(); if(!Q) return;
+    const pct = (c,i) => i ? (c/i*100) : 0;
+    const rows = [
+      { name:'Organic', impr:Q.organic.i, clicks:Q.organic.c },
+      { name:'Paid',    impr:Q.paid.i,    clicks:Q.paid.c },
+    ];
+    const note = card.querySelector('[data-role="lich-note"]');
+    if(note){
+      note.innerHTML = Q.paid.i
+        ? `<strong>${Q.label}</strong> — organic reached ${Q.organic.i.toLocaleString()} at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>; paid reached ${Q.paid.i.toLocaleString()} at ${pct(Q.paid.c,Q.paid.i).toFixed(2)}%. Organic converts attention <strong>${(pct(Q.organic.c,Q.organic.i)/pct(Q.paid.c,Q.paid.i)).toFixed(1)}×</strong> harder; paid buys the reach.`
+        : `<strong>${Q.label}</strong> — organic only. ${Q.organic.i.toLocaleString()} impressions at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>. No paid ran this quarter (the NADIF campaign relaunched in April).`;
+    }
+    const tipRows = r => `Impressions ${r.impr.toLocaleString()}<br/>Clicks ${r.clicks.toLocaleString()}<br/>CTR ${pct(r.clicks,r.impr).toFixed(2)}%`;
+    if(window.echarts){ try { echartsStackedHBars(el, rows, { labelW:96, rowH:44, hitName:'Clicks', tipRows }); }
+      catch(e){ console.warn('li-channel', e); } }
+  }
+
+  function liAudCards(){ return $$('[data-role="liaud-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function renderAllLiAudience(){ liAudCards().forEach(card=>{ renderLiAudTabs(card); renderLiAudChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function liAudKeys(){ const L=liData(); return L && L.audience ? Object.keys(L.audience) : []; }
+  function renderLiAudTabs(card){
+    const L=liData(); if(!L||!L.audience) return;
+    const keys=liAudKeys(); if(!keys.includes(state.liAud)) state.liAud=keys[0];
+    const host=card.querySelector('[data-role="liaud-tabs"]');
+    if(host){
+      host.innerHTML = keys.map(k=>`<button class="${state.liAud===k?'on':''}" data-aud="${k}">${L.audience[k].label}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.liAud=b.dataset.aud; renderAllLiAudience(); });
+    }
+    const note=card.querySelector('[data-role="liaud-note"]');
+    if(note) note.innerHTML = `Who follows the page — <strong>${(L.followers||0).toLocaleString()}</strong> followers, broken down by ${(L.audience[state.liAud]||{}).label.toLowerCase()}.`;
+  }
+  function renderLiAudChart(card){
+    const L=liData(); if(!L||!L.audience) return;
+    const el=card.querySelector('[data-role="liaud-chart"]'); if(!el) return;
+    const seg=L.audience[state.liAud]; if(!seg) return;
+    const rows=seg.rows.map(r=>({ name:r.n, v:r.v, color:'var(--c-us)' }));
+    if(window.echarts){ try { echartsHBars(el, rows, { labelW:150, rowH:30, valUnit:' followers' }); }
+      catch(e){ console.warn('li-aud', e); } }
+  }
+
+  /* --- Form submissions: enquiries by role, function and source. Aggregate
+     only — no names or emails are published. --- */
+  function formCards(){ return $$('[data-role="form-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function renderAllForms(){ formCards().forEach(card=>{ renderFormTabs(card); renderFormChart(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function renderFormTabs(card){
+    const F = D.forms ? D.forms() : null; if(!F) return;
+    const keys = Object.keys(F.dims);
+    if(!keys.includes(state.formDim)) state.formDim = keys[0];
+    const host = card.querySelector('[data-role="form-tabs"]');
+    if(host){
+      host.innerHTML = keys.map(k=>`<button class="${state.formDim===k?'on':''}" data-dim="${k}">${F.dims[k].label}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.formDim=b.dataset.dim; renderAllForms(); });
+    }
+    const note = card.querySelector('[data-role="form-note"]');
+    if(note) note.innerHTML = `<strong>${F.total}</strong> enquiries came through our forms this quarter, split by ${F.dims[state.formDim].label.toLowerCase()}. Aggregate only — no personal details are published.`;
+  }
+  function renderFormChart(card){
+    const F = D.forms ? D.forms() : null; if(!F) return;
+    const el = card.querySelector('[data-role="form-chart"]'); if(!el) return;
+    const seg = F.dims[state.formDim]; if(!seg) return;
+    const rows = seg.rows.map(r=>({ name:r.n, v:r.v, color:'var(--c-us)' }));
+    if(window.echarts){ try { echartsHBars(el, rows, { labelW:170, rowH:32, valUnit:' enquiries' }); }
+      catch(e){ console.warn('forms', e); } }
+  }
+
+  function liPostCards(){ return $$('[data-role="lipost-grid"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function renderAllLiPosts(){ liPostCards().forEach(card=>{ renderLiPostTabs(card); renderLiPosts(card); }); if(window.MI_fitCarousels) window.MI_fitCarousels(); }
+  function liPostList(){ const L=liData(); if(!L||!L.posts) return [];
+    const list = L.posts[state.liQ] || [];
+    return state.liCat==='All' ? list : list.filter(p=>p.cat===state.liCat); }
+  function renderLiPostTabs(card){
+    const L=liData(); if(!L||!L.posts) return;
+    const list = L.posts[state.liQ] || [];
+    const cats = ['All'].concat([...new Set(list.map(p=>p.cat))]);
+    if(!cats.includes(state.liCat)) state.liCat='All';
+    ensureCardQuarterSlider(card, state.liQ, nq => { state.liQ=nq; state.liCat='All'; renderAllLiPosts(); renderAllLiChannel(); });
+    const host=card.querySelector('[data-role="lipost-tabs"]');
+    if(host){
+      host.innerHTML = cats.map(c=>`<button class="${state.liCat===c?'on':''}" data-cat="${c}">${c}</button>`).join('');
+      host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.liCat=b.dataset.cat; renderAllLiPosts(); });
+    }
+    const note=card.querySelector('[data-role="lipost-note"]');
+    if(note){ const sel=liPostList(); const im=sel.reduce((t,p)=>t+p.i,0);
+      note.innerHTML = `Top posts in <strong>${state.liQ.toUpperCase()} 2026</strong>${state.liCat==='All'?'':` · ${state.liCat}`} — ${sel.length} posts, ${im.toLocaleString()} impressions.`; }
+  }
+  function renderLiPosts(card){
+    const host=card.querySelector('[data-role="lipost-grid"]'); if(!host) return;
+    const esc=s=>String(s||'').replace(/"/g,'&quot;');
+    const escT=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const list=liPostList();
+    host.className='slide-scroll creative-grid';
+    if(!list.length){ host.innerHTML='<p class="muted-txt">No posts in that category.</p>'; return; }
+    // Q1 baseline is the real Q1 post set, filtered to the same category so the
+    // comparison is like-for-like. Viewing Q1 itself leaves the rule off.
+    const L=liData();
+    const q1src = (state.liQ==='q1' ? [] : ((L&&L.posts&&L.posts.q1)||[]))
+      .filter(p=> state.liCat==='All' || p.cat===state.liCat);
+    const mean = k => q1src.length ? q1src.reduce((a,p)=>a+(p[k]||0),0)/q1src.length : 0;
+    const q1avg = { n:q1src.length, i:mean('i'), c:mean('c'), l:mean('l') };
+    // scale bars to the largest value on screen OR the Q1 rule, so the rule
+    // never falls off the end of the track
+    const peak = k => Math.max(...list.map(p=>p[k]||0), q1avg[k]||0);
+    const max = { i:peak('i'), c:peak('c'), l:peak('l') };
+    host.innerHTML=list.map(p=>{
+      const ctr=p.i?(p.c/p.i*100).toFixed(2):'0.00';
+      const thumb = p.img
+        ? `<div class="creative-thumb has-img"><span class="fmt">${esc(p.cat)}</span><img src="li-posts/${esc(p.img)}" alt="${esc(p.cat)} post" loading="lazy" onerror="this.closest('.creative-thumb').classList.remove('has-img');this.remove()"><span class="ph">${esc(p.cat)}</span></div>`
+        : `<div class="creative-thumb"><span class="fmt">${esc(p.cat)}</span><span class="ph">${esc(p.mt||'post')}</span></div>`;
+      // Bar is scaled across the posts on screen; the dashed rule is the Q1
+      // average for the same metric, so "beat last quarter" is readable without
+      // holding two numbers in your head.
+      const bar = (v, avg, max) => {
+        if(!max) return '';
+        const pct = Math.max(2, Math.min(100, v / max * 100));
+        const ref = avg ? Math.min(100, avg / max * 100) : null;
+        return `<div class="mbar"><i style="width:${pct.toFixed(1)}%"></i>${
+          ref === null ? '' : `<u style="left:${ref.toFixed(1)}%" title="Q1 average ${Math.round(avg).toLocaleString()}"></u>`}</div>`;
+      };
+      return `<div class="creative">${thumb}
+        <p class="creative-copy" title="${esc(p.t)}">${escT(p.t)}</p>
+        <div class="creative-meta">
+          <div class="mrow"><span>Impressions</span><span class="mono">${p.i.toLocaleString()}</span></div>
+          ${bar(p.i, q1avg.i, max.i)}
+          <div class="mrow"><span>Clicks</span><span class="mono">${p.c.toLocaleString()} · ${ctr}%</span></div>
+          ${bar(p.c, q1avg.c, max.c)}
+          <div class="mrow"><span>Reactions</span><span class="mono">${p.l.toLocaleString()}</span></div>
+          ${bar(p.l, q1avg.l, max.l)}
+        </div></div>`;
+    }).join('');
+    const legend = host.parentElement && host.parentElement.querySelector('[data-role="lipost-legend"]');
+    if(legend) legend.innerHTML = q1avg.n
+      ? `<span class="muted-txt" style="font-size:12px">Bars compare posts on screen; the dashed rule is the Q1 average (${Math.round(q1avg.i).toLocaleString()} impressions, ${Math.round(q1avg.c).toLocaleString()} clicks, ${Math.round(q1avg.l).toLocaleString()} reactions).</span>`
+      : '';
+  }
+
   function syncQuarterSlider(sl, q){
     const qq = q==='q2'?1:0;
     sl.querySelectorAll('.q-end').forEach(e=> e.classList.toggle('on', +e.dataset.q===qq));
@@ -250,6 +425,26 @@
   function renderCompChips(card){
     card = card || creativeCards()[0]; if(!card) return;
     const compHost = card.querySelector('[data-role="comp-chips"]'), fmtHost = card.querySelector('[data-role="fmt-chips"]');
+    if(state.platform === 'press'){
+      // Share of voice ranks every rival at once (nothing to filter); the card
+      // view is a feed, so it gets a competitor filter like the ad galleries.
+      if(compHost){
+        const arts = D.pressArticles ? D.pressArticles() : [];
+        compHost.innerHTML = state.pressView !== 'cards' ? '' :
+          ['All', ...new Set(arts.map(a=>a.c))].map(n=>{
+            const col = n==='All' ? 'var(--c-us)' : ((D.COMPETITORS.find(c=>c.name===n)||{}).color || 'var(--c-muted)');
+            const cnt = n==='All' ? arts.length : arts.filter(a=>a.c===n).length;
+            return `<button class="chip ${state.pressComp===n?'on':'off'}" data-pcomp="${n}"><span class="dot" style="background:${col}"></span>${n} ${cnt}</button>`;
+          }).join('');
+        compHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressComp=b.dataset.pcomp; renderAllCreatives(); });
+      }
+      if(fmtHost){
+        fmtHost.innerHTML = ['chart','cards'].map(v=>
+          `<button class="chip ${state.pressView===v?'on':'off'}" data-pview="${v}">${v==='chart'?'Share of voice':'Coverage'}</button>`).join('');
+        fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressView=b.dataset.pview; renderAllCreatives(); });
+      }
+      return;
+    }
     if(compHost){
       compHost.innerHTML = creativeComps().map(c=>`<button class="chip ${state.comp.has(c.name)?'on':'off'}" data-comp="${c.name}"><span class="dot" style="background:${c.color}"></span>${c.name}</button>`).join('');
       compHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ const n=b.dataset.comp; state.comp.has(n)?state.comp.delete(n):state.comp.add(n); if(!state.comp.size)state.comp.add(n); renderAllCreatives(); });
@@ -260,14 +455,79 @@
       fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ const n=b.dataset.fmt; state.fmt.has(n)?state.fmt.delete(n):state.fmt.add(n); if(!state.fmt.size)state.fmt.add(n); renderAllCreatives(); });
     }
   }
+  // Press is competitor share-of-voice, not ad creatives — same tab strip, a
+  // different shape of answer. Total mentions per rival with the positive slice
+  // called out; the full sentiment split rides in the tooltip.
+  // Coverage cards. No screenshot and no outbound link — Signal's search response
+  // carries neither, and its one URL is a per-user gated reader link. So the card
+  // leads on what we do have: the headline, who ran it, and how it read.
+  function renderPressCards(card, host){
+    // brands without a press snapshot get the honest empty state, not a crash
+    const arts = D.pressArticles ? D.pressArticles() : [];
+    if(!arts.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No press coverage is wired into this pack yet.</p>`; return; }
+    const escT = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const compColor = n => (D.COMPETITORS.find(c=>c.name===n)||{}).color || 'var(--c-muted)';
+    const sentPill = m => m==='positive' ? 'pos' : m==='negative' ? 'neg' : '';
+    const list = state.pressComp==='All' ? arts : arts.filter(a=>a.c===state.pressComp);
+    host.className='slide-scroll creative-grid'; host.style.padding='';
+    host.innerHTML = list.map(a=>`<div class="creative news-card">
+        <div class="creative-body">
+          <div class="adv"><span class="swatch" style="background:${compColor(a.c)}"></span>${escT(a.c)}</div>
+          <p class="news-head">${escT(a.t)}</p>
+          <div class="news-meta">
+            <span class="mono">${escT(a.s)}</span><span class="muted"> · ${escT(a.y)} · ${a.d}</span>
+          </div>
+          <div class="news-chips">
+            <span class="pill ${sentPill(a.m)}">${a.m}</span>
+            ${(a.k||[]).map(k=>`<span class="pill">${escT(k)}</span>`).join('')}
+          </div>
+        </div>
+      </div>`).join('');
+  }
+  function renderPress(card){
+    const host = card.querySelector('[data-role="creatives"]'); if(!host) return;
+    // Coverage cards span the whole tracked window on purpose — Q2 alone yields
+    // only 8 in-context articles, so the quarter slider belongs to the chart.
+    if(state.pressView === 'cards'){
+      const sl0 = card.querySelector('.chart-q-slider'); if(sl0) sl0.remove();
+      return renderPressCards(card, host);
+    }
+    ensureCardQuarterSlider(card, state.pressQ, nq => { state.pressQ = nq; renderAllCreatives(); });
+    const rows = D.press ? D.press(state.pressQ) : [];
+    if(!rows.length){
+      host.className=''; host.style.padding='';
+      host.innerHTML = `<p class="muted-txt">No press data for that quarter.</p>`;
+      return;
+    }
+    host.className='slide-scroll'; host.style.padding='6px 14px';
+    // Diversified groups dwarf a pure infra manager on total press volume, so say
+    // so next to the chart rather than letting the bars imply a like-for-like race.
+    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">Blackstone, KKR, Macquarie and J.P. Morgan are diversified groups — most of their coverage isn't infrastructure, so read them as context, not as a like-for-like race.</p>
+      <div class="chart-wrap" data-role="press-chart"></div>`;
+    const el = host.querySelector('[data-role="press-chart"]');
+    if(!el || !window.echarts) return;
+    const modal = !!card.closest('.lb-scroll');
+    const bars = rows.slice().sort((a,b)=>(b.total||0)-(a.total||0)).slice(0, modal?22:14)
+      .map(r=>({ name:r.name, impr:r.total||0, clicks:r.positive||0,
+                 _p:r.positive||0, _n:r.neutral||0, _g:r.negative||0 }));
+    const tipRows = r => { const pct = r.impr ? (r._p/r.impr*100).toFixed(0) : '0';
+      return `Mentions ${r.impr.toLocaleString()}<br/>Positive ${r._p.toLocaleString()} (${pct}%)<br/>Neutral ${r._n.toLocaleString()}<br/>Negative ${r._g.toLocaleString()}`; };
+    try { echartsStackedHBars(el, bars, { labelW: modal?280:214, hitName:'Positive', tipRows, modal }); }
+    catch(e){ console.warn('press', e); }
+  }
   function renderCreatives(card){
     card = card || creativeCards()[0]; if(!card) return;
     const host = card.querySelector('[data-role="creatives"]'); if(!host) return;
+    if(state.platform === 'press') return renderPress(card);
+    // the quarter slider belongs to Press only — drop it when we leave that tab
+    const sl = card.querySelector('.chart-q-slider'); if(sl) sl.remove();
     const li = state.platform === 'linkedin';
     const list = currentCreatives().filter(c=> state.comp.has(c.competitor) && (li || state.fmt.has(c.format)));
     if(!list.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No adverts match those filters.</p>`; return; }
     const dash = '<span class="muted">—</span>';
-    const linkLabel = li ? 'View on LinkedIn ↗' : 'View ad ↗';
+    // Name the destination — "View ad" gave no clue these open Google's public
+    // Ads Transparency Centre, which is where the provenance for this data lives.
+    const linkLabel = li ? 'View on LinkedIn ↗' : 'View in Ads Transparency Centre ↗';
     const view = c => c.preview ? `<a class="creative-link" href="${c.preview}" target="_blank" rel="noopener">${linkLabel}</a>` : '';
     const esc = s => String(s||'').replace(/"/g,'&quot;');
     const escT = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -277,14 +537,23 @@
       return c.image
       ? `<div class="creative-thumb has-img"><span class="fmt">${badge}</span><img src="${esc(c.image)}" alt="${esc(c.advertiser||c.competitor)} ad" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.creative-thumb').classList.remove('has-img');this.remove()"><span class="ph">${badge} ad</span></div>`
       : `<div class="creative-thumb"><span class="fmt">${badge}</span><span class="ph">${badge} ad</span></div>`; };
-    const metaRows = c =>
-      `<div class="mrow"><span>Advertiser</span><span class="mono" title="${esc(c.advertiser||'')}">${c.advertiser||c.competitor}</span></div>
-       <div class="mrow"><span>Running since</span><span class="mono">${c.firstShown||dash}</span></div>
+    // "Variations" was the raw Ads-Transparency field and read as jargon. Days
+    // running is the same intel in plain English: how long they've kept it live.
+    const daysRunning = c => {
+      if(!c.firstShown || !c.lastShown) return null;
+      const a = Date.parse(c.firstShown), b = Date.parse(c.lastShown);
+      if(isNaN(a) || isNaN(b)) return null;
+      return Math.max(1, Math.round((b - a) / 86400000));
+    };
+    const metaRows = c => {
+      const d = daysRunning(c);
+      return `<div class="mrow"><span>Advertiser</span><span class="mono" title="${esc(c.advertiser||'')}">${c.advertiser||c.competitor}</span></div>
+       <div class="mrow"><span>First seen</span><span class="mono">${c.firstShown||dash}</span></div>
        <div class="mrow"><span>Last seen</span><span class="mono">${c.lastShown||dash}</span></div>
-       <div class="mrow"><span>Variations</span><span class="mono">${c.variants||dash}</span></div>`;
-    if(state.creativeView==='gallery'){
-      host.className='slide-scroll creative-grid'; host.style.padding='';
-      host.innerHTML = list.map(c=> li
+       <div class="mrow"><span>Days running</span><span class="mono">${d ? d.toLocaleString() : dash}</span></div>`;
+    };
+    host.className='slide-scroll creative-grid'; host.style.padding='';
+    host.innerHTML = list.map(c=> li
         ? `<div class="creative">
             ${thumb(c)}
             <div class="creative-body">
@@ -302,29 +571,6 @@
               ${view(c)}
             </div>
           </div>`).join('');
-    } else if(li){
-      host.className='slide-scroll creative-list card on-dark'; host.style.padding='6px 14px';
-      host.innerHTML = list.map(c=>`<div class="clrow li-clrow">
-          <div class="clthumb${c.image?' has-img':''}">${c.image?`<img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.clthumb').classList.remove('has-img');this.remove()">`:''}</div>
-          <div class="li-listbody">
-            <div class="strong"><span class="dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${c.color};margin-right:8px"></span>${c.competitor} <span class="mono" style="opacity:.7;font-size:11.5px">· ${esc(c.advertiser||'')}</span></div>
-            <div class="li-listcopy">${escT(c.copy||'')}</div>
-          </div>
-          <div>${view(c)}</div>
-        </div>`).join('');
-    } else {
-      host.className='slide-scroll creative-list card on-dark'; host.style.padding='6px 14px';
-      host.innerHTML = `<div class="clrow clhead">
-          <span></span><span>Competitor</span><span>Advertiser</span><span class="clhide">Format</span><span class="clhide">Since</span><span class="clhide">Variations</span></div>` +
-        list.map(c=>`<div class="clrow">
-          <div class="clthumb${c.image?' has-img':''}">${c.image?`<img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.clthumb').classList.remove('has-img');this.remove()">`:''}</div>
-          <div class="strong"><span class="dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${c.color};margin-right:8px"></span>${c.competitor}</div>
-          <div class="mono" style="font-size:12.5px" title="${c.advertiser||''}">${c.advertiser||c.competitor}</div>
-          <div class="clhide"><span class="pill">${c.format}</span></div>
-          <div class="clhide mono" style="font-size:12.5px">${c.firstShown||dash}</div>
-          <div class="clhide mono" style="font-size:12.5px">${c.variants||dash}</div>
-        </div>`).join('');
-    }
   }
 
   /* ================= HIGHLIGHTS (campaign features, own datasets) ================= */
@@ -561,8 +807,23 @@
     const host = card.querySelector('[data-role="liads"]'); if(!host) return;
     const esc = s => String(s||'').replace(/"/g,'&quot;');
     const escT = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const list = liAdRows();
+    // Same bar treatment as the organic post cards — but paid was dark in Q1, so
+    // there is no prior-quarter baseline. The dashed rule is the average of the
+    // ads on screen instead: which creatives pull above their weight.
+    const mean = k => list.length ? list.reduce((s,a)=>s+(a[k]||0),0)/list.length : 0;
+    const avg = { i:mean('i'), c:mean('c') };
+    const peak = k => Math.max(...list.map(a=>a[k]||0), avg[k]||0);
+    const max = { i:peak('i'), c:peak('c') };
+    const bar = (v, av, mx) => {
+      if(!mx) return '';
+      const pct = Math.max(2, Math.min(100, v / mx * 100));
+      const ref = av ? Math.min(100, av / mx * 100) : null;
+      return `<div class="mbar"><i style="width:${pct.toFixed(1)}%"></i>${
+        ref === null ? '' : `<u style="left:${ref.toFixed(1)}%" title="Average of ads shown ${Math.round(av).toLocaleString()}"></u>`}</div>`;
+    };
     host.className = 'slide-scroll creative-grid';
-    host.innerHTML = liAdRows().map(a=>{
+    host.innerHTML = list.map(a=>{
       const ctr = a.i ? (a.c/a.i*100).toFixed(2) : '0.00';
       const badge = a.t === 'video' ? 'Video' : 'Static';
       return `<div class="creative">
@@ -574,11 +835,17 @@
         <div class="creative-meta">
           <div class="mrow"><span>Headline</span><span class="mono" title="${esc(a.h)}">${escT(a.h)}</span></div>
           <div class="mrow"><span>Impressions</span><span class="mono">${a.i.toLocaleString()}</span></div>
+          ${bar(a.i, avg.i, max.i)}
           <div class="mrow"><span>Clicks</span><span class="mono">${a.c.toLocaleString()} · ${ctr}%</span></div>
+          ${bar(a.c, avg.c, max.c)}
           ${a.wave?`<div class="mrow"><span>Wave</span><span class="mono">${a.wave}</span></div>`:''}
         </div>
       </div>`;
     }).join('');
+    const legend = card.querySelector('[data-role="liads-legend"]');
+    if(legend) legend.innerHTML = list.length
+      ? `<span class="muted-txt" style="font-size:12px">Bars compare the ads shown; the dashed rule is their average (${Math.round(avg.i).toLocaleString()} impressions, ${Math.round(avg.c).toLocaleString()} clicks).</span>`
+      : '';
   }
 
   function renderRiChapters(el, opts){
@@ -609,7 +876,9 @@
   function echartsVisits(el, data, opts){
     const dark = !!(el.closest('.page') && el.closest('.page').classList.contains('dark')) || !!el.closest('.lb-panel');
     const q = opts.quarter || 'q2';                      // which quarter is the emphasised (solid) line
-    el.style.height = opts.modal ? '54vh' : '240px';
+    // three paragraphs of section copy sit above this on the website page, and
+    // .page clips silently — shorter on laptop heights, full in the modal
+    el.style.height = opts.modal ? '54vh' : (window.innerHeight && window.innerHeight < 900 ? '128px' : '240px');
     const inst = echarts.getInstanceByDom(el) || echarts.init(el, null, { renderer:'canvas' });
     const blue = chartColor('--c-a', '#3b82f6'), grey = '#b6b0a3';
     const dim = dark ? '#b3ada0' : '#8b877d', ink = dark ? '#f4f1ea' : '#1c1b18';
@@ -769,18 +1038,6 @@
     inst.resize(); bindResize(el, inst); return inst;
   }
 
-  function renderLinkedInBench(el, opts){
-    el = el || $('#li-bench'); if(!el) return;
-    const rows = D.linkedin().bench.map(b=>({ name:b.name, rate:b.rate, us:b.us }));
-    if(window.echarts){ try { return echartsHBars(el, rows, Object.assign({ rate:true, labelW:120 }, opts)); } catch(e){ console.warn('echarts bench', e); } }
-    C.hbars(el, rows, { rate:true, labelW:120 });
-  }
-  function renderDealBars(el, opts){
-    el = el || $('#deal-bars'); if(!el) return;
-    const rows = D.DEALS.stages.map(s=>({ label:s.stage, v:s.v }));
-    if(window.echarts){ try { return echartsBars(el, rows, Object.assign({ height:230 }, opts)); } catch(e){ console.warn('echarts deals', e); } }
-    C.bars(el, rows.map(s=>({ ...s, color:'var(--c-us)' })), { height:230 });
-  }
   function renderEventsDonut(el, opts){
     el = el || $('#events-donut'); if(!el) return;
     if(window.echarts){ try { return echartsDonut(el, 0.60, Object.assign({ size:118 }, opts)); } catch(e){ console.warn('echarts donut', e); } }
@@ -793,8 +1050,6 @@
       if(key === 'visits')     return renderVisitsChart(el, opts);
       if(key === 'search-vis') return renderSearchVisibility(el, opts);
       if(key === 'sov')        return renderSoV(el, opts);
-      if(key === 'li-bench')   return renderLinkedInBench(el, opts);
-      if(key === 'deal-bars')  return renderDealBars(el, opts);
       if(key === 'na-audience') return renderNaAudience(el, opts);
       if(key === 'ri-chapters') return renderRiChapters(el, opts);
       if(key === 'ri-companies')return renderRiCompanies(el, opts);
@@ -866,6 +1121,10 @@
       if(key === 'creatives'){ wireCreatives(el); renderCompChips(el); renderCreatives(el); return; }
       if(key === 'sem'){ wireSem(el); renderSemChips(el); renderSemGallery(el); renderSemChart(el, { modal:true }); return; }
       if(key === 'searchterms'){ renderStTabs(el); renderStChart(el, { modal:true }); return; }
+      if(key === 'lichannel'){ renderLiChannel(el); return; }
+      if(key === 'liaudience'){ renderLiAudTabs(el); renderLiAudChart(el); return; }
+      if(key === 'liposts'){ renderLiPostTabs(el); renderLiPosts(el); return; }
+      if(key === 'forms'){ renderFormTabs(el); renderFormChart(el); return; }
       if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
       if(key === 'email'){ renderEmailTabs(el); renderEmailChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
@@ -956,10 +1215,13 @@
   function renderLinkedIn(){
     const li = D.linkedin();
     const kpi = (v,l)=>`<div class="kpi"><b>${v}</b><div class="kl">${l}</div></div>`;
-    $('#li-organic').innerHTML = kpi(li.organic.impressions,'People reached') + kpi(li.organic.clicks,'Clicks') + kpi(li.organic.engRate,'Engagement rate');
-    $('#li-paid').innerHTML    = kpi(li.paid.impressions,'People reached') + kpi(li.paid.conversions,'Leads') + kpi(li.paid.spend,'Spend');
-    renderLinkedInBench($('#li-bench'));
-    $('#li-posts').innerHTML = `<table class="tbl"><thead><tr>
+    // Igneo replaced these KPI/table mounts with the real organic-vs-paid,
+    // audience and top-post widgets; other brands still carry them, so guard.
+    const org = $('#li-organic'), paid = $('#li-paid'), posts = $('#li-posts');
+    if(org)  org.innerHTML  = kpi(li.organic.impressions,'People reached') + kpi(li.organic.clicks,'Clicks') + kpi(li.organic.engRate,'Engagement rate');
+    if(paid) paid.innerHTML = kpi(li.paid.impressions,'People reached') + kpi(li.paid.conversions,'Leads') + kpi(li.paid.spend,'Spend');
+    if(!posts) return;
+    posts.innerHTML = `<table class="tbl"><thead><tr>
       <th>Post</th><th>Type</th><th class="num">Reactions</th><th class="num">Comments</th><th class="num">Shares</th>
       </tr></thead><tbody>${li.posts.map(p=>`<tr>
         <td class="strong">${p.title}</td><td><span class="pill">${p.type}</span></td>
@@ -988,50 +1250,33 @@
       host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.emailDim=b.dataset.dim; renderAllEmail(); });
     }
     const note = card.querySelector('[data-role="email-note"]');
-    if(note){ const d=currentEmailDim(); const modal=!!card.closest('.lb-scroll'); const cap=modal?22:12;
+    if(note){ const d=currentEmailDim(); const modal=!!card.closest('.lb-scroll');
+      const cap = modal ? 22 : (window.innerHeight && window.innerHeight < 900 ? 4 : 12);
       const shown = d ? Math.min(cap, d.rows.length) : 0;
-      const plural = { campaign:'campaigns', country:'countries', company:'companies' };
+      const plural = { strategy:'strategies', company:'companies', contact:'contacts' };
       const noun = d ? (plural[d.key] || d.label.toLowerCase()+'s') : '';
+      // The page is height-budgeted, so on-page carries the one-line version;
+      // the full methodology (incl. the masking statement) rides in the modal.
+      const brief = 'Q2 activity 22 Apr–30 Jun · external contacts only · clicks are the harder signal.';
+      const maskLine = d && d.key==='contact' ? ' Contacts show initial + surname only.' : '';
       note.innerHTML = d
-        ? `Top ${shown} ${noun}${d.rows.length>shown?` of ${d.rows.length}`:''} by activity. ${E.note}`
-        : E.note;
+        ? `Top ${shown} ${noun}${d.rows.length>shown?` of ${d.rows.length}`:''} by clicks. ${modal ? E.note : brief + maskLine}`
+        : (modal ? E.note : brief);
     }
   }
   function renderEmailChart(card){
     const E=emailEngData(); if(!E) return;
     const el = card.querySelector('[data-role="email-chart"]'); if(!el || !window.echarts) return;
     const d = currentEmailDim(); if(!d) return;
-    const modal = !!card.closest('.lb-scroll'); const cap = modal?22:12;
+    const modal = !!card.closest('.lb-scroll');
+    // On-page rows are height-budgeted: below the heading + KPI row a laptop
+    // leaves ~200px, and .page clips with no scrollbar. Expand shows all 22.
+    const cap = modal ? 22 : (window.innerHeight && window.innerHeight < 900 ? 4 : 12);
     const rows = d.rows.slice(0, cap).map(r=>({ name:r.n, impr:(r.o||0)+(r.c||0), clicks:(r.c||0), _o:r.o||0, _c:r.c||0, _e:r.e||0 }));
-    const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}<br/>Emails engaged ${r._e}`;
+    // contact rows carry no per-email count (e:0) — omit the line rather than say 0
+    const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}` + (r._e ? `<br/>Emails engaged ${r._e}` : '');
     try { echartsStackedHBars(el, rows, { labelW: modal?280:214, hitName:'Clicks', tipRows, modal }); }
     catch(e){ console.warn('email-eng', e); }
-  }
-  function renderCampPanel(){
-    const panel = $('#camp-panel');
-    if(state.campTab==='email'){
-      $('#camp-title').textContent='Email performance'; $('#camp-source').textContent='Email platform';
-      panel.innerHTML = `<table class="tbl"><thead><tr><th>Email</th><th class="num">Opened</th><th class="num">Open rate</th><th class="num">Click rate</th></tr></thead>
-        <tbody>${D.EMAILS.map(r=>`<tr><td class="strong">${r.name}</td><td class="num">${D.fmtInt(r.opens)}</td><td class="num">${r.openRate}%</td><td class="num">${r.clickRate}%</td></tr>`).join('')}</tbody></table>`;
-    } else if(state.campTab==='tracker'){
-      $('#camp-title').textContent='Live campaign tracker'; $('#camp-source').textContent='Campaign tracker';
-      const stColor = s=> s==='Live'?'pos': s==='Planned'?'':'warm';
-      panel.innerHTML = `<table class="tbl"><thead><tr><th>Activity</th><th>Channel</th><th>Region</th><th>Owner</th><th>Go-live</th><th class="num">Spend</th><th>Status</th></tr></thead>
-        <tbody>${D.CAMPAIGNS.map(r=>`<tr>
-          <td class="strong">${r.key?'★ ':''}${r.title}</td><td class="muted">${r.channel}</td><td class="muted">${r.region}</td><td class="muted">${r.lead}</td>
-          <td class="mono" style="font-size:12.5px">${r.goLive}</td><td class="num">$${(r.spend/1000)}k</td>
-          <td><span class="pill ${stColor(r.status)}">${r.status}</span></td>
-        </tr>`).join('')}</tbody></table>`;
-    } else {
-      $('#camp-title').textContent='Sales pipeline'; $('#camp-source').textContent='CRM';
-      const d = D.DEALS;
-      panel.innerHTML = `<div class="row-between" style="margin-bottom:20px">
-          <div><b style="font-size:28px">${d.pipeline}</b><div class="kl">open pipeline</div></div>
-          <div><b style="font-size:28px">${d.won}</b><div class="kl">won this quarter</div></div>
-          <div><b style="font-size:28px">${d.count}</b><div class="kl">deals closed</div></div>
-        </div><div class="chart-wrap" id="deal-bars" data-chart="deal-bars"></div>`;
-      renderDealBars($('#deal-bars'));
-    }
   }
 
   /* ================= LOYALTY ================= */
@@ -1060,10 +1305,19 @@
   function switchPlatform(p){
     if(state.platform !== p){
       state.platform = p;
-      state.comp = new Set(creativeComps().map(c=>c.name));
-      if(p === 'google') state.fmt = new Set(D.FORMATS);
+      // press has no creatives feed, so leave the ad filters as they were —
+      // rebuilding them from an empty feed would blank them for Google/LinkedIn.
+      if(p !== 'press'){
+        state.comp = new Set(creativeComps().map(c=>c.name));
+        if(p === 'google') state.fmt = new Set(D.FORMATS);
+      }
     }
     $$('.plat-toggle button').forEach(b=> b.classList.toggle('on', b.dataset.plat===p));
+    $$('[data-role="creatives-title"]').forEach(h=> h.textContent =
+      p==='press' ? 'Who is getting written about' : 'Their live adverts right now');
+    $$('[data-role="creatives-sub"]').forEach(h=> h.textContent =
+      p==='press' ? 'Press mentions this quarter, from Signal AI. The bright slice is positive coverage.'
+                  : 'Real ad examples pulled from public ad libraries.');
     renderAllCreatives();   // activity chart stays Google-only
   }
   // Bind the gallery controls (platform toggle + Gallery/List) within one card
@@ -1071,7 +1325,6 @@
   function wireCreatives(card){
     if(!card) return;
     card.querySelectorAll('.plat-toggle button').forEach(b=> b.onclick=()=> switchPlatform(b.dataset.plat));
-    card.querySelectorAll('[data-role="view"] button').forEach(b=> b.onclick=()=>{ state.creativeView=b.dataset.view; $$('[data-role="view"] button').forEach(x=>x.classList.toggle('on', x.dataset.view===b.dataset.view)); renderAllCreatives(); });
   }
 
   /* ================= WIRE ================= */
@@ -1080,7 +1333,6 @@
     // The competitor-ad chart's Q1/Q2 slider is built + wired inside renderSoV.
     creativeCards().forEach(wireCreatives);
     semCards().forEach(wireSem);
-    $$('#camp-tabs button').forEach(b=> b.onclick=()=>{ state.campTab=b.dataset.tab; $$('#camp-tabs button').forEach(x=>x.classList.toggle('on',x===b)); renderCampPanel(); });
   }
 
   /* ================= NAV SCROLLSPY + REVEAL ================= */
@@ -1097,7 +1349,7 @@
   /* ================= GO ================= */
   renderContentBlocks();
   renderHighlightCards();
-  renderAllSem(); renderAllSearchTerms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies();
+  renderAllSem(); renderAllSearchTerms(); renderAllLiChannel(); renderAllLiAudience(); renderAllLiPosts(); renderAllForms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies();
   renderStages();
   heroSlider();
   renderKPIs();
@@ -1105,7 +1357,7 @@
   renderVisits(); renderTopPages();
   renderAlphix();
   renderLinkedIn();
-  renderEmailSummary(); renderCampPanel(); renderAllEmail();
+  renderEmailSummary(); renderAllEmail();
   renderEvents(); renderResults();
   wire(); observers();
 })();

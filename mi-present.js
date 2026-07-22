@@ -76,6 +76,12 @@
       let items = '';
       for(let p = start; p < end; p++){
         const pg = pages[p];
+        // a page can opt out of the dropdown (e.g. the "— data" continuation
+        // pages) while still being reachable by scrolling
+        if(pg.hasAttribute('data-nomenu')) continue;
+        // the section's own divider is already the parent nav item — listing it
+        // again inside its dropdown is a duplicate ("Awareness > 09 Awareness")
+        if(p === gotos[i] && pg.classList.contains('divider')) continue;
         const label = pg.dataset.label || ('Page ' + (p + 1));
         const sub = (pg.querySelector('.p-sub')?.textContent || '').trim();
         const kind = pg.classList.contains('divider') ? 'section' : pg.classList.contains('cover-page') ? 'cover' : 'page';
@@ -124,6 +130,8 @@
   function chrome(){
     const dark = pages[pi].dataset.nav === 'dark';
     nav.classList.toggle('on-dark', dark);
+    // the cover carries its own (larger) logo — hide the nav one there
+    nav.classList.toggle('on-cover', pages[pi].classList.contains('cover-page'));
     rail.classList.toggle('on-dark-rail', dark);
     $$('#p-progress button').forEach((b,i)=> b.classList.toggle('on', i===pi));
     // nav link active = greatest goto <= pi
@@ -172,7 +180,8 @@
   window.addEventListener('wheel', (e) => {
     if(LB && LB.isOpen()) return;
     // allow native scroll inside a scrollable panel that still has room
-    const sc = e.target.closest && e.target.closest('.slide-scroll');
+    // (.page-inner only ever scrolls on short screens, via the media query)
+    const sc = e.target.closest && e.target.closest('.slide-scroll, .page-inner');
     if(sc){
       const down = e.deltaY > 0 && sc.scrollTop + sc.clientHeight < sc.scrollHeight - 1;
       const up   = e.deltaY < 0 && sc.scrollTop > 0;
@@ -312,6 +321,11 @@
     return { open, close, isOpen: () => lb.classList.contains('open') };
   }
 
+  // Controls that must never read as an "expand": dragging the Q1/Q2 slider or
+  // tapping a tab is not a request to open the lightbox. Shared with
+  // hintControls so the two can't drift apart.
+  const EXPAND_IGNORE = 'button, a, input, select, textarea, .seg, .chip, .page-tab, .cdot, .focus-slider, .chips';
+
   function addExpandButtons(lbox){
     function makeExpandable(card, source, title){
       if($('.expand-btn', card)) return;
@@ -326,7 +340,7 @@
       card.addEventListener('click', e => {
         // never treat a click on an interactive control (incl. the Q1/Q2 slider)
         // as an "expand" — dragging the slider must not open the lightbox.
-        if(e.target.closest('button, a, input, select, textarea, .seg, .chip, .page-tab, .cdot, .focus-slider, .chips')) return;
+        if(e.target.closest(EXPAND_IGNORE)) return;
         lbox.open(source, title);
       });
     }
@@ -342,14 +356,24 @@
   }
 
   /* ---------- discoverability pulse ----------
-     Tag the filter/tab controls so CSS can pulse them, and kill every pulse the
-     moment the user engages any control (they've learned the affordance). Skip
-     the lightbox — by the time it's open the user is already interacting. */
+     Tag the filter/tab controls so CSS can pulse them. Tabs and filters are one
+     affordance, so the first use anywhere retires them all. Expand rings retire
+     per page instead — each page has its own cards, and a reader who expanded
+     something on page 3 still needs the cue on page 12. Skip the lightbox — by
+     the time it's open the user is already interacting. */
   function hintControls(){
     $$('.deck .seg').forEach(seg => { if(!seg.closest('.lb-scroll')) seg.classList.add('ui-hint'); });
-    const seen = () => document.body.classList.add('hints-seen');
     document.addEventListener('pointerdown', e => {
-      if(e.target.closest('.seg, .expand-btn, .expandable, .chip, .chips')) seen();
+      // tabs/filters: learned once, retired everywhere
+      if(e.target.closest('.seg, .chip, .chips')) document.body.classList.add('hints-seen');
+      // Expand: retire only the page it was used on. The button itself always
+      // counts and must be tested FIRST — it is a <button>, so the ignore list
+      // would otherwise swallow it. Everywhere else mirror the card's own
+      // exclusions: a `.chart-card` IS `.expandable`, so without them a tap on a
+      // tab inside the card would count as an expand and kill that page's ring.
+      const btn = e.target.closest('.expand-btn');
+      const ex = btn || (e.target.closest(EXPAND_IGNORE) ? null : e.target.closest('.expandable'));
+      if(ex){ const pg = ex.closest('.page'); if(pg) pg.classList.add('hints-done'); }
     }, { capture:true });
   }
 

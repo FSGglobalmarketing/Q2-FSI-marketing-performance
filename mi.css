@@ -463,9 +463,32 @@ button { font-family: inherit; cursor: pointer; }
 .creative-list .li-clrow { grid-template-columns: 90px 1fr auto; align-items: center; }
 .li-listbody { min-width: 0; }
 .li-listcopy { font-size: 12.5px; line-height: 1.45; margin-top: 3px; color: var(--dark-ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.creative-body .meta { margin-top: 9px; font-size: 12px; color: var(--ink-2); display: grid; gap: 4px; }
-.dark .creative-body .meta { color: var(--dark-ink-2); }
-.creative-body .meta .mrow { display: flex; justify-content: space-between; gap: 10px; }
+/* `.creative-meta` is the LinkedIn-post variant and sits OUTSIDE .creative-body,
+   so it matched none of these and rendered as unstyled inline text
+   ("Impressions6,566"). Both spellings are styled together. */
+.creative-body .meta, .creative-meta { margin-top: 9px; font-size: 12px; color: var(--ink-2); display: grid; gap: 4px; }
+.dark .creative-body .meta, .dark .creative-meta { color: var(--dark-ink-2); }
+.creative-body .meta .mrow, .creative-meta .mrow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.creative-meta .mrow > span:first-child { white-space: nowrap; }
+.creative-meta .mrow .mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+
+
+/* Press coverage cards. No thumbnail — Signal returns no image for an article —
+   so the headline carries the card and gets the visual weight a screenshot would. */
+.news-card .creative-body { padding: 14px 15px 13px; }
+.news-head { font-size: 14px; line-height: 1.35; font-weight: 600; margin: 7px 0 9px; }
+.dark .news-head { color: var(--dark-ink); }
+.news-meta { font-size: 11.5px; line-height: 1.4; }
+.news-meta .mono { font-family: 'IBM Plex Mono', monospace; }
+.news-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.news-chips .pill { font-size: 10.5px; padding: 3px 8px; }
+
+/* Per-post bar against the Q1 average — the dashed rule is that post category's
+   Q1 mean, so a bar overshooting it beat last quarter at a glance. */
+.mbar { position: relative; height: 5px; border-radius: 3px; background: var(--hair-2); overflow: visible; margin-top: 2px; }
+.dark .mbar { background: rgba(255,255,255,.13); }
+.mbar > i { display: block; height: 100%; border-radius: 3px; background: var(--c-us); }
+.mbar > u { position: absolute; top: -3px; bottom: -3px; width: 0; border-left: 1.5px dashed currentColor; opacity: .65; text-decoration: none; }
 .creative-link { display: inline-block; margin-top: 11px; font-family: var(--font-mono); font-size: 11.5px; color: var(--c-us); text-decoration: none; }
 .creative-link:hover { text-decoration: underline; }
 .creative-body .meta .mono { color: var(--ink); }

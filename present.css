@@ -57,6 +57,27 @@ body { background: #14120f; color: var(--dark-ink); }
 }
 .page-inner.center { align-items: center; text-align: center; }
 @media (max-width: 720px){ .page-inner { padding: 92px 24px 60px; gap: 20px; } }
+/* .page clips silently, so laptop-height screens need the chrome to give ground:
+   slimmer paddings and gaps claw back ~90px for content. Lives HERE, after the
+   base .page-inner — in mi.css the cascade would lose to this file. The
+   engagement chart also drops to fewer rows below 900px (renderEmailChart);
+   the expand modal always carries the full list. */
+@media (max-height: 900px){
+  .page-inner { padding-top: 68px; padding-bottom: 34px; gap: 12px; }
+  .p-head { gap: 8px; }
+  .cb-mount .kr-grid { margin-top: 12px; }
+  .kpi-row .kpi b { font-size: 22px; }
+  .kpi-row .kpi { padding: 12px 16px; }
+  /* Safety valve: rather than silently clipping, a too-tall page scrolls. The
+     wheel handler defers to a scrollable .page-inner with room left (same rule
+     as .slide-scroll), so page navigation still works once you hit the end.
+     margin-auto on first/last child keeps short pages centred — plain
+     justify-content:center makes overflowing flex content unreachable above
+     the fold. */
+  .page-inner { overflow-y: auto; justify-content: flex-start; }
+  .page-inner > :first-child { margin-top: auto; }
+  .page-inner > :last-child { margin-bottom: auto; }
+}
 
 /* ---------- ENTRANCE ANIMATION ---------- */
 [data-anim] {
@@ -146,7 +167,13 @@ body { background: #14120f; color: var(--dark-ink); }
 
 /* ---------- COVER ---------- */
 .kick { font-family: var(--font-mono); letter-spacing: .18em; text-transform: uppercase; font-size: 13px; color: var(--dark-ink-2); }
-.cover-page .page-inner { justify-content: flex-end; max-width: 1280px; }
+/* Middle-left. The 1280 cap centres the content block, so on a 1920 screen the
+   card started 379px in and read as centred; dropping the cap lets it sit on the
+   page margin, lining its left edge up with the brandmark above it. */
+.cover-page .page-inner { justify-content: center; max-width: none; padding-block: 104px; }
+/* .page clips without a scrollbar, so on a short screen the symmetric padding
+   would quietly crop the top of the card rather than showing overflow. */
+@media (max-height: 720px){ .cover-page .page-inner { padding-block: 52px; } }
 .cover-card {
   align-self: flex-start; max-width: 720px;
   background: rgba(24,21,18,.34);
@@ -211,6 +238,18 @@ body { background: #14120f; color: var(--dark-ink); }
 }
 /* multiple lead paragraphs on content pages — compact so charts stay in view */
 .cb-mount .lead-sum + .lead-sum { margin-top: 9px; }
+/* Section copy reads at full brightness — the dimmed ink-2 was fine for a
+   caption but this is the page's actual narrative. Slightly larger to match. */
+.cb-mount .lead-sum { color: var(--dark-ink); font-size: clamp(13px, 1.15vw, 15px); max-width: 88ch; }
+/* air between the copy and the number boxes, and slimmer boxes under it */
+.cb-mount .kr-grid { margin-top: 18px; }
+.page .kr { padding: 11px 14px; }
+.page .kr b { font-size: 20px; }
+.page .kr i { font-size: 12px; }
+@media (max-height: 900px){
+  .cb-mount .lead-sum { font-size: 12.5px; }
+  .cb-mount .lead-sum + .lead-sum { margin-top: 6px; }
+}
 .lead-sum strong { color: var(--dark-ink); font-weight: 600; }
 
 /* ---------- FOCUS SLIDER (Q1 ⟷ Q2) ---------- */
@@ -370,6 +409,16 @@ body { background: #14120f; color: var(--dark-ink); }
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   color: var(--dark-ink); cursor: pointer; transition: all .2s;
 }
+/* Real Igneo logo (white + Magma) in place of the glyph brandmark. The cover
+   carries the larger one, so the fixed nav mark is hidden there to avoid
+   showing the logo twice on the front page. */
+/* NB: scope the cover size by parent — do NOT add a `.cover` class here, mi.css
+   already defines a generic `.cover` (min-height:96vh) that would blow it up. */
+.logo-img { height: 20px; width: auto; display: block; max-height: 30px; }
+.cover-brand .logo-img { height: 30px; }
+.p-nav.on-cover .brandmark { opacity: 0; pointer-events: none; }
+@media (max-width: 720px){ .cover-brand .logo-img { height: 24px; } }
+
 .expand-btn:hover { background: rgba(255,255,255,.16); }
 .expand-btn svg { width: 15px; height: 15px; display: block; }
 
@@ -399,8 +448,13 @@ body { background: #14120f; color: var(--dark-ink); }
   border-radius: 50%; border: 2px solid var(--c-us); pointer-events: none; z-index: 2;
   animation: ui-ping 2.4s ease-out infinite;
 }
+/* Tabs/filters are one affordance learned once, so the first interaction
+   anywhere retires them. The expand button is per-page — every page has its own
+   cards, and a pulse the reader never saw on page 12 teaches them nothing
+   because they clicked something on page 3. So expand rings retire per page,
+   once that page's own expand has been used. */
 .expand-btn:hover::before,
-body.hints-seen .expand-btn::before,
+.page.hints-done .expand-btn::before,
 body.hints-seen .seg.ui-hint::after,
 body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
 @media (prefers-reduced-motion: reduce) {
