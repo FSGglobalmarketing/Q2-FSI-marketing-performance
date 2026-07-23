@@ -268,7 +268,7 @@ async function gatcPull() {
   const creatives = [], activity = []; let ci = 0;
   for (const comp of GATC_COMPETITORS) {
     try {
-      const payload = { '2': 40, '3': { '12': { '1': comp.domain, '2': true }, '8': [REGION] }, '7': { '1': 1 } };
+      const payload = { '2': 40, '3': { '12': { '1': comp.domain, '2': true }, '8': [comp.region || REGION] }, '7': { '1': 1 } };
       const resp = await alxFetch(RPC, { method: 'POST', headers, body: 'f.req=' + encodeURIComponent(JSON.stringify(payload)), dispatcher: ALX_AGENT });
       if (!resp.ok) { console.error(`GATC ${comp.name}: ${resp.status}`); continue; }
       let text = await resp.text();
