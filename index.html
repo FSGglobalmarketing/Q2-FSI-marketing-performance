@@ -286,27 +286,44 @@
       <div class="p-head" data-anim>
         <span class="tag inv">Consideration</span>
         <h2 class="p-title">Always on — LinkedIn</h2>
+        
       </div>
       <div class="cb-mount" data-cb="linkedin"></div>
       <div class="carousel" data-anim>
         <div class="carousel-viewport">
           <div class="carousel-track">
-            <div class="cslide" data-label="Earned organic">
-              <div class="card">
-                <div class="card-head"><div class="card-title">Earned for free · organic</div><span class="tag ghost">Organic</span></div>
-                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)" id="li-organic"></div>
+            <div class="cslide" data-label="Organic vs paid">
+              <div class="chart-card" data-widget="lichannel">
+                <div class="card-head">
+                  <div class="card-title">Organic vs paid</div>
+                  <span class="source-note">LinkedIn API</span>
+                </div>
+                <p class="muted-txt" data-role="lich-note" style="font-size:13px;margin:2px 0 12px"></p>
+                <div class="legend" style="margin:12px 0"><span><i class="ln" style="background:var(--c-us)"></i>Clicks</span><span><i class="ln" style="background:#8fb4d6"></i>Impressions</span></div>
+                <div class="chart-wrap" data-role="lich-chart"></div>
               </div>
             </div>
-            <div class="cslide" data-label="Paid boost">
-              <div class="card">
-                <div class="card-head"><div class="card-title">Paid to boost · advertising</div><span class="tag ghost">Paid</span></div>
-                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)" id="li-paid"></div>
+            <div class="cslide" data-label="Who follows us">
+              <div class="chart-card" data-widget="liaudience">
+                <div class="card-head">
+                  <div class="card-title">Who follows us</div>
+                  <span class="source-note">LinkedIn · follower statistics</span>
+                </div>
+                <p class="muted-txt" data-role="liaud-note" style="font-size:13px;margin:2px 0 12px"></p>
+                <div class="seg tab-row" data-role="liaud-tabs" role="group" aria-label="Breakdown"></div>
+                <div class="chart-wrap" data-role="liaud-chart" style="margin-top:12px"></div>
               </div>
             </div>
-            <div class="cslide" data-label="Best posts">
-              <div class="card">
-                <div class="card-head"><div class="card-title">Posts that performed best</div><span class="source-note">LinkedIn</span></div>
-                <div class="slide-scroll" id="li-posts"></div>
+            <div class="cslide" data-label="Top posts">
+              <div class="chart-card" data-widget="liposts">
+                <div class="card-head">
+                  <div class="card-title">Top performing posts</div>
+                  <span class="source-note">LinkedIn · organic</span>
+                </div>
+                <p class="muted-txt" data-role="lipost-note" style="font-size:13px;margin:2px 0 12px"></p>
+                <div class="seg tab-row" data-role="lipost-tabs" role="group" aria-label="Category"></div>
+                <div data-role="lipost-legend" style="margin:8px 0 2px"></div>
+                <div class="creative-host" data-role="lipost-grid" style="margin-top:12px"></div>
               </div>
             </div>
           </div>

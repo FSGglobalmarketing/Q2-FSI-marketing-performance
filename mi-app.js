@@ -279,7 +279,7 @@
     if(note){
       note.innerHTML = Q.paid.i
         ? `<strong>${Q.label}</strong> — organic reached ${Q.organic.i.toLocaleString()} at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>; paid reached ${Q.paid.i.toLocaleString()} at ${pct(Q.paid.c,Q.paid.i).toFixed(2)}%. Organic converts attention <strong>${(pct(Q.organic.c,Q.organic.i)/pct(Q.paid.c,Q.paid.i)).toFixed(1)}×</strong> harder; paid buys the reach.`
-        : `<strong>${Q.label}</strong> — organic only. ${Q.organic.i.toLocaleString()} impressions at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>. No paid ran this quarter (the NADIF campaign relaunched in April).`;
+        : `<strong>${Q.label}</strong> — organic only. ${Q.organic.i.toLocaleString()} impressions at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>. No paid ran this quarter.`;
     }
     const tipRows = r => `Impressions ${r.impr.toLocaleString()}<br/>Clicks ${r.clicks.toLocaleString()}<br/>CTR ${pct(r.clicks,r.impr).toFixed(2)}%`;
     if(window.echarts){ try { echartsStackedHBars(el, rows, { labelW:96, rowH:44, hitName:'Clicks', tipRows }); }

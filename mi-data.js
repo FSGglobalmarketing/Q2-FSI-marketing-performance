@@ -481,10 +481,85 @@ window.MIDATA = (function () {
     return (P && Array.isArray(P.articles)) ? P.articles : [];
   }
 
+  // LinkedIn channel — organic + paid from the linkedin-API pipeline
+  // (li_share_statistics_by_month / li_ads_by_campaign / li_organic_posts /
+  //  li_follower_statistics, synced Jul 2026). Audience labels are LinkedIn's
+  // standard seniority/function/staff-size taxonomies.
+  const LI_CHANNEL = {
+    quarters: [
+      { key:'q1', label:'Q1 2026', organic:{ i:35902, c:3437 }, paid:{ i:0, c:0 } },
+      { key:'q2', label:'Q2 2026', organic:{ i:51214, c:7645 }, paid:{ i:0, c:0 } },
+    ],
+    months: [
+      { m:'Jan', o:11976, oc:2176, p:0, pc:0 },
+      { m:'Feb', o:7076, oc:446, p:0, pc:0 },
+      { m:'Mar', o:16850, oc:815, p:0, pc:0 },
+      { m:'Apr', o:9145, oc:413, p:0, pc:0 },
+      { m:'May', o:27292, oc:6566, p:0, pc:0 },
+      { m:'Jun', o:14777, oc:666, p:0, pc:0 },
+    ],
+    followers: 32868,
+    audience: {
+      seniority: { label:'Seniority', rows:[
+        { n:'Senior', v:13386 },
+        { n:'Entry', v:6093 },
+        { n:'Director', v:5469 },
+        { n:'Manager', v:2978 },
+        { n:'VP', v:2099 },
+        { n:'CXO', v:1043 },
+        { n:'Owner', v:836 },
+        { n:'Partner', v:633 },
+      ] },
+      func: { label:'Function', rows:[
+        { n:'Finance', v:7158 },
+        { n:'Business Development', v:5388 },
+        { n:'Operations', v:2078 },
+        { n:'Sales', v:2055 },
+        { n:'Information Technology', v:1695 },
+        { n:'Human Resources', v:1056 },
+        { n:'Marketing', v:980 },
+        { n:'Engineering', v:959 },
+      ] },
+      size: { label:'Company size', rows:[
+        { n:'10k+', v:7181 },
+        { n:'1k-5k', v:5265 },
+        { n:'11-50', v:3808 },
+        { n:'51-200', v:3682 },
+        { n:'2-10', v:2890 },
+        { n:'201-500', v:2678 },
+        { n:'501-1k', v:2569 },
+        { n:'5k-10k', v:2031 },
+      ] },
+    },
+    posts: {
+      q1: [
+        { t:'For Adviser/Professional/Institutional audiences only. AI and data centres are reshaping electricity demand — but how can utilities deliver growth al…', cat:'Video', img:'7444584008362909696.jpg', mt:'video', i:5011, c:241, l:39, cm:0 },
+        { t:'This content is intended for institutional/professional investors or financial advisers in Australia only. We’re proud to share the First Sentier Aus…', cat:'Article', img:'', mt:'', i:4907, c:1291, l:79, cm:1 },
+        { t:'“Trust that you deserve to be in the room.” Sage advice from our Australian Equities Growth Portfolio Manager Alison Thai…', cat:'Article', img:'7436896865264082944.jpg', mt:'article', i:4842, c:294, l:49, cm:0 },
+        { t:'In our latest video, Nigel Foo, Head of Asian Fixed Income, shares how Asian fixed income performed in 2025 and what in…', cat:'Video', img:'7422128075519258624.jpg', mt:'video', i:4435, c:298, l:54, cm:0 },
+        { t:'This content is intended for Australia only. The Reserve Bank of Australia hiked the cash rate to 4.1% this week. Our Short Term Investments Senior…', cat:'Article', img:'7440191272486670336.jpg', mt:'article', i:2991, c:61, l:20, cm:0 },
+        { t:'In a market where shareholder income is increasingly sought after, Global Listed Infrastructure is proving to be a quiet achiever. Dividend yields re…', cat:'Video', img:'7437283267680284672.jpg', mt:'video', i:2496, c:85, l:29, cm:0 },
+        { t:'From a value‑driven consumer reshaping retail, to AI fears creating mispriced software opportunities, this reporting season has plenty bubbling benea…', cat:'Article', img:'7433031546372227073.jpg', mt:'article', i:2488, c:74, l:19, cm:0 },
+        { t:'When First Sentier Group launched its inaugural Climate and Nature Report, it marked an important milestone in our …', cat:'Image', img:'7417374419074859008.jpg', mt:'image', i:2011, c:73, l:41, cm:0 },
+      ],
+      q2: [
+        { t:'This content is intended for Australian institutional and adviser audiences only. We’re excited to celebrate the launch of the First Sentier Active…', cat:'Article', img:'', mt:'', i:15254, c:6090, l:236, cm:3 },
+        { t:'This content is for audiences in Australia only. What does a potential World Cup-winning ASX portfolio look like? Our Head of Australian Equities…', cat:'Image', img:'7470373751272943616.jpg', mt:'image', i:5421, c:197, l:49, cm:1 },
+        { t:'This content is intended for Australia only. The Reserve Bank of Australia has raised the cash rate at their last 3 meetings, to now be at 4.35%, …', cat:'Article', img:'7457678556156821505.jpg', mt:'article', i:5027, c:108, l:25, cm:0 },
+        { t:'For Adviser/Professional/Institutional audiences only. In our latest fireside chat, Brian Savoy, Chief Financial Officer …', cat:'Video', img:'7452547973454016512.jpg', mt:'video', i:3967, c:212, l:46, cm:0 },
+        { t:'This content is intended for institutional investors or financial advisers in Australia only. With cash yields around 5%, investors are increasingl…', cat:'Article', img:'7474708213494358016.jpg', mt:'article', i:2737, c:56, l:26, cm:0 },
+        { t:'This content is intended for Australian institutional and adviser audiences only. For years, cash was the forgotten asset class, but this has now s…', cat:'Video', img:'7472864121584123904.jpg', mt:'video', i:2599, c:127, l:53, cm:0 },
+        { t:'This content is for adviser/professional/institutional audiences only. Our Global Listed Infrastructure Portfolio Manager, Rebecca Sherlock…', cat:'Image', img:'7467389151840063490.jpg', mt:'image', i:2465, c:33, l:32, cm:0 },
+        { t:'This content is intended for Australia only. The Australian Bureau of Statistics reported a rise in annual CPI to 4.6…', cat:'Article', img:'7455429745288073216.jpg', mt:'article', i:2320, c:35, l:20, cm:0 },
+      ],
+    },
+  };
+  function liChannel(){ return LI_CHANNEL; }
+
   return {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
+    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
   };
 })();
