@@ -18,10 +18,11 @@ jobs:
       - name: Pull Data-Hub metrics
         working-directory: scripts
         env:
-          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_PROPERTY_ID: '309368135'   # FSI property (Property IDs.xlsx)
           GA4_SA_KEY: ${{ secrets.GA4_SA_KEY }}
           ALPHIX_SUBDOMAIN: ${{ secrets.ALPHIX_SUBDOMAIN }}
           ALPHIX_REPORTS_TOKEN: ${{ secrets.ALPHIX_REPORTS_TOKEN }}
+          ALPHIX_DOMAIN: 'www.firstsentierinvestors.com'
           ALPHIX_AUTH_SCHEME: ${{ secrets.ALPHIX_AUTH_SCHEME }}
         run: node fetch-data.mjs
       - name: Commit data.js if changed
