@@ -1148,7 +1148,7 @@
   function alphixCompanies(fpages){
     const by = {};
     fpages.forEach(pg => D.firmsByPage(pg.path).forEach(f => {
-      const rec = by[f.firm] || (by[f.firm] = { firm:f.firm, domain:f.domain, industry:f.industry, total:0, visits:0, pages:[] });
+      const rec = by[f.firm] || (by[f.firm] = { firm:f.firm, domain:f.domain, industry:f.industry, comp:!!f.comp, total:0, visits:0, pages:[] });
       rec.total += f.views; rec.visits += f.sessions;
       rec.pages.push({ title:pg.title, path:pg.path, region:pg.region, views:f.views });
     }));
@@ -1193,7 +1193,7 @@
         <button class="firm-head" type="button" aria-expanded="${open}">
           <span class="firm-chev">${ALX_CHEV}</span>
           <span class="firm-cell"><span class="avatar" style="background:${avatarColor(c.firm)}">${initials(c.firm)}</span>
-            <span class="fmeta"><span class="strong">${c.firm}</span><small>${c.domain}</small></span></span>
+            <span class="fmeta"><span class="strong">${c.firm}${c.comp?' <span class="pill warm" style="font-size:10px;padding:2px 7px;vertical-align:2px">Competitor</span>':''}</span><small>${c.domain}</small></span></span>
           <span class="firm-ind">${c.industry}</span>
           <span class="firm-metric"><b>${D.fmtInt(c.total)}</b> views</span>
           <span class="firm-metric"><b>${c.visits}</b> visits</span>

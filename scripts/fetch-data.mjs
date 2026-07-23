@@ -151,6 +151,11 @@ const alxPath = u => { try { return new URL(u).pathname.replace(/\/+$/,'') || '/
                        catch { return String(u || '').replace(/^https?:\/\/[^/]+/i, '').replace(/[?#].*$/,'').replace(/\/+$/,'') || String(u||''); } };
 
 async function alphixPull(wantedPaths) {
+  // BrightEdge competitors reading OUR pages get flagged - the same register
+  // (GATC_COMPETITORS) drives ads, press and this. Name-based match: firm
+  // labels arrive like 'BlackRock, Inc.', so compare on a squashed form.
+  const squash = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+  const compNames = GATC_COMPETITORS.map(c => squash(c.name)).filter(n => n.length >= 4);
   const seenDomains = new Set();   // diagnostic: what Domains does the report actually carry?
   const base = `https://${ALPHIX_SUBDOMAIN}.alphix.com/api`;
   const opts = { headers: { Authorization: `${ALPHIX_SCHEME} ${ALPHIX_TOKEN}`.trim(), 'Content-Type': 'application/json' }, dispatcher: ALX_AGENT };
@@ -177,7 +182,8 @@ async function alphixPull(wantedPaths) {
     if (industry) byIndustry[industry] = (byIndustry[industry] || 0) + views;
     const path = alxPath(r['Page URL']);
     if (want && !want.has(path)) return;                          // drill-down: only pages the pack renders
-    (ALPHIX[path] ||= []).push({ firm, domain: r['Domain'] || '', industry, views, sessions: Math.max(1, Math.round(views / 6)) });
+    const comp = compNames.some(n => squash(firm).includes(n));
+    (ALPHIX[path] ||= []).push({ firm, domain: r['Domain'] || '', industry, views, sessions: Math.max(1, Math.round(views / 6)), comp });
   };
 
   // Stream the (20MB+) JSON-Lines file so it never buffers whole; retry the
