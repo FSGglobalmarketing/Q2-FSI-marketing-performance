@@ -48,6 +48,9 @@ window.MIDATA = (function () {
   // GA4 — Website visits over time (Q2 weekly, with Q1 comparison)
   // ============================================================
   function visitsSeries(){
+    if (typeof window !== 'undefined' && window.MI_REMOTE && Array.isArray(window.MI_REMOTE.VISITS)
+        && window.MI_REMOTE.VISITS.some(function(w){ return (w.sessions||0) > 0; }))
+      return window.MI_REMOTE.VISITS;  // real weekly GA4 data (Q2 sessions + Q1 comparison); all-zero = no data, fall through
     const rnd = seed('vis-q2');
     const out = [];
     for(let i=0;i<13;i++){
@@ -89,9 +92,18 @@ window.MIDATA = (function () {
     { path:'/insights/ai-in-investment',      title:'AI in investment' },
     { path:'/strategies/asian-growth',        title:'Asian growth strategy' },
   ];
-  function firmsByPage(pageIdx){
-    const rnd = seed('alx'+pageIdx);
-    const rot = [...FIRMS.slice(pageIdx%FIRMS.length), ...FIRMS.slice(0, pageIdx%FIRMS.length)];
+  // Which firms read a given page. Keyed by the page path so the selection
+  // survives region filtering. Real Alphix data (window.MI_REMOTE.ALPHIX =
+  // { [pagePath]: [ {firm,domain,industry,views,sessions} ] }) is used
+  // exclusively once loaded — a page with no identified firms returns [].
+  function firmsByPage(key){
+    key = String(key || '');
+    const R = (typeof window !== 'undefined' && window.MI_REMOTE) || {};
+    if (R.ALPHIX) return Array.isArray(R.ALPHIX[key]) ? R.ALPHIX[key] : [];
+    const rnd = seed('alx'+key);
+    let h = 0; for(let i=0;i<key.length;i++) h = (h*31 + key.charCodeAt(i)) >>> 0;
+    const off = FIRMS.length ? h % FIRMS.length : 0;
+    const rot = [...FIRMS.slice(off), ...FIRMS.slice(0, off)];
     return rot.slice(0,8).map((fm,i)=>{
       const views = Math.round((320 - i*30) * (0.7+rnd()*0.7));
       const delta = Math.round((rnd()*80)-25);
@@ -565,4 +577,18 @@ window.MIDATA = (function () {
     fmtInt, fmtK,
     channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
   };
+})();
+
+;(function () {
+  // Copy real Data-Hub datasets over the seeded defaults — but only ones that
+  // actually contain something. An empty array or an all-zero VISITS series
+  // (a GA4 property with no recorded data yet) must not shadow the honest
+  // fallback the pack would otherwise show.
+  try { var R = (typeof window !== 'undefined' && window.MI_REMOTE) || {};
+    for (var k in R) if (Object.prototype.hasOwnProperty.call(R, k)) {
+      var v = R[k];
+      if (Array.isArray(v) && !v.length) continue;
+      if (k === 'VISITS' && Array.isArray(v) && !v.some(function(w){ return (w.sessions||0) > 0; })) continue;
+      window.MIDATA[k] = v;
+    } } catch (e) {}
 })();

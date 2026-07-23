@@ -941,6 +941,13 @@
   function renderVisitsChart(el, opts){
     opts = opts || {}; if(!el) return;
     const data = D.visitsSeries();
+    // an honest empty state beats a zero flatline (e.g. RQI's new site has no
+    // recorded GA4 traffic for Q2) — brands set WEB_NOTE to explain why
+    if(!data || !data.length){
+      el.style.height='auto';
+      el.innerHTML = `<p class="muted-txt">${D.WEB_NOTE || 'No web analytics are wired into this pack yet.'}</p>`;
+      return;
+    }
     if(window.echarts){ try { return echartsVisits(el, data, opts); } catch(e){ console.warn('echarts visits failed, using fallback', e); } }
     C.lines(el, data, [{ key:'sessions', color:'var(--c-a)', us:true }, { key:'prev', color:'var(--c-muted)', dash:true }], { height: opts.modal?420:240 });
   }
@@ -1075,6 +1082,12 @@
   function renderTopPages(root){
     root = root || document;
     const all = (D.TOP_PAGES||[]).map(r=>({ ...r, country: pageCountry(r.path) }));
+    if(!all.length){
+      const seg0 = root.querySelector('[data-seg="pages-country"]'); if(seg0) seg0.innerHTML='';
+      const body0 = root.querySelector('[data-body="top-pages"]');
+      if(body0) body0.innerHTML = `<p class="muted-txt" style="padding:14px 4px">${D.WEB_NOTE || 'No page analytics are wired into this pack yet.'}</p>`;
+      return;
+    }
     const countries = ['all', ...[...new Set(all.map(r=>r.country))]];
     const sel = countries.includes(state.pagesCountry) ? state.pagesCountry : 'all';
     // country filter control (rendered from whatever regions the data contains)
@@ -1171,7 +1184,7 @@
     root = root || document;
     const q = sel => root.querySelector(sel);
     const sumEl = q('[data-alphix-summary]');
-    if(sumEl){ const s = D.FIRMS_SUMMARY;
+    if(sumEl){ const s = D.FIRMS_SUMMARY || {};
       sumEl.innerHTML = [
         { v:s.companies, l:'companies identified' },
         { v:s.identifiedPct, l:'of views identified to a company', pct:true },
@@ -1193,7 +1206,7 @@
     if(!(state.alphixOpen instanceof Set)) state.alphixOpen = new Set();
     const tableEl = q('[data-alphix-table]');
     if(!tableEl) return;
-    if(!companies.length){ tableEl.innerHTML = `<p class="muted-txt" style="padding:14px 4px">No companies in this region.</p>`; return; }
+    if(!companies.length){ tableEl.innerHTML = `<p class="muted-txt" style="padding:14px 4px">${(region==='all' && D.ALPHIX_NOTE) || 'No companies in this region.'}</p>`; return; }
     tableEl.innerHTML = `<div class="firm-list">${companies.map(c=>{
       const open = state.alphixOpen.has(c.firm);
       return `<div class="firm-row ${open?'open':''}" data-firm="${c.firm}">

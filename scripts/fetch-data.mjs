@@ -346,10 +346,28 @@ async function gatcPull() {
 async function main() {
   if (PROPERTY && SA_KEY) {
     const c = await ga4Client();
-    try { remote.TOP_PAGES = await ga4Pages(c); console.log('GA4 Pages:', remote.TOP_PAGES.length); }
+    // Publish only datasets with substance: an empty pages list or an all-zero
+    // week series (a property with no recorded data, e.g. a just-launched
+    // site) would pass the pack's array guards and render as fake zeros.
+    try { const pages = await ga4Pages(c);
+      if (pages.length) { remote.TOP_PAGES = pages; console.log('GA4 Pages:', pages.length); }
+      else console.log('GA4 Pages: no rows — dataset withheld so the pack keeps its fallback.'); }
     catch (e) { console.error('GA4 Pages failed:', e.message); }
-    try { remote.VISITS = await ga4Weekly(c); console.log('GA4 Weekly visits:', remote.VISITS.length, 'weeks'); }
+    try { const vis = await ga4Weekly(c);
+      if (vis.some(w => w.sessions > 0)) { remote.VISITS = vis; console.log('GA4 Weekly visits:', vis.length, 'weeks'); }
+      else console.log('GA4 Weekly: all-zero — dataset withheld so the pack keeps its fallback.'); }
     catch (e) { console.error('GA4 Weekly failed:', e.message); }
+    // Empty property? Log WHEN it has ever had data, so the run answers
+    // "wrong ID or tag not live yet" without another debugging round.
+    if (!remote.TOP_PAGES && !remote.VISITS) {
+      try {
+        const probe = await runReport(c, { dateRanges: [{ startDate: '2024-01-01', endDate: 'today' }],
+          dimensions: [{ name: 'yearMonth' }], metrics: [{ name: 'sessions' }], limit: 40 });
+        const months = probe.map(r => r.dimensionValues[0].value + ':' + r.metricValues[0].value).sort();
+        console.log('GA4 probe — months with sessions since Jan 2024:',
+          months.length ? months.join(' ') : 'NONE (this property has never recorded a session)');
+      } catch (e) { console.error('GA4 probe failed:', e.message); }
+    }
   } else {
     console.log('GA4 secrets not set — GA4 datasets fall back to seeded defaults.');
   }
