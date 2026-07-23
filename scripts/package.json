@@ -1,0 +1,6 @@
+{
+  "name": "q2-igneo-data",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@google-analytics/data": "^4.12.0", "undici": "^6.19.8" }
+}

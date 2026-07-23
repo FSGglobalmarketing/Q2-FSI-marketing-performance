@@ -457,10 +457,31 @@ window.MIDATA = (function () {
   };
   function emailEng(){ return EMAIL_ENG; }
 
+  // Press share-of-voice from Signal AI (press-data.js snapshot, or MI_REMOTE.PRESS
+  // if the build ever fetches it live). Still NO seeded fallback: invented press
+  // coverage would be indistinguishable from the real thing on the page, so no
+  // data means the tab says so rather than drawing bars.
+  function press(q){
+    const R = (typeof window !== 'undefined' && window.MI_REMOTE) || {};
+    if (Array.isArray(R.PRESS) && R.PRESS.length) return R.PRESS;
+    const P = (typeof window !== 'undefined' && window.MI_PRESS) || null;
+    const rows = P && P.quarters && P.quarters[q || 'q2'];
+    // normalise the compact snapshot keys to what the renderer reads
+    return Array.isArray(rows)
+      ? rows.map(r => ({ name:r.n, total:r.t, positive:r.p, neutral:r.u, negative:r.g, us:!!r.us }))
+      : [];
+  }
+  function pressMeta(){ return (typeof window !== 'undefined' && window.MI_PRESS) || null; }
+  // Coverage cards, already filtered to Igneo's investment universe upstream.
+  function pressArticles(){
+    const P = (typeof window !== 'undefined' && window.MI_PRESS) || null;
+    return (P && Array.isArray(P.articles)) ? P.articles : [];
+  }
+
   return {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
+    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
   };
 })();

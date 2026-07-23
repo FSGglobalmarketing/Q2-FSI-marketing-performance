@@ -1,0 +1,39 @@
+name: Data refresh
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install deps
+        working-directory: scripts
+        run: npm install --no-audit --no-fund
+      - name: Pull Data-Hub metrics
+        working-directory: scripts
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SA_KEY: ${{ secrets.GA4_SA_KEY }}
+          ALPHIX_SUBDOMAIN: ${{ secrets.ALPHIX_SUBDOMAIN }}
+          ALPHIX_REPORTS_TOKEN: ${{ secrets.ALPHIX_REPORTS_TOKEN }}
+          ALPHIX_AUTH_SCHEME: ${{ secrets.ALPHIX_AUTH_SCHEME }}
+        run: node fetch-data.mjs
+      - name: Commit data.js if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # stage first: `git diff` alone only sees TRACKED files, so when
+          # data.js is new (or was removed from the repo) it reports "no
+          # changes" and the refresh silently never commits.
+          git add -f data.js
+          if ! git diff --cached --quiet -- data.js; then
+            git commit -m "data: refresh Data-Hub values" && git push
+          else
+            echo "No data changes."
+          fi

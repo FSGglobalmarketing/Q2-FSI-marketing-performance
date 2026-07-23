@@ -502,7 +502,7 @@
     host.className='slide-scroll'; host.style.padding='6px 14px';
     // Diversified groups dwarf a pure infra manager on total press volume, so say
     // so next to the chart rather than letting the bars imply a like-for-like race.
-    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">Blackstone, KKR, Macquarie and J.P. Morgan are diversified groups — most of their coverage isn't infrastructure, so read them as context, not as a like-for-like race.</p>
+    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">The diversified giants in this peer set dwarf a specialist manager on raw press volume — read them as context, not as a like-for-like race.</p>
       <div class="chart-wrap" data-role="press-chart"></div>`;
     const el = host.querySelector('[data-role="press-chart"]');
     if(!el || !window.echarts) return;
