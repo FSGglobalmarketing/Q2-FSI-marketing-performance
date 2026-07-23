@@ -151,6 +151,7 @@ const alxPath = u => { try { return new URL(u).pathname.replace(/\/+$/,'') || '/
                        catch { return String(u || '').replace(/^https?:\/\/[^/]+/i, '').replace(/[?#].*$/,'').replace(/\/+$/,'') || String(u||''); } };
 
 async function alphixPull(wantedPaths) {
+  const seenDomains = new Set();   // diagnostic: what Domains does the report actually carry?
   const base = `https://${ALPHIX_SUBDOMAIN}.alphix.com/api`;
   const opts = { headers: { Authorization: `${ALPHIX_SCHEME} ${ALPHIX_TOKEN}`.trim(), 'Content-Type': 'application/json' }, dispatcher: ALX_AGENT };
   const unwrap = b => (b && typeof b === 'object' && 'data' in b) ? b.data : b;
@@ -165,6 +166,7 @@ async function alphixPull(wantedPaths) {
   const want = (wantedPaths && wantedPaths.size) ? wantedPaths : null;
   let ALPHIX = {}, firmSet = new Set(), byIndustry = {}, totalViews = 0, namedViews = 0;
   const onRow = (r) => {
+    seenDomains.add(r['Domain'] || '(blank)');
     if ((r['Domain'] || '') !== ALPHIX_DOMAIN) return;            // this brand's site only
     const views = alxNum(r['Pageviews Human']);
     totalViews += views;                                         // all traffic (incl. anonymous)
@@ -209,6 +211,9 @@ async function alphixPull(wantedPaths) {
   }
   // cap each page to its top 25 identified firms (keeps data.js small)
   Object.keys(ALPHIX).forEach(p => { ALPHIX[p] = ALPHIX[p].sort((a, b) => b.views - a.views).slice(0, 25); });
+  // diagnostic: if the domain filter matched nothing, say what the report carries
+  if (!Object.keys(ALPHIX).length)
+    console.log('Alphix domains seen (filter matched none):', [...seenDomains].sort().join(' | '));
   const topIndustry = Object.entries(byIndustry).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
   return {
     ALPHIX,
