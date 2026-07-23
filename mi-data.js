@@ -135,6 +135,9 @@ window.MIDATA = (function () {
   ];
   const FORMATS = ['Image','Video','Text'];
   function creatives(){
+    // real competitor ads from the Google Ads Transparency Center (data.js)
+    if (typeof window !== 'undefined' && window.MI_REMOTE && Array.isArray(window.MI_REMOTE.CREATIVES) && window.MI_REMOTE.CREATIVES.length)
+      return window.MI_REMOTE.CREATIVES;
     const rnd = seed('cre-q2');
     const out = [];
     const advByComp = { 'Blackstone':'Blackstone Inc.', 'BlackRock':'BlackRock, Inc.', 'Schroders':'Schroders plc', 'Nuveen':'Nuveen, LLC' };
