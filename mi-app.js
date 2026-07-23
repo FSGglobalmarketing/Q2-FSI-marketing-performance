@@ -508,7 +508,13 @@
     const el = host.querySelector('[data-role="press-chart"]');
     if(!el || !window.echarts) return;
     const modal = !!card.closest('.lb-scroll');
-    const bars = rows.slice().sort((a,b)=>(b.total||0)-(a.total||0)).slice(0, modal?22:14)
+    const sorted = rows.slice().sort((a,b)=>(b.total||0)-(a.total||0));
+    const top = sorted.slice(0, modal?22:14);
+    // our own brand must never fall off the chart — the bigger BrightEdge peer
+    // sets (RQI 19 rows, FSI 25) push it below the cap, so swap it in last.
+    const usRow = sorted.find(r=>r.us);
+    if(usRow && !top.includes(usRow)) top[top.length-1] = usRow;
+    const bars = top
       .map(r=>({ name:r.name, impr:r.total||0, clicks:r.positive||0,
                  _p:r.positive||0, _n:r.neutral||0, _g:r.negative||0 }));
     const tipRows = r => { const pct = r.impr ? (r._p/r.impr*100).toFixed(0) : '0';
