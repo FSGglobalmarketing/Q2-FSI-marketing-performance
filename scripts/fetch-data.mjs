@@ -228,16 +228,51 @@ async function alphixPull(wantedPaths) {
 // bot-gated, unofficial) anji RPC. No token; a browser User-Agent + Origin
 // headers get past bot detection from a residential IP (CI IPs may be blocked —
 // set GATC_PROXY then). Payload/field indices are reverse-engineered.
+// Peer set from Competitors/2026/BrightEdge SEO Competitors.xlsx - the union of
+// the "FSI Domestic" and "First Sentier Investors" sheets, deduped by
+// registrable domain (subdomains/paths stripped: am.jpmorgan.com -> jpmorgan.com).
+// Default region is AU; `region:2826` marks the EMEA-only rows. Queries are
+// domain-keyed, so a wrong domain returns nothing rather than the wrong firm.
 const GATC_COMPETITORS = [
+  // FSI Domestic (AU)
   { name:'Fidelity', domain:'fidelity.com.au' },
-  { name:'Pendal', domain:'pendalgroup.com' }, { name:'Perpetual', domain:'perpetual.com.au' },
-  { name:'Vanguard AU', domain:'vanguard.com.au' }, { name:'UBS', domain:'ubs.com' },
-  { name:'BetaShares', domain:'betashares.com.au' }, { name:'BlackRock', domain:'blackrock.com' },
-  { name:'Colonial First State', domain:'cfs.com.au' }, { name:'Ausbil', domain:'ausbil.com.au' },
-  { name:'Magellan', domain:'magellangroup.com.au' }, { name:'ClearBridge', domain:'clearbridge.com' },
-  { name:'Resolution Capital', domain:'rescap.com' }, { name:'Hyperion', domain:'hyperion.com.au' },
-  { name:'Partners Group', domain:'partnersgroup.com' }, { name:'EQT', domain:'eqtgroup.com' },
+  { name:'Pendal', domain:'pendalgroup.com' },
+  { name:'Perpetual', domain:'perpetual.com.au' },
+  { name:'Vanguard AU', domain:'vanguard.com.au' },
+  { name:'UBS', domain:'ubs.com' },
+  { name:'BetaShares', domain:'betashares.com.au' },
+  { name:'BlackRock / iShares', domain:'blackrock.com' },
+  { name:'Bennelong', domain:'bennelongfunds.com' },
+  { name:'Colonial First State', domain:'cfs.com.au' },
+  { name:'Ausbil', domain:'ausbil.com.au' },
+  { name:'Magellan', domain:'magellangroup.com.au' },
+  { name:'ClearBridge AU', domain:'clearbridge.com.au' },
+  { name:'ClearBridge', domain:'clearbridgeinvestments.com' },
+  { name:'Resolution Capital', domain:'resolutioncapital.com' },
+  { name:'Hyperion', domain:'hyperion.com.au' },
+  // First Sentier Investors sheet - AU rows
+  { name:'Airlie', domain:'airlie.com.au' },
+  { name:'Alphinity', domain:'alphinity.com.au' },
+  { name:'Fisher Investments', domain:'fisherinvestments.com' },
+  { name:'Federated Hermes', domain:'hermes-investment.com' },
+  { name:'InvestmentMarkets', domain:'investmentmarkets.com.au' },
+  { name:'J.P. Morgan', domain:'jpmorgan.com' },
+  { name:'KKR', domain:'kkr.com' },
+  { name:'Macquarie', domain:'macquarie.com' },
+  { name:'PIMCO', domain:'pimco.com.au' },
+  { name:'Platinum', domain:'platinum.com.au' },
+  { name:'Remara', domain:'remara.com' },
   { name:'Robeco', domain:'robeco.com' },
+  { name:'S&P Global', domain:'spglobal.com' },
+  { name:'Schroders', domain:'schroders.com' },
+  { name:'T. Rowe Price', domain:'troweprice.com' },
+  // First Sentier Investors sheet - EMEA rows
+  { name:'Partners Group', domain:'partnersgroup.com', region:2826 },
+  { name:'Ardian', domain:'ardian.com', region:2826 },
+  { name:'EQT', domain:'eqtgroup.com', region:2826 },
+  { name:'IFM Investors', domain:'ifminvestors.com', region:2826 },
+  { name:'Maple-Brown Abbott', domain:'maple-brownabbott.com', region:2826 },
+  { name:'Collimate Capital', domain:'collimatecapital.com', region:2826 },
 ];
 
 async function gatcPull() {
@@ -295,7 +330,7 @@ async function gatcPull() {
       const imgN = parsed.filter(c => c.image).length;
       [...parsed.filter(c => c.image), ...parsed.filter(c => !c.image)].slice(0, 6).forEach(c => creatives.push(c));
       console.log(`GATC ${comp.name}: ${items.length} ads (${imgN} image) · Q1 ${q1} / Q2 ${q2}`);
-      await new Promise(r => setTimeout(r, 1200));                // polite spacing
+      await new Promise(r => setTimeout(r, 2500));                // polite spacing (1200 earned 429s)
     } catch (e) { console.error(`GATC ${comp.name} failed: ${e.message}`); }
   }
   const rows = q => activity.map(a => ({ name: a.name, v: a[q], color: a.color })).filter(r => r.v > 0).sort((x, y) => y.v - x.v);
