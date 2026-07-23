@@ -481,6 +481,7 @@
             <span class="pill ${sentPill(a.m)}">${a.m}</span>
             ${(a.k||[]).map(k=>`<span class="pill">${escT(k)}</span>`).join('')}
           </div>
+          ${a.u?`<a class="creative-link" href="${escT(a.u)}" target="_blank" rel="noopener">Read the coverage ↗</a>`:''}
         </div>
       </div>`).join('');
   }
