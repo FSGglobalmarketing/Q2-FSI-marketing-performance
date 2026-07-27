@@ -1100,7 +1100,9 @@
       if(body0) body0.innerHTML = `<p class="muted-txt" style="padding:14px 4px">${D.WEB_NOTE || 'No page analytics are wired into this pack yet.'}</p>`;
       return;
     }
-    const countries = ['all', ...[...new Set(all.map(r=>r.country))]];
+    // 'Global' is the catch-all bucket for unmapped paths (campaign URLs etc.),
+    // not a real market — keep those pages in "All" but don't offer it as a chip.
+    const countries = ['all', ...[...new Set(all.map(r=>r.country))].filter(c=>c!=='Global')];
     const sel = countries.includes(state.pagesCountry) ? state.pagesCountry : 'all';
     // country filter control (rendered from whatever regions the data contains)
     const seg = root.querySelector('[data-seg="pages-country"]');
@@ -1206,7 +1208,7 @@
        .map(x=>`<div><b style="font-size:24px;font-weight:600;display:block;letter-spacing:-.02em">${x.plus?'+':''}${x.v}${x.pct?'%':''}</b><span class="alx-sub">${x.l}</span></div>`).join('');
     }
     const pages = alphixPages();
-    const regions = ['all', ...[...new Set(pages.map(p=>p.region))]];
+    const regions = ['all', ...[...new Set(pages.map(p=>p.region))].filter(r=>r!=='Global')];
     const region = regions.includes(state.alphixRegion) ? state.alphixRegion : 'all';
     const regSeg = q('[data-alphix-region]');
     if(regSeg){
