@@ -278,8 +278,8 @@
     const note = card.querySelector('[data-role="lich-note"]');
     if(note){
       note.innerHTML = Q.paid.i
-        ? `<strong>${Q.label}</strong> — organic reached ${Q.organic.i.toLocaleString()} at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>; paid reached ${Q.paid.i.toLocaleString()} at ${pct(Q.paid.c,Q.paid.i).toFixed(2)}%. Organic converts attention <strong>${(pct(Q.organic.c,Q.organic.i)/pct(Q.paid.c,Q.paid.i)).toFixed(1)}×</strong> harder; paid buys the reach.`
-        : `<strong>${Q.label}</strong> — organic only. ${Q.organic.i.toLocaleString()} impressions at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>. No paid ran this quarter.`;
+        ? `<strong>${Q.label}</strong>: organic reached ${Q.organic.i.toLocaleString()} at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>; paid reached ${Q.paid.i.toLocaleString()} at ${pct(Q.paid.c,Q.paid.i).toFixed(2)}%. Organic converts attention <strong>${(pct(Q.organic.c,Q.organic.i)/pct(Q.paid.c,Q.paid.i)).toFixed(1)}×</strong> harder; paid buys the reach.`
+        : `<strong>${Q.label}</strong>: organic only. ${Q.organic.i.toLocaleString()} impressions at <strong>${pct(Q.organic.c,Q.organic.i).toFixed(2)}% CTR</strong>. No paid ran this quarter.`;
     }
     const tipRows = r => `Impressions ${r.impr.toLocaleString()}<br/>Clicks ${r.clicks.toLocaleString()}<br/>CTR ${pct(r.clicks,r.impr).toFixed(2)}%`;
     if(window.echarts){ try { echartsStackedHBars(el, rows, { labelW:96, rowH:44, hitName:'Clicks', tipRows }); }
@@ -298,7 +298,7 @@
       host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.liAud=b.dataset.aud; renderAllLiAudience(); });
     }
     const note=card.querySelector('[data-role="liaud-note"]');
-    if(note) note.innerHTML = `Who follows the page — <strong>${(L.followers||0).toLocaleString()}</strong> followers, broken down by ${(L.audience[state.liAud]||{}).label.toLowerCase()}.`;
+    if(note) note.innerHTML = `Who follows the page: <strong>${(L.followers||0).toLocaleString()}</strong> followers, broken down by ${(L.audience[state.liAud]||{}).label.toLowerCase()}.`;
   }
   function renderLiAudChart(card){
     const L=liData(); if(!L||!L.audience) return;
@@ -323,7 +323,7 @@
       host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.formDim=b.dataset.dim; renderAllForms(); });
     }
     const note = card.querySelector('[data-role="form-note"]');
-    if(note) note.innerHTML = `<strong>${F.total}</strong> enquiries came through our forms this quarter, split by ${F.dims[state.formDim].label.toLowerCase()}. Aggregate only — no personal details are published.`;
+    if(note) note.innerHTML = `<strong>${F.total}</strong> enquiries came through our forms this quarter, split by ${F.dims[state.formDim].label.toLowerCase()}. Aggregate only, no personal details are published.`;
   }
   function renderFormChart(card){
     const F = D.forms ? D.forms() : null; if(!F) return;
@@ -352,7 +352,7 @@
     }
     const note=card.querySelector('[data-role="lipost-note"]');
     if(note){ const sel=liPostList(); const im=sel.reduce((t,p)=>t+p.i,0);
-      note.innerHTML = `Top posts in <strong>${state.liQ.toUpperCase()} 2026</strong>${state.liCat==='All'?'':` · ${state.liCat}`} — ${sel.length} posts, ${im.toLocaleString()} impressions.`; }
+      note.innerHTML = `Top posts in <strong>${state.liQ.toUpperCase()} 2026</strong>${state.liCat==='All'?'':` · ${state.liCat}`}: ${sel.length} posts, ${im.toLocaleString()} impressions.`; }
   }
   function renderLiPosts(card){
     const host=card.querySelector('[data-role="lipost-grid"]'); if(!host) return;
@@ -503,7 +503,7 @@
     host.className='slide-scroll'; host.style.padding='6px 14px';
     // Diversified groups dwarf a pure infra manager on total press volume, so say
     // so next to the chart rather than letting the bars imply a like-for-like race.
-    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">The diversified giants in this peer set dwarf a specialist manager on raw press volume — read them as context, not as a like-for-like race.</p>
+    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">The diversified giants in this peer set dwarf a specialist manager on raw press volume; read them as context, not as a like-for-like race.</p>
       <div class="chart-wrap" data-role="press-chart"></div>`;
     const el = host.querySelector('[data-role="press-chart"]');
     if(!el || !window.echarts) return;
@@ -769,7 +769,7 @@
       const scope = state.prospectBucket === 'All'
         ? `all <strong>${P.served}</strong> firms we served`
         : `the <strong>${sel.length}</strong> in <strong>${state.prospectBucket}</strong>`;
-      sub.innerHTML = `Our Salesforce pipeline, uploaded to LinkedIn as the <strong>${P.list}</strong> list — ${P.served} of ${P.prospects}`
+      sub.innerHTML = `Our Salesforce pipeline, uploaded to LinkedIn as the <strong>${P.list}</strong> list: ${P.served} of ${P.prospects}`
         + ` matched prospects served, ${P.impr.toLocaleString()} impressions, ${P.engaged} of them clicking or watching.`
         + ` The spend landed where it was aimed: <strong>${100-spill}%</strong> of delivery went to this list and no competitor was served.`
         + `<br/>Showing the top ${Math.min(cap, sel.length)} of ${scope} — ${sel.reduce((t,r)=>t+r.i,0).toLocaleString()} impressions. Paid metrics only.`;
