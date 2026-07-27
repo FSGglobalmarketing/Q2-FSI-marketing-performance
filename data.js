@@ -1050,175 +1050,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 487,
-        "sessions": 81
+        "sessions": 81,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 101,
-        "sessions": 17
+        "sessions": 17,
+        "comp": false
       },
       {
         "firm": "Incisive Media",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Media Production",
         "views": 55,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 24,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Defaqto",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Adobe Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Santander",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Ministry of Justice",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Raymond James",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "UBS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": true
       },
       {
         "firm": "Grant Thornton LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "FNZ Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Fenchurch Advisory Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deloitte",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Royal Bank of Canada",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of America",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Clyde & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Post DHL Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Package/Freight Delivery",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/performance/price-and-performance-sut.html": [
@@ -1227,175 +1252,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 476,
-        "sessions": 79
+        "sessions": 79,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 465,
-        "sessions": 78
+        "sessions": 78,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 420,
-        "sessions": 70
+        "sessions": 70,
+        "comp": false
       },
       {
         "firm": "Intercontinental Exchange, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 205,
-        "sessions": 34
+        "sessions": 34,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 175,
-        "sessions": 29
+        "sessions": 29,
+        "comp": false
       },
       {
         "firm": "Changi Airport Group (Singapore) Pte. Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 156,
-        "sessions": 26
+        "sessions": 26,
+        "comp": false
       },
       {
         "firm": "Chicago Stock Exchange",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 97,
-        "sessions": 16
+        "sessions": 16,
+        "comp": false
       },
       {
         "firm": "Homeland Security",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 71,
-        "sessions": 12
+        "sessions": 12,
+        "comp": false
       },
       {
         "firm": "Actever",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 62,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Johnson Matthey",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 54,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Asean Cableship Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 52,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 52,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Brunei Shell Petroleum Company Sendirian Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 47,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 34,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "National University of Singapore",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 33,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "Shin-Etsu Singapore Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 29,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 28,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Marina Bay Sands Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 19,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "CBRE",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Mondrian Investment Partners Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       }
     ],
     "/sg/en/retail/performance/dividend.html": [
@@ -1404,175 +1454,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 373,
-        "sessions": 62
+        "sessions": 62,
+        "comp": false
       },
       {
         "firm": "Vent-Axia",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Electrical/Electronic Manufacturing",
         "views": 230,
-        "sessions": 38
+        "sessions": 38,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 64,
-        "sessions": 11
+        "sessions": 11,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 40,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Nanyang Technological University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Akzo Nobel N.V.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Chemicals",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Chicago Stock Exchange",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Johnson Matthey",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Mondrian Investment Partners Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Intercontinental Exchange, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NielsenIQ",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aberdeen Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mott MacDonald Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Futu Securities International (Hong Kong) Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/": [
@@ -1581,175 +1656,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 353,
-        "sessions": 59
+        "sessions": 59,
+        "comp": false
       },
       {
         "firm": "ESPN",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Sports",
         "views": 257,
-        "sessions": 43
+        "sessions": 43,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 128,
-        "sessions": 21
+        "sessions": 21,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 127,
-        "sessions": 21
+        "sessions": 21,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 115,
-        "sessions": 19
+        "sessions": 19,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 100,
-        "sessions": 17
+        "sessions": 17,
+        "comp": true
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 90,
-        "sessions": 15
+        "sessions": 15,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 78,
-        "sessions": 13
+        "sessions": 13,
+        "comp": false
       },
       {
         "firm": "Vent-Axia",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Electrical/Electronic Manufacturing",
         "views": 75,
-        "sessions": 13
+        "sessions": 13,
+        "comp": false
       },
       {
         "firm": "Deloitte",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 62,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 61,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 60,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Bank of America",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 53,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Macquarie Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 53,
-        "sessions": 9
+        "sessions": 9,
+        "comp": true
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 50,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 50,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "AlbaCore Capital LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 45,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 44,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Mitsubishi UFJ Financial Group Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 41,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Morgan Stanley",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 40,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "KPMG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 40,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 40,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "UBS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 37,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "Santander",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 34,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       }
     ],
     "/hk/zh/retail/performance/price-and-performance.html": [
@@ -1758,175 +1858,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 259,
-        "sessions": 43
+        "sessions": 43,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 142,
-        "sessions": 24
+        "sessions": 24,
+        "comp": false
       },
       {
         "firm": "CLP Power Hong Kong Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 72,
-        "sessions": 12
+        "sessions": 12,
+        "comp": false
       },
       {
         "firm": "Nanshing America, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Textiles",
         "views": 58,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Cathay Life Insurance Co Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 47,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "City University Of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "VIA Labs, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Tchibo GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Invesco Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "La Prairie Group AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Health and Beauty",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hospital Authority",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sema Group (Hong Kong) Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Economic Times",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Janus Henderson Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Water Supplies Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of China International Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "UBS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/insto/home.html": [
@@ -1935,175 +2060,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 173,
-        "sessions": 29
+        "sessions": 29,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Corporation Service Company",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "GHD Group Pty Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Monetary Authority",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of China International Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Invesco Asset Management (India) Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Seasons",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Post DHL Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Package/Freight Delivery",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BOCI-Prudential Asset Management Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/retail/performance/literature.html": [
@@ -2112,175 +2262,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 167,
-        "sessions": 28
+        "sessions": 28,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 56,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 55,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Bank of China International Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 27,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 26,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Orbis Investment Management",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Goldman Sachs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Deacons",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 18,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 18,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Utmost Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Lockton Companies LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": true
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       }
     ],
     "/hk/en/retail/performance/dividend.html": [
@@ -2289,175 +2464,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Electrical/Electronic Manufacturing",
         "views": 150,
-        "sessions": 25
+        "sessions": 25,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 88,
-        "sessions": 15
+        "sessions": 15,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 33,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 28,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 19,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Tchibo GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Chicago Stock Exchange",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Zurich Insurance Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of China International Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DLA Piper",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GHD Group Pty Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/retail/home.html": [
@@ -2466,175 +2666,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 93,
-        "sessions": 16
+        "sessions": 16,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 63,
-        "sessions": 11
+        "sessions": 11,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 60,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 51,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 45,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 38,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 32,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 29,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 28,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 26,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": true
       },
       {
         "firm": "MyTV Super Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Tchibo GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "GHD Group Pty Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       }
     ],
     "/hk/en/retail/our-funds/rqi-investors.html": [
@@ -2643,175 +2868,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 73,
-        "sessions": 12
+        "sessions": 12,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 65,
-        "sessions": 11
+        "sessions": 11,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 64,
-        "sessions": 11
+        "sessions": 11,
+        "comp": false
       },
       {
         "firm": "AHAM Asset Management Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Swire Properties Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Commercial Real Estate",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Tchibo GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "The University of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "University of Wisconsin-Madison",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cargill, Incorporated",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Agriculture",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Chinese University of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BOCI-Prudential Asset Management Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hongkong Crejoy Technology Co.,ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Corporation Service Company",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "121 Mining Investment",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "City University Of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Monetary Authority",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Prada S.p.a.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Retail",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deacons",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NVIDIA Corporation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/retail/performance/price-and-performance.html": [
@@ -2820,175 +3070,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 60,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 60,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Hsbc Electronic Data Processing India Pvt Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 51,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 38,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "Irwin Mitchell Solicitors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 31,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Deacons",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Hong Kong Housing Society",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 26,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 26,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 24,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "MyTV Super Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": true
       },
       {
         "firm": "Tchibo GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Tetra Tech, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Engineering",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Cargill, Incorporated",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Agriculture",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Shanghai Commercial Bank Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       }
     ],
     "/hk/zh/retail/home.html": [
@@ -2997,175 +3272,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 60,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Nanshing America, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Textiles",
         "views": 19,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": true
       },
       {
         "firm": "G2000 (Apparel) Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BOCI-Prudential Asset Management Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "E Fund Management Co., Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Taishin International Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Chubb",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Ping An Insurance (Hong Kong) Co., Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China International Capital Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Economic Times",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Australian National University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Corporation Service Company",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Oxford Economics",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/private/portals.html": [
@@ -3174,175 +3474,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Architecture and Planning",
         "views": 58,
-        "sessions": 10
+        "sessions": 10,
+        "comp": false
       },
       {
         "firm": "Ministry of Justice",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Melvin Jacobs Estate Agents",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Tokai Carbon Europe",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Mining and Metals",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Rainbow Properties",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Beggs & Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Wholesalers",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Oxford",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The British School of Barcelona",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Charter School",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Navico",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Maritime",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Todd Architects",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Architecture and Planning",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Edinburgh Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Institute of Technical Education",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Exposed",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Graphic Design",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ziser London",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hydro Hotel Eastbourne",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospitality",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cargill, Incorporated",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Agriculture",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Alfred Ashley Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Telecommunications",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Queensgate International College",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Wealth Club Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nhs England",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First State Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aberdeen Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/zh/retail/our-funds/rqi-investors.html": [
@@ -3351,175 +3676,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 56,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 35,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 34,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Tencent Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "MTR Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Vocational Training Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Swire Properties Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Commercial Real Estate",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Hong Kong Economic Times",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "The University of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "The Chinese University of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "University of Aberdeen",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Wellington Management Company LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Cathay Life Insurance Co Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "TAI Guang Medicines Co., Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Hermès International",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Apparel and Fashion",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "City University Of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Patek Philippe SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Luxury Goods and Jewellery",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "La Mer Technology, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Health and Beauty",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Wisconsin-Madison",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Emirates Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Automobili Lamborghini S.p.A",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The New Zealand Automobile Association Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/performance/literature.html": [
@@ -3528,175 +3878,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 54,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 36,
-        "sessions": 6
+        "sessions": 6,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 32,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 27,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 24,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 19,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "NTUC Income Insurance Co-operative Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Samsung Electronics Co., Ltd.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Electronics",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Sefar AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Textiles",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Avallis Financial Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Drew & Napier LLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mitsubishi UFJ Financial Group Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Corporation Service Company",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IOOF Holdings Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/our-funds/balanced-strategy/balanced-funds-asia-pacific.html": [
@@ -3705,175 +4080,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 51,
-        "sessions": 9
+        "sessions": 9,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "The Emirates Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Liberty Insurance Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "RHB Bank Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Marina Bay Sands Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cargill, Incorporated",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Agriculture",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CapitaLand",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aurora Technology",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Shin-Etsu Singapore Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Drew & Napier LLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Qua Aliter Associates",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of China International Holdings Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hamilton Lane",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "HL Bank Singapore",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Singapore Life Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Futu Securities International (Hong Kong) Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Phillip Securities Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/home.html": [
@@ -3882,175 +4282,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 47,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 31,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 31,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 30,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 29,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Samsung Electronics Co., Ltd.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Electronics",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Mitsubishi UFJ Financial Group Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Avallis Financial Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Capital Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Bank of America",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Singapore Airlines Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": true
       },
       {
         "firm": "Sefar AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Textiles",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "National University of Singapore",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Intercontinental Exchange, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/our-funds/fssa-investment-managers.html": [
@@ -4059,175 +4484,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 47,
-        "sessions": 8
+        "sessions": 8,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 27,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "OCBC Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 24,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Taisu Ventures",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Willis Towers Watson",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Boursorama",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Singapore Life Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "iFAST",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Intercontinental Exchange, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "S&P Global Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Bennelong Funds Management Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Great Eastern",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SIX Group Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mighty Velo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Retail",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "MFS Investment Management",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/de/de/professionelle-anleger/our-funds/infrastructure-real-estate/global-listed-infrastructure.html": [
@@ -4236,175 +4686,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 44,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Fey & Co. GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CU Networks GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "E-commerce",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Standard Life Versicherung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Atruvia AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "1741 Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ebner Stolz",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadtwerke Ingolstadt Beteiligungen GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Vorwerk",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Goods",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Financiere De L'echiquier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadt Wolfsburg",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Raiffeisen Bankengruppe",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Federal Ministry of the Interior and Community",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Die Sparkasse Bremen AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Marco Bungalski GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadtwerke Neustrelitz GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Adlatus AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BuchVertrieb Blank GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CLS Computer",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Evangelisch-Lutherische Kirche In Bayern",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Religious Institutions",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Energieforen Leipzig GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Utilities",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ECM Equity Capital Management GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/intermediary/performance/literature.html": [
@@ -4413,175 +4888,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Media",
         "views": 43,
-        "sessions": 7
+        "sessions": 7,
+        "comp": false
       },
       {
         "firm": "Defaqto",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 23,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Cambridge Associates LLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Farley & Thompson LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deloitte",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Post DHL Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Package/Freight Delivery",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Charles Stanley Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Parmenion",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "KPMG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Lockton Companies LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty Insurance Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Amati Global Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Clever Adviser",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Union Bancaire Privée - UBP SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/home.html": [
@@ -4590,175 +5090,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 32,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 24,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Ramsay Health Care",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 22,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 19,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Queensgate International College",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Equiniti",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "JTC Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Royal Bank of Canada",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "M&G Investments Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SIX Group Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fenchurch Advisory Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Wtax Uk Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Phoenix Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Border to Coast Pensions Partnership Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nuclear Waste Services",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Environmental Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "3 Verulam Buildings",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/private/home.html": [
@@ -4767,175 +5292,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 27,
-        "sessions": 5
+        "sessions": 5,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Deloitte",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "AlbaCore Capital LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Lockton Companies LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ministry of Defence",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Tokai Carbon Europe",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Mining and Metals",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "M&G Investments Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Baringa",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consultants",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CoStar UK Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aberdeen Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Rothschild & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "MorgenFund",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Lazard, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Charter School",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fenchurch Advisory Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mediaworks",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Morgan Stanley",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Edinburgh Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/performance/literature.html": [
@@ -4944,175 +5494,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 25,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "Irwin Mitchell Solicitors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 21,
-        "sessions": 4
+        "sessions": 4,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 14,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Queensgate International College",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Institutional Shareholder Services Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GHD Group Pty Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Exchange Data International India Private Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Teletrader d.o.o.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Russell Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Juniper Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TISCO Bank Public Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cambridge Associates LLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Phoenix Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IBIS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Royal Bank of Canada",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "AlbaCore Capital LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Royal Bank of Canada Trust Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JM Finn",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/retail/our-funds/fssa-investment-managers.html": [
@@ -5121,175 +5696,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 20,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 12,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Housing Society",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Novo Nordisk",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Pharmaceuticals",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BetaShares Capital Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Securities and Futures Commission",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ATS Healthcare",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Johnson Matthey",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cultural Affairs Bureau of the Macao Special Administrative Region Government.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aberdeen Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Citigroup Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Capital Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Morgan Stanley",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/home.html": [
@@ -5298,175 +5898,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 18,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Norton Rose Fulbright",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Teletrader d.o.o.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "AHAM Asset Management Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Industrial and Commercial Bank of China Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "HSBC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "baha GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dillon Eustace",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ALS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Environmental Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IPE-Quest",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GHD Group Pty Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Civil Engineering",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Goldman Sachs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fida Informatica",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Affirmative Finance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Intesa Sanpaolo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IR Japan, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Public Relations and Communications",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Harvest SAS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sigmar Recruitment Consultants Ltd.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/performance/literature.html": [
@@ -5475,175 +6100,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 18,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Institutional Shareholder Services Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Teletrader d.o.o.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Exchange Data International India Private Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "AHAM Asset Management Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "RL360 Insurance Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cathay Life Insurance Co Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deloitte",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Rathbone Investment Management",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Goldman Sachs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ogier Legal Limited Partnership",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "International Fund Services & Asset Management S.A.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "baha GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Revenue Commissioners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "United Overseas Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College Cork",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DWS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fida Informatica",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Prisminvest SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Justerini & Brooks",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/our-funds/fssa-investment-managers.html": [
@@ -5652,175 +6302,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 17,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "360 Degree Underwriting",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Irish National Teachers' Organisation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Professional Bodies",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College Cork",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Microsoft",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Raidió Teilifís Éireann",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Broadcast Media",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Price Forbes & Partners Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liverpool Football Club",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Sports",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Moran Hotels Ireland, Dublin Hotels latest offers, Special Offer Cork Hotels",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Irwin Expert Electrical",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mercer LLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Jazz Pharmaceuticals",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Department Of Agriculture Food And The Marine",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ESB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FLI Global",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Noesis",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IDA Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Schroder Investment Management Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Alliance Automotive Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Label Application Solutions Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Packaging and Containers",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SIX Group Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Queen's University Belfast",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fitzpatrick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Evercam Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/fixed-income/asian-fixed-income.html": [
@@ -5829,175 +6504,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 16,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Edgbaston Investment Partners LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "North West Ambulance Service NHS Trust",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Gloucestershire County Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Caredig",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Baker Property Consultants Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Pareto Securities Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The University of Edinburgh",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kew Electrical",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Wholesalers",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Diabetes UK",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Abbey Heat Transfer",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Engineering",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "top3",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cure Usher Syndrome",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cornerstone Finance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Jigsaw Business Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Barnwell School",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "J.P. Morgan",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Roydon Academy",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Elysian",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Individual and Family Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NHS Scotland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JMF Advisory Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/de/de/professionelle-anleger/our-funds/fssa-investment-managers.html": [
@@ -6006,175 +6706,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "E-commerce",
         "views": 15,
-        "sessions": 3
+        "sessions": 3,
+        "comp": false
       },
       {
         "firm": "Ausland Sprachendienst Gesellschaft mit beschränkter Haftung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TUI",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "htp communications GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Marketing and Advertising",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Vorwerk",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Goods",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadt Wolfsburg",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadtwerke Neustrelitz GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Feri AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "@gillo.de",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Duisburger Versorgungs- und Verkehrsgesellschaft mbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Utilities",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Penguin Random House Verlagsgruppe GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Frankfurt Main Finance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadtwerke Merseburg GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Telepark Passau GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "EDISOFT GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Reisebüro Egon van Almsick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ATG:biosynthetics",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Research",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ärzteversorgung Niedersachsen",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ADAC Reisevertrieb GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Leibniz Universität Hannover",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DVAG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dockweiler AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Mining and Metals",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "AMONDO GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DRK-Blutspendedienst West gemeinnützige Gesellschaft mit beschränkter Haftung der Landesve",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/zh/retail/insights.html": [
@@ -6183,140 +6908,160 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 13,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "G2000 (Apparel) Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SinoPac Financial Holdings Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "top3",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Central Business Information Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Bank of East Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "United Country Real Estate | Results Realty and Auction",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Petroliam Nasional Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mingpao",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Colgate University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Alternative Investment Management Association Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mingpao",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Wuxi MBY Bearing Technology Co.,Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Alternative Investment Management Association Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 0,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/de/de/professionelle-anleger/our-funds/stewart-investors.html": [
@@ -6325,175 +7070,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "E-commerce",
         "views": 11,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Ausland Sprachendienst Gesellschaft mit beschränkter Haftung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DERTOUR Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Tolukan Holding GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TUI",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dockweiler AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Mining and Metals",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "htp communications GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Marketing and Advertising",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Lufthansa City Center",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "E. Breuninger GmbH & Co.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Retail",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadt Wolfsburg",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Standard Life Versicherung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ludwig-Maximilians-Universität München",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Movie Art Marketing GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Marketing and Advertising",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Penguin Random House Verlagsgruppe GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sedus Stoll",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Furniture",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Vorwerk",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Goods",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Heidelberg University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Puhl GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Telecommunications",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fleuter Verwaltungsgesellschaft MbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Leipzig University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Daimler Truck AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "VPV Versicherungen",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ernst & Young",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "LVM Versicherung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/sg/en/retail/insights.html": [
@@ -6502,175 +7272,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "top3",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty General Insurance Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mondrian Investment Partners Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "LRQA Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "International Trade and Development",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsche Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Freshfields Bruckhaus Deringer LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Azelis",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Crown Worldwide Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ebner Stolz",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Samsung Electronics Co., Ltd.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Electronics",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Millennium Partners",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Walker Wayland NSW",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Johnson Matthey",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Accuracy",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Management Consulting",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Tullett Prebon",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Arcadis N.V.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Engineering",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Russell Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TD Bank Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GIC Private Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IR Japan, Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Public Relations and Communications",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IPP Financial Advisers Pte Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/our-funds/fixed-income/asian-fixed-income.html": [
@@ -6679,175 +7474,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "baha GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Bar of Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Leicester",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Suir Engineering",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Limerick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bank of Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Royal College of Surgeons in Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ESB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NorthStandard Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Leeds",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Roomex",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CU Networks GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "E-commerce",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ricoh Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "InterTradeIreland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Professional Bodies",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DFDS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Payzone PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Alanna Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "School of Surveying & Construction Management",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Louth & Meath Education and Training Board",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Clear Connections",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/en/retail/insights.html": [
@@ -6856,175 +7676,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 10,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Permira",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kuehne+Nagel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DWS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sun Life",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cathay Life Insurance Co Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Pictet Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Macquarie Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Mirae Asset Financial Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "IOOF Holdings Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "LGBR Capital London Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Knight Frank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Seasons",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "RHB Bank Berhad",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "121 Mining Investment",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "top3",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ET Net Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/hk/zh/retail/our-funds/fssa-investment-managers.html": [
@@ -7033,175 +7878,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 9,
-        "sessions": 2
+        "sessions": 2,
+        "comp": false
       },
       {
         "firm": "Liberty International Insurance Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 8,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier Investors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nanshing America, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Textiles",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Leisure and Cultural Services Department",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "China Everbright Securities International Company Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DBS Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "JPMorgan Chase & Co",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Changhua Christian Hospital",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nan Ya Plastics Corporation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong Economic Times",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Australian National University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "State Administration of Foreign Exchange",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "E Fund Management Co., Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CTCI Corporation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Hongkong and Shanghai Banking Corporation Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Chinese University of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "G2000 (Apparel) Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hong Kong International Airport",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Taishin International Bank",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "City University Of Hong Kong",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Chong Hing Bank Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Wolver Hill Asset Management Asia Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sema Group (Hong Kong) Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/fssa-investment-managers.html": [
@@ -7210,175 +8080,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Caredig",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Nottingham",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Aberdeen",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Swansea University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Norfolk County Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Surrey",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kingston University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College London",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Maximus UK",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Staffing and Recruitment",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cardiff University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Leeds",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Birmingham City Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Leicester",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Kent",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Printing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Nursing and Midwifery Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "British Airways",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Salvation Army",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "London Borough of Hackney",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fido Pr",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Public Relations and Communications",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Children in Northern Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "baha GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The British Horse Society",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/stewart-investors.html": [
@@ -7387,175 +8282,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 7,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College London",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Higos Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The University of Edinburgh",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Nottingham",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "24hr Solutions",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Caredig",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Buckinghamshire Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Chicago Stock Exchange",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Leicester",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University Of Cambridge",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Kingston University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Birmingham City Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "North West Ambulance Service NHS Trust",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liberty",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Construction",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The British Red Cross",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NHS Scotland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Manchester University NHS Foundation Trust",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "AlbaCore Capital LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The University of Sheffield",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sona Insurance Brokers",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Schools Week",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Great Ormond Street Hospital",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/rqi-investors.html": [
@@ -7564,175 +8484,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Building and Maintenance Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Copenhagen Merchants Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Logistics and Supply Chain",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Brit Insurance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Örn Marketing AB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Marketing and Advertising",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Nottingham",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Söderhamns kommun",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "E3P",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Environmental Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sandviken Energi AB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TMI Foods",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverage Production",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Danmarks Tekniske Universitet",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ultima Media",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Brainkind",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ljusdals Kommun",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Savills",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Birmingham City Council",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "KL Elektronik",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Lithos Natursten ApS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Building Materials and Tools",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "eRate AS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Telecommunications",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sandvikens kommun",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SpinDrive",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Universitair Ziekenhuis Gent",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hotel-Café-Restaurant De Biltsche Hoek Beheer B.V.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dienstencentrum Land van Horne",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Morgan Stanley",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/infrastructure-real-estate/global-listed-infrastructure.html": [
@@ -7741,175 +8686,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Phoenix Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Atlantic House Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Russell Investments",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College London",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GPP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Union Bancaire Privée - UBP SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNP Paribas",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Walker Crips",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Capital Markets",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "CMS Legal Services EEIG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Newcastle University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Polar Capital LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ricoh",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Supplies and Equipment",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TrinityBridge",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Guide Dogs UK",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Jet2com Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Macquarie Group Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": true
       },
       {
         "firm": "Royal London Mutual Insurance Society Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Accor SA",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hotels and Accommodation",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Frankfurt Main Finance",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mencap",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/our-funds/infrastructure-real-estate/global-listed-infrastructure.html": [
@@ -7918,175 +8888,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 6,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Willis Towers Watson plc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Insurance",
         "views": 5,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Ricoh Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "PricewaterhouseCoopers LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FE Fundinfo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mediolanum International Funds Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Davy Group",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Goodbody",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Barclays Bank PLC",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Amundi Investment Solutions",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Raidió Teilifís Éireann",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Broadcast Media",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ALS",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Environmental Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Noesis",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Information Technology and Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dillon Eustace",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fitzwilliam Hotel (*****)",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TSS Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bord Bia",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "London Children's Practice",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fitzpatrick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Scania CV AB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Scorebuddy",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "New Ireland Assurance Company",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dogs Trust CLG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/our-funds/stewart-investors.html": [
@@ -8095,175 +9090,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "FactSet Research Systems Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Apollo Language Centre Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Agri Cs",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Machinery",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Raidió Teilifís Éireann",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Broadcast Media",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Queen's University Belfast",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "360 Degree Underwriting",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "ESB",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Oil and Energy",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Rockwell Automation, Inc.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Industrial Automation",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Swansea University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Gaelchultúr",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bord Bia",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "baha GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Publishing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Connolly Stairs & Doors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "OSSM Cloud",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Castleforms Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "DCC Vital",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Medical Supplies and Equipment",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Galway",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The CFO Center",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Accounting",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "The Bar of Ireland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Newcastle University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Bloomberg L.P.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Irish Water",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Utilities",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aer Lingus Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dublin Port",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Maritime",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/uk/en/institutional/our-funds/infrastructure-real-estate/global-property.html": [
@@ -8272,175 +9292,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 4,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "KBC Bank & Verzekering",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "First Sentier",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "BNY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Newcastle University",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Lego",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Consumer Goods",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mencap",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "New Line Learning Academy",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "U.K.P. Accessories",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Supplies and Equipment",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Studio Play LTD",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Design",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nutone Interiors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Construction",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Transport for London",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Transportation/Trucking/Railroad",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Family Outings",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "D2 Integrated Systems",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Security and Investigations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Sanlam",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Prosport Physiotherapy Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Arts Trail Studios",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Museums and Galleries",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Integrity Automotive",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Automotive",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Van Lanschot Kempen Wealth Management NV",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "North West Ambulance Service NHS Trust",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "British Airways",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cotswold Retreats",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospitality",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Surbiton High School",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GE Aerospace",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Aviation and Aerospace",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Roberts Limbrick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Architecture and Planning",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/ie/en/professional-investor/our-funds/rqi-investors.html": [
@@ -8449,175 +9494,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "360 Degree Underwriting",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 3,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Royal Victoria Eye & Ear Hospital",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospital and Healthcare",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University College Cork",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stockland",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Real Estate",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Liverpool Football Club",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Sports",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "MSCI Inc",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Queen's University Belfast",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Wells Fargo",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Apollo Language Centre Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dimensional Fund Advisors",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Management",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Intel Corporation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Royal School Cavan",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Label Application Solutions Limited",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Packaging and Containers",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Cae",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Absolut Research GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Missouri",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Humanscale International Holdings Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Furniture",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Roomex",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computer Software",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Universal Floral",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Facilities Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hibernian Hotel Mallow",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Hospitality",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hickey Metering Ltd",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "LV=",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "University of Limerick",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Education",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mason Hayes & Curran LLP",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ],
     "/de/de/professionelle-anleger/our-funds/rqi-investors.html": [
@@ -8626,175 +9696,200 @@ window.MI_REMOTE = {
         "domain": "www.firstsentierinvestors.com",
         "industry": "E-commerce",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Berenberg",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Banking",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "NewMark Finanzkommunikation GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Business Services",
         "views": 2,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Duisburger Versorgungs- und Verkehrsgesellschaft mbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Utilities",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Penguin Random House Verlagsgruppe GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Fritz Garritzmann",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Sports",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "E. Breuninger GmbH & Co.",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Retail",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Magdalene Linek",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Reisekreisel",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "RossiCom",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Aux Delices Normands",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Stadt Wolfsburg",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Government",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Deutsches Elektronen-Synchrotron DESY",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Electrical/Electronic Manufacturing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Dockweiler AG",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Mining and Metals",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Quoniam",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Investment Banking",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Hengeler Mueller",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Legal Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Siemens Aktiengesellschaft",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Electrical/Electronic Manufacturing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Nasko It-Systeme GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Unknown",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "TLT Urlaubsreisen GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Leisure, Travel and Tourism",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Pannekookehauus",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Food and Beverages",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "GAP Gesellschaft für anwendungsorientierte Programmierung mbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Yamaha Corporation",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Music",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Helmholtz-Zentrum Berlin für Materialien und Energie Gesellschaft mit beschränkter Haftung",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Charities and Non Profit Organizations",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "SozialFactoring GmbH",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Financial Services",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       },
       {
         "firm": "Mobile Data Collection",
         "domain": "www.firstsentierinvestors.com",
         "industry": "Computing",
         "views": 1,
-        "sessions": 1
+        "sessions": 1,
+        "comp": false
       }
     ]
   },
@@ -8813,9 +9908,21 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/9457664785617665584",
       "firstShown": "2026-07-13",
-      "lastShown": "2026-07-22",
-      "variants": 10,
+      "lastShown": "2026-07-27",
+      "variants": 11,
       "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR12330893377884127233"
+    },
+    {
+      "competitor": "Fidelity",
+      "color": "var(--c-a)",
+      "advertiser": "PTARMIGAN MEDIA LTD",
+      "domain": "fidelity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17093452660962768042",
+      "firstShown": "2026-01-28",
+      "lastShown": "2026-07-27",
+      "variants": 123,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR09383356003807920129"
     },
     {
       "competitor": "Fidelity",
@@ -8828,18 +9935,6 @@ window.MI_REMOTE = {
       "lastShown": "2026-07-22",
       "variants": 115,
       "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR06921575857496522753"
-    },
-    {
-      "competitor": "Fidelity",
-      "color": "var(--c-a)",
-      "advertiser": "PTARMIGAN MEDIA LTD",
-      "domain": "fidelity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17093452660962768042",
-      "firstShown": "2026-01-28",
-      "lastShown": "2026-07-22",
-      "variants": 122,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR09383356003807920129"
     },
     {
       "competitor": "Fidelity",
@@ -8955,11 +10050,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12621083127985540130",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1278578197691302309",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-07-23",
-      "variants": 485,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR16682899772310290433"
+      "lastShown": "2026-07-27",
+      "variants": 488,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR11978488090021855233"
     },
     {
       "competitor": "Vanguard AU",
@@ -8967,23 +10062,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17698000099960497453",
-      "firstShown": "2026-03-18",
-      "lastShown": "2026-07-23",
-      "variants": 129,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR14344962216250310657"
-    },
-    {
-      "competitor": "Vanguard AU",
-      "color": "var(--c-c)",
-      "advertiser": "Vanguard Investments Australia ltd",
-      "domain": "vanguard.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/14982647357691852094",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7665095762993161017",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-07-23",
-      "variants": 484,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR12908259311725051905"
+      "lastShown": "2026-07-26",
+      "variants": 488,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR10116827987220365313"
     },
     {
       "competitor": "Vanguard AU",
@@ -8991,11 +10074,23 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17812831187276772440",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9862770757646621166",
+      "firstShown": "2026-04-22",
+      "lastShown": "2026-07-26",
+      "variants": 97,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR07165984441808977921"
+    },
+    {
+      "competitor": "Vanguard AU",
+      "color": "var(--c-c)",
+      "advertiser": "Vanguard Investments Australia ltd",
+      "domain": "vanguard.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1626103265510200727",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-07-23",
-      "variants": 484,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR12875608214426615809"
+      "lastShown": "2026-07-26",
+      "variants": 488,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR08329224390596100097"
     },
     {
       "competitor": "Vanguard AU",
@@ -9003,11 +10098,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/258695305950578891",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8764515572281404377",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-07-23",
-      "variants": 484,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR02062478703249588225"
+      "lastShown": "2026-07-26",
+      "variants": 488,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR08364254831057043457"
     },
     {
       "competitor": "Vanguard AU",
@@ -9015,11 +10110,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12296596504952595577",
-      "firstShown": "2024-11-13",
-      "lastShown": "2026-07-23",
-      "variants": 616,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR05518069820353937409"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15756820303743983340",
+      "firstShown": "2026-07-07",
+      "lastShown": "2026-07-26",
+      "variants": 21,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR14285763479418699777"
     },
     {
       "competitor": "UBS",
@@ -9027,47 +10122,11 @@ window.MI_REMOTE = {
       "advertiser": "UBS Business Solutions AG",
       "domain": "ubs.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/13833178814837313150",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11926216693956767404",
       "firstShown": "2025-07-31",
-      "lastShown": "2026-07-23",
-      "variants": 343,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14363957147203534849"
-    },
-    {
-      "competitor": "UBS",
-      "color": "var(--c-d)",
-      "advertiser": "UBS Business Solutions AG",
-      "domain": "ubs.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/8470274971352464085",
-      "firstShown": "2025-11-04",
-      "lastShown": "2026-07-23",
-      "variants": 236,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR11087372707854024705"
-    },
-    {
-      "competitor": "UBS",
-      "color": "var(--c-d)",
-      "advertiser": "UBS Business Solutions AG",
-      "domain": "ubs.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/6957959179657788070",
-      "firstShown": "2025-11-04",
-      "lastShown": "2026-07-23",
-      "variants": 236,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14581676461141262337"
-    },
-    {
-      "competitor": "UBS",
-      "color": "var(--c-d)",
-      "advertiser": "UBS Business Solutions AG",
-      "domain": "ubs.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17470136851421354569",
-      "firstShown": "2025-07-31",
-      "lastShown": "2026-07-23",
-      "variants": 332,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR13957894858682138625"
+      "lastShown": "2026-07-27",
+      "variants": 323,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR10879582052634591233"
     },
     {
       "competitor": "UBS",
@@ -9077,9 +10136,45 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/11898131073845752221",
       "firstShown": "2025-11-04",
-      "lastShown": "2026-07-22",
-      "variants": 235,
+      "lastShown": "2026-07-27",
+      "variants": 239,
       "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR11306256636533800961"
+    },
+    {
+      "competitor": "UBS",
+      "color": "var(--c-d)",
+      "advertiser": "UBS Business Solutions AG",
+      "domain": "ubs.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10221893292666723590",
+      "firstShown": "2025-07-31",
+      "lastShown": "2026-07-26",
+      "variants": 328,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR12036175582480826369"
+    },
+    {
+      "competitor": "UBS",
+      "color": "var(--c-d)",
+      "advertiser": "UBS Business Solutions AG",
+      "domain": "ubs.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7421415090917832532",
+      "firstShown": "2025-11-04",
+      "lastShown": "2026-07-26",
+      "variants": 240,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR01225990082406645761"
+    },
+    {
+      "competitor": "UBS",
+      "color": "var(--c-d)",
+      "advertiser": "UBS Business Solutions AG",
+      "domain": "ubs.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12080120806866049594",
+      "firstShown": "2025-07-31",
+      "lastShown": "2026-07-26",
+      "variants": 335,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14523039368593014785"
     },
     {
       "competitor": "UBS",
@@ -9089,8 +10184,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/3117336043057562031",
       "firstShown": "2026-05-15",
-      "lastShown": "2026-07-22",
-      "variants": 69,
+      "lastShown": "2026-07-26",
+      "variants": 73,
       "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR11280461750148792321"
     },
     {
@@ -9099,11 +10194,23 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5449066472975355792",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11325677828042978902",
+      "firstShown": "2023-03-07",
+      "lastShown": "2026-07-27",
+      "variants": 1226,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR09655452824938479617"
+    },
+    {
+      "competitor": "BetaShares",
+      "color": "var(--c-us)",
+      "advertiser": "BetaShares Capital Ltd",
+      "domain": "betashares.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11243985153682515372",
       "firstShown": "2026-04-09",
-      "lastShown": "2026-07-23",
-      "variants": 103,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR06177546028426723329"
+      "lastShown": "2026-07-27",
+      "variants": 106,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR18155897212071051265"
     },
     {
       "competitor": "BetaShares",
@@ -9111,11 +10218,11 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5580125310333331110",
-      "firstShown": "2022-08-02",
-      "lastShown": "2026-07-23",
-      "variants": 1427,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR05925306713711312897"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1897227502495063051",
+      "firstShown": "2022-05-18",
+      "lastShown": "2026-07-27",
+      "variants": 1315,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR07662864939085725697"
     },
     {
       "competitor": "BetaShares",
@@ -9123,11 +10230,23 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2227153692087501306",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1099442650160748683",
+      "firstShown": "2023-03-07",
+      "lastShown": "2026-07-27",
+      "variants": 1034,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR00111721032900935681"
+    },
+    {
+      "competitor": "BetaShares",
+      "color": "var(--c-us)",
+      "advertiser": "BetaShares Capital Ltd",
+      "domain": "betashares.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13242681024530663189",
       "firstShown": "2026-03-06",
-      "lastShown": "2026-07-23",
-      "variants": 140,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR06909005347214589953"
+      "lastShown": "2026-07-27",
+      "variants": 143,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR17846278517260550145"
     },
     {
       "competitor": "BetaShares",
@@ -9135,155 +10254,83 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/18218476130358499163",
-      "firstShown": "2022-08-10",
-      "lastShown": "2026-07-23",
-      "variants": 1420,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR15674658175259246593"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9236313646723118341",
+      "firstShown": "2026-07-17",
+      "lastShown": "2026-07-27",
+      "variants": 8,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR00885556775363805185"
     },
     {
-      "competitor": "BetaShares",
-      "color": "var(--c-us)",
-      "advertiser": "BetaShares Capital Ltd",
-      "domain": "betashares.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/16010948702064996848",
-      "firstShown": "2025-08-26",
-      "lastShown": "2026-07-23",
-      "variants": 328,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR12634001701137809409"
-    },
-    {
-      "competitor": "BetaShares",
-      "color": "var(--c-us)",
-      "advertiser": "BetaShares Capital Ltd",
-      "domain": "betashares.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2326755804232377484",
-      "firstShown": "2022-08-11",
-      "lastShown": "2026-07-23",
-      "variants": 1363,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR02274410376957263873"
-    },
-    {
-      "competitor": "BlackRock",
+      "competitor": "BlackRock / iShares",
       "color": "var(--c-muted)",
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12176659461523531568",
-      "firstShown": "2026-06-10",
-      "lastShown": "2026-07-23",
-      "variants": 44,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR12231016078079164417"
-    },
-    {
-      "competitor": "BlackRock",
-      "color": "var(--c-muted)",
-      "advertiser": "BlackRock Investment Management (Australia) Limited",
-      "domain": "blackrock.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/326594435820558990",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11568411462289037471",
       "firstShown": "2025-05-22",
-      "lastShown": "2026-07-23",
-      "variants": 207,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR01263658594860007425"
+      "lastShown": "2026-07-27",
+      "variants": 429,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR13512269255575339009"
     },
     {
-      "competitor": "BlackRock",
+      "competitor": "BlackRock / iShares",
       "color": "var(--c-muted)",
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/9539533827646780872",
-      "firstShown": "2025-05-23",
-      "lastShown": "2026-07-23",
-      "variants": 185,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR12519297693190717441"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8505845350875456115",
+      "firstShown": "2026-06-10",
+      "lastShown": "2026-07-27",
+      "variants": 47,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR06818542547002982401"
     },
     {
-      "competitor": "BlackRock",
+      "competitor": "BlackRock / iShares",
       "color": "var(--c-muted)",
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/13934274646460493109",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/18322230515890536194",
       "firstShown": "2025-12-08",
-      "lastShown": "2026-07-23",
-      "variants": 226,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR09882749512219361281"
+      "lastShown": "2026-07-27",
+      "variants": 229,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR05275602277791432705"
     },
     {
-      "competitor": "BlackRock",
-      "color": "var(--c-muted)",
-      "advertiser": "BlackRock, Inc.",
-      "domain": "blackrock.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/174542010120974434",
-      "firstShown": "2026-05-18",
-      "lastShown": "2026-07-23",
-      "variants": 67,
-      "preview": "https://adstransparency.google.com/advertiser/AR17709583924570619905/creative/CR07510685116687974401"
-    },
-    {
-      "competitor": "BlackRock",
+      "competitor": "BlackRock / iShares",
       "color": "var(--c-muted)",
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/14304785982753062153",
-      "firstShown": "2025-12-08",
-      "lastShown": "2026-07-23",
-      "variants": 218,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR08247133606925828097"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1875527827235302310",
+      "firstShown": "2025-05-22",
+      "lastShown": "2026-07-27",
+      "variants": 428,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR11283764794747781121"
     },
     {
-      "competitor": "Colonial First State",
-      "color": "var(--c-a)",
-      "advertiser": "The Speed Agency Pty Ltd",
-      "domain": "cfs.com.au",
-      "format": "Text",
-      "image": null,
-      "firstShown": "2026-06-23",
-      "lastShown": "2026-07-23",
-      "variants": 30,
-      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR01380446546708922369"
+      "competitor": "BlackRock / iShares",
+      "color": "var(--c-muted)",
+      "advertiser": "BlackRock Investment Management (Australia) Limited",
+      "domain": "blackrock.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/821468575969015478",
+      "firstShown": "2026-06-10",
+      "lastShown": "2026-07-27",
+      "variants": 47,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR09034665407390154753"
     },
     {
-      "competitor": "Colonial First State",
-      "color": "var(--c-a)",
-      "advertiser": "The Speed Agency Pty Ltd",
-      "domain": "cfs.com.au",
-      "format": "Text",
-      "image": null,
-      "firstShown": "2026-06-23",
-      "lastShown": "2026-07-23",
-      "variants": 30,
-      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR15236146833290952705"
-    },
-    {
-      "competitor": "Colonial First State",
-      "color": "var(--c-a)",
-      "advertiser": "The Speed Agency Pty Ltd",
-      "domain": "cfs.com.au",
-      "format": "Text",
-      "image": null,
-      "firstShown": "2026-06-25",
-      "lastShown": "2026-07-23",
-      "variants": 29,
-      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR04759472278259892225"
-    },
-    {
-      "competitor": "Colonial First State",
-      "color": "var(--c-a)",
-      "advertiser": "The Speed Agency Pty Ltd",
-      "domain": "cfs.com.au",
-      "format": "Text",
-      "image": null,
-      "firstShown": "2026-06-26",
-      "lastShown": "2026-07-23",
-      "variants": 28,
-      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR10496151106436988929"
+      "competitor": "BlackRock / iShares",
+      "color": "var(--c-muted)",
+      "advertiser": "BlackRock Investment Management (Australia) Limited",
+      "domain": "blackrock.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5242366533342816638",
+      "firstShown": "2025-09-04",
+      "lastShown": "2026-07-27",
+      "variants": 94,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR11483216229796151297"
     },
     {
       "competitor": "Colonial First State",
@@ -9293,109 +10340,613 @@ window.MI_REMOTE = {
       "format": "Text",
       "image": null,
       "firstShown": "2026-06-24",
-      "lastShown": "2026-07-23",
-      "variants": 29,
+      "lastShown": "2026-07-27",
+      "variants": 33,
       "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR12813157457207492609"
     },
     {
-      "competitor": "Resolution Capital",
-      "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2226425401641257740",
-      "firstShown": "2024-06-28",
-      "lastShown": "2026-07-23",
-      "variants": 754,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR05173237083820523521"
+      "competitor": "Colonial First State",
+      "color": "var(--c-a)",
+      "advertiser": "The Speed Agency Pty Ltd",
+      "domain": "cfs.com.au",
+      "format": "Text",
+      "image": null,
+      "firstShown": "2026-06-26",
+      "lastShown": "2026-07-27",
+      "variants": 32,
+      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR10496151106436988929"
     },
     {
-      "competitor": "Resolution Capital",
-      "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/13623948315611592531",
-      "firstShown": "2024-06-28",
-      "lastShown": "2026-07-23",
-      "variants": 755,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR10510613970719604737"
+      "competitor": "Colonial First State",
+      "color": "var(--c-a)",
+      "advertiser": "The Speed Agency Pty Ltd",
+      "domain": "cfs.com.au",
+      "format": "Text",
+      "image": null,
+      "firstShown": "2026-06-23",
+      "lastShown": "2026-07-26",
+      "variants": 34,
+      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR15236146833290952705"
     },
     {
-      "competitor": "Resolution Capital",
-      "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10960129305928772198",
-      "firstShown": "2026-04-12",
-      "lastShown": "2026-07-22",
-      "variants": 102,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR11453110570635493377"
+      "competitor": "Colonial First State",
+      "color": "var(--c-a)",
+      "advertiser": "The Speed Agency Pty Ltd",
+      "domain": "cfs.com.au",
+      "format": "Text",
+      "image": null,
+      "firstShown": "2026-06-23",
+      "lastShown": "2026-07-26",
+      "variants": 34,
+      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR01380446546708922369"
     },
     {
-      "competitor": "Resolution Capital",
-      "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10452347193741089825",
-      "firstShown": "2026-01-09",
-      "lastShown": "2026-07-21",
-      "variants": 193,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR12853557568861110273"
+      "competitor": "Colonial First State",
+      "color": "var(--c-a)",
+      "advertiser": "The Speed Agency Pty Ltd",
+      "domain": "cfs.com.au",
+      "format": "Text",
+      "image": null,
+      "firstShown": "2026-06-25",
+      "lastShown": "2026-07-26",
+      "variants": 32,
+      "preview": "https://adstransparency.google.com/advertiser/AR08855540944452190209/creative/CR04759472278259892225"
     },
     {
-      "competitor": "Resolution Capital",
+      "competitor": "Alphinity",
       "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10106471113836913548",
-      "firstShown": "2026-01-12",
-      "lastShown": "2026-04-10",
-      "variants": 90,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR07780762762023534593"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/824691607168467934",
+      "firstShown": "2024-10-03",
+      "lastShown": "2026-07-27",
+      "variants": 581,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR05995564630552870913"
     },
     {
-      "competitor": "Resolution Capital",
+      "competitor": "Alphinity",
       "color": "var(--c-b)",
-      "advertiser": "Pinnacle Investment Management Group Limited",
-      "domain": "rescap.com",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/3966947437024653995",
-      "firstShown": "2024-06-29",
-      "lastShown": "2025-11-08",
-      "variants": 269,
-      "preview": "https://adstransparency.google.com/advertiser/AR09429417629681975297/creative/CR16385524500252327937"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1304029209596450349",
+      "firstShown": "2024-10-03",
+      "lastShown": "2026-07-27",
+      "variants": 582,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR05606109915413217281"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/16280417696396440603",
+      "firstShown": "2024-10-03",
+      "lastShown": "2026-07-27",
+      "variants": 574,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR08631521162599333889"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17489298570605093511",
+      "firstShown": "2024-10-03",
+      "lastShown": "2026-07-27",
+      "variants": 568,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR07138246795687100417"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1782981155532996070",
+      "firstShown": "2024-10-22",
+      "lastShown": "2026-07-27",
+      "variants": 556,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR12710687723732598785"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15119118749538284056",
+      "firstShown": "2025-02-10",
+      "lastShown": "2026-07-27",
+      "variants": 486,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR09655011285120581633"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/6267979903316527823",
+      "firstShown": "2024-02-28",
+      "lastShown": "2026-07-27",
+      "variants": 843,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR01954656813458653185"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2710069236415836941",
+      "firstShown": "2024-02-29",
+      "lastShown": "2026-07-27",
+      "variants": 549,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR12592742097808785409"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11898780069919003841",
+      "firstShown": "2025-05-16",
+      "lastShown": "2026-07-27",
+      "variants": 201,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR02074764775027376129"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/16098289090117835336",
+      "firstShown": "2024-02-28",
+      "lastShown": "2026-07-27",
+      "variants": 881,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR13220818461405478913"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4228481212015751646",
+      "firstShown": "2025-05-22",
+      "lastShown": "2026-07-27",
+      "variants": 260,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR08143629336088412161"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17711914789667228317",
+      "firstShown": "2025-04-21",
+      "lastShown": "2026-07-27",
+      "variants": 248,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR16596836796726247425"
+    },
+    {
+      "competitor": "Federated Hermes",
+      "color": "var(--c-d)",
+      "advertiser": "FEDERATED HERMES LIMITED",
+      "domain": "hermes-investment.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/6864937994394482086",
+      "firstShown": "2025-09-29",
+      "lastShown": "2025-11-30",
+      "variants": 21,
+      "preview": "https://adstransparency.google.com/advertiser/AR12949546591823331329/creative/CR04190601497672679425"
+    },
+    {
+      "competitor": "Federated Hermes",
+      "color": "var(--c-d)",
+      "advertiser": "FEDERATED HERMES LIMITED",
+      "domain": "hermes-investment.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4831884624291736511",
+      "firstShown": "2025-09-29",
+      "lastShown": "2025-11-30",
+      "variants": 21,
+      "preview": "https://adstransparency.google.com/advertiser/AR12949546591823331329/creative/CR07056531332028956673"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11629080190153827570",
+      "firstShown": "2026-07-15",
+      "lastShown": "2026-07-26",
+      "variants": 12,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR14760527102734237697"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13520637796354583302",
+      "firstShown": "2026-07-15",
+      "lastShown": "2026-07-26",
+      "variants": 12,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR04024870280361934849"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9136146244965389476",
+      "firstShown": "2026-07-15",
+      "lastShown": "2026-07-26",
+      "variants": 12,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR01374567870352064513"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8934481741174009280",
+      "firstShown": "2025-03-24",
+      "lastShown": "2026-07-26",
+      "variants": 485,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR09204255979233869825"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2872744210252459503",
+      "firstShown": "2025-10-27",
+      "lastShown": "2026-07-26",
+      "variants": 270,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR00135542003856310273"
+    },
+    {
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17346267967249933229",
+      "firstShown": "2026-07-15",
+      "lastShown": "2026-07-26",
+      "variants": 12,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR17980288575001853953"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11202304004878280366",
+      "firstShown": "2025-03-26",
+      "lastShown": "2026-07-27",
+      "variants": 486,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR00429476886851092481"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/3799760446643371216",
+      "firstShown": "2025-03-27",
+      "lastShown": "2026-07-27",
+      "variants": 480,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR17468443346513952769"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4325883614829906465",
+      "firstShown": "2025-03-26",
+      "lastShown": "2026-07-27",
+      "variants": 484,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR12417169967961604097"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4913489882555603086",
+      "firstShown": "2025-03-26",
+      "lastShown": "2026-07-27",
+      "variants": 486,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR13855639212147081217"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10872320519903776270",
+      "firstShown": "2026-02-21",
+      "lastShown": "2026-07-27",
+      "variants": 156,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR12053178112465174529"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11716110343164670394",
+      "firstShown": "2026-05-19",
+      "lastShown": "2026-07-27",
+      "variants": 69,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR12951895758545616897"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8201825661081839893",
+      "firstShown": "2024-11-28",
+      "lastShown": "2026-07-27",
+      "variants": 473,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR12609927413011316737"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15023863215737350583",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 505,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR04221482690488041473"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5268116390996067111",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 479,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR08373588276027588609"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4222136672766193257",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 449,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR16648279415326769153"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10225227185998858852",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 493,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR15860424392803614721"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10524711454399714473",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 504,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR09549119691071422465"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/6348748898200163203",
+      "firstShown": "2021-11-14",
+      "lastShown": "2025-10-28",
+      "variants": 1323,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR01948983453718413313"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7745451825807947782",
+      "firstShown": "2021-12-20",
+      "lastShown": "2025-10-28",
+      "variants": 1202,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR17276395447241408513"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/14865825950771730084",
+      "firstShown": "2021-11-14",
+      "lastShown": "2025-10-28",
+      "variants": 1188,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR11305341421952696321"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9614019604231898436",
+      "firstShown": "2021-11-14",
+      "lastShown": "2025-10-28",
+      "variants": 1235,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR13377542195993640961"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9963426809725824812",
+      "firstShown": "2021-12-21",
+      "lastShown": "2025-10-28",
+      "variants": 1057,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR10217434108615720961"
+    },
+    {
+      "competitor": "Platinum",
+      "color": "var(--c-b)",
+      "advertiser": "PLATINUM ASSET MANAGEMENT LTD",
+      "domain": "platinum.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15625896337656008203",
+      "firstShown": "2022-10-12",
+      "lastShown": "2025-10-28",
+      "variants": 566,
+      "preview": "https://adstransparency.google.com/advertiser/AR04794807206132318209/creative/CR04574166988015796225"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12253147333227707329",
+      "firstShown": "2024-03-09",
+      "lastShown": "2026-02-05",
+      "variants": 699,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR05795651512289984513"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/409039323470186908",
+      "firstShown": "2025-08-29",
+      "lastShown": "2026-02-04",
+      "variants": 160,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR02982787149927022593"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7641282335523630356",
+      "firstShown": "2025-11-25",
+      "lastShown": "2026-01-12",
+      "variants": 50,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR05046302056986443777"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10844482571566903309",
+      "firstShown": "2024-05-02",
+      "lastShown": "2026-01-12",
+      "variants": 258,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR04696230473964191745"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9167724011139869181",
+      "firstShown": "2023-07-18",
+      "lastShown": "2026-01-12",
+      "variants": 773,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR13860712994452799489"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8174137080371805053",
+      "firstShown": "2024-05-23",
+      "lastShown": "2026-01-12",
+      "variants": 332,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR14575662888451571713"
     },
     {
       "competitor": "Robeco",
-      "color": "var(--c-c)",
+      "color": "var(--c-d)",
       "advertiser": "Robeco Nederland B.V.",
       "domain": "robeco.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12720321361888095066",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10488070973463572286",
       "firstShown": "2025-02-14",
-      "lastShown": "2026-07-23",
-      "variants": 438,
+      "lastShown": "2026-07-26",
+      "variants": 442,
       "preview": "https://adstransparency.google.com/advertiser/AR01652962350489141249/creative/CR00208453849709543425"
     },
     {
       "competitor": "Robeco",
-      "color": "var(--c-c)",
+      "color": "var(--c-d)",
       "advertiser": "Robeco Nederland B.V.",
       "domain": "robeco.com",
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/6144541679797828306",
       "firstShown": "2025-01-31",
-      "lastShown": "2026-07-22",
-      "variants": 435,
+      "lastShown": "2026-07-24",
+      "variants": 437,
       "preview": "https://adstransparency.google.com/advertiser/AR01652962350489141249/creative/CR17048919977651863553"
     },
     {
       "competitor": "Robeco",
-      "color": "var(--c-c)",
+      "color": "var(--c-d)",
       "advertiser": "Robeco Nederland B.V.",
       "domain": "robeco.com",
       "format": "Image",
@@ -9407,7 +10958,7 @@ window.MI_REMOTE = {
     },
     {
       "competitor": "Robeco",
-      "color": "var(--c-c)",
+      "color": "var(--c-d)",
       "advertiser": "Robeco Nederland B.V.",
       "domain": "robeco.com",
       "format": "Image",
@@ -9419,7 +10970,7 @@ window.MI_REMOTE = {
     },
     {
       "competitor": "Robeco",
-      "color": "var(--c-c)",
+      "color": "var(--c-d)",
       "advertiser": "Robeco Nederland B.V.",
       "domain": "robeco.com",
       "format": "Image",
@@ -9428,24 +10979,311 @@ window.MI_REMOTE = {
       "lastShown": "2025-09-24",
       "variants": 221,
       "preview": "https://adstransparency.google.com/advertiser/AR01652962350489141249/creative/CR05697734624537477121"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "The McGraw-Hill Companies Inc",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2687078545179195858",
+      "firstShown": "2023-05-10",
+      "lastShown": "2026-07-27",
+      "variants": 1144,
+      "preview": "https://adstransparency.google.com/advertiser/AR10740688187581005825/creative/CR14299708301925941249"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Market Intelligence Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/14300173753653792077",
+      "firstShown": "2024-11-27",
+      "lastShown": "2026-07-27",
+      "variants": 411,
+      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR17640768807502872577"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/201093374736053537",
+      "firstShown": "2021-10-25",
+      "lastShown": "2026-07-27",
+      "variants": 1644,
+      "preview": "https://adstransparency.google.com/advertiser/AR15962006021530976257/creative/CR14881820612715610113"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Market Intelligence Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/3209084450906992590",
+      "firstShown": "2024-10-01",
+      "lastShown": "2026-07-27",
+      "variants": 576,
+      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR16326011285915303937"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Market Intelligence Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11517927399064177152",
+      "firstShown": "2023-02-08",
+      "lastShown": "2026-07-27",
+      "variants": 1221,
+      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR07944459900002762753"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/3503115443517275602",
+      "firstShown": "2022-10-20",
+      "lastShown": "2026-07-27",
+      "variants": 1047,
+      "preview": "https://adstransparency.google.com/advertiser/AR00948387053073072129/creative/CR14574915375163506689"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15374555996318041202",
+      "firstShown": "2026-03-24",
+      "lastShown": "2026-07-27",
+      "variants": 92,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR02889306078628020225"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12398712881495344488",
+      "firstShown": "2026-02-17",
+      "lastShown": "2026-07-27",
+      "variants": 126,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR04088437376890699777"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7394414191209617505",
+      "firstShown": "2026-05-10",
+      "lastShown": "2026-07-27",
+      "variants": 74,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR16220022548295843841"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5842418255403964039",
+      "firstShown": "2026-03-05",
+      "lastShown": "2026-07-26",
+      "variants": 114,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR10855473636697964545"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2513447787959367222",
+      "firstShown": "2026-07-02",
+      "lastShown": "2026-07-26",
+      "variants": 19,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR14227656076597133313"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4565866820591932663",
+      "firstShown": "2026-02-17",
+      "lastShown": "2026-07-26",
+      "variants": 128,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR08979531839924338689"
+    },
+    {
+      "competitor": "Ardian",
+      "color": "var(--c-a)",
+      "advertiser": "PEREGRINE COMMUNICATIONS",
+      "domain": "ardian.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/3842298188235688020",
+      "firstShown": "2025-10-22",
+      "lastShown": "2025-12-18",
+      "variants": 58,
+      "preview": "https://adstransparency.google.com/advertiser/AR08413511199634751489/creative/CR01087190758173179905"
+    },
+    {
+      "competitor": "Ardian",
+      "color": "var(--c-a)",
+      "advertiser": "PEREGRINE COMMUNICATIONS",
+      "domain": "ardian.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12006358150288320344",
+      "firstShown": "2025-10-23",
+      "lastShown": "2025-12-18",
+      "variants": 57,
+      "preview": "https://adstransparency.google.com/advertiser/AR08413511199634751489/creative/CR06404745649446715393"
+    },
+    {
+      "competitor": "Ardian",
+      "color": "var(--c-a)",
+      "advertiser": "PEREGRINE COMMUNICATIONS",
+      "domain": "ardian.com",
+      "format": "Text",
+      "image": null,
+      "firstShown": "2025-10-22",
+      "lastShown": "2025-12-18",
+      "variants": 58,
+      "preview": "https://adstransparency.google.com/advertiser/AR08413511199634751489/creative/CR07028001616628285441"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "EQT PARTNERS LIMITED",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10531633885414293249",
+      "firstShown": "2026-07-14",
+      "lastShown": "2026-07-26",
+      "variants": 11,
+      "preview": "https://adstransparency.google.com/advertiser/AR00159149712505569281/creative/CR06554142848432734209"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/3391901963617958046",
+      "firstShown": "2024-05-31",
+      "lastShown": "2026-06-26",
+      "variants": 744,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR02032481569322565633"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5290735489914697489",
+      "firstShown": "2024-05-31",
+      "lastShown": "2026-05-05",
+      "variants": 642,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR12488959246802616321"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8360625505508953333",
+      "firstShown": "2024-05-31",
+      "lastShown": "2026-05-05",
+      "variants": 622,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR01065173621942517761"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17959245044749246740",
+      "firstShown": "2024-05-31",
+      "lastShown": "2026-05-05",
+      "variants": 516,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR00052320209268113409"
+    },
+    {
+      "competitor": "EQT",
+      "color": "var(--c-b)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "eqtgroup.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/16540622346501176243",
+      "firstShown": "2024-06-01",
+      "lastShown": "2026-05-04",
+      "variants": 535,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR13447783791959474177"
     }
   ],
   "AD_SOV": {
     "q1": [
       {
-        "name": "BetaShares",
-        "v": 36,
+        "name": "S&P Global",
+        "v": 39,
         "color": "var(--c-us)"
       },
       {
-        "name": "BlackRock",
-        "v": 28,
+        "name": "BetaShares",
+        "v": 38,
+        "color": "var(--c-us)"
+      },
+      {
+        "name": "Macquarie",
+        "v": 36,
+        "color": "var(--c-a)"
+      },
+      {
+        "name": "Alphinity",
+        "v": 33,
+        "color": "var(--c-b)"
+      },
+      {
+        "name": "Fisher Investments",
+        "v": 33,
+        "color": "var(--c-c)"
+      },
+      {
+        "name": "BlackRock / iShares",
+        "v": 32,
+        "color": "var(--c-muted)"
+      },
+      {
+        "name": "J.P. Morgan",
+        "v": 29,
         "color": "var(--c-muted)"
       },
       {
         "name": "Vanguard AU",
         "v": 27,
         "color": "var(--c-c)"
+      },
+      {
+        "name": "InvestmentMarkets",
+        "v": 20,
+        "color": "var(--c-us)"
+      },
+      {
+        "name": "T. Rowe Price",
+        "v": 15,
+        "color": "var(--c-muted)"
       },
       {
         "name": "UBS",
@@ -9463,31 +11301,66 @@ window.MI_REMOTE = {
         "color": "var(--c-a)"
       },
       {
-        "name": "Resolution Capital",
-        "v": 4,
+        "name": "EQT",
+        "v": 8,
         "color": "var(--c-b)"
+      },
+      {
+        "name": "Remara",
+        "v": 7,
+        "color": "var(--c-c)"
       },
       {
         "name": "Robeco",
         "v": 2,
-        "color": "var(--c-c)"
+        "color": "var(--c-d)"
       }
     ],
     "q2": [
       {
-        "name": "BetaShares",
+        "name": "BlackRock / iShares",
         "v": 40,
+        "color": "var(--c-muted)"
+      },
+      {
+        "name": "Fisher Investments",
+        "v": 40,
+        "color": "var(--c-c)"
+      },
+      {
+        "name": "Macquarie",
+        "v": 40,
+        "color": "var(--c-a)"
+      },
+      {
+        "name": "BetaShares",
+        "v": 39,
         "color": "var(--c-us)"
       },
       {
-        "name": "BlackRock",
-        "v": 40,
+        "name": "S&P Global",
+        "v": 39,
+        "color": "var(--c-us)"
+      },
+      {
+        "name": "Alphinity",
+        "v": 34,
+        "color": "var(--c-b)"
+      },
+      {
+        "name": "J.P. Morgan",
+        "v": 33,
         "color": "var(--c-muted)"
       },
       {
         "name": "Vanguard AU",
         "v": 21,
         "color": "var(--c-c)"
+      },
+      {
+        "name": "InvestmentMarkets",
+        "v": 20,
+        "color": "var(--c-us)"
       },
       {
         "name": "UBS",
@@ -9505,19 +11378,24 @@ window.MI_REMOTE = {
         "color": "var(--c-a)"
       },
       {
+        "name": "T. Rowe Price",
+        "v": 9,
+        "color": "var(--c-muted)"
+      },
+      {
+        "name": "EQT",
+        "v": 8,
+        "color": "var(--c-b)"
+      },
+      {
         "name": "Colonial First State",
         "v": 5,
         "color": "var(--c-a)"
       },
       {
-        "name": "Resolution Capital",
-        "v": 5,
-        "color": "var(--c-b)"
-      },
-      {
         "name": "Robeco",
         "v": 2,
-        "color": "var(--c-c)"
+        "color": "var(--c-d)"
       }
     ]
   }
