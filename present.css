@@ -240,7 +240,7 @@ body { background: #14120f; color: var(--dark-ink); }
 .cb-mount .lead-sum + .lead-sum { margin-top: 9px; }
 /* Section copy reads at full brightness — the dimmed ink-2 was fine for a
    caption but this is the page's actual narrative. Slightly larger to match. */
-.cb-mount .lead-sum { color: var(--dark-ink); font-size: clamp(13px, 1.15vw, 15px); max-width: 88ch; }
+.cb-mount .lead-sum { color: var(--dark-ink); font-size: clamp(13px, 1.15vw, 15px); max-width: 120ch; }
 /* air between the copy and the number boxes, and slimmer boxes under it */
 .cb-mount .kr-grid { margin-top: 18px; }
 .page .kr { padding: 11px 14px; }
