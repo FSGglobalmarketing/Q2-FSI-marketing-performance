@@ -531,7 +531,7 @@
     const li = state.platform === 'linkedin';
     const list = currentCreatives().filter(c=> state.comp.has(c.competitor) && (li || state.fmt.has(c.format)));
     if(!list.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No adverts match those filters.</p>`; return; }
-    const dash = '<span class="muted">—</span>';
+    const dash = '<span class="muted">–</span>';
     // Name the destination — "View ad" gave no clue these open Google's public
     // Ads Transparency Centre, which is where the provenance for this data lives.
     const linkLabel = li ? 'View on LinkedIn ↗' : 'View in Ads Transparency Centre ↗';
@@ -1072,7 +1072,19 @@
   // The GA4 top-pages come as country-specific URLs (/europe/…, /usa/…, …).
   // Derive the country from the first path segment so we can group the same
   // page across regions and offer a country filter.
-  const COUNTRY_MAP = { europe:'Europe', usa:'US', us:'US', australia:'Australia', anz:'Australia', asia:'Asia', uk:'UK', global:'Global' };
+  // Two path conventions map here: legacy Igneo full-word segments (/europe/,
+  // /asia/…) and the First Sentier estate's ISO country codes (/hk/, /sg/, /de/…)
+  // that the RQI/FSSA/FSI proxies use. Nordic markets fold into one "Nordics"
+  // filter; smaller European markets fold into "Europe".
+  const COUNTRY_MAP = {
+    europe:'Europe', usa:'US', australia:'Australia', anz:'Australia', asia:'Asia', global:'Global',
+    au:'Australia', nz:'New Zealand',
+    hk:'Hong Kong', sg:'Singapore', jp:'Japan',
+    uk:'UK', gb:'UK', ie:'Ireland', us:'US',
+    de:'Germany',
+    dk:'Nordics', se:'Nordics', no:'Nordics', fi:'Nordics', is:'Nordics',
+    fr:'Europe', nl:'Europe', ch:'Europe', at:'Europe', it:'Europe', es:'Europe', lu:'Europe', be:'Europe',
+  };
   function pageCountry(path){ const m=/^\/([a-z]+)/i.exec(path||''); const k=m&&m[1].toLowerCase(); return COUNTRY_MAP[k]||'Global'; }
   function fmtDur(s){ s=Math.round(s||0); if(!s) return ''; return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
   function chanClass(ch){ return 'ch-'+String(ch||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
@@ -1100,7 +1112,7 @@
     const rows = (sel==='all' ? all : all.filter(r=>r.country===sel))
       .slice().sort((a,b)=>b.views-a.views).slice(0,10);
     const max = Math.max(1, ...rows.map(r=>Math.max(r.views, r.prevViews||0)));
-    const dash = '<span class="muted">—</span>';
+    const dash = '<span class="muted">–</span>';
     const body = root.querySelector('[data-body="top-pages"]');
     if(!body) return;
     if(!rows.length){ body.innerHTML = '<p class="muted-txt" style="padding:14px 4px">No pages for this country.</p>'; return; }
