@@ -33,6 +33,30 @@ body { background: #14120f; color: var(--dark-ink); }
 .page.active { opacity: 1; visibility: visible; transform: none; z-index: 2; }
 .page.up { transform: translateY(-26px) scale(.995); }
 
+/* ---------- FLAT REVIEW MODE (?flat / ?review / ?markup) ----------
+   Turns the fixed-slide deck into one long scrolling document so visual
+   annotation tools (e.g. markup.io) can anchor comment pins to real elements
+   as the page scrolls. Every page stacks in normal flow and stays visible,
+   and carousels un-stack so all their slides are reachable too. */
+html.flat-review, html.flat-review body { height: auto; overflow-x: hidden; overflow-y: auto; }
+html.flat-review .deck { position: static; inset: auto; height: auto; }
+html.flat-review .page {
+  position: relative; inset: auto;
+  height: auto; min-height: 100vh;
+  opacity: 1 !important; visibility: visible !important;
+  transform: none !important; transition: none !important;
+  overflow: visible;
+}
+html.flat-review .page-inner { overflow: visible !important; height: auto; justify-content: flex-start; }
+html.flat-review .page [data-anim] { opacity: 1 !important; transform: none !important; }
+html.flat-review .scroll-hint, html.flat-review .p-progress { display: none !important; }
+/* un-stack carousels: show every slide vertically, drop the slider chrome */
+html.flat-review .carousel-viewport { height: auto !important; }
+html.flat-review .carousel-track { transform: none !important; flex-direction: column; transition: none !important; }
+html.flat-review .carousel-track > .cslide { width: 100% !important; flex: 0 0 auto; }
+html.flat-review .carousel-track > .cslide + .cslide { margin-top: 22px; }
+html.flat-review .carousel-ui { display: none !important; }
+
 /* full-bleed background image + legibility veil */
 .page-bg { position: absolute; inset: 0; z-index: 0; }
 .page-bg image-slot { position: absolute; inset: 0; }

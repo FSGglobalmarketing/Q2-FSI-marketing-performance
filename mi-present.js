@@ -18,6 +18,10 @@
   let pi = 0;
   let moved = false;
   let LB = null;
+  // Flat review mode: the deck becomes one long scrolling document (see
+  // present.css) so annotation tools like markup.io can anchor pins to real
+  // elements. Set by the inline <head> script from ?flat / ?review / ?markup.
+  const FLAT = document.documentElement.classList.contains('flat-review');
 
   /* ---------- carousels ---------- */
   const pageCar = pages.map(page => {
@@ -157,6 +161,7 @@
 
   function goPage(np){
     np = Math.max(0, Math.min(pages.length-1, np));
+    if(FLAT){ if(pages[np]) pages[np].scrollIntoView({ behavior:'smooth', block:'start' }); return; }
     if(np !== pi){ moved = true; setPage(np, np>pi?1:-1); }
   }
 
@@ -178,6 +183,7 @@
   function guard(){ if(lock) return false; lock = true; setTimeout(()=>lock=false, 780); return true; }
 
   window.addEventListener('wheel', (e) => {
+    if(FLAT) return;                 // native document scroll in review mode
     if(LB && LB.isOpen()) return;
     // allow native scroll inside a scrollable panel that still has room
     // (.page-inner only ever scrolls on short screens, via the media query)
@@ -194,6 +200,7 @@
   }, { passive:false });
 
   window.addEventListener('keydown', (e) => {
+    if(FLAT) return;                 // native scroll / key behaviour in review mode
     if(LB && LB.isOpen()) return;
     const k = e.key;
     if(['ArrowDown','PageDown','ArrowRight',' '].includes(k)){ e.preventDefault(); if(guard()) step(1); }
@@ -204,8 +211,9 @@
 
   // touch swipe (vertical)
   let ty = null;
-  window.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive:true });
+  window.addEventListener('touchstart', e => { if(FLAT) return; ty = e.touches[0].clientY; }, { passive:true });
   window.addEventListener('touchend', e => {
+    if(FLAT) return;
     if(ty === null) return;
     const dy = ty - e.changedTouches[0].clientY;
     if(Math.abs(dy) > 44 && guard()) step(dy > 0 ? 1 : -1);
@@ -378,8 +386,8 @@
   }
 
   /* ---------- init ---------- */
-  pages[0].classList.add('active');
-  stagger(pages[0]);
+  if(FLAT){ pages.forEach(p=>{ p.classList.add('active'); stagger(p); }); }
+  else { pages[0].classList.add('active'); stagger(pages[0]); }
   focusSlider();
   LB = lightbox();
   addExpandButtons(LB);
