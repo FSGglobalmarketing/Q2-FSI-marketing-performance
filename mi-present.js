@@ -215,14 +215,14 @@
   /* ---------- FOCUS SLIDER (Q1 ⟷ Q2) ---------- */
   const FOCUS = [
     { label: 'Q1 2026', items: [
-      { t: 'GEM campaign in ANZ',   d: 'Established the GEM campaign in ANZ and set the regional narrative for the year ahead.' },
-      { t: 'Search foundations',    d: 'Rebuilt technical SEO and search foundations for our priority, non-branded terms.' },
-      { t: 'Always-on engine',      d: 'Stood up the always-on content engine across the website, email and LinkedIn.' },
+      { t: 'Continuation of the XX20 launch & reporting season', d: 'We kicked off the year with a dedicated campaign timed to reporting season with bespoke events, broad media presence and key advertising activities across digital channels.' },
+      { t: 'Build momentum towards the Q2 Cash ETF launch', d: 'Brand survey, client value proposition, filmed launch videos, bespoke flyers, web copy, and a full communications and advertising plan and schedule now complete.' },
+      { t: 'Taiwan media roundtable', d: 'Participating in a media roundtable in Taipei, we continue to focus on strengthening GLIS awareness and visibility in the Taiwan market.' },
     ]},
     { label: 'Q2 2026', items: [
-      { t: 'GEM capabilities',      d: 'Continue to build messaging on GEM capabilities across always-on channels and search.' },
-      { t: 'Homepage redesign',     d: 'Launched the global homepage redesign, optimised for search, mobile and the user experience.' },
-      { t: 'Content globalisation', d: 'A global content review process to accelerate delivery and share regional content worldwide.' },
+      { t: 'Launch the Cash ETF (FSCF)', d: 'We launched the Active Cash Fund on the ASX on 7 May with a bell-ringing ceremony and a full campaign across the likes of AFR, Investor Daily and Morningstar with supported media appearances on Ausbiz and the Livewire income series.' },
+      { t: 'Livewire Markets’ World Cup edition of Buy Hold Sell', d: 'Dedicate a portion of marketing focus and activity to Dushko’s special World Cup episode of Livewire Markets’ Buy Hold Sell.' },
+      { t: 'ASX LEVR market messaging', d: 'We rolled out new creatives for the Geared Australian Share Fund, supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.' },
     ]},
   ];
   let fq = 1;

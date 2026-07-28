@@ -17,11 +17,11 @@ window.MIDATA = (function () {
   //  delta = change vs Q1 2026
   // ============================================================
   const HEADLINE = [
-    { v:'486.5k', l:'People reached on LinkedIn', d:'+18% vs Q1', up:true },
-    { v:'48,213', l:'Website visits',             d:'+11% vs Q1', up:true },
-    { v:'33.9%',  l:'Email open rate',            d:'+2.4 pts vs Q1', up:true },
-    { v:'212',    l:'Companies reading our pages',d:'+34 vs Q1', up:true },
-    { v:'18.6%',  l:'Our share of search',        d:'+3.1 pts vs Q1', up:true },
+    { v:'6,000+', l:'Clicks on the Buy Hold Sell post', d:'our best content of the quarter', up:true },
+    { v:'~50,000',l:'Website visitors',                d:'up a quarter on Q1', up:true },
+    { v:'740',    l:'Organisations in the Cash ETF launch', d:'across 8 emails', up:true },
+    { v:'1,500+', l:'GLIS clicks from Asian banks',    d:'our biggest engagement engine', up:true },
+    { v:'145',    l:'Australian search terms',         d:'+40% vs a year ago', up:true },
   ];
 
   // ============================================================
@@ -201,10 +201,10 @@ window.MIDATA = (function () {
   // HubSpot — email / campaigns / deals
   // ============================================================
   const EMAILS = [
-    { name:'Global listed infra — quarterly update', opens:17712, openRate:33.9, clickRate:6.0 },
-    { name:'China outlook 2026 — invitation',        opens:14204, openRate:31.2, clickRate:5.1 },
-    { name:'Asian growth — thought leadership',      opens:11908, openRate:29.7, clickRate:4.4 },
-    { name:'Monthly periodical — June',              opens:9860,  openRate:27.5, clickRate:3.8 },
+    { name:'Global listed infra: quarterly update', opens:17712, openRate:33.9, clickRate:6.0 },
+    { name:'China outlook 2026: invitation',        opens:14204, openRate:31.2, clickRate:5.1 },
+    { name:'Asian growth: thought leadership',      opens:11908, openRate:29.7, clickRate:4.4 },
+    { name:'Monthly periodical: June',              opens:9860,  openRate:27.5, clickRate:3.8 },
     { name:'Event: Asia Pacific Leaders webinar',    opens:8412,  openRate:36.4, clickRate:7.2 },
   ];
   // Real Q2 totals from the cross-brand Pardot engagement workbook (By brand
@@ -237,11 +237,14 @@ window.MIDATA = (function () {
   // Events & sponsorships (Smartsheet key activities + geography)
   // ============================================================
   const EVENTS = [
-    { name:'Asia Pacific Leaders webinar', city:'Singapore', region:'APAC', status:'Delivered', x:0.78, y:0.55 },
-    { name:'Infrastructure Investor Summit', city:'London', region:'EMEA', status:'Delivered', x:0.47, y:0.34 },
-    { name:'China outlook luncheon', city:'Hong Kong', region:'APAC', status:'Delivered', x:0.80, y:0.48 },
-    { name:'US institutional forum', city:'New York', region:'Americas', status:'Upcoming', x:0.26, y:0.40 },
-    { name:'DACH advisor roadshow', city:'Frankfurt', region:'EMEA', status:'Upcoming', x:0.50, y:0.33 },
+    { name:'ASX: FSCF launch & bell-ringing ceremony', city:'Sydney', region:'ANZ', status:'Delivered', x:0.885, y:0.79 },
+    { name:'Infocus webinar with Ben Samuel', city:'Australia (virtual)', region:'ANZ', status:'Delivered', x:0.86, y:0.83 },
+    { name:'Lonsec Conference', city:'Sydney', region:'ANZ', status:'Delivered', x:0.895, y:0.805 },
+    { name:'Morningstar Conference', city:'Sydney', region:'ANZ', status:'Delivered', x:0.875, y:0.815 },
+    { name:'Entireti webinar with Rebecca Sherlock', city:'Australia (virtual)', region:'ANZ', status:'Delivered', x:0.85, y:0.80 },
+    { name:'Lifespan PD Day with Dushko Bajic', city:'Australia', region:'ANZ', status:'Delivered', x:0.905, y:0.82 },
+    { name:'Count Virtual PD Day with Tony Togher', city:'Australia (virtual)', region:'ANZ', status:'Delivered', x:0.865, y:0.775 },
+    { name:'ACTA Conference with Tony Togher & Ben Samuel', city:'Australia', region:'ANZ', status:'Delivered', x:0.905, y:0.80 },
   ];
 
   // ============================================================
@@ -260,24 +263,49 @@ window.MIDATA = (function () {
   //   (professional plain-English copy, per funnel section)
   // ============================================================
   const CB = {
-    phaseII: {
-      summary: 'Our flagship Asia Phase II campaign ran across paid social, out-of-home and owned channels through the quarter, repositioning the flagship strategy for institutional audiences in core Asian markets.',
-      goals: ['Lift brand recall in core Asian markets','Extend distribution into Tier-2 cities','Reposition the flagship strategy'],
-      activities: ['Out-of-home and paid social','Owned email nurture programme','Partner co-marketing'],
-      results: [{v:'+12%',l:'Brand recall',b:'+8%',up:true},{v:'4.2M',l:'Impressions',b:'3.0M',up:true},{v:'87k',l:'Engagements',b:'60k',up:true}],
-      q2: ['Phase III creative refresh','Tier-2 paid expansion'],
-      q3: ['Retargeting layer','Always-on remarketing'],
+    highlight1: {
+      summary: [
+        'We launched the Active Cash Fund on the ASX on 7 May with a bell-ringing ceremony and a full campaign across the likes of AFR, Investor Daily and Morningstar, with supported media appearances on Ausbiz and the Livewire income series.',
+      ],
+      goals: ['Leverage reporting season to profile the investment team','Use content to promote the LEVR and XX20 strategies','Position the AEQ Growth team'],
+      activities: ['Launch post','Campaign placements in AFR, Investor Daily, Money Management, Financial Standard, Morningstar and Financial Newswire','Tony Togher on Ausbiz','Ben Samuel and Ky Van Tang in the Investor Daily podcast','Ben Samuel in Livewire’s Income series'],
+      results: [{v:'7 May',l:'Listed on the ASX',d:'bell-ringing ceremony',up:true},{v:'6,300+',l:'Visitors to the Cash Fund page',up:true},{v:'740',l:'Organisations reached',d:'across 8 emails',up:true}],
+      q2: ['Prepare the ASX Cash page and optimise it for search'],
+      q3: ['Continue optimising the campaign pages'],
+    },
+    highlight2: {
+      summary: [
+        'Dushko Bajic joined a special World Cup episode of Livewire Markets’ Buy Hold Sell. The post drew over 6,000 clicks, more than every other post this quarter combined, and made May comfortably our strongest month. It is the clearest proof yet that recognisable media formats and personalities travel far further than standard fund content.',
+      ],
+      goals: [],
+      activities: ['Special World Cup episode of Livewire Markets’ Buy Hold Sell','LinkedIn organic'],
+      results: [{v:'6,000+',l:'Clicks on the LinkedIn post',d:'more than every other post combined',up:true},{v:'May',l:'Strongest month of the year',up:true}],
+      q2: [],
+      q3: [],
+    },
+    highlight3: {
+      summary: [
+        'We rolled out new creatives for the Geared Australian Share Fund (ASX: LEVR), supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.',
+      ],
+      goals: [],
+      activities: ['New market-driven creative variants','Solus eDM via Investor Daily'],
+      results: [{v:'1,000+',l:'Visitors to the fund page',d:'Geared Australian Share Fund',up:true}],
+      q2: [],
+      q3: [],
     },
     search: {
-      summary: 'We measured how we appear in search against a defined peer set. Organic visibility grew steadily and we now lead the peer average on our priority themes.',
-      goals: ['Defend brand search terms','Grow non-brand share of voice','Build category authority'],
-      activities: ['Weekly editorial programme','Technical SEO improvements','Backlink and PR outreach'],
-      results: [{v:'18.6%',l:'Search share',b:'15.5%',up:true},{v:'1,120',l:'Top-10 terms',b:'900',up:true},{v:'+18',l:'Position movers',b:'+10',up:true}],
-      q2: ['Twelve new topic-cluster pages','Structured-data rollout'],
-      q3: ['Internal-linking refresh'],
+      summary: [
+        'Across our Australian strategies, First Sentier ends June visible on around 145 search terms, holding flat on the quarter and up more than 40 per cent on a year ago. That steadiness came in a period when search coverage compressed across the market as Google answered more queries directly, so holding ground counted for something.',
+        'Australian Equities Growth was the clear gainer, moving from 20 terms to 28 on the back of the reporting-season campaign and now ahead of Betashares in that category. Global Listed Infrastructure and Short Term Investments both eased slightly, in line with the wider contraction, while Vanguard remains the volume leader across every category we track. We continue to appear for the terms that matter to us: quant, cash, listed infrastructure and Australian equities.',
+      ],
+      goals: ['Analyse competitor activities and incorporate them into our website','Position our brand to be included in more AI search results as technology pivots'],
+      activities: ['Paid search ads focusing on branded and ETF-related terms','Cross-promotions on LinkedIn with Duke and Xcel'],
+      results: [{v:'145',l:'Search terms',d:'+40% YoY, flat on the quarter',up:true},{v:'20 → 28',l:'Australian Equities Growth terms',d:'now ahead of Betashares',up:true},{v:'Vanguard',l:'Volume leader across categories'}],
+      q2: ['Hold ground as search coverage compresses'],
+      q3: ['Build a data model on the ETF landscape with competitor positions','Understand how we rank for AI searches across all products'],
     },
     competitors: {
-      summary: 'We track our competitors\u2019 live advertising from public ad libraries. They continue to out-spend us on paid, concentrating on private markets and infrastructure \u2014 the themes we already lead on organically.',
+      summary: 'We track our competitors\u2019 live advertising from public ad libraries. Vanguard and the big ETF issuers out-spend us on paid across cash, ETF and index terms; our edge is the specialist strategies and named-voice content we lead on through owned channels.',
       goals: ['Understand competitor positioning','Identify white-space themes','Benchmark creative volume'],
       activities: ['Weekly ad-library monitoring','Creative theme analysis','Share-of-voice tracking'],
       results: [{v:'16.6%',l:'Paid share of voice',b:'13.0%',up:true},{v:'4',l:'Competitors tracked',b:'3',up:true},{v:'18.6%',l:'Search share (lead)',b:'15.5%',up:true}],
@@ -285,36 +313,47 @@ window.MIDATA = (function () {
       q3: ['Expand competitive set to five'],
     },
     website: {
-      summary: 'The website remained our always-on hub. Visits held steady quarter-on-quarter while time-on-page and conversion both improved after the spring content refresh.',
-      goals: ['Reduce bounce on campaign pages','Lift enquiry conversion','Improve mobile load speed'],
-      activities: ['Hero and template redesign','Call-to-action experiments','Image performance pass'],
-      results: [{v:'41.2%',l:'Bounce rate',b:'47%',up:true},{v:'1:52',l:'Avg. time on page',b:'1:35',up:true},{v:'9.1%',l:'Conversion',b:'7.0%',up:true}],
-      q2: ['Search navigation redesign','Enquiry form simplification'],
-      q3: ['Editorial CMS migration'],
+      summary: [
+        'The Australian site drew around 50,000 visitors in Q2, up a quarter on Q1, with the homepage, the RQI quant fund page and the Active Cash Fund the three most visited destinations. The Cash Fund page alone pulled over 6,300 visitors, evidence that the ETF launch campaign sent advisers straight to the right place.',
+        'Performance and literature pages held attention longest, at nearly a minute each, and email became a genuine traffic source for the first time as the launch sequence drove visitors onto fund pages. Visits from AI assistants edged up, led by ChatGPT.',
+      ],
+      goals: ['Prepare the ASX Cash page and optimise for search engines','Refresh the homepage to funnel traffic to campaign landing pages'],
+      activities: ['Cash ETF launch sequence to fund pages','Homepage and campaign landing pages','Continued search-engine optimisation'],
+      results: [{v:'~50,000',l:'Visitors in Q2',d:'up a quarter on Q1',up:true},{v:'6,300+',l:'Active Cash Fund page',d:'ETF launch traffic',up:true},{v:'ChatGPT',l:'Leading AI referrer',up:true}],
+      q2: ['Refresh the homepage to funnel to campaign pages'],
+      q3: ['Continue optimising key campaign pages for search rankings'],
     },
     preview: {
       summary: 'A redesigned website is in internal beta. The new information architecture, visual system and component-based CMS are on track for a Q3 public launch.',
       goals: ['Ship the redesigned architecture','Modernise the visual system','Move to a component CMS'],
       activities: ['Discovery and content audits','Design sprints','Internal beta programme'],
       results: [{v:'36%',l:'Faster key journeys',b:'20%',up:true},{v:'+2.1',l:'Pilot satisfaction',b:'+1.0',up:true},{v:'94',l:'Performance score',b:'78',up:true}],
-      q2: ['Public launch \u2014 Q3, week 6','Sales enablement'],
+      q2: ['Public launch: Q3, week 6','Sales enablement'],
       q3: ['Ongoing A/B testing framework'],
     },
     linkedin: {
-      summary: 'LinkedIn is our largest owned audience. Organic engagement outperformed every tracked competitor, and paid campaigns delivered qualified leads at a lower cost than last quarter.',
-      goals: ['Build thought leadership','Support senior recruitment','Amplify flagship campaigns'],
-      activities: ['Executive voice programme','Hiring spotlights','Campaign repurposing'],
-      results: [{v:'4.2%',l:'Engagement rate',b:'2.6%',up:true},{v:'486.5k',l:'Organic reach',b:'412k',up:true},{v:'584',l:'Paid leads',b:'430',up:true}],
-      q2: ['Launch newsletter','Video series'],
-      q3: ['Employee advocacy pilot'],
+      summary: [
+        'May carried the quarter. The Buy Hold Sell World Cup post with Livewire drew over 6,000 clicks, more than every other post combined, and made May comfortably our strongest month. It is the clearest proof yet that recognisable media formats and personalities travel far further than standard fund content.',
+        'Around it, the insight programme did its job: the Duke Energy fireside chat, the Asian energy-shock piece and the RBA rate commentary each drew steady adviser engagement. Follower growth was strongest in June, adding 181, the best month of the year.',
+        'Paid follower acquisition has now wound down, and the page is growing on the strength of its content alone. The lesson from May is one to repeat: partner formats and named voices outperform product posts by a wide margin.',
+      ],
+      goals: ['Execute the two sponsored campaigns and analyse the data','Grow the channel and leverage it for campaign support'],
+      activities: ['Buy Hold Sell World Cup post with Livewire','Duke Energy fireside chat and Asian energy-shock piece','RBA rate commentary'],
+      results: [{v:'6,000+',l:'Clicks · Buy Hold Sell post',d:'more than every other post combined',up:true},{v:'+181',l:'New followers in June',d:'best month of the year',up:true},{v:'Organic',l:'Paid acquisition wound down',up:true}],
+      q2: ['Grow the channel and leverage it for campaign support'],
+      q3: ['Scale sponsored reach while publishing 3-4 organic posts a month','German-language coverage through IMK and FONDS Kongress'],
     },
     engagement: {
-      summary: 'Client-facing channels turned attention into conversations. Email engagement rose across the board and directly generated meetings for the sales team.',
-      goals: ['Lift email engagement','Grow qualified replies','Convert interest to meetings'],
-      activities: ['Segmented nurture journeys','Periodicals refresh','Sales-aligned calls to action'],
-      results: [{v:'33.9%',l:'Open rate',b:'31.5%',up:true},{v:'396',l:'Replies to sales',b:'280',up:true},{v:'242',l:'Meetings booked',b:'180',up:true}],
-      q2: ['Triggered journeys','Cadence clean-up'],
-      q3: ['Account-based expansion'],
+      summary: [
+        'Two engines drove engagement this quarter. Global Listed Infrastructure was the biggest, generating more than 1,500 clicks from Asian wholesale banks: DBS in both Hong Kong and Singapore, Bank of China, China Construction Bank, Shanghai Commercial and OCBC all worked through the infrastructure sends. The strategy is Australian-run but its client base is firmly regional.',
+        'The Cash ETF launch was the other. Just eight emails reached 740 organisations across Australia, the broadest single-campaign footprint of the quarter, with Bell Potter, Shaw and Partners and Ord Minnett among the advisers engaging. Reporting-season and Australian Equities Growth activity added a smaller adviser layer on top.',
+        'On the website, the same names recur. IOOF, Ord Minnett, Pitcher Partners and Canaccord read fund and performance pages, Frontier Advisors worked through the RQI insights, and Equity Mates spent its time on the Active Cash Fund page. Adviser groups and consultants reading performance data is the follow-up list distribution can act on.',
+      ],
+      goals: ['Close the open-to-click gap on Asian sends','Consolidate event follow-ups into a single well-timed send'],
+      activities: ['Global Listed Infrastructure sends to Asian wholesale banks','Cash ETF launch emails','Reporting-season and Australian Equities Growth activity'],
+      results: [{v:'1,500+',l:'GLIS clicks from Asian banks',up:true},{v:'740',l:'Organisations · Cash ETF launch',d:'in 8 emails',up:true},{v:'8 emails',l:'Broadest footprint of the quarter',up:true}],
+      q2: ['Turn performance-page readers into a distribution follow-up list'],
+      q3: ['Consolidate event follow-ups into a single well-timed send'],
     },
   };
 
