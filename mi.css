@@ -23,8 +23,8 @@
   --dark:       #191817;
   --dark-alt:   #221f1d;
   --dark-card:  #262320;
-  --dark-ink:   #f4f1ea;
-  --dark-ink-2: #b3ada0;
+  --dark-ink:   #fbfaf7;
+  --dark-ink-2: #e7e3da;
   --dark-hair:  #38342f;
 
   /* data palette — shared chroma/lightness, varied hue (oklch) */
@@ -34,8 +34,8 @@
   --c-b:     oklch(0.62 0.10 190);   /* teal */
   --c-c:     oklch(0.66 0.11 130);   /* green */
   --c-d:     oklch(0.60 0.12 305);   /* violet */
-  --c-muted: #b6b0a3;                /* competitors / context */
-  --c-muted-2:#cdc8bc;
+  --c-muted: #d3cec2;                /* competitors / context */
+  --c-muted-2:#e2ddd2;
 
   --pos: oklch(0.55 0.11 150);
   --neg: oklch(0.55 0.14 25);
