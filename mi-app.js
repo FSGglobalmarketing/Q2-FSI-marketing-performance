@@ -650,8 +650,8 @@
     const note = card.querySelector('[data-role="sem-note"]'); if(note) note.style.display = disp ? '' : 'none';
     const sub = card.querySelector('[data-role="sem-sub"]');
     if(sub) sub.textContent = disp
-      ? 'One responsive display ad — Google mixes these two images with six headlines and five descriptions. 271,631 impressions at 3.43% CTR for £1,081. Bars rank the copy that earned the clicks.'
-      : 'Keywords by impressions, with clicks stacked inside the bar — 51,646 impressions at 6.89% CTR.';
+      ? 'One responsive display ad: Google mixes these two images with six headlines and five descriptions. 271,631 impressions at 3.43% CTR for £1,081. Bars rank the copy that earned the clicks.'
+      : 'Keywords by impressions, with clicks stacked inside the bar. 51,646 impressions at 6.89% CTR.';
   }
   function renderSemChart(card, opts){
     card = card || semCards()[0]; if(!card) return;
@@ -692,7 +692,7 @@
     const note = card.querySelector('[data-role="st-note"]');
     if(note){
       note.innerHTML = state.stTheme === 'All'
-        ? `2,400 distinct queries actually triggered our ads. <strong>Data centres are 56%</strong> of them — and 40% carry retail intent (“stocks”, “reits”, “etf”), not the institutional buyers NADIF targets. Brand terms are tiny but convert at <strong>26% CTR</strong>.`
+        ? `2,400 distinct queries actually triggered our ads. <strong>Data centres are 56%</strong> of them, and 40% carry retail intent (“stocks”, “reits”, “etf”), not the institutional buyers NADIF targets. Brand terms are tiny but convert at <strong>26% CTR</strong>.`
         : `Real queries in “${state.stTheme}”, ranked by impressions with clicks stacked inside.`;
     }
   }
@@ -772,7 +772,7 @@
       sub.innerHTML = `Our Salesforce pipeline, uploaded to LinkedIn as the <strong>${P.list}</strong> list: ${P.served} of ${P.prospects}`
         + ` matched prospects served, ${P.impr.toLocaleString()} impressions, ${P.engaged} of them clicking or watching.`
         + ` The spend landed where it was aimed: <strong>${100-spill}%</strong> of delivery went to this list and no competitor was served.`
-        + `<br/>Showing the top ${Math.min(cap, sel.length)} of ${scope} — ${sel.reduce((t,r)=>t+r.i,0).toLocaleString()} impressions. Paid metrics only.`;
+        + `<br/>Showing the top ${Math.min(cap, sel.length)} of ${scope}, ${sel.reduce((t,r)=>t+r.i,0).toLocaleString()} impressions. Paid metrics only.`;
     }
     // Bar = paid impressions; the accent segment = engagements (clicks + video
     // views), so the story is "reached, and actually watched/clicked".
@@ -806,8 +806,8 @@
     if(sub){
       const g = A.groups.find(x=>x.id===state.liGroup);
       sub.textContent = g
-        ? `${g.name} — ${g.impr.toLocaleString()} impressions and ${g.clicks.toLocaleString()} clicks (${(g.clicks/g.impr*100).toFixed(2)}% CTR) for £${g.spend.toLocaleString()}.`
-        : 'Every ad we ran, by impressions. Statics and Videos were a clean test — same objective, same bidding. Video bought a third of the reach for much the same money, but earned nearly three times the click rate.';
+        ? `${g.name}: ${g.impr.toLocaleString()} impressions and ${g.clicks.toLocaleString()} clicks (${(g.clicks/g.impr*100).toFixed(2)}% CTR) for £${g.spend.toLocaleString()}.`
+        : 'Every ad we ran, by impressions. Statics and Videos were a clean test: same objective, same bidding. Video bought a third of the reach for much the same money, but earned nearly three times the click rate.';
     }
   }
   function renderLiAds(card){
