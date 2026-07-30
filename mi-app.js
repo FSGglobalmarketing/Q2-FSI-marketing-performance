@@ -595,11 +595,12 @@
       if(h.keyResults && h.keyResults.length)           takeaways.push(box('Key results','is-results','ticks', h.keyResults));
       if(h.recommendations && h.recommendations.length) takeaways.push(box('Recommendations','is-recs','arrows', h.recommendations));
       mount.innerHTML =
-        (takeaways.length ? `<div class="hl-boxes">${takeaways.join('')}</div>` : '') +
         `<div class="stage-grid">
         <div class="glass-card"><h4>Goals</h4><ol>${li(h.goals)}</ol></div>
         <div class="glass-card"><h4>Marketing activities</h4><ul>${li(h.activities)}</ul></div>
-      </div>`;
+      </div>` +
+        // Key results + Recommendations report on those objectives, so they sit below.
+        (takeaways.length ? `<div class="hl-boxes">${takeaways.join('')}</div>` : '');
     });
   }
   // ---- SEM (search + display). Root-scoped (page + lightbox clone). Channel
