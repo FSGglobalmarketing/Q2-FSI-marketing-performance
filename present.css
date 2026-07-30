@@ -130,7 +130,7 @@ html.flat-review .carousel-ui { display: none !important; }
 
 /* ---------- EXECUTIVE SUMMARY (board page) ---------- */
 .exec-wrap { display: flex; flex-direction: column; gap: clamp(20px, 2.4vw, 34px); margin-top: clamp(14px, 1.8vw, 26px); }
-.exec-lede { display: flex; flex-direction: column; gap: 0.6em; max-width: 72ch; }
+.exec-lede { display: flex; flex-direction: column; gap: 0.6em; max-width: 120ch; }
 .exec-lede p {
   margin: 0;
   font-size: clamp(14.5px, 1.55vw, 20px);
