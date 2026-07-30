@@ -65,15 +65,16 @@
   /* ===== FUNNEL-STAGE CARDS on divider pages (Goals / activities / results / focus) ===== */
   function stageBlock(s){
     if(!s) return '';
-    const ul = a => (a&&a.length) ? `<ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
+    const ul = (a, cls) => (a&&a.length) ? `<ul${cls?` class="${cls}"`:''}>${a.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
     const ol = a => (a&&a.length) ? `<ol>${a.map(x=>`<li>${x}</li>`).join('')}</ol>` : '';
     // Key results stay on the content pages — dividers show only Goals /
     // Marketing activities / Focus, small, under the big centred heading.
+    // Forward-looking Focus lists use modern tick bullets, not discs.
     const cards = [];
     if(s.goals&&s.goals.length)           cards.push(`<div class="glass-card"><h4>Goals</h4>${ol(s.goals)}</div>`);
     if(s.activities&&s.activities.length) cards.push(`<div class="glass-card"><h4>Marketing activities</h4>${ul(s.activities)}</div>`);
-    if(s.q2&&s.q2.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q2</h4>${ul(s.q2)}</div>`);
-    if(s.q3&&s.q3.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q3</h4>${ul(s.q3)}</div>`);
+    if(s.q2&&s.q2.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q2</h4>${ul(s.q2,'ticks')}</div>`);
+    if(s.q3&&s.q3.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q3</h4>${ul(s.q3,'ticks')}</div>`);
     return `<div class="stage-grid">${cards.join('')}</div>`;
   }
   // Injected by JS so no per-repo divider markup changes are needed: the stage
@@ -587,7 +588,15 @@
     $$('[data-hl]').forEach(mount => {
       const h = D.HIGHLIGHTS && D.HIGHLIGHTS[mount.dataset.hl]; if(!h) return;
       const li = a => a.map(x=>`<li>${x}</li>`).join('');
-      mount.innerHTML = `<div class="stage-grid">
+      // Takeaway boxes — rendered only when the highlight supplies the copy.
+      const box = (title, cls, marker, arr) =>
+        `<div class="hl-box ${cls}"><h4>${title}</h4><ul class="${marker}">${li(arr)}</ul></div>`;
+      const takeaways = [];
+      if(h.keyResults && h.keyResults.length)           takeaways.push(box('Key results','is-results','ticks', h.keyResults));
+      if(h.recommendations && h.recommendations.length) takeaways.push(box('Recommendations','is-recs','arrows', h.recommendations));
+      mount.innerHTML =
+        (takeaways.length ? `<div class="hl-boxes">${takeaways.join('')}</div>` : '') +
+        `<div class="stage-grid">
         <div class="glass-card"><h4>Goals</h4><ol>${li(h.goals)}</ol></div>
         <div class="glass-card"><h4>Marketing activities</h4><ul>${li(h.activities)}</ul></div>
       </div>`;

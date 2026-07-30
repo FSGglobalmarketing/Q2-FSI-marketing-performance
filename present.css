@@ -304,6 +304,46 @@ html.flat-review .carousel-ui { display: none !important; }
   counter-increment: g; content: counter(g);
   font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--c-us); min-width: 12px;
 }
+/* ---------- Modern tick / arrow list markers (Focus lists + takeaway boxes) ---------- */
+.glass-card ul.ticks, .glass-card ul.arrows,
+.hl-box ul.ticks, .hl-box ul.arrows { padding-left: 0; }
+.glass-card ul.ticks > li, .glass-card ul.arrows > li,
+.hl-box ul.ticks > li, .hl-box ul.arrows > li {
+  list-style: none; display: flex; gap: 8px; align-items: flex-start;
+}
+.glass-card ul.ticks > li::before, .glass-card ul.arrows > li::before,
+.hl-box ul.ticks > li::before, .hl-box ul.arrows > li::before {
+  content: ""; flex: 0 0 auto; width: 13px; height: 13px; margin-top: 1px; background: var(--c-us);
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-size: contain; mask-size: contain;
+}
+.glass-card ul.ticks > li::before, .hl-box ul.ticks > li::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+.glass-card ul.arrows > li::before, .hl-box ul.arrows > li::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+}
+/* ---------- Highlight takeaway boxes: Key results / Recommendations ---------- */
+.hl-boxes {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+  width: 100%; max-width: 1000px; margin: 0 0 12px;
+}
+@media (max-width: 620px){ .hl-boxes { grid-template-columns: 1fr; } }
+.hl-box {
+  background: var(--glass); border: 1px solid var(--glass-brd);
+  border-left: 3px solid var(--c-us); border-radius: 13px; padding: 13px 15px;
+  -webkit-backdrop-filter: blur(12px) saturate(1.05); backdrop-filter: blur(12px) saturate(1.05);
+}
+.hl-box.is-recs { border-left-color: var(--c-c, var(--c-us)); }
+.hl-box h4 {
+  margin: 0 0 8px; font-family: var(--font-body); font-weight: 600;
+  font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--dark-ink-2);
+}
+.hl-box ul { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.hl-box li { font-size: 12.5px; line-height: 1.4; color: var(--dark-ink); }
 /* multiple lead paragraphs on content pages — compact so charts stay in view */
 .cb-mount .lead-sum + .lead-sum { margin-top: 9px; }
 /* Section copy reads at full brightness — the dimmed ink-2 was fine for a
