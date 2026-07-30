@@ -129,13 +129,14 @@ html.flat-review .carousel-ui { display: none !important; }
 .lead-sum { font-size: clamp(12px, 1.05vw, 13.5px); line-height: 1.55; color: var(--dark-ink-2); max-width: none; text-wrap: pretty; }
 
 /* ---------- EXECUTIVE SUMMARY (board page) ---------- */
-.exec-wrap { display: flex; flex-direction: column; gap: clamp(24px, 3vw, 40px); margin-top: clamp(18px, 2.4vw, 34px); }
-.exec-lede {
-  font-size: clamp(21px, 2.7vw, 34px);
-  line-height: 1.32;
-  letter-spacing: -0.015em;
+.exec-wrap { display: flex; flex-direction: column; gap: clamp(20px, 2.4vw, 34px); margin-top: clamp(14px, 1.8vw, 26px); }
+.exec-lede { display: flex; flex-direction: column; gap: 0.6em; max-width: 72ch; }
+.exec-lede p {
+  margin: 0;
+  font-size: clamp(14.5px, 1.55vw, 20px);
+  line-height: 1.42;
+  letter-spacing: -0.004em;
   color: var(--dark-ink);
-  max-width: 30ch;
   font-weight: 400;
   text-wrap: pretty;
 }
