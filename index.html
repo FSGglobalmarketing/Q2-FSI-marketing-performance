@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="present.css" />
 <link rel="stylesheet" href="brand.css" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
@@ -469,26 +471,29 @@
     <div class="page-bg"><image-slot id="bg-loy-events" shape="rect" placeholder="Events backdrop"></image-slot></div>
     <div class="page-veil"></div>
     <div class="page-inner">
-      <div class="p-controls" data-anim>
-        <div class="p-head">
-          <span class="tag">Service &amp; loyalty</span>
-          <h2 class="p-title">Events &amp; sponsorships</h2>
-        </div>
-        <div class="events-head">
-          <div class="chart-wrap" id="events-donut" style="width:104px"></div>
-          <div><b style="font-size:15px">60% delivered</b><br/><span class="muted-txt" style="font-size:13px">of the 2026 plan</span></div>
-        </div>
+      <div class="p-head" data-anim>
+        <span class="tag">Service &amp; loyalty</span>
+        <h2 class="p-title">Events &amp; sponsorships</h2>
       </div>
       <div class="carousel" data-anim>
         <div class="carousel-viewport">
           <div class="carousel-track">
             <div class="cslide" data-label="Where we showed up">
-              <div class="map-wrap"><div class="chart-wrap" id="events-map"></div></div>
+              <div class="card" style="padding:0;overflow:hidden">
+                <div class="card-head" style="padding:14px 16px 0;align-items:center">
+                  <div>
+                    <div class="card-title">Where we showed up</div>
+                    <p class="muted-txt" style="font-size:12.5px;margin:2px 0 0">Committed, proprietary and distribution-owned FSI events. Click a pin for the details.</p>
+                  </div>
+                  <div class="ev-slider-mount"></div>
+                </div>
+                <div class="events-map" id="ev-leaflet" style="height:56vh;min-height:380px;margin-top:12px"></div>
+              </div>
             </div>
             <div class="cslide" data-label="Event schedule">
               <div class="card">
-                <div class="card-head"><div class="card-title">Event schedule</div><span class="source-note">Campaign tracker</span></div>
-                <div class="slide-scroll" id="events-table"></div>
+                <div class="card-head"><div class="card-title">Event schedule</div><span class="source-note">2026 events &amp; sponsorship calendar</span></div>
+                <div class="slide-scroll events-table" id="events-table"></div>
               </div>
             </div>
           </div>
@@ -511,5 +516,6 @@
 <script src="mi-charts.js"></script>
 <script src="mi-app.js"></script>
 <script src="mi-present.js"></script>
+<script src="events-map.js"></script>
 </body>
 </html>

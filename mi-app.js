@@ -1325,12 +1325,17 @@
 
   /* ================= LOYALTY ================= */
   function renderEvents(){
+    // Packs with the interactive Leaflet events section (events-map.js) use
+    // id="ev-leaflet" + class="events-table", so #events-map is absent — skip the
+    // legacy dot-map/table render (and don't clobber the Leaflet table).
+    const em = $('#events-map');
+    if(!em) return;
     renderEventsDonut($('#events-donut'));
     const pts = D.EVENTS.map(e=>`<div title="${e.name}" style="position:absolute;left:${e.x*100}%;top:${e.y*100}%;transform:translate(-50%,-50%)">
         <span style="display:block;width:14px;height:14px;border-radius:50%;background:${e.status==='Delivered'?'var(--c-us)':'var(--c-a)'};box-shadow:0 0 0 4px color-mix(in srgb, ${e.status==='Delivered'?'var(--c-us)':'var(--c-a)'} 22%, transparent)"></span>
       </div>`).join('');
-    $('#events-map').innerHTML = `<div style="position:relative;width:100%;aspect-ratio:2/1;background:radial-gradient(circle at 1px 1px, var(--hair-2) 1px, transparent 0) 0 0/22px 22px;border-radius:12px;overflow:hidden">${pts}</div>`;
-    $('#events-table').innerHTML = `<table class="tbl"><thead><tr><th>Event</th><th>City</th><th>Status</th></tr></thead>
+    em.innerHTML = `<div style="position:relative;width:100%;aspect-ratio:2/1;background:radial-gradient(circle at 1px 1px, var(--hair-2) 1px, transparent 0) 0 0/22px 22px;border-radius:12px;overflow:hidden">${pts}</div>`;
+    const et = $('#events-table'); if(et) et.innerHTML = `<table class="tbl"><thead><tr><th>Event</th><th>City</th><th>Status</th></tr></thead>
       <tbody>${D.EVENTS.map(e=>`<tr><td class="strong">${e.name}</td><td class="muted">${e.city}</td><td><span class="pill ${e.status==='Delivered'?'pos':'warm'}">${e.status}</span></td></tr>`).join('')}</tbody></table>`;
   }
 
