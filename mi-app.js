@@ -55,8 +55,12 @@
     const P = (typeof window!=='undefined' && window.MI_PIPELINE) || null;
     if(!P || !Array.isArray(P.opportunities)) return [];
     const ft = pipeTokens(name); if(!ft.length) return [];
+    // Only flag this pack's own-brand opportunities (window.MI_BRAND). Falls back
+    // to the whole pipeline if a pack doesn't declare a brand.
+    const brand = (typeof window!=='undefined' && window.MI_BRAND) || '';
+    const opps = brand ? P.opportunities.filter(o=>o.brand===brand) : P.opportunities;
     const fset = new Set(ft), out = [], seen = {};
-    P.opportunities.forEach(o=>{
+    opps.forEach(o=>{
       const ot = pipeTokens(o.name); if(!ot.length) return;
       const oset = new Set(ot);
       const short = ft.length <= ot.length ? ft : ot;

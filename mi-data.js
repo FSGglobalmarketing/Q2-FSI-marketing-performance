@@ -374,12 +374,16 @@ window.MIDATA = (function () {
   // the chart's Q1/Q2 slider picks one. Falls back to a seeded estimate.
   function adSoV(){
     const R = (typeof window !== 'undefined' && window.MI_REMOTE) || {};
+    // Align the activity bars with the filtered ad-example gallery: only count
+    // competitors that actually appear in creatives() (asset-class + live filter).
+    const shown = new Set(creatives().map(c=>c.competitor));
+    const keep = arr => (arr||[]).filter(r=>shown.has(r.name));
     if (R.AD_SOV && ((R.AD_SOV.q1 && R.AD_SOV.q1.length) || (R.AD_SOV.q2 && R.AD_SOV.q2.length)))
-      return R.AD_SOV;
+      return { q1: keep(R.AD_SOV.q1), q2: keep(R.AD_SOV.q2) };
     const rnd = seed('adsov-q2');
     const mk = f => COMPETITORS.map(c=>({ name:c.name, v:Math.round(3+rnd()*30*f), color:c.color }))
       .filter(r=>r.v>0).sort((a,b)=>b.v-a.v);
-    return { q1: mk(0.9), q2: mk(1) };
+    return { q1: keep(mk(0.9)), q2: keep(mk(1)) };
   }
 
   const SEO = {
