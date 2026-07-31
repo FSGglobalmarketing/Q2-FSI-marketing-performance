@@ -39,6 +39,41 @@
   function initials(name){ return name.split(/\s|\+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase(); }
   const pct1 = x => (x*100).toFixed(1)+'%';
 
+  /* ---- Sales-pipeline matching: flag targeting companies (Alphix, email, forms)
+     that appear as a live RFP/RFI opportunity in the Service Request pipeline
+     (window.MI_PIPELINE, pipeline-data.js). Company names are matched on their
+     distinctive tokens after corporate/geographic filler is stripped. ---- */
+  const PIPE_STOP = new Set('the and of for group holdings holding plc inc incorporated llc ltd limited co company corp corporation gmbh ag sa spa pty llp lp fund funds asset assets management managers investment investments investing investors capital partners advisers advisors advisory consulting consultants services bank banking trust pension pensions retirement system board authority fondo global international worldwide national uk usa us australia australian asia asian pacific europe emea apac hk singapore germany deutschland canada'.split(' '));
+  const PIPE_ALIAS = [[/hong ?kong.*shanghai.*bank|hongkong.*shanghai/, 'hsbc']];
+  function pipeTokens(name){
+    const s = (name||'').toLowerCase();
+    const extra = []; PIPE_ALIAS.forEach(a=>{ if(a[0].test(s)) extra.push(a[1]); });
+    const toks = s.replace(/[^a-z0-9 ]+/g,' ').split(/\s+/).filter(t=>t.length>1 && !PIPE_STOP.has(t));
+    return [...new Set(toks.concat(extra))];
+  }
+  function pipelineMatches(name){
+    const P = (typeof window!=='undefined' && window.MI_PIPELINE) || null;
+    if(!P || !Array.isArray(P.opportunities)) return [];
+    const ft = pipeTokens(name); if(!ft.length) return [];
+    const fset = new Set(ft), out = [], seen = {};
+    P.opportunities.forEach(o=>{
+      const ot = pipeTokens(o.name); if(!ot.length) return;
+      const oset = new Set(ot);
+      const short = ft.length <= ot.length ? ft : ot;
+      const longSet = ft.length <= ot.length ? oset : fset;
+      if(short.every(t=>longSet.has(t)) && !seen[o.name]){ seen[o.name]=1; out.push(o); }
+    });
+    return out;
+  }
+  function pipelineBadge(name){
+    const m = pipelineMatches(name); if(!m.length) return '';
+    const use = m.filter(o=>o.active).length ? m.filter(o=>o.active) : m;
+    const types = [...new Set(use.map(o=>o.type))].join('/');
+    const title = use.map(o=>[o.brand,o.capability,o.type,o.stage].filter(Boolean).join(' · ')).join(' | ').replace(/"/g,'&quot;');
+    return ` <span class="pill pipe" title="${title}">In pipeline${types?' · '+types:''}</span>`;
+  }
+  if(typeof window!=='undefined') window.MI_pipelineBadge = pipelineBadge;
+
   /* ================= CONTENT BLOCK (summary + key results) ================= */
   // Split into lead (summary paragraphs) and KPIs (results grid) so a highlight
   // can put the copy on one page and the metrics on another.
@@ -1237,7 +1272,7 @@
         <button class="firm-head" type="button" aria-expanded="${open}">
           <span class="firm-chev">${ALX_CHEV}</span>
           <span class="firm-cell"><span class="avatar" style="background:${avatarColor(c.firm)}">${initials(c.firm)}</span>
-            <span class="fmeta"><span class="strong">${c.firm}${c.comp?' <span class="pill warm" style="font-size:10px;padding:2px 7px;vertical-align:2px">Competitor</span>':''}</span><small>${c.domain}</small></span></span>
+            <span class="fmeta"><span class="strong">${c.firm}${c.comp?' <span class="pill warm" style="font-size:10px;padding:2px 7px;vertical-align:2px">Competitor</span>':''}${pipelineBadge(c.firm)}</span><small>${c.domain}</small></span></span>
           <span class="firm-ind">${c.industry}</span>
           <span class="firm-metric"><b>${D.fmtInt(c.total)}</b> views</span>
           <span class="firm-metric"><b>${c.visits}</b> visits</span>
