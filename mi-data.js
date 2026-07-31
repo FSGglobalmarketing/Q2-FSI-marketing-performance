@@ -146,10 +146,12 @@ window.MIDATA = (function () {
     { name:'Nuveen',     domain:'nuveen.com',     color:'var(--c-d)' },
   ];
   const FORMATS = ['Image','Video','Text'];
+  // Drop stale creatives whose images no longer load (2025 snapshot rows).
+  const AD_LIVE_FROM = '2026-01-01';
   function creatives(){
     // real competitor ads from the Google Ads Transparency Center (data.js)
     if (typeof window !== 'undefined' && window.MI_REMOTE && Array.isArray(window.MI_REMOTE.CREATIVES) && window.MI_REMOTE.CREATIVES.length)
-      return window.MI_REMOTE.CREATIVES;
+      return window.MI_REMOTE.CREATIVES.filter(c => !c.lastShown || c.lastShown >= AD_LIVE_FROM);
     const rnd = seed('cre-q2');
     const out = [];
     const advByComp = { 'Blackstone':'Blackstone Inc.', 'BlackRock':'BlackRock, Inc.', 'Schroders':'Schroders plc', 'Nuveen':'Nuveen, LLC' };
