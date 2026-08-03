@@ -1418,12 +1418,55 @@
   }
 
   /* ================= RESULTS ================= */
+  // KPI framework (from KPI_Framework.xlsx) with the 2025 financial-sector
+  // benchmarks (Financial Sector Marketing Benchmarks 2026.xlsx) where the market
+  // provides one. Rendered as a funnel accordion; quarter results live in each section.
+  const KPI_FRAMEWORK = [
+    { stage:'Awareness', desc:'Getting in front of the right institutional and wholesale audiences.', rows:[
+      { ch:'Search (SEM)',     m:'Impressions · Av CTR',          vs:'vs industry', b:'Paid search CTR 5-8% (finance); 6.5% all-industry avg' },
+      { ch:'Search (SEO)',     m:'Keywords ranked · Av position', vs:'vs peers',    b:'Position-led: #1 ~27.6% CTR; AI Overviews cutting CTR ~61%' },
+      { ch:'Display ads',      m:'Impressions · CTR',             vs:'vs industry', b:'' },
+      { ch:'LinkedIn paid',    m:'Impressions · CTR',             vs:'vs industry', b:'0.74% CTR (financial services) vs 0.44-0.65% global' },
+      { ch:'Podcast',          m:'Streams',                       vs:'vs Q4 2025',  b:'' },
+    ]},
+    { stage:'Consideration', desc:'Deepening interest with owned content and repeat engagement.', rows:[
+      { ch:'LinkedIn organic', m:'Total posts · Engagement rate', vs:'vs peers',    b:'3.2-3.3% engagement (financial services); 2-6% all-industry' },
+      { ch:'Website',          m:'Visitors · Dwell time',         vs:'vs Q4 2025',  b:'' },
+    ]},
+    { stage:'Conversion', desc:'Turning engaged audiences into qualified sales conversations.', rows:[
+      { ch:'Webinars',         m:'Attendees · Live attendees',    vs:'vs previous', b:'40-50%+ live attendance (financial services); 33-57% B2B' },
+      { ch:'Events',           m:'Client feedback',               vs:'Qualitative', b:'' },
+      { ch:'Email',            m:'Open rate · CTOR',              vs:'vs industry', b:'27.4% open · 13.4% CTOR (financial services)' },
+    ]},
+    { stage:'Service & loyalty', desc:'Retaining clients and growing first-party data and consent.', rows:[
+      { ch:'Data capture',     m:'Form conversions',              vs:'vs Q4 2025',  b:'' },
+    ]},
+  ];
+  const KPI_CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
   function renderResults(){
-    $('#branches').innerHTML = D.RESULTS.map(r=>`
-      <div class="branch"><div class="bl"><span class="bdot"></span>${r.stage}</div>
-        <div class="bmeta">${r.meta}</div>
-        <div class="bpills">${r.pills.map(([t,k])=>`<span class="pill ${k}">${t}</span>`).join('')}</div>
-      </div>`).join('');
+    const host = $('#branches'); if(!host) return;
+    host.classList.remove('slide-scroll');
+    host.style.cssText = 'display:block;max-height:56vh;overflow:auto;padding-right:6px';
+    host.innerHTML = '<div class="kpi-accordion">' + KPI_FRAMEWORK.map((s,i)=>`
+      <div class="kpi-stage${i===0?' open':''}">
+        <button class="kpi-stage-head" type="button" aria-expanded="${i===0}">
+          <span class="kpi-stage-num">${i+1}</span>
+          <span class="kpi-stage-title"><span class="kpi-stage-name">${s.stage}</span><span class="kpi-stage-desc">${s.desc}</span></span>
+          <span class="kpi-stage-meta">${s.rows.length} ${s.rows.length===1?'channel':'channels'}</span>
+          <span class="kpi-chev">${KPI_CHEV}</span>
+        </button>
+        <div class="kpi-stage-body"><div class="kpi-stage-inner">${s.rows.map(r=>`
+          <div class="kpi-row">
+            <div class="kpi-ch">${r.ch}</div>
+            <div class="kpi-m">${r.m}</div>
+            <div class="kpi-vs">${r.vs}</div>
+            ${r.b ? `<div class="kpi-b"><b>Benchmark</b> ${r.b}</div>` : '<div class="kpi-b kpi-b-none">No industry benchmark; tracked over time</div>'}
+          </div>`).join('')}</div></div>
+      </div>`).join('') + '</div>';
+    host.querySelectorAll('.kpi-stage-head').forEach(btn => btn.onclick = () => {
+      const open = btn.closest('.kpi-stage').classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
   }
 
   // Switch the whole competitor-ads section between Google and LinkedIn: reset the
