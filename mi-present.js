@@ -271,6 +271,7 @@
   /* ---------- CHART LIGHTBOX ---------- */
   const ICON_EXPAND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/></svg>';
   const ICON_CLOSE  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+  const ICON_BACK   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
 
   function lightbox(){
     const lb = document.createElement('div');
@@ -278,15 +279,24 @@
     lb.innerHTML =
       '<div class="lb-backdrop"></div>' +
       '<div class="lb-panel dark" role="dialog" aria-modal="true">' +
-        '<div class="lb-head"><span class="lb-title"></span>' +
-        '<button class="lb-close" aria-label="Close">' + ICON_CLOSE + '</button></div>' +
+        '<div class="lb-head">' +
+          '<button class="lb-back" type="button" aria-label="Back">' + ICON_BACK + '<span>Back</span></button>' +
+          '<nav class="lb-crumbs" aria-label="Breadcrumb"></nav>' +
+        '</div>' +
         '<div class="lb-scroll"></div>' +
       '</div>';
     document.body.appendChild(lb);
     const scroll = $('.lb-scroll', lb);
-    const titleEl = $('.lb-title', lb);
+    const crumbsEl = $('.lb-crumbs', lb);
+    const escc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    function setCrumbs(items){
+      const a = (Array.isArray(items) ? items : [items]).filter(Boolean);
+      crumbsEl.innerHTML = a.map((c,i)=>
+        (i>0 ? '<span class="lb-sep" aria-hidden="true">›</span>' : '') +
+        '<span class="lb-crumb'+(i===a.length-1?' cur':'')+'">'+escc(c)+'</span>').join('');
+    }
 
-    function open(source, title){
+    function open(source, crumbs){
       scroll.innerHTML = '';
       // a carousel expands each of its slides; a standalone card expands itself
       const slides = $$('.cslide', source);
@@ -304,7 +314,7 @@
         clone.classList.remove('on-dark');
         scroll.appendChild(clone);
       });
-      titleEl.textContent = title || 'Charts';
+      setCrumbs((crumbs && (Array.isArray(crumbs) ? crumbs.length : crumbs)) ? crumbs : ['Charts']);
       lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
       scroll.scrollTop = 0;
       // Force a synchronous layout so the now-visible panel reports real
@@ -323,7 +333,7 @@
     }
     function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); scroll.innerHTML = ''; }
 
-    $('.lb-close', lb).onclick = close;
+    $('.lb-back', lb).onclick = close;
     $('.lb-backdrop', lb).onclick = close;
     window.addEventListener('keydown', e => { if(e.key === 'Escape' && lb.classList.contains('open')){ e.stopPropagation(); close(); } });
     return { open, close, isOpen: () => lb.classList.contains('open') };
@@ -334,14 +344,23 @@
   // hintControls so the two can't drift apart.
   const EXPAND_IGNORE = 'button, a, input, select, textarea, .seg, .chip, .page-tab, .cdot, .focus-slider, .chips';
 
+  // Breadcrumb for the lightbox: [chapter, page]. Chapter = nearest preceding
+  // divider's label; pages before the first divider sit under "Overview".
+  function crumbsFor(pageEl){
+    if(!pageEl) return ['Charts'];
+    const label = pageEl.dataset.label || 'Charts';
+    let el = pageEl.previousElementSibling, chapter = '';
+    while(el){ if(el.classList && el.classList.contains('divider')){ chapter = el.dataset.label || ''; break; } el = el.previousElementSibling; }
+    return chapter ? [chapter, label] : ['Overview', label];
+  }
   function addExpandButtons(lbox){
-    function makeExpandable(card, source, title){
+    function makeExpandable(card, source, crumbs){
       if($('.expand-btn', card)) return;
       const btn = document.createElement('button');
       btn.className = 'expand-btn'; btn.type = 'button';
       btn.setAttribute('aria-label', 'Expand');
       btn.innerHTML = ICON_EXPAND;
-      btn.addEventListener('click', e => { e.stopPropagation(); lbox.open(source, title); });
+      btn.addEventListener('click', e => { e.stopPropagation(); lbox.open(source, crumbs); });
       card.appendChild(btn);
       // clicking anywhere on the widget (except interactive controls) opens it too
       card.classList.add('expandable');
@@ -349,17 +368,16 @@
         // never treat a click on an interactive control (incl. the Q1/Q2 slider)
         // as an "expand" — dragging the slider must not open the lightbox.
         if(e.target.closest(EXPAND_IGNORE)) return;
-        lbox.open(source, title);
+        lbox.open(source, crumbs);
       });
     }
     $$('.carousel').forEach(car => {
-      const title = (car.closest('.page')?.dataset.label) || 'Charts';
-      $$('.cslide > .card, .cslide > .chart-card, .cslide > .map-wrap', car).forEach(card => makeExpandable(card, car, title));
+      const crumbs = crumbsFor(car.closest('.page'));
+      $$('.cslide > .card, .cslide > .chart-card, .cslide > .map-wrap', car).forEach(card => makeExpandable(card, car, crumbs));
     });
     // standalone cards (e.g. Alphix) that aren't inside a carousel
     $$('[data-expandable]').forEach(card => {
-      const title = (card.closest('.page')?.dataset.label) || 'Details';
-      makeExpandable(card, card, title);
+      makeExpandable(card, card, crumbsFor(card.closest('.page')));
     });
   }
 
