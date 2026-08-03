@@ -1418,54 +1418,118 @@
   }
 
   /* ================= RESULTS ================= */
-  // KPI framework (from KPI_Framework.xlsx) with the 2025 financial-sector
-  // benchmarks (Financial Sector Marketing Benchmarks 2026.xlsx) where the market
-  // provides one. Rendered as a funnel accordion; quarter results live in each section.
-  const KPI_FRAMEWORK = [
-    { stage:'Awareness', desc:'Getting in front of the right institutional and wholesale audiences.', rows:[
-      { ch:'Search (SEM)',     m:'Impressions · Av CTR',          vs:'vs industry', b:'Paid search CTR 5-8% (finance); 6.5% all-industry avg' },
-      { ch:'Search (SEO)',     m:'Keywords ranked · Av position', vs:'vs peers',    b:'Position-led: #1 ~27.6% CTR; AI Overviews cutting CTR ~61%' },
-      { ch:'Display ads',      m:'Impressions · CTR',             vs:'vs industry', b:'' },
-      { ch:'LinkedIn paid',    m:'Impressions · CTR',             vs:'vs industry', b:'0.74% CTR (financial services) vs 0.44-0.65% global' },
-      { ch:'Podcast',          m:'Streams',                       vs:'vs Q4 2025',  b:'' },
-    ]},
-    { stage:'Consideration', desc:'Deepening interest with owned content and repeat engagement.', rows:[
-      { ch:'LinkedIn organic', m:'Total posts · Engagement rate', vs:'vs peers',    b:'3.2-3.3% engagement (financial services); 2-6% all-industry' },
-      { ch:'Website',          m:'Visitors · Dwell time',         vs:'vs Q4 2025',  b:'' },
-    ]},
-    { stage:'Conversion', desc:'Turning engaged audiences into qualified sales conversations.', rows:[
-      { ch:'Webinars',         m:'Attendees · Live attendees',    vs:'vs previous', b:'40-50%+ live attendance (financial services); 33-57% B2B' },
-      { ch:'Events',           m:'Client feedback',               vs:'Qualitative', b:'' },
-      { ch:'Email',            m:'Open rate · CTOR',              vs:'vs industry', b:'27.4% open · 13.4% CTOR (financial services)' },
-    ]},
-    { stage:'Service & loyalty', desc:'Retaining clients and growing first-party data and consent.', rows:[
-      { ch:'Data capture',     m:'Form conversions',              vs:'vs Q4 2025',  b:'' },
-    ]},
-  ];
   const KPI_CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+  // KPI framework "Marketing Menu": every funnel stage, its organic and paid
+  // channels, and the KPI + benchmark we hold each to. Benchmarks per the group
+  // KPI framework (KPI_Framework.xlsx) and 2025 financial-sector benchmarks.
+  const _ENG   = { n:'Engagement',        kpi:'Time on Page',    b:'Avg. Session Duration ~2 min · Industry' };
+  const _EMAIL = { n:'Email Performance', kpi:'Open Rate',       b:'Open Rate >42% · Industry' };
+  const _SOC   = { n:'Social Engagement', kpi:'Engagement Rate', b:'Engagement Rate <0.5% · Industry' };
+  const _PR    = { n:'Media Coverage',    kpi:'Media Mentions',  b:'Positive Mentions >70% · Competitor' };
+  const _EVT   = { n:'Event Engagement',  kpi:'Metric 1',        b:'QoQ Growth · Internal' };
+  const KPI_MENU = {
+    objectives: [
+      ['Business', 'Increase asset inflows in EMEA by 5% in 2025'],
+      ['Distribution', 'Grow Igneo sales, protect SI, and expand FSSA GEM'],
+      ['Marketing', 'Run awareness and consideration campaigns to generate interest and deliver qualified leads to sales'],
+    ],
+    stages: [
+      { name:'Awareness', color:'#3b6fb0', groups:[
+        { t:'Organic', ch:[
+          { c:'Content Marketing', k:[{ n:'Website traffic', kpi:'Active users', b:'Quarter over quarter average' }] },
+          { c:'Educational content', k:[_ENG] },
+          { c:'In-house Emails', k:[_ENG] },
+          { c:'LinkedIn', k:[_SOC] },
+          { c:'PR', k:[_PR] },
+          { c:'SEO', k:[{ n:'Search Visibility', kpi:'Organic Keywords', b:'Organic Keywords >1000 · Internal' }] },
+          { c:'Whitepapers / Proprietary Research', k:[
+            { n:'Lead Generation', kpi:'Form Submissions', b:'Conversion Rate >2.5% · Industry' },
+            { n:'Ad Performance', kpi:'CTR', b:'CTR >0.5% · Industry' },
+          ] },
+        ] },
+        { t:'Paid', ch:[
+          { c:'Search Engine Marketing (SEM)', k:[{ n:'Search Performance', kpi:'CTR', b:'CTR >1.2% · Industry' }, _EMAIL] },
+          { c:'Digital Advertising (MPUs)', k:[{ n:'Ad Performance', kpi:'CTR', b:'CTR >0.5% · Industry' }] },
+          { c:'Events & Sponsorships', k:[{ n:'Event Reach', kpi:'Attendees', b:'Attendees >100 · Internal' }] },
+          { c:'Outdoor (billboards)', k:[{ n:'Impressions', kpi:'Monthly Impressions', b:'Monthly Impressions >10K · Industry' }] },
+          { c:'Print advertising', k:[{ n:'Impressions', kpi:'Monthly Impressions', b:'Monthly Impressions >10K · Industry' }] },
+        ] },
+      ] },
+      { name:'Consideration', color:'#17a89a', groups:[
+        { t:'Organic', ch:[
+          { c:'Automated Drip Campaigns', k:[_EMAIL, _ENG] },
+          { c:'Content Amplification & Regional Tailoring', k:[_EMAIL, _ENG] },
+          { c:'LinkedIn / Social Media', k:[_SOC] },
+          { c:'Podcasts', k:[_ENG] },
+          { c:'PR', k:[_PR] },
+          { c:'Strategy insight content (case studies)', k:[_ENG] },
+          { c:'Strategy Update Events', k:[_EMAIL] },
+          { c:'Strategy / Product development', k:[_ENG] },
+          { c:'Videos', k:[_ENG] },
+        ] },
+        { t:'Paid', ch:[
+          { c:'Client Events & Masterclasses', k:[_EVT] },
+          { c:'Client Webinars', k:[_ENG] },
+          { c:'Emails', k:[_EMAIL] },
+        ] },
+      ] },
+      { name:'Conversion', color:'#2bb35f', groups:[
+        { t:'Organic', ch:[
+          { c:'Follow-Up Emails', k:[_EMAIL] },
+          { c:'Personalised web content', k:[_ENG] },
+          { c:'PR', k:[_PR] },
+          { c:'Product level information content', k:[_ENG] },
+          { c:'Sales Enablement Materials', k:[{ n:'Sales Support', kpi:'Usage Rate', b:'Usage Rate >60% · Internal' }] },
+          { c:'Social Media', k:[_SOC] },
+          { c:'Webinars', k:[_ENG] },
+        ] },
+        { t:'Paid', ch:[
+          { c:'CRM-driven Engagement Optimisation', k:[{ n:'CRM Performance', kpi:'Engagement Rate', b:'Engagement Rate <3% · Internal' }] },
+          { c:'Proprietary Events', k:[_EVT] },
+          { c:'Social Media', k:[_SOC] },
+          { c:'Webinars', k:[_ENG] },
+        ] },
+      ] },
+      { name:'Service / Loyalty', color:'#9061d6', groups:[
+        { t:'Organic', ch:[
+          { c:'Client Surveys & Feedback Loop', k:[{ n:'Client Feedback', kpi:'Satisfaction Score', b:'Satisfaction Score >80% · Internal' }] },
+          { c:'Client Webinars', k:[_ENG] },
+          { c:'PR', k:[_PR] },
+          { c:'Product Update Emails', k:[_EMAIL] },
+          { c:'Social Media', k:[_SOC] },
+        ] },
+        { t:'Paid', ch:[
+          { c:'Client Surveys & Feedback Loop', k:[{ n:'Client Feedback', kpi:'Satisfaction Score', b:'Satisfaction Score >80% · Internal' }] },
+          { c:'Client Webinars', k:[_ENG] },
+          { c:'Exclusive Events for Top Clients', k:[{ n:'Client Engagement', kpi:'Attendance Rate', b:'Attendance Rate >75% · Internal' }] },
+        ] },
+      ] },
+    ],
+  };
   function renderResults(){
     const host = $('#branches'); if(!host) return;
-    host.classList.remove('slide-scroll');
-    host.style.cssText = 'display:block;max-height:56vh;overflow:auto;padding-right:6px';
-    host.innerHTML = '<div class="kpi-accordion">' + KPI_FRAMEWORK.map((s,i)=>`
-      <div class="kpi-stage${i===0?' open':''}">
-        <button class="kpi-stage-head" type="button" aria-expanded="${i===0}">
-          <span class="kpi-stage-num">${i+1}</span>
-          <span class="kpi-stage-title"><span class="kpi-stage-name">${s.stage}</span><span class="kpi-stage-desc">${s.desc}</span></span>
-          <span class="kpi-stage-meta">${s.rows.length} ${s.rows.length===1?'channel':'channels'}</span>
-          <span class="kpi-chev">${KPI_CHEV}</span>
-        </button>
-        <div class="kpi-stage-body"><div class="kpi-stage-inner">${s.rows.map(r=>`
-          <div class="kpi-row">
-            <div class="kpi-ch">${r.ch}</div>
-            <div class="kpi-m">${r.m}</div>
-            <div class="kpi-vs">${r.vs}</div>
-            ${r.b ? `<div class="kpi-b"><b>Benchmark</b> ${r.b}</div>` : '<div class="kpi-b kpi-b-none">No industry benchmark; tracked over time</div>'}
-          </div>`).join('')}</div></div>
-      </div>`).join('') + '</div>';
-    host.querySelectorAll('.kpi-stage-head').forEach(btn => btn.onclick = () => {
-      const open = btn.closest('.kpi-stage').classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
+    host.classList.remove('slide-scroll'); host.style.cssText = '';
+    const objs = KPI_MENU.objectives.map(o=>`<div class="kpi-obj"><b>${o[0]} objective:</b> ${o[1]}</div>`).join('');
+    const cols = KPI_MENU.stages.map(s=>`
+      <section class="kpi-col">
+        <h3 class="kpi-col-head" style="--kc:${s.color}">${s.name}</h3>
+        <div class="kpi-col-body">${s.groups.map(g=>`
+          <div class="kpi-grp-tag">${g.t}</div>
+          ${g.ch.map(c=>`
+            <div class="kpi-acc open">
+              <button class="kpi-acc-head" type="button" aria-expanded="true"><span>${c.c}</span><span class="kpi-chev">${KPI_CHEV}</span></button>
+              <div class="kpi-acc-body"><div class="kpi-acc-inner">${c.k.map(k=>`
+                <div class="kpi-card">
+                  <div class="kpi-card-name">${k.n}</div>
+                  <div class="kpi-card-line"><b>KPI</b> ${k.kpi}</div>
+                  <div class="kpi-card-line kpi-card-bench"><b>Benchmark</b> ${k.b}</div>
+                </div>`).join('')}</div></div>
+            </div>`).join('')}`).join('')}
+        </div>
+      </section>`).join('');
+    host.innerHTML = `<div class="kpi-menu"><div class="kpi-objs">${objs}</div><div class="kpi-cols">${cols}</div></div>`;
+    host.querySelectorAll('.kpi-acc-head').forEach(btn => btn.onclick = () => {
+      const open = btn.closest('.kpi-acc').classList.toggle('open'); btn.setAttribute('aria-expanded', open);
     });
   }
 
