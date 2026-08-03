@@ -78,6 +78,45 @@
   }
   if(typeof window!=='undefined') window.MI_pipelineBadge = pipelineBadge;
 
+  /* ---------- Consistent, labelled filter rail (right, under the slider) ----------
+     Collect each chart-card's filter controls (.seg / .chips) into one right-aligned
+     stack placed just under the card head (where the Q1/Q2 slider lives), each with a
+     "Filter by ..." label. Controls keep their data-role/id so renderers still find
+     them. Idempotent; runs at init and is exposed for the lightbox clones. */
+  function filterName(ctrl){
+    const role = (ctrl.getAttribute('data-role') || ctrl.id || '').toLowerCase();
+    if(role.indexOf('comp') === 0 || role.indexOf('comp-chips') > -1) return 'brand';
+    if(role.indexOf('fmt') === 0 || role.indexOf('fmt-chips') > -1) return 'format';
+    if(role.indexOf('plat') > -1) return 'platform';
+    const a = (ctrl.getAttribute('aria-label') || '').toLowerCase();
+    if(a === 'group by') return 'grouping';
+    if(a === 'ad platform') return 'platform';
+    return a || 'view';
+  }
+  function arrangeFilters(root){
+    const scope = root || document;
+    scope.querySelectorAll('.chart-card').forEach(card => {
+      try {
+        if(card.dataset.railed) return;
+        const ctrls = [...card.querySelectorAll('.seg, .chips')].filter(c => !c.closest('.filter-rail'));
+        if(!ctrls.length) return;
+        card.dataset.railed = '1';
+        const head = card.querySelector('.card-head, .p-controls');
+        const rail = document.createElement('div'); rail.className = 'filter-rail';
+        ctrls.forEach(c => {
+          const grp = document.createElement('div'); grp.className = 'filter-group';
+          const lbl = document.createElement('div'); lbl.className = 'filter-lbl';
+          lbl.textContent = 'Filter by ' + filterName(c);
+          grp.appendChild(lbl); grp.appendChild(c);
+          rail.appendChild(grp);
+        });
+        if(head && head.parentNode === card) card.insertBefore(rail, head.nextSibling);
+        else card.insertBefore(rail, card.firstChild);
+      } catch(e){}
+    });
+  }
+  if(typeof window!=='undefined') window.MI_arrangeFilters = arrangeFilters;
+
   /* ================= CONTENT BLOCK (summary + key results) ================= */
   // Split into lead (summary paragraphs) and KPIs (results grid) so a highlight
   // can put the copy on one page and the metrics on another.
@@ -1448,4 +1487,5 @@
   renderEmailSummary(); renderAllEmail();
   renderEvents(); renderResults();
   wire(); observers();
+  arrangeFilters();
 })();

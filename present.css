@@ -615,6 +615,26 @@ body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
 .lb-crumb { color: var(--dark-ink-2); }
 .lb-crumb.cur { color: #ffffff; font-weight: 600; }
 .lb-sep { color: var(--dark-ink-2); opacity: .55; }
+
+/* ---------- Labelled filter rail: right, under the slider, stacked, high-contrast ---------- */
+.filter-rail { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; margin: 6px 0 16px; }
+.filter-group { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; max-width: 100%; }
+.filter-lbl { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--dark-ink); }
+.filter-rail .seg, .filter-rail .chips {
+  display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px;
+  background: none; border: 0; padding: 0; box-shadow: none; margin: 0;
+}
+.filter-rail .seg button, .filter-rail .chip {
+  border: 1.5px solid var(--dark-ink-2); background: rgba(255,255,255,.06); color: var(--dark-ink);
+  padding: 6px 13px; border-radius: 9px; font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  line-height: 1; cursor: pointer; transition: background .15s, border-color .15s, color .15s; white-space: nowrap;
+}
+.filter-rail .seg button:hover, .filter-rail .chip:hover { border-color: #ffffff; background: rgba(255,255,255,.12); }
+.filter-rail .seg button.on, .filter-rail .chip.on { background: var(--c-us); border-color: var(--c-us); color: #ffffff; }
+@media (max-width: 620px){
+  .filter-rail, .filter-group { align-items: stretch; }
+  .filter-rail .seg, .filter-rail .chips { justify-content: flex-start; }
+}
 .lb-scroll { overflow: auto; padding: 30px 34px 40px; display: flex; flex-direction: column; gap: 26px; }
 .lb-scroll::-webkit-scrollbar { width: 10px; }
 .lb-scroll::-webkit-scrollbar-thumb { background: var(--glass-brd-2); border-radius: 8px; }
