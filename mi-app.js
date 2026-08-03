@@ -1506,31 +1506,32 @@
       ] },
     ],
   };
+  // Vertical funnel: only the channels this brand actually used this quarter, each
+  // filled with the real metric vs its benchmark. Per-brand data is D.KPI.
   function renderResults(){
     const host = $('#branches'); if(!host) return;
     host.classList.remove('slide-scroll'); host.style.cssText = '';
-    const objs = KPI_MENU.objectives.map(o=>`<div class="kpi-obj"><b>${o[0]} objective:</b> ${o[1]}</div>`).join('');
-    const cols = KPI_MENU.stages.map(s=>`
-      <section class="kpi-col">
-        <h3 class="kpi-col-head" style="--kc:${s.color}">${s.name}</h3>
-        <div class="kpi-col-body">${s.groups.map(g=>`
-          <div class="kpi-grp-tag">${g.t}</div>
-          ${g.ch.map(c=>`
-            <div class="kpi-acc open">
-              <button class="kpi-acc-head" type="button" aria-expanded="true"><span>${c.c}</span><span class="kpi-chev">${KPI_CHEV}</span></button>
-              <div class="kpi-acc-body"><div class="kpi-acc-inner">${c.k.map(k=>`
-                <div class="kpi-card">
-                  <div class="kpi-card-name">${k.n}</div>
-                  <div class="kpi-card-line"><b>KPI</b> ${k.kpi}</div>
-                  <div class="kpi-card-line kpi-card-bench"><b>Benchmark</b> ${k.b}</div>
-                </div>`).join('')}</div></div>
-            </div>`).join('')}`).join('')}
-        </div>
-      </section>`).join('');
-    host.innerHTML = `<div class="kpi-menu"><div class="kpi-objs">${objs}</div><div class="kpi-cols">${cols}</div></div>`;
-    host.querySelectorAll('.kpi-acc-head').forEach(btn => btn.onclick = () => {
-      const open = btn.closest('.kpi-acc').classList.toggle('open'); btn.setAttribute('aria-expanded', open);
-    });
+    const stages = (D.KPI && Array.isArray(D.KPI)) ? D.KPI : [];
+    if(!stages.length){ host.innerHTML = ''; return; }
+    const objs = (KPI_MENU.objectives || []).map(o=>`<div class="kpi-obj"><b>${o[0]} objective:</b> ${o[1]}</div>`).join('');
+    const STL = { up:'On / above benchmark', down:'Below benchmark', flat:'On track' };
+    const W = [100, 84, 70, 58];
+    host.innerHTML = `<div class="kpi-objs">${objs}</div>` +
+      '<div class="kpi-funnel">' + stages.map((s,i)=>`
+        <div class="kf-stage">
+          <div class="kf-head" style="--kc:${s.color};width:${W[i]||58}%">
+            <span class="kf-name">${s.stage}</span><span class="kf-count">${s.rows.length} ${s.rows.length===1?'channel':'channels'} used</span>
+          </div>
+          <div class="kf-body">${s.rows.map(r=>`
+            <div class="kf-card" style="--kc:${s.color}">
+              <div class="kf-ch">${r.ch}</div>
+              <div class="kf-actual">${r.actual}</div>
+              <div class="kf-kpi">${r.kpi}</div>
+              <div class="kf-bench">Benchmark: ${r.bench}</div>
+              <div class="kf-status ${r.status}">${STL[r.status] || ''}</div>
+            </div>`).join('')}</div>
+          ${i < stages.length-1 ? '<div class="kf-connector" aria-hidden="true">&#9660;</div>' : ''}
+        </div>`).join('') + '</div>';
   }
 
   // Switch the whole competitor-ads section between Google and LinkedIn: reset the

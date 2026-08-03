@@ -252,6 +252,22 @@ window.MIDATA = (function () {
   // ============================================================
   // Results — outcomes by funnel stage
   // ============================================================
+  // KPI framework — vertical funnel. Only channels FSI ran this quarter, each
+  // against our KPI framework and the 2025 financial-sector benchmarks.
+  const KPI = [
+    { stage:'Awareness', color:'#3b6fb0', rows:[
+      { ch:'SEO', actual:'145', kpi:'Australian search terms, +40% YoY', bench:'AEQ Growth 20 → 28, now ahead of Betashares', status:'up' },
+    ] },
+    { stage:'Consideration', color:'#17a89a', rows:[
+      { ch:'LinkedIn (organic)', actual:'6,000+', kpi:'Clicks on the Buy Hold Sell post', bench:'More than every other post combined', status:'up' },
+      { ch:'Website', actual:'~50,000', kpi:'Website visitors, up a quarter on Q1', bench:'6,300+ on the Cash Fund page (ETF launch)', status:'up' },
+    ] },
+    { stage:'Conversion', color:'#2bb35f', rows:[
+      { ch:'Email', actual:'740', kpi:'Organisations in the Cash ETF launch, across 8 emails', bench:'1,500+ GLIS clicks from Asian banks', status:'up' },
+      { ch:'Data capture', actual:'1,730', kpi:'Contacts engaged · 1,095 organisations · 3,640 clicks', bench:'Down 10% vs Q1 (1,917)', status:'down' },
+    ] },
+  ];
+
   const RESULTS = [
     { stage:'Awareness',  meta:'3 of 4 goals met', pills:[['Reach +18%','pos'],['Recall +12%','pos'],['Share of voice ↑','pos'],['Search rank −2','neg']] },
     { stage:'Engagement', meta:'All goals met',    pills:[['Web visits ↑','pos'],['LinkedIn 4.2%','pos'],['Avg time 1:52','pos']] },
@@ -617,7 +633,7 @@ window.MIDATA = (function () {
   function liChannel(){ return LI_CHANNEL; }
 
   return {
-    PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, RESULTS, CB,
+    PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, KPI, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
     channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
