@@ -255,16 +255,36 @@ window.MIDATA = (function () {
   // KPI framework — vertical funnel. Only channels FSI ran this quarter, each
   // against our KPI framework and the 2025 financial-sector benchmarks.
   const KPI = [
-    { stage:'Awareness', color:'#3b6fb0', rows:[
-      { ch:'SEO', actual:'145', kpi:'Australian search terms, +40% YoY', bench:'AEQ Growth 20 → 28, now ahead of Betashares', status:'up' },
+    { stage:'Awareness', color:'#37a6ff', channels:[
+      { ch:'Organic search', metrics:[
+        { v:'145', l:'Australian search terms', cmp:'flat on Q1', dir:'flat' },
+        { v:'20 → 28', l:'AEQ Growth terms', cmp:'now ahead of Betashares', dir:'up' },
+      ] },
+      { ch:'SEM & display', off:true, metrics:[ { l:'Impressions · CTR', cmp:'not run' } ] },
+      { ch:'LinkedIn (paid)', off:true, metrics:[ { l:'Impressions · CTR', cmp:'wound down' } ] },
     ] },
-    { stage:'Consideration', color:'#17a89a', rows:[
-      { ch:'LinkedIn (organic)', actual:'6,000+', kpi:'Clicks on the Buy Hold Sell post', bench:'More than every other post combined', status:'up' },
-      { ch:'Website', actual:'~50,000', kpi:'Website visitors, up a quarter on Q1', bench:'6,300+ on the Cash Fund page (ETF launch)', status:'up' },
+    { stage:'Consideration', color:'#15d9c2', channels:[
+      { ch:'LinkedIn (organic)', metrics:[
+        { v:'6,000+', l:'Buy Hold Sell clicks', cmp:'more than all other posts', dir:'up' },
+        { v:'+181', l:'New followers in June', cmp:'June, best month', dir:'up' },
+      ] },
+      { ch:'Website', metrics:[
+        { v:'~50,000', l:'Website visitors', cmp:'up a quarter on Q1', dir:'up' },
+        { v:'6,300+', l:'Cash Fund page', cmp:'ETF launch traffic', dir:'up' },
+      ] },
     ] },
-    { stage:'Conversion', color:'#2bb35f', rows:[
-      { ch:'Email', actual:'740', kpi:'Organisations in the Cash ETF launch, across 8 emails', bench:'1,500+ GLIS clicks from Asian banks', status:'up' },
-      { ch:'Data capture', actual:'1,730', kpi:'Contacts engaged · 1,095 organisations · 3,640 clicks', bench:'Down 10% vs Q1 (1,917)', status:'down' },
+    { stage:'Conversion', color:'#2ce072', channels:[
+      { ch:'Email', metrics:[
+        { v:'740', l:'Orgs in Cash ETF launch', cmp:'across 8 emails', dir:'up' },
+        { v:'1,500+', l:'GLIS clicks, Asian banks', cmp:'biggest engagement engine', dir:'up' },
+      ] },
+      { ch:'Events', off:true, metrics:[ { l:'Attendees', cmp:'not measured' } ] },
+    ] },
+    { stage:'Service & loyalty', color:'#a870ff', channels:[
+      { ch:'Data capture', metrics:[
+        { v:'1,730', l:'Contacts engaged', cmp:'down 10% vs Q1', dir:'down' },
+        { v:'1,095', l:'Organisations · 3,640 clicks', cmp:'', dir:'flat' },
+      ] },
     ] },
   ];
 

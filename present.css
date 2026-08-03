@@ -144,10 +144,17 @@ html.flat-review .carousel-ui { display: none !important; }
 /* Sales-pipeline match flag on targeting companies (Alphix / email / forms):
    this company is also a live RFP/RFI opportunity. */
 .pill.pipe {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 10px; padding: 2px 8px 2px 6px; vertical-align: 2px; white-space: nowrap;
   color: var(--pos);
   border-color: color-mix(in srgb, var(--pos) 55%, transparent);
   background: color-mix(in srgb, var(--pos) 15%, transparent);
-  font-size: 10px; padding: 2px 8px; vertical-align: 2px; white-space: nowrap;
+}
+.pill.pipe svg { width: 9px; height: 9px; flex: none; }
+.pill.pipe.open {
+  color: oklch(0.82 0.16 80);
+  border-color: color-mix(in srgb, oklch(0.82 0.16 80) 55%, transparent);
+  background: color-mix(in srgb, oklch(0.82 0.16 80) 15%, transparent);
 }
 .exec-metrics {
   display: grid;
@@ -644,30 +651,62 @@ body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
   .filter-rail .seg, .filter-rail .chips { justify-content: flex-start; }
 }
 
-/* ---------- KPI framework "Marketing Menu" ---------- */
-.kpi-menu { display: flex; flex-direction: column; gap: 14px; }
-.kpi-objs { display: flex; flex-direction: column; gap: 3px; padding: 12px 16px; border-radius: 12px;
-  background: color-mix(in srgb, var(--c-us) 16%, transparent); border: 1px solid color-mix(in srgb, var(--c-us) 42%, transparent); }
-.kpi-obj { font-size: 12px; color: var(--dark-ink); }
-.kpi-obj b { color: #ffffff; font-weight: 600; }
-/* vertical funnel: tapering stage bands, actual-vs-benchmark cards per channel */
-.kpi-funnel { display: flex; flex-direction: column; align-items: center; max-height: 62vh; overflow-y: auto; overflow-x: hidden; padding: 2px 6px; }
-.kf-stage { width: 100%; display: flex; flex-direction: column; align-items: center; }
-.kf-head { max-width: 820px; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 9px 22px; border-radius: 10px; color: #fff; background: var(--kc); box-shadow: 0 5px 16px -8px rgba(0,0,0,.7); }
-.kf-name { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
-.kf-count { font-family: var(--font-mono); font-size: 10px; opacity: .85; }
-.kf-body { width: 100%; max-width: 940px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 11px 0 4px; }
-.kf-card { border: 1px solid var(--dark-hair); border-top: 3px solid var(--kc); border-radius: 10px; padding: 11px 13px; background: var(--glass); }
-.kf-ch { font-size: 12px; font-weight: 600; color: var(--dark-ink); }
-.kf-actual { font-family: var(--font-mono); font-size: 20px; font-weight: 500; color: #ffffff; margin: 5px 0 1px; line-height: 1.05; }
-.kf-kpi { font-size: 11px; color: var(--dark-ink-2); }
-.kf-bench { font-size: 10.5px; color: var(--dark-ink-2); margin-top: 6px; }
-.kf-status { display: inline-block; margin-top: 7px; font-family: var(--font-mono); font-size: 9.5px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 6px; }
-.kf-status.up { color: var(--pos); border: 1px solid color-mix(in srgb, var(--pos) 55%, transparent); }
-.kf-status.down { color: var(--neg); border: 1px solid color-mix(in srgb, var(--neg) 55%, transparent); }
-.kf-status.flat { color: var(--dark-ink-2); border: 1px solid var(--dark-hair); }
-.kf-connector { color: var(--dark-ink-2); font-size: 11px; margin: 3px 0 9px; opacity: .55; }
-@media (max-width: 700px){ .kf-head { width: 100% !important; } .kf-body { grid-template-columns: 1fr; } }
+/* ---------- KPI framework: horizontal funnel tree ---------- */
+.kpi-tree { display: flex; flex-direction: column; gap: 20px; max-height: 66vh; overflow: auto; padding: 8px 4px 16px; }
+.kpi-tree::-webkit-scrollbar { width: 8px; height: 8px; }
+.kpi-tree::-webkit-scrollbar-thumb { background: var(--dark-hair); border-radius: 8px; }
+
+/* one stage = [ node ] [ branches ] */
+.kt-stage { --kc: #3b6fb0; display: flex; align-items: center; gap: 0; min-width: 660px; }
+
+/* stage node: colour circle + name, with a trunk line reaching the branch bus */
+.kt-node { flex: none; width: 172px; display: flex; align-items: center; gap: 12px; }
+.kt-dot { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: var(--font-mono); font-size: 15px; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,.55);
+  background: var(--kc);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--kc) 24%, transparent), 0 0 26px 1px color-mix(in srgb, var(--kc) 62%, transparent), inset 0 2px 7px rgba(255,255,255,.42), inset 0 -3px 9px rgba(0,0,0,.28); }
+.kt-sname { font-size: 14.5px; font-weight: 600; letter-spacing: .01em; color: var(--kc); line-height: 1.2; text-shadow: 0 0 15px color-mix(in srgb, var(--kc) 38%, transparent); }
+.kt-node::after { content: ''; flex: 1; min-width: 14px; height: 2px; margin-left: 6px; align-self: center; background: color-mix(in srgb, var(--kc) 68%, transparent); box-shadow: 0 0 8px color-mix(in srgb, var(--kc) 45%, transparent); }
+
+/* branches: vertical bus + one row per channel */
+.kt-branches { flex: 1; position: relative; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; }
+.kt-branches::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px; background: color-mix(in srgb, var(--kc) 58%, transparent); border-radius: 2px; box-shadow: 0 0 10px color-mix(in srgb, var(--kc) 42%, transparent); }
+
+.kt-row { position: relative; display: flex; align-items: center; gap: 14px; }
+.kt-row::before { content: ''; position: absolute; left: -22px; top: 50%; width: 22px; height: 2px; background: color-mix(in srgb, var(--kc) 52%, transparent); }
+
+.kt-ch { flex: none; width: 134px; font-size: 11.5px; font-weight: 600; color: var(--dark-ink); padding: 8px 13px; border-radius: 999px; background: var(--glass); border: 1px solid var(--dark-hair); text-align: center; }
+
+.kt-box { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 15px; border-radius: 11px;
+  background: color-mix(in srgb, var(--kc) 18%, transparent); border: 1px solid color-mix(in srgb, var(--kc) 48%, transparent);
+  box-shadow: inset 0 0 20px -8px color-mix(in srgb, var(--kc) 55%, transparent); }
+.kt-mrow { height: 24px; display: flex; align-items: baseline; gap: 10px; }
+.kt-v { flex: none; min-width: 62px; font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: #ffffff; text-shadow: 0 0 16px color-mix(in srgb, var(--kc) 45%, transparent); }
+.kt-l { font-size: 11.5px; color: var(--dark-ink-2); }
+
+.kt-cmps { flex: none; display: flex; flex-direction: column; padding: 8px 0; text-align: right; }
+.kt-cmp { height: 24px; display: flex; align-items: center; justify-content: flex-end; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.kt-cmp.up { color: var(--pos); text-shadow: 0 0 13px color-mix(in srgb, var(--pos) 50%, transparent); }
+.kt-cmp.down { color: var(--neg); text-shadow: 0 0 13px color-mix(in srgb, var(--neg) 50%, transparent); }
+.kt-cmp.flat { color: var(--dark-ink-2); }
+
+/* unused framework channel — greyed placeholder */
+.kt-row.off .kt-ch { color: var(--dark-ink-2); opacity: .45; border-style: dashed; }
+.kt-row.off .kt-box { background: rgba(255,255,255,.025); border-color: var(--dark-hair); border-style: dashed; }
+.kt-row.off .kt-v, .kt-row.off .kt-l { color: var(--dark-ink-2); opacity: .5; }
+.kt-row.off .kt-cmp { color: var(--dark-ink-2); opacity: .45; font-weight: 500; }
+
+@media (max-width: 760px){
+  .kt-stage { flex-direction: column; align-items: stretch; min-width: 0; gap: 12px; }
+  .kt-node { width: auto; }
+  .kt-node::after { display: none; }
+  .kt-branches { padding-left: 0; }
+  .kt-branches::before { display: none; }
+  .kt-row { flex-wrap: wrap; gap: 8px; }
+  .kt-row::before { display: none; }
+  .kt-ch { width: 100%; text-align: left; }
+  .kt-cmps { padding: 0; text-align: left; }
+  .kt-cmp { justify-content: flex-start; }
+}
 .lb-scroll { overflow: auto; padding: 30px 34px 40px; display: flex; flex-direction: column; gap: 26px; }
 .lb-scroll::-webkit-scrollbar { width: 10px; }
 .lb-scroll::-webkit-scrollbar-thumb { background: var(--glass-brd-2); border-radius: 8px; }

@@ -69,12 +69,15 @@
     });
     return out;
   }
+  const PIPE_PIN = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.6 5 8.5 5 8.5s5-4.9 5-8.5c0-2.76-2.24-5-5-5zm0 6.6A1.6 1.6 0 118 4.4a1.6 1.6 0 010 3.2z"/></svg>';
   function pipelineBadge(name){
-    const m = pipelineMatches(name); if(!m.length) return '';
-    const use = m.filter(o=>o.active).length ? m.filter(o=>o.active) : m;
-    const types = [...new Set(use.map(o=>o.type))].join('/');
-    const title = use.map(o=>[o.brand,o.capability,o.type,o.stage].filter(Boolean).join(' · ')).join(' | ').replace(/"/g,'&quot;');
-    return ` <span class="pill pipe" title="${title}">In pipeline${types?' · '+types:''}</span>`;
+    // Pins only open/live opportunities (active). Lost never gets a pin.
+    const m = pipelineMatches(name).filter(o=>o.active); if(!m.length) return '';
+    const hasOpen = m.some(o=>o.status==='open');
+    const label = hasOpen ? 'Open opportunity' : 'Live mandate';
+    const cls = hasOpen ? 'open' : 'live';
+    const title = m.slice(0,8).map(o=>[o.capability,o.stage].filter(Boolean).join(' · ')).filter(Boolean).join(' | ').replace(/"/g,'&quot;');
+    return ` <span class="pill pipe ${cls}" title="${title}">${PIPE_PIN}${label}</span>`;
   }
   if(typeof window!=='undefined') window.MI_pipelineBadge = pipelineBadge;
 
@@ -1315,7 +1318,7 @@
         <button class="firm-head" type="button" aria-expanded="${open}">
           <span class="firm-chev">${ALX_CHEV}</span>
           <span class="firm-cell"><span class="avatar" style="background:${avatarColor(c.firm)}">${initials(c.firm)}</span>
-            <span class="fmeta"><span class="strong">${c.firm}${c.comp?' <span class="pill warm" style="font-size:10px;padding:2px 7px;vertical-align:2px">Competitor</span>':''}${pipelineBadge(c.firm)}</span><small>${c.domain}</small></span></span>
+            <span class="fmeta"><span class="strong">${c.firm}${c.comp?' <span class="pill warm" style="font-size:10px;padding:2px 7px;vertical-align:2px">Competitor</span>':pipelineBadge(c.firm)}</span><small>${c.domain}</small></span></span>
           <span class="firm-ind">${c.industry}</span>
           <span class="firm-metric"><b>${D.fmtInt(c.total)}</b> views</span>
           <span class="firm-metric"><b>${c.visits}</b> visits</span>
@@ -1508,30 +1511,27 @@
   };
   // Vertical funnel: only the channels this brand actually used this quarter, each
   // filled with the real metric vs its benchmark. Per-brand data is D.KPI.
+  // Horizontal funnel tree: a stage node branches to its framework channels.
+  // Each channel shows its live metric(s) (mono value + label) and, to the
+  // right, the benchmark comparison colour-coded by direction. Channels the
+  // brand did not run this quarter render greyed (c.off) as framework markers.
   function renderResults(){
     const host = $('#branches'); if(!host) return;
     host.classList.remove('slide-scroll'); host.style.cssText = '';
     const stages = (D.KPI && Array.isArray(D.KPI)) ? D.KPI : [];
     if(!stages.length){ host.innerHTML = ''; return; }
-    const objs = (KPI_MENU.objectives || []).map(o=>`<div class="kpi-obj"><b>${o[0]} objective:</b> ${o[1]}</div>`).join('');
-    const STL = { up:'On / above benchmark', down:'Below benchmark', flat:'On track' };
-    const W = [100, 84, 70, 58];
-    host.innerHTML = `<div class="kpi-objs">${objs}</div>` +
-      '<div class="kpi-funnel">' + stages.map((s,i)=>`
-        <div class="kf-stage">
-          <div class="kf-head" style="--kc:${s.color};width:${W[i]||58}%">
-            <span class="kf-name">${s.stage}</span><span class="kf-count">${s.rows.length} ${s.rows.length===1?'channel':'channels'} used</span>
-          </div>
-          <div class="kf-body">${s.rows.map(r=>`
-            <div class="kf-card" style="--kc:${s.color}">
-              <div class="kf-ch">${r.ch}</div>
-              <div class="kf-actual">${r.actual}</div>
-              <div class="kf-kpi">${r.kpi}</div>
-              <div class="kf-bench">Benchmark: ${r.bench}</div>
-              <div class="kf-status ${r.status}">${STL[r.status] || ''}</div>
-            </div>`).join('')}</div>
-          ${i < stages.length-1 ? '<div class="kf-connector" aria-hidden="true">&#9660;</div>' : ''}
-        </div>`).join('') + '</div>';
+    host.innerHTML = '<div class="kpi-tree">' + stages.map((s,i)=>`
+      <div class="kt-stage" style="--kc:${s.color}">
+        <div class="kt-node"><span class="kt-dot">${i+1}</span><span class="kt-sname">${s.stage}</span></div>
+        <div class="kt-branches">${(s.channels||[]).map(c=>`
+          <div class="kt-row${c.off?' off':''}">
+            <div class="kt-ch">${c.ch}</div>
+            <div class="kt-box">${(c.metrics||[]).map(m=>`
+              <div class="kt-mrow"><span class="kt-v">${c.off?'-':m.v}</span><span class="kt-l">${m.l}</span></div>`).join('')}</div>
+            <div class="kt-cmps">${(c.metrics||[]).map(m=>`
+              <div class="kt-cmp ${c.off?'flat':(m.dir||'flat')}">${m.cmp||''}</div>`).join('')}</div>
+          </div>`).join('')}</div>
+      </div>`).join('') + '</div>';
   }
 
   // Switch the whole competitor-ads section between Google and LinkedIn: reset the
