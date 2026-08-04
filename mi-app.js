@@ -1112,8 +1112,8 @@
       xAxis:{ type:'value', show:false, max:'dataMax' },
       yAxis:{ type:'category', data:cat, axisTick:{show:false}, axisLine:{show:false},
               axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5,
-                formatter: pipeSet.size ? (v => (pipeSet.has(v)?'{pin|◆} ':'')+v) : undefined,
-                rich: pipeSet.size ? { pin:{ color:'#e0a020', fontSize:12 } } : undefined } },
+                formatter: pipeSet.size ? (v => { if(!pipeSet.has(v)) return v; const nm = v.length>22 ? v.slice(0,21)+'…' : v; return nm+' {pill|◆ Open opportunity}'; }) : undefined,
+                rich: pipeSet.size ? { pill:{ color:'#e6a91f', backgroundColor:'rgba(224,160,32,0.14)', borderColor:'rgba(224,160,32,0.55)', borderWidth:1, borderRadius:7, padding:[3,7,3,7], fontSize:10, fontFamily:'IBM Plex Sans' } } : undefined } },
       series:[
         { name:(opts.hitName||'Clicks'), type:'bar', stack:'t', data:clk, barWidth:14, itemStyle:{ color:cUs, borderRadius:[7,0,0,7] } },
         { name:'Impressions', type:'bar', stack:'t', data:rest, barWidth:14, itemStyle:{ color:cRest, borderRadius:[0,7,7,0] },
@@ -1403,7 +1403,8 @@
     const rows = d.rows.slice(0, cap).map(r=>({ name:r.n, impr:(r.o||0)+(r.c||0), clicks:(r.c||0), _o:r.o||0, _c:r.c||0, _e:r.e||0, _pipe:!!r.p }));
     // contact rows carry no per-email count (e:0) — omit the line rather than say 0
     const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}` + (r._e ? `<br/>Emails engaged ${r._e}` : '') + (r._pipe ? `<br/><span style="color:#e0a020">◆ Open opportunity</span>` : '');
-    try { echartsStackedHBars(el, rows, { labelW: modal?280:214, hitName:'Clicks', tipRows, modal }); }
+    const hasPins = rows.some(r=>r._pipe);
+    try { echartsStackedHBars(el, rows, { labelW: modal?(hasPins?348:280):(hasPins?300:214), hitName:'Clicks', tipRows, modal }); }
     catch(e){ console.warn('email-eng', e); }
   }
 
