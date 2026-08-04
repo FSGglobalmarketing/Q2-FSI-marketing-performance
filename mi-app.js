@@ -1096,6 +1096,7 @@
     opts=opts||{}; const dark=echDark(el);
     const inst=echInit(el, opts.modal?(Math.max(rows.length,3)*44+70)+'px':((rows.length*(opts.rowH||34)+26)+'px'));
     const cat  = rows.map(r=>r.name).reverse();
+    const pipeSet = new Set(rows.filter(r=>r._pipe).map(r=>r.name));
     const clk  = rows.map(r=>r.clicks).reverse();
     const rest = rows.map(r=>Math.max(0, r.impr - r.clicks)).reverse();
     const rev  = rows.slice().reverse();
@@ -1110,7 +1111,9 @@
           return `<b>${r.name}</b><br/>Impressions ${Number(r.impr).toLocaleString()}<br/>Clicks ${Number(r.clicks).toLocaleString()}<br/>CTR ${ctr}%`; } }),
       xAxis:{ type:'value', show:false, max:'dataMax' },
       yAxis:{ type:'category', data:cat, axisTick:{show:false}, axisLine:{show:false},
-              axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5 } },
+              axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5,
+                formatter: pipeSet.size ? (v => (pipeSet.has(v)?'{pin|◆} ':'')+v) : undefined,
+                rich: pipeSet.size ? { pin:{ color:'#e0a020', fontSize:12 } } : undefined } },
       series:[
         { name:(opts.hitName||'Clicks'), type:'bar', stack:'t', data:clk, barWidth:14, itemStyle:{ color:cUs, borderRadius:[7,0,0,7] } },
         { name:'Impressions', type:'bar', stack:'t', data:rest, barWidth:14, itemStyle:{ color:cRest, borderRadius:[0,7,7,0] },
@@ -1382,10 +1385,10 @@
       const noun = d ? (plural[d.key] || d.label.toLowerCase()+'s') : '';
       // The page is height-budgeted, so on-page carries the one-line version;
       // the full methodology (incl. the masking statement) rides in the modal.
-      const brief = 'Q2 activity 22 Apr–30 Jun · external contacts only · clicks are the harder signal.';
+      const brief = 'Q2 2026 · external contacts only · ranked by opens + clicks · ◆ marks an open opportunity.';
       const maskLine = d && d.key==='contact' ? ' Contacts show initial + surname only.' : '';
       note.innerHTML = d
-        ? `Top ${shown} ${noun}${d.rows.length>shown?` of ${d.rows.length}`:''} by clicks. ${modal ? E.note : brief + maskLine}`
+        ? `Top ${shown} ${noun}${d.rows.length>shown?` of ${d.rows.length}`:''} by engagement. ${modal ? E.note : brief + maskLine}`
         : (modal ? E.note : brief);
     }
   }
@@ -1397,9 +1400,9 @@
     // On-page rows are height-budgeted: below the heading + KPI row a laptop
     // leaves ~200px, and .page clips with no scrollbar. Expand shows all 22.
     const cap = modal ? 22 : (window.innerHeight && window.innerHeight < 900 ? 4 : 12);
-    const rows = d.rows.slice(0, cap).map(r=>({ name:r.n, impr:(r.o||0)+(r.c||0), clicks:(r.c||0), _o:r.o||0, _c:r.c||0, _e:r.e||0 }));
+    const rows = d.rows.slice(0, cap).map(r=>({ name:r.n, impr:(r.o||0)+(r.c||0), clicks:(r.c||0), _o:r.o||0, _c:r.c||0, _e:r.e||0, _pipe:!!r.p }));
     // contact rows carry no per-email count (e:0) — omit the line rather than say 0
-    const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}` + (r._e ? `<br/>Emails engaged ${r._e}` : '');
+    const tipRows = r => `Opens ${r._o.toLocaleString()}<br/>Clicks ${r._c.toLocaleString()}` + (r._e ? `<br/>Emails engaged ${r._e}` : '') + (r._pipe ? `<br/><span style="color:#e0a020">◆ Open opportunity</span>` : '');
     try { echartsStackedHBars(el, rows, { labelW: modal?280:214, hitName:'Clicks', tipRows, modal }); }
     catch(e){ console.warn('email-eng', e); }
   }
