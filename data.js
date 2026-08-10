@@ -9874,59 +9874,11 @@ window.MI_REMOTE = {
       "advertiser": "PTARMIGAN MEDIA LTD",
       "domain": "fidelity.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2127056972845299905",
-      "firstShown": "2026-01-28",
-      "lastShown": "2026-08-03",
-      "variants": 151,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR07499696666199457793"
-    },
-    {
-      "competitor": "Fidelity",
-      "color": "var(--c-a)",
-      "advertiser": "PTARMIGAN MEDIA LTD",
-      "domain": "fidelity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5504311993032886278",
-      "firstShown": "2026-02-01",
-      "lastShown": "2026-08-03",
-      "variants": 64,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR10155775016948465665"
-    },
-    {
-      "competitor": "Fidelity",
-      "color": "var(--c-a)",
-      "advertiser": "PTARMIGAN MEDIA LTD",
-      "domain": "fidelity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12674520756769077138",
-      "firstShown": "2026-01-28",
-      "lastShown": "2026-08-02",
-      "variants": 94,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR14451267879506542593"
-    },
-    {
-      "competitor": "Fidelity",
-      "color": "var(--c-a)",
-      "advertiser": "PTARMIGAN MEDIA LTD",
-      "domain": "fidelity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2268875323588579943",
-      "firstShown": "2026-01-28",
-      "lastShown": "2026-08-02",
-      "variants": 68,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR10286182593560838145"
-    },
-    {
-      "competitor": "Fidelity",
-      "color": "var(--c-a)",
-      "advertiser": "PTARMIGAN MEDIA LTD",
-      "domain": "fidelity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/761847166405936781",
-      "firstShown": "2026-04-22",
-      "lastShown": "2026-08-02",
-      "variants": 65,
-      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR16795876713778118657"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5287234355704776222",
+      "firstShown": "2026-04-21",
+      "lastShown": "2026-08-10",
+      "variants": 70,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR09408805437383376897"
     },
     {
       "competitor": "Fidelity",
@@ -9936,9 +9888,57 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/6275159899740651076",
       "firstShown": "2026-04-21",
-      "lastShown": "2026-08-02",
-      "variants": 68,
+      "lastShown": "2026-08-10",
+      "variants": 75,
       "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR10153507068057747457"
+    },
+    {
+      "competitor": "Fidelity",
+      "color": "var(--c-a)",
+      "advertiser": "PTARMIGAN MEDIA LTD",
+      "domain": "fidelity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/761847166405936781",
+      "firstShown": "2026-04-22",
+      "lastShown": "2026-08-10",
+      "variants": 72,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR16795876713778118657"
+    },
+    {
+      "competitor": "Fidelity",
+      "color": "var(--c-a)",
+      "advertiser": "PTARMIGAN MEDIA LTD",
+      "domain": "fidelity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2268875323588579943",
+      "firstShown": "2026-01-28",
+      "lastShown": "2026-08-10",
+      "variants": 74,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR10286182593560838145"
+    },
+    {
+      "competitor": "Fidelity",
+      "color": "var(--c-a)",
+      "advertiser": "PTARMIGAN MEDIA LTD",
+      "domain": "fidelity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12674520756769077138",
+      "firstShown": "2026-01-28",
+      "lastShown": "2026-08-09",
+      "variants": 101,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR14451267879506542593"
+    },
+    {
+      "competitor": "Fidelity",
+      "color": "var(--c-a)",
+      "advertiser": "PTARMIGAN MEDIA LTD",
+      "domain": "fidelity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9457664785617665584",
+      "firstShown": "2026-07-13",
+      "lastShown": "2026-08-09",
+      "variants": 24,
+      "preview": "https://adstransparency.google.com/advertiser/AR09239578838248194049/creative/CR12330893377884127233"
     },
     {
       "competitor": "Perpetual",
@@ -10018,11 +10018,23 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7665095762993161017",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12017915062894547319",
+      "firstShown": "2024-11-13",
+      "lastShown": "2026-08-10",
+      "variants": 635,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR11681982583201071105"
+    },
+    {
+      "competitor": "Vanguard AU",
+      "color": "var(--c-c)",
+      "advertiser": "Vanguard Investments Australia ltd",
+      "domain": "vanguard.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12621083127985540130",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-08-03",
-      "variants": 495,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR10116827987220365313"
+      "lastShown": "2026-08-10",
+      "variants": 502,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR16682899772310290433"
     },
     {
       "competitor": "Vanguard AU",
@@ -10030,11 +10042,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/9862770757646621166",
-      "firstShown": "2026-04-22",
-      "lastShown": "2026-08-03",
-      "variants": 104,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR07165984441808977921"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9579684222488329163",
+      "firstShown": "2026-03-18",
+      "lastShown": "2026-08-09",
+      "variants": 146,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR14344962216250310657"
     },
     {
       "competitor": "Vanguard AU",
@@ -10042,23 +10054,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/15756820303743983340",
-      "firstShown": "2026-07-07",
-      "lastShown": "2026-08-03",
-      "variants": 28,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR14285763479418699777"
-    },
-    {
-      "competitor": "Vanguard AU",
-      "color": "var(--c-c)",
-      "advertiser": "Vanguard Investments Australia ltd",
-      "domain": "vanguard.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/8764515572281404377",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/14982647357691852094",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-08-03",
-      "variants": 495,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR08364254831057043457"
+      "lastShown": "2026-08-09",
+      "variants": 502,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR12908259311725051905"
     },
     {
       "competitor": "Vanguard AU",
@@ -10066,11 +10066,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/1626103265510200727",
-      "firstShown": "2025-03-27",
-      "lastShown": "2026-08-03",
-      "variants": 495,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR08329224390596100097"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12296596504952595577",
+      "firstShown": "2024-11-13",
+      "lastShown": "2026-08-09",
+      "variants": 634,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR05518069820353937409"
     },
     {
       "competitor": "Vanguard AU",
@@ -10078,35 +10078,11 @@ window.MI_REMOTE = {
       "advertiser": "Vanguard Investments Australia ltd",
       "domain": "vanguard.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/678820638781174274",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/258695305950578891",
       "firstShown": "2025-03-27",
-      "lastShown": "2026-08-03",
-      "variants": 495,
-      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR11551224468537868289"
-    },
-    {
-      "competitor": "UBS",
-      "color": "var(--c-d)",
-      "advertiser": "UBS Business Solutions AG",
-      "domain": "ubs.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10221893292666723590",
-      "firstShown": "2025-07-31",
-      "lastShown": "2026-08-03",
-      "variants": 335,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR12036175582480826369"
-    },
-    {
-      "competitor": "UBS",
-      "color": "var(--c-d)",
-      "advertiser": "UBS Business Solutions AG",
-      "domain": "ubs.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7421415090917832532",
-      "firstShown": "2025-11-04",
-      "lastShown": "2026-08-03",
-      "variants": 247,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR01225990082406645761"
+      "lastShown": "2026-08-09",
+      "variants": 502,
+      "preview": "https://adstransparency.google.com/advertiser/AR10426908872051523585/creative/CR02062478703249588225"
     },
     {
       "competitor": "UBS",
@@ -10116,8 +10092,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/3117336043057562031",
       "firstShown": "2026-05-15",
-      "lastShown": "2026-08-02",
-      "variants": 80,
+      "lastShown": "2026-08-10",
+      "variants": 87,
       "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR11280461750148792321"
     },
     {
@@ -10126,11 +10102,11 @@ window.MI_REMOTE = {
       "advertiser": "UBS Business Solutions AG",
       "domain": "ubs.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/13326029994622461280",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12080120806866049594",
       "firstShown": "2025-07-31",
-      "lastShown": "2026-08-02",
-      "variants": 353,
-      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR02031255287440080897"
+      "lastShown": "2026-08-10",
+      "variants": 349,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14523039368593014785"
     },
     {
       "competitor": "UBS",
@@ -10140,9 +10116,21 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/8470274971352464085",
       "firstShown": "2025-11-04",
-      "lastShown": "2026-08-02",
-      "variants": 247,
+      "lastShown": "2026-08-10",
+      "variants": 254,
       "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR11087372707854024705"
+    },
+    {
+      "competitor": "UBS",
+      "color": "var(--c-d)",
+      "advertiser": "UBS Business Solutions AG",
+      "domain": "ubs.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13326029994622461280",
+      "firstShown": "2025-07-31",
+      "lastShown": "2026-08-10",
+      "variants": 360,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR02031255287440080897"
     },
     {
       "competitor": "UBS",
@@ -10152,21 +10140,21 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/6957959179657788070",
       "firstShown": "2025-11-04",
-      "lastShown": "2026-08-02",
-      "variants": 247,
+      "lastShown": "2026-08-10",
+      "variants": 254,
       "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14581676461141262337"
     },
     {
-      "competitor": "BetaShares",
-      "color": "var(--c-us)",
-      "advertiser": "BetaShares Capital Ltd",
-      "domain": "betashares.com.au",
+      "competitor": "UBS",
+      "color": "var(--c-d)",
+      "advertiser": "UBS Business Solutions AG",
+      "domain": "ubs.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/8000956418457079579",
-      "firstShown": "2022-08-02",
-      "lastShown": "2026-08-03",
-      "variants": 1442,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR07680045358025539585"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13833178814837313150",
+      "firstShown": "2025-07-31",
+      "lastShown": "2026-08-09",
+      "variants": 361,
+      "preview": "https://adstransparency.google.com/advertiser/AR15402754928304717825/creative/CR14363957147203534849"
     },
     {
       "competitor": "BetaShares",
@@ -10174,11 +10162,11 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/8853029097602647147",
-      "firstShown": "2025-03-11",
-      "lastShown": "2026-08-03",
-      "variants": 507,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR09814193733866881025"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8925452908593974965",
+      "firstShown": "2026-07-17",
+      "lastShown": "2026-08-10",
+      "variants": 25,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR15008523049890742273"
     },
     {
       "competitor": "BetaShares",
@@ -10186,11 +10174,11 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/11355738305788693167",
-      "firstShown": "2023-09-14",
-      "lastShown": "2026-08-03",
-      "variants": 1026,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR05378410008012652545"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4175933209551542769",
+      "firstShown": "2026-07-17",
+      "lastShown": "2026-08-10",
+      "variants": 25,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR11306812645820071937"
     },
     {
       "competitor": "BetaShares",
@@ -10198,11 +10186,11 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2210524346636191286",
-      "firstShown": "2026-03-19",
-      "lastShown": "2026-08-03",
-      "variants": 136,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR16248665444674699265"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1095520255174682864",
+      "firstShown": "2026-07-17",
+      "lastShown": "2026-08-10",
+      "variants": 25,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR16370120866333196289"
     },
     {
       "competitor": "BetaShares",
@@ -10210,11 +10198,11 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17228080313931878165",
-      "firstShown": "2023-07-02",
-      "lastShown": "2026-08-03",
-      "variants": 880,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR05531107915135451137"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1774918351187957888",
+      "firstShown": "2023-08-01",
+      "lastShown": "2026-08-10",
+      "variants": 1089,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR04140877647674605569"
     },
     {
       "competitor": "BetaShares",
@@ -10222,11 +10210,23 @@ window.MI_REMOTE = {
       "advertiser": "BetaShares Capital Ltd",
       "domain": "betashares.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/4231456698108570655",
-      "firstShown": "2022-05-19",
-      "lastShown": "2026-08-03",
-      "variants": 544,
-      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR15231155746285551617"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11946831978520950845",
+      "firstShown": "2026-07-17",
+      "lastShown": "2026-08-10",
+      "variants": 25,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR15539584967083294721"
+    },
+    {
+      "competitor": "BetaShares",
+      "color": "var(--c-us)",
+      "advertiser": "BetaShares Capital Ltd",
+      "domain": "betashares.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7521731233121574956",
+      "firstShown": "2026-08-06",
+      "lastShown": "2026-08-10",
+      "variants": 5,
+      "preview": "https://adstransparency.google.com/advertiser/AR10698904349133766657/creative/CR08602440102246875137"
     },
     {
       "competitor": "BlackRock / iShares",
@@ -10234,11 +10234,23 @@ window.MI_REMOTE = {
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10550297154680454930",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11019048842435047081",
+      "firstShown": "2026-06-10",
+      "lastShown": "2026-08-10",
+      "variants": 60,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR05070737972769325057"
+    },
+    {
+      "competitor": "BlackRock / iShares",
+      "color": "var(--c-muted)",
+      "advertiser": "BlackRock Investment Management (Australia) Limited",
+      "domain": "blackrock.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/9679943755405630493",
       "firstShown": "2025-05-22",
-      "lastShown": "2026-08-03",
-      "variants": 437,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR02632341114476036097"
+      "lastShown": "2026-08-10",
+      "variants": 224,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR06664856084437532673"
     },
     {
       "competitor": "BlackRock / iShares",
@@ -10246,11 +10258,11 @@ window.MI_REMOTE = {
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/15462181429277565148",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13255136550438154516",
       "firstShown": "2025-05-23",
-      "lastShown": "2026-08-03",
-      "variants": 187,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR06799440774443302913"
+      "lastShown": "2026-08-10",
+      "variants": 220,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR05656745002852679681"
     },
     {
       "competitor": "BlackRock / iShares",
@@ -10258,11 +10270,11 @@ window.MI_REMOTE = {
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/11975160236261607584",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7986953974914452505",
       "firstShown": "2025-05-23",
-      "lastShown": "2026-08-03",
-      "variants": 437,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR16552360632259706881"
+      "lastShown": "2026-08-10",
+      "variants": 224,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR16939444250574061569"
     },
     {
       "competitor": "BlackRock / iShares",
@@ -10270,11 +10282,11 @@ window.MI_REMOTE = {
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2989522264694184716",
-      "firstShown": "2025-05-22",
-      "lastShown": "2026-08-03",
-      "variants": 217,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR17400799879344685057"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11856730905175515897",
+      "firstShown": "2025-05-24",
+      "lastShown": "2026-08-10",
+      "variants": 220,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR02193994553223020545"
     },
     {
       "competitor": "BlackRock / iShares",
@@ -10282,23 +10294,11 @@ window.MI_REMOTE = {
       "advertiser": "BlackRock Investment Management (Australia) Limited",
       "domain": "blackrock.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/18316183711966551726",
-      "firstShown": "2025-09-04",
-      "lastShown": "2026-08-03",
-      "variants": 113,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR17645328310424567809"
-    },
-    {
-      "competitor": "BlackRock / iShares",
-      "color": "var(--c-muted)",
-      "advertiser": "BlackRock Investment Management (Australia) Limited",
-      "domain": "blackrock.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7958874855381805856",
-      "firstShown": "2025-05-22",
-      "lastShown": "2026-08-03",
-      "variants": 217,
-      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR17550236703698976769"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12176659461523531568",
+      "firstShown": "2026-06-10",
+      "lastShown": "2026-08-10",
+      "variants": 61,
+      "preview": "https://adstransparency.google.com/advertiser/AR05832621465492520961/creative/CR12231016078079164417"
     },
     {
       "competitor": "Colonial First State",
@@ -10366,23 +10366,11 @@ window.MI_REMOTE = {
       "advertiser": "Alphinity Investment Management Pty Ltd",
       "domain": "alphinity.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5331045459747197664",
-      "firstShown": "2026-04-21",
-      "lastShown": "2026-08-03",
-      "variants": 105,
-      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR14064188453080268801"
-    },
-    {
-      "competitor": "Alphinity",
-      "color": "var(--c-b)",
-      "advertiser": "Alphinity Investment Management Pty Ltd",
-      "domain": "alphinity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17489298570605093511",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/2537496539862819060",
       "firstShown": "2024-10-03",
-      "lastShown": "2026-08-03",
-      "variants": 574,
-      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR07138246795687100417"
+      "lastShown": "2026-08-10",
+      "variants": 566,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR08556005260894666753"
     },
     {
       "competitor": "Alphinity",
@@ -10390,11 +10378,47 @@ window.MI_REMOTE = {
       "advertiser": "Alphinity Investment Management Pty Ltd",
       "domain": "alphinity.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/14760547857710624061",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11880789178011218516",
+      "firstShown": "2024-10-03",
+      "lastShown": "2026-08-10",
+      "variants": 598,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR01453801504338083841"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11761278656497184537",
+      "firstShown": "2026-04-21",
+      "lastShown": "2026-08-10",
+      "variants": 112,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR06201623134051762177"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11779205606711063701",
       "firstShown": "2025-02-10",
-      "lastShown": "2026-08-03",
-      "variants": 498,
-      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR13411878621279158273"
+      "lastShown": "2026-08-10",
+      "variants": 506,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR15076856606635327489"
+    },
+    {
+      "competitor": "Alphinity",
+      "color": "var(--c-b)",
+      "advertiser": "Alphinity Investment Management Pty Ltd",
+      "domain": "alphinity.com.au",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/14066761263777728508",
+      "firstShown": "2025-02-10",
+      "lastShown": "2026-08-10",
+      "variants": 504,
+      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR16715794411434278913"
     },
     {
       "competitor": "Alphinity",
@@ -10404,33 +10428,21 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/4190133094737787391",
       "firstShown": "2025-02-10",
-      "lastShown": "2026-08-03",
-      "variants": 471,
+      "lastShown": "2026-08-10",
+      "variants": 477,
       "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR01201560170988044289"
     },
     {
-      "competitor": "Alphinity",
-      "color": "var(--c-b)",
-      "advertiser": "Alphinity Investment Management Pty Ltd",
-      "domain": "alphinity.com.au",
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/4373889560674455882",
-      "firstShown": "2025-02-10",
-      "lastShown": "2026-08-03",
-      "variants": 508,
-      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR06713786447817605121"
-    },
-    {
-      "competitor": "Alphinity",
-      "color": "var(--c-b)",
-      "advertiser": "Alphinity Investment Management Pty Ltd",
-      "domain": "alphinity.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/9299642287417264218",
-      "firstShown": "2024-10-03",
-      "lastShown": "2026-08-03",
-      "variants": 522,
-      "preview": "https://adstransparency.google.com/advertiser/AR10693849559173431297/creative/CR18332555238499680257"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7424524594912488224",
+      "firstShown": "2026-06-01",
+      "lastShown": "2026-08-10",
+      "variants": 70,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR08252051997314777089"
     },
     {
       "competitor": "Fisher Investments",
@@ -10438,11 +10450,11 @@ window.MI_REMOTE = {
       "advertiser": "Fisher Investments",
       "domain": "fisherinvestments.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5199913245619818273",
-      "firstShown": "2025-08-20",
-      "lastShown": "2026-08-03",
-      "variants": 304,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR07976076846485733377"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8183444815079817253",
+      "firstShown": "2026-01-15",
+      "lastShown": "2026-08-10",
+      "variants": 104,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR14410398482546294785"
     },
     {
       "competitor": "Fisher Investments",
@@ -10450,11 +10462,11 @@ window.MI_REMOTE = {
       "advertiser": "Fisher Investments",
       "domain": "fisherinvestments.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/16926484868495176378",
-      "firstShown": "2024-02-29",
-      "lastShown": "2026-08-03",
-      "variants": 770,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR17852715822833729537"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8903933666990130966",
+      "firstShown": "2025-04-24",
+      "lastShown": "2026-08-10",
+      "variants": 412,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR02794826186914529281"
     },
     {
       "competitor": "Fisher Investments",
@@ -10462,11 +10474,23 @@ window.MI_REMOTE = {
       "advertiser": "Fisher Investments",
       "domain": "fisherinvestments.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2060378509660028838",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13252378087625658091",
+      "firstShown": "2026-06-19",
+      "lastShown": "2026-08-10",
+      "variants": 39,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR02354035505802248193"
+    },
+    {
+      "competitor": "Fisher Investments",
+      "color": "var(--c-c)",
+      "advertiser": "Fisher Investments",
+      "domain": "fisherinvestments.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10738737266652142900",
       "firstShown": "2026-01-02",
-      "lastShown": "2026-08-03",
-      "variants": 149,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR15673534964001931265"
+      "lastShown": "2026-08-10",
+      "variants": 58,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR00679426382702313473"
     },
     {
       "competitor": "Fisher Investments",
@@ -10474,35 +10498,11 @@ window.MI_REMOTE = {
       "advertiser": "Fisher Investments",
       "domain": "fisherinvestments.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/15822741556424353254",
-      "firstShown": "2024-03-01",
-      "lastShown": "2026-08-03",
-      "variants": 577,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR05668227640868208641"
-    },
-    {
-      "competitor": "Fisher Investments",
-      "color": "var(--c-c)",
-      "advertiser": "Fisher Investments",
-      "domain": "fisherinvestments.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12437034979581826496",
-      "firstShown": "2024-02-28",
-      "lastShown": "2026-08-03",
-      "variants": 591,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR03184589985080672257"
-    },
-    {
-      "competitor": "Fisher Investments",
-      "color": "var(--c-c)",
-      "advertiser": "Fisher Investments",
-      "domain": "fisherinvestments.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/14562273454589968126",
-      "firstShown": "2026-01-31",
-      "lastShown": "2026-08-03",
-      "variants": 66,
-      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR03929089692162588673"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4326443640721294287",
+      "firstShown": "2026-01-02",
+      "lastShown": "2026-08-10",
+      "variants": 153,
+      "preview": "https://adstransparency.google.com/advertiser/AR08703699960614354945/creative/CR00873679094846324737"
     },
     {
       "competitor": "Federated Hermes",
@@ -10534,23 +10534,11 @@ window.MI_REMOTE = {
       "advertiser": "Investment Markets (AUST) Pty Ltd",
       "domain": "investmentmarkets.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/15204091274298791804",
-      "firstShown": "2025-02-03",
-      "lastShown": "2026-08-03",
-      "variants": 542,
-      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR03309872445938204673"
-    },
-    {
-      "competitor": "InvestmentMarkets",
-      "color": "var(--c-us)",
-      "advertiser": "Investment Markets (AUST) Pty Ltd",
-      "domain": "investmentmarkets.com.au",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/6104622287584524510",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/6077570755956010394",
       "firstShown": "2025-10-27",
-      "lastShown": "2026-08-03",
-      "variants": 276,
-      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR11041993389074546689"
+      "lastShown": "2026-08-10",
+      "variants": 284,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR13146085085562273793"
     },
     {
       "competitor": "InvestmentMarkets",
@@ -10560,8 +10548,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/14740416353449214748",
       "firstShown": "2025-10-20",
-      "lastShown": "2026-08-03",
-      "variants": 284,
+      "lastShown": "2026-08-10",
+      "variants": 291,
       "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR06889824890854047745"
     },
     {
@@ -10570,11 +10558,11 @@ window.MI_REMOTE = {
       "advertiser": "Investment Markets (AUST) Pty Ltd",
       "domain": "investmentmarkets.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2872744210252459503",
-      "firstShown": "2025-10-27",
-      "lastShown": "2026-08-02",
-      "variants": 277,
-      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR00135542003856310273"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/16395922966280793264",
+      "firstShown": "2025-03-24",
+      "lastShown": "2026-08-09",
+      "variants": 501,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR11722365102668644353"
     },
     {
       "competitor": "InvestmentMarkets",
@@ -10582,11 +10570,11 @@ window.MI_REMOTE = {
       "advertiser": "Investment Markets (AUST) Pty Ltd",
       "domain": "investmentmarkets.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/11503853191521977448",
-      "firstShown": "2025-10-20",
-      "lastShown": "2026-08-02",
-      "variants": 283,
-      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR18280685116034383873"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17405988260460187096",
+      "firstShown": "2026-07-28",
+      "lastShown": "2026-08-09",
+      "variants": 14,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR05150590417053417473"
     },
     {
       "competitor": "InvestmentMarkets",
@@ -10594,59 +10582,23 @@ window.MI_REMOTE = {
       "advertiser": "Investment Markets (AUST) Pty Ltd",
       "domain": "investmentmarkets.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/6077570755956010394",
-      "firstShown": "2025-10-27",
-      "lastShown": "2026-08-02",
-      "variants": 277,
-      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR13146085085562273793"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/11414286701253128184",
+      "firstShown": "2026-07-28",
+      "lastShown": "2026-08-09",
+      "variants": 14,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR14731165194470293505"
     },
     {
-      "competitor": "J.P. Morgan",
-      "color": "var(--c-muted)",
-      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
-      "domain": "jpmorgan.com",
+      "competitor": "InvestmentMarkets",
+      "color": "var(--c-us)",
+      "advertiser": "Investment Markets (AUST) Pty Ltd",
+      "domain": "investmentmarkets.com.au",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/11716110343164670394",
-      "firstShown": "2026-05-19",
-      "lastShown": "2026-08-03",
-      "variants": 76,
-      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR12951895758545616897"
-    },
-    {
-      "competitor": "J.P. Morgan",
-      "color": "var(--c-muted)",
-      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
-      "domain": "jpmorgan.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2539025959611204213",
-      "firstShown": "2025-07-24",
-      "lastShown": "2026-08-03",
-      "variants": 374,
-      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR11746317379364192257"
-    },
-    {
-      "competitor": "J.P. Morgan",
-      "color": "var(--c-muted)",
-      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
-      "domain": "jpmorgan.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/15852907848033108416",
-      "firstShown": "2026-05-19",
-      "lastShown": "2026-08-03",
-      "variants": 76,
-      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR14790251162640580609"
-    },
-    {
-      "competitor": "J.P. Morgan",
-      "color": "var(--c-muted)",
-      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
-      "domain": "jpmorgan.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/1291687463707332174",
-      "firstShown": "2025-11-07",
-      "lastShown": "2026-08-03",
-      "variants": 201,
-      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR01232889792748847105"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/6210570555306645944",
+      "firstShown": "2026-08-06",
+      "lastShown": "2026-08-09",
+      "variants": 4,
+      "preview": "https://adstransparency.google.com/advertiser/AR18024266145304936449/creative/CR01952009936783278081"
     },
     {
       "competitor": "J.P. Morgan",
@@ -10656,8 +10608,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/17048200334893260156",
       "firstShown": "2025-03-26",
-      "lastShown": "2026-08-03",
-      "variants": 438,
+      "lastShown": "2026-08-10",
+      "variants": 443,
       "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR02805508629573140481"
     },
     {
@@ -10666,11 +10618,59 @@ window.MI_REMOTE = {
       "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
       "domain": "jpmorgan.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17699825421425292172",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/1924980460222054271",
+      "firstShown": "2025-11-05",
+      "lastShown": "2026-08-10",
+      "variants": 277,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR13090823631150252033"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8620626026174313424",
+      "firstShown": "2025-06-03",
+      "lastShown": "2026-08-10",
+      "variants": 277,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR04188423528346812417"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13259561456730894923",
+      "firstShown": "2026-05-20",
+      "lastShown": "2026-08-10",
+      "variants": 82,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR00547919844217978881"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8978693070498760742",
+      "firstShown": "2026-01-07",
+      "lastShown": "2026-08-10",
+      "variants": 210,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR17400443594627612673"
+    },
+    {
+      "competitor": "J.P. Morgan",
+      "color": "var(--c-muted)",
+      "advertiser": "JPMorgan Asset Management (Asia Pacific) Limited",
+      "domain": "jpmorgan.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17791285668605058340",
       "firstShown": "2025-03-26",
-      "lastShown": "2026-08-03",
-      "variants": 493,
-      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR06929784132704665601"
+      "lastShown": "2026-08-10",
+      "variants": 500,
+      "preview": "https://adstransparency.google.com/advertiser/AR06119098266626818049/creative/CR17995999333442387969"
     },
     {
       "competitor": "Macquarie",
@@ -10678,11 +10678,11 @@ window.MI_REMOTE = {
       "advertiser": "Macquarie Investment Management Australia Limited",
       "domain": "macquarie.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/5002363465961271945",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7253570309425075459",
       "firstShown": "2024-02-06",
-      "lastShown": "2026-08-03",
-      "variants": 782,
-      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR01225628600779145217"
+      "lastShown": "2026-08-10",
+      "variants": 777,
+      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR09241727301148737537"
     },
     {
       "competitor": "Macquarie",
@@ -10690,11 +10690,47 @@ window.MI_REMOTE = {
       "advertiser": "Macquarie Investment Management Australia Limited",
       "domain": "macquarie.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2991472138944933922",
-      "firstShown": "2025-03-24",
-      "lastShown": "2026-08-03",
-      "variants": 372,
-      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR08946411431549468673"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/12258832695527563877",
+      "firstShown": "2024-02-06",
+      "lastShown": "2026-08-09",
+      "variants": 629,
+      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR07833003866583990273"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13500131824666186292",
+      "firstShown": "2026-08-01",
+      "lastShown": "2026-08-09",
+      "variants": 9,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR14154873766957547521"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8799415411062608042",
+      "firstShown": "2026-08-01",
+      "lastShown": "2026-08-09",
+      "variants": 9,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR08710872839466516481"
+    },
+    {
+      "competitor": "Macquarie",
+      "color": "var(--c-a)",
+      "advertiser": "MACQUARIE (DERRIMUT) PTY LIMITED",
+      "domain": "macquarie.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/14674159116708379767",
+      "firstShown": "2026-08-01",
+      "lastShown": "2026-08-09",
+      "variants": 9,
+      "preview": "https://adstransparency.google.com/advertiser/AR02096945987598680065/creative/CR17730005093903761409"
     },
     {
       "competitor": "Macquarie",
@@ -10704,45 +10740,9 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/1660133595156588162",
       "firstShown": "2025-03-24",
-      "lastShown": "2026-08-03",
-      "variants": 377,
+      "lastShown": "2026-08-09",
+      "variants": 384,
       "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR00066679109572362241"
-    },
-    {
-      "competitor": "Macquarie",
-      "color": "var(--c-a)",
-      "advertiser": "Macquarie Investment Management Australia Limited",
-      "domain": "macquarie.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/12488189859356528158",
-      "firstShown": "2024-07-01",
-      "lastShown": "2026-08-03",
-      "variants": 637,
-      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR17934040667806236673"
-    },
-    {
-      "competitor": "Macquarie",
-      "color": "var(--c-a)",
-      "advertiser": "Macquarie Investment Management Australia Limited",
-      "domain": "macquarie.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/16270244198099811902",
-      "firstShown": "2024-02-06",
-      "lastShown": "2026-08-03",
-      "variants": 759,
-      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR04537254595964960769"
-    },
-    {
-      "competitor": "Macquarie",
-      "color": "var(--c-a)",
-      "advertiser": "Macquarie Investment Management Australia Limited",
-      "domain": "macquarie.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/13893788789722883754",
-      "firstShown": "2025-03-23",
-      "lastShown": "2026-08-03",
-      "variants": 380,
-      "preview": "https://adstransparency.google.com/advertiser/AR18115816053278769153/creative/CR04993026939049476097"
     },
     {
       "competitor": "Platinum",
@@ -10822,6 +10822,54 @@ window.MI_REMOTE = {
       "advertiser": "Remara Capital Pty Ltd",
       "domain": "remara.com",
       "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/13154269806621029704",
+      "firstShown": "2026-08-04",
+      "lastShown": "2026-08-10",
+      "variants": 6,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR14558491291374583809"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/17701466522473499712",
+      "firstShown": "2026-08-05",
+      "lastShown": "2026-08-10",
+      "variants": 6,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR14976384874766663681"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/5056170005815686875",
+      "firstShown": "2026-08-04",
+      "lastShown": "2026-08-10",
+      "variants": 6,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR10945100258316648449"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/8715363053728712083",
+      "firstShown": "2026-08-05",
+      "lastShown": "2026-08-09",
+      "variants": 5,
+      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR12175814409611902977"
+    },
+    {
+      "competitor": "Remara",
+      "color": "var(--c-c)",
+      "advertiser": "Remara Capital Pty Ltd",
+      "domain": "remara.com",
+      "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/12253147333227707329",
       "firstShown": "2024-03-09",
       "lastShown": "2026-02-05",
@@ -10839,54 +10887,6 @@ window.MI_REMOTE = {
       "lastShown": "2026-02-04",
       "variants": 160,
       "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR02982787149927022593"
-    },
-    {
-      "competitor": "Remara",
-      "color": "var(--c-c)",
-      "advertiser": "Remara Capital Pty Ltd",
-      "domain": "remara.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7641282335523630356",
-      "firstShown": "2025-11-25",
-      "lastShown": "2026-01-12",
-      "variants": 50,
-      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR05046302056986443777"
-    },
-    {
-      "competitor": "Remara",
-      "color": "var(--c-c)",
-      "advertiser": "Remara Capital Pty Ltd",
-      "domain": "remara.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10844482571566903309",
-      "firstShown": "2024-05-02",
-      "lastShown": "2026-01-12",
-      "variants": 258,
-      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR04696230473964191745"
-    },
-    {
-      "competitor": "Remara",
-      "color": "var(--c-c)",
-      "advertiser": "Remara Capital Pty Ltd",
-      "domain": "remara.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/9167724011139869181",
-      "firstShown": "2023-07-18",
-      "lastShown": "2026-01-12",
-      "variants": 773,
-      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR13860712994452799489"
-    },
-    {
-      "competitor": "Remara",
-      "color": "var(--c-c)",
-      "advertiser": "Remara Capital Pty Ltd",
-      "domain": "remara.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/8174137080371805053",
-      "firstShown": "2024-05-23",
-      "lastShown": "2026-01-12",
-      "variants": 332,
-      "preview": "https://adstransparency.google.com/advertiser/AR00295805805108658177/creative/CR14575662888451571713"
     },
     {
       "competitor": "Robeco",
@@ -10951,14 +10951,50 @@ window.MI_REMOTE = {
     {
       "competitor": "S&P Global",
       "color": "var(--c-us)",
-      "advertiser": "S&P Global Market Intelligence Inc.",
+      "advertiser": "S&P Global Inc.",
       "domain": "spglobal.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/14300173753653792077",
-      "firstShown": "2024-11-27",
-      "lastShown": "2026-08-03",
-      "variants": 415,
-      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR17640768807502872577"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/15826922318681149770",
+      "firstShown": "2025-01-07",
+      "lastShown": "2026-08-10",
+      "variants": 555,
+      "preview": "https://adstransparency.google.com/advertiser/AR15962006021530976257/creative/CR00493195922142920705"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7255536494087695262",
+      "firstShown": "2022-04-01",
+      "lastShown": "2026-08-10",
+      "variants": 1303,
+      "preview": "https://adstransparency.google.com/advertiser/AR00948387053073072129/creative/CR01890342375440515073"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "Standard & Poor's Financial Services LLC",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7911515004616687417",
+      "firstShown": "2026-04-29",
+      "lastShown": "2026-08-10",
+      "variants": 80,
+      "preview": "https://adstransparency.google.com/advertiser/AR02340498602108911617/creative/CR02951232016613376001"
+    },
+    {
+      "competitor": "S&P Global",
+      "color": "var(--c-us)",
+      "advertiser": "S&P Global Inc.",
+      "domain": "spglobal.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4527869585864984441",
+      "firstShown": "2022-05-13",
+      "lastShown": "2026-08-10",
+      "variants": 1261,
+      "preview": "https://adstransparency.google.com/advertiser/AR00948387053073072129/creative/CR09337373113274335233"
     },
     {
       "competitor": "S&P Global",
@@ -10968,8 +11004,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/14404369476411068372",
       "firstShown": "2023-01-10",
-      "lastShown": "2026-08-03",
-      "variants": 1083,
+      "lastShown": "2026-08-10",
+      "variants": 1089,
       "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR16884188310900047873"
     },
     {
@@ -10978,47 +11014,11 @@ window.MI_REMOTE = {
       "advertiser": "S&P Global Market Intelligence Inc.",
       "domain": "spglobal.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/4545801536174199090",
-      "firstShown": "2022-10-17",
-      "lastShown": "2026-08-03",
-      "variants": 1151,
-      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR16876953249511374849"
-    },
-    {
-      "competitor": "S&P Global",
-      "color": "var(--c-us)",
-      "advertiser": "S&P Global Inc.",
-      "domain": "spglobal.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/3733325597254304312",
-      "firstShown": "2022-05-13",
-      "lastShown": "2026-08-03",
-      "variants": 1243,
-      "preview": "https://adstransparency.google.com/advertiser/AR00948387053073072129/creative/CR16302101976072585217"
-    },
-    {
-      "competitor": "S&P Global",
-      "color": "var(--c-us)",
-      "advertiser": "S&P Global Inc.",
-      "domain": "spglobal.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/303445633658823741",
-      "firstShown": "2025-09-28",
-      "lastShown": "2026-08-03",
-      "variants": 245,
-      "preview": "https://adstransparency.google.com/advertiser/AR00948387053073072129/creative/CR04139088828155559937"
-    },
-    {
-      "competitor": "S&P Global",
-      "color": "var(--c-us)",
-      "advertiser": "Standard & Poor's Financial Services LLC",
-      "domain": "spglobal.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/17163802379636518774",
-      "firstShown": "2026-04-29",
-      "lastShown": "2026-08-03",
-      "variants": 74,
-      "preview": "https://adstransparency.google.com/advertiser/AR02340498602108911617/creative/CR05519699975191134209"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7180622469739949101",
+      "firstShown": "2022-10-19",
+      "lastShown": "2026-08-10",
+      "variants": 1023,
+      "preview": "https://adstransparency.google.com/advertiser/AR18373764401732780033/creative/CR09026146382708211713"
     },
     {
       "competitor": "T. Rowe Price",
@@ -11028,8 +11028,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/5842418255403964039",
       "firstShown": "2026-03-05",
-      "lastShown": "2026-08-02",
-      "variants": 119,
+      "lastShown": "2026-08-10",
+      "variants": 125,
       "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR10855473636697964545"
     },
     {
@@ -11038,23 +11038,11 @@ window.MI_REMOTE = {
       "advertiser": "Fundamental Media Ltd",
       "domain": "troweprice.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7793601601899904209",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/4565866820591932663",
       "firstShown": "2026-02-17",
-      "lastShown": "2026-08-02",
-      "variants": 129,
-      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR07812377294734884865"
-    },
-    {
-      "competitor": "T. Rowe Price",
-      "color": "var(--c-muted)",
-      "advertiser": "Fundamental Media Ltd",
-      "domain": "troweprice.com",
-      "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7394414191209617505",
-      "firstShown": "2026-05-10",
-      "lastShown": "2026-08-02",
-      "variants": 80,
-      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR16220022548295843841"
+      "lastShown": "2026-08-09",
+      "variants": 139,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR08979531839924338689"
     },
     {
       "competitor": "T. Rowe Price",
@@ -11064,8 +11052,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/12398712881495344488",
       "firstShown": "2026-02-17",
-      "lastShown": "2026-08-02",
-      "variants": 132,
+      "lastShown": "2026-08-09",
+      "variants": 138,
       "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR04088437376890699777"
     },
     {
@@ -11076,8 +11064,8 @@ window.MI_REMOTE = {
       "format": "Image",
       "image": "https://tpc.googlesyndication.com/archive/simgad/15374555996318041202",
       "firstShown": "2026-03-24",
-      "lastShown": "2026-08-02",
-      "variants": 98,
+      "lastShown": "2026-08-09",
+      "variants": 104,
       "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR02889306078628020225"
     },
     {
@@ -11086,11 +11074,23 @@ window.MI_REMOTE = {
       "advertiser": "Fundamental Media Ltd",
       "domain": "troweprice.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/2513447787959367222",
-      "firstShown": "2026-07-02",
-      "lastShown": "2026-08-02",
-      "variants": 24,
-      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR14227656076597133313"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7394414191209617505",
+      "firstShown": "2026-05-10",
+      "lastShown": "2026-08-09",
+      "variants": 86,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR16220022548295843841"
+    },
+    {
+      "competitor": "T. Rowe Price",
+      "color": "var(--c-muted)",
+      "advertiser": "Fundamental Media Ltd",
+      "domain": "troweprice.com",
+      "format": "Image",
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7793601601899904209",
+      "firstShown": "2026-02-17",
+      "lastShown": "2026-08-09",
+      "variants": 133,
+      "preview": "https://adstransparency.google.com/advertiser/AR03752725544576221185/creative/CR07812377294734884865"
     },
     {
       "competitor": "Ardian",
@@ -11134,11 +11134,11 @@ window.MI_REMOTE = {
       "advertiser": "EQT PARTNERS LIMITED",
       "domain": "eqtgroup.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/10531633885414293249",
-      "firstShown": "2026-07-14",
-      "lastShown": "2026-08-02",
-      "variants": 18,
-      "preview": "https://adstransparency.google.com/advertiser/AR00159149712505569281/creative/CR06554142848432734209"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/7541363845088872861",
+      "firstShown": "2026-07-07",
+      "lastShown": "2026-08-09",
+      "variants": 34,
+      "preview": "https://adstransparency.google.com/advertiser/AR00159149712505569281/creative/CR14238054570377871361"
     },
     {
       "competitor": "EQT",
@@ -11146,11 +11146,11 @@ window.MI_REMOTE = {
       "advertiser": "EQT PARTNERS LIMITED",
       "domain": "eqtgroup.com",
       "format": "Image",
-      "image": "https://tpc.googlesyndication.com/archive/simgad/7541363845088872861",
-      "firstShown": "2026-07-07",
-      "lastShown": "2026-08-02",
-      "variants": 26,
-      "preview": "https://adstransparency.google.com/advertiser/AR00159149712505569281/creative/CR14238054570377871361"
+      "image": "https://tpc.googlesyndication.com/archive/simgad/10531633885414293249",
+      "firstShown": "2026-07-14",
+      "lastShown": "2026-08-09",
+      "variants": 25,
+      "preview": "https://adstransparency.google.com/advertiser/AR00159149712505569281/creative/CR06554142848432734209"
     },
     {
       "competitor": "EQT",
@@ -11205,12 +11205,7 @@ window.MI_REMOTE = {
     "q1": [
       {
         "name": "S&P Global",
-        "v": 38,
-        "color": "var(--c-us)"
-      },
-      {
-        "name": "BetaShares",
-        "v": 36,
+        "v": 37,
         "color": "var(--c-us)"
       },
       {
@@ -11224,13 +11219,13 @@ window.MI_REMOTE = {
         "color": "var(--c-b)"
       },
       {
-        "name": "J.P. Morgan",
-        "v": 29,
+        "name": "BlackRock / iShares",
+        "v": 31,
         "color": "var(--c-muted)"
       },
       {
-        "name": "BlackRock / iShares",
-        "v": 28,
+        "name": "J.P. Morgan",
+        "v": 29,
         "color": "var(--c-muted)"
       },
       {
@@ -11242,6 +11237,11 @@ window.MI_REMOTE = {
         "name": "Vanguard AU",
         "v": 27,
         "color": "var(--c-c)"
+      },
+      {
+        "name": "BetaShares",
+        "v": 27,
+        "color": "var(--c-us)"
       },
       {
         "name": "InvestmentMarkets",
@@ -11265,7 +11265,7 @@ window.MI_REMOTE = {
       },
       {
         "name": "Fidelity",
-        "v": 8,
+        "v": 9,
         "color": "var(--c-a)"
       },
       {
@@ -11296,19 +11296,14 @@ window.MI_REMOTE = {
         "color": "var(--c-c)"
       },
       {
-        "name": "Macquarie",
-        "v": 40,
-        "color": "var(--c-a)"
-      },
-      {
         "name": "S&P Global",
-        "v": 40,
-        "color": "var(--c-us)"
-      },
-      {
-        "name": "BetaShares",
         "v": 38,
         "color": "var(--c-us)"
+      },
+      {
+        "name": "Macquarie",
+        "v": 37,
+        "color": "var(--c-a)"
       },
       {
         "name": "Alphinity",
@@ -11319,6 +11314,11 @@ window.MI_REMOTE = {
         "name": "J.P. Morgan",
         "v": 33,
         "color": "var(--c-muted)"
+      },
+      {
+        "name": "BetaShares",
+        "v": 32,
+        "color": "var(--c-us)"
       },
       {
         "name": "Vanguard AU",
@@ -11336,14 +11336,14 @@ window.MI_REMOTE = {
         "color": "var(--c-d)"
       },
       {
+        "name": "Fidelity",
+        "v": 12,
+        "color": "var(--c-a)"
+      },
+      {
         "name": "Perpetual",
         "v": 12,
         "color": "var(--c-b)"
-      },
-      {
-        "name": "Fidelity",
-        "v": 10,
-        "color": "var(--c-a)"
       },
       {
         "name": "T. Rowe Price",
