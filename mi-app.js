@@ -552,7 +552,13 @@
     const sentPill = m => m==='positive' ? 'pos' : m==='negative' ? 'neg' : '';
     const list = state.pressComp==='All' ? arts : arts.filter(a=>a.c===state.pressComp);
     host.className='slide-scroll creative-grid'; host.style.padding='';
-    host.innerHTML = list.map(a=>`<div class="creative news-card">
+    // Coverage is curated to genuine editorial pieces, so the biggest names by raw
+    // share of voice (diversified groups whose volume is mostly generic market and
+    // ETF newsflow) appear here less than their mention totals imply. Say so.
+    const covNote = state.pressComp==='All'
+      ? `<p class="muted-txt" style="grid-column:1/-1;font-size:12.5px;margin:0 0 2px">These are genuine editorial pieces on the tracked peer set. The names that top raw share of voice are diversified groups whose volume is mostly generic market and ETF newsflow, so they feature here less than their mention totals suggest.</p>`
+      : '';
+    host.innerHTML = covNote + list.map(a=>`<div class="creative news-card">
         <div class="creative-body">
           <div class="adv"><span class="swatch" style="background:${compColor(a.c)}"></span>${escT(a.c)}</div>
           <p class="news-head">${escT(a.t)}</p>
