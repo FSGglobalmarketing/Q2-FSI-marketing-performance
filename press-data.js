@@ -5,12 +5,12 @@
    Domestic" (Australia) and "First Sentier Investors" (EMEA) lists and now
    matches the BrightEdge SEO competitor register (source of truth).
    Regenerate by re-running that repo's `sync` and re-cutting.
-   t = total mentions, p/u/g = positive/neutral/negative.
-
-   READ WITH CARE: S&P Global's total is mostly index/ratings newsflow, and
-   UBS, BlackRock and Vanguard are global giants whose coverage is
-   overwhelmingly not about Australian funds management — context, not a
-   like-for-like race.
+   quarters: share of voice SCOPED TO STRATEGY TOPICS. Document counts are summed
+   over the funds-management lens only (Asset Management, Savings & Pensions,
+   Sustainability, Emerging Markets, Fixed Income, Infrastructure), cut from
+   data/metrics_by_topic — so the global giants (BlackRock, Vanguard, UBS) are
+   sized by their funds-management footprint, not their total index/ratings
+   newsflow. t = strategy mentions, p/u/g = positive/neutral/negative.
 
    articles: a curated Coverage lens over the AU-retail peer set, cut from the
    signal-api search_competitor_mentions parquet. Genuine editorial coverage only
@@ -20,61 +20,37 @@
    ============================================================ */
 window.MI_PRESS = {
   generatedAt: '2026-07-23',
-  source: 'Signal AI · metrics_volume_sentiment + metrics_competitors',
+  source: 'Signal AI · metrics_by_topic (strategy-scoped)',
   quarters: {
     q1: [
-      { n:'S&P Global', t:508210, p:85887, u:416918, g:5405 },
-      { n:'UBS', t:258855, p:70915, u:171988, g:15952 },
-      { n:'BlackRock', t:178789, p:74596, u:82332, g:21861 },
-      { n:'Vanguard', t:70566, p:35019, u:31000, g:4547 },
-      { n:'Macquarie Group', t:38017, p:9436, u:27968, g:613 },
-      { n:'KKR', t:38002, p:13214, u:22111, g:2677 },
-      { n:'EQT', t:26579, p:12218, u:13458, g:903 },
-      { n:'T. Rowe Price', t:17161, p:5750, u:10954, g:457 },
-      { n:'Schroders', t:15342, p:6870, u:7792, g:680 },
-      { n:'PIMCO', t:13432, p:3045, u:9514, g:873 },
-      { n:'Partners Group', t:8876, p:3817, u:4354, g:705 },
-      { n:'J.P. Morgan', t:8466, p:3132, u:5329, g:5 },
-      { n:'Fidelity International', t:6656, p:2272, u:4327, g:57 },
-      { n:'Federated Hermes', t:4952, p:2413, u:2271, g:268 },
-      { n:'Ardian', t:2752, p:1394, u:1274, g:84 },
-      { n:'IFM Investors', t:2695, p:802, u:1864, g:29 },
-      { n:'Robeco', t:2220, p:1021, u:1167, g:32 },
-      { n:'Fisher Investments', t:2181, p:1330, u:812, g:39 },
-      { n:'BetaShares', t:2137, p:676, u:1417, g:44 },
-      { n:'ClearBridge Investments', t:1194, p:151, u:1023, g:20 },
-      { n:'Magellan Financial Group', t:1183, p:512, u:551, g:120 },
-      { n:'First Sentier Investors', t:1045, p:289, u:750, g:6, us:true },
-      { n:'Pendal Group', t:398, p:43, u:336, g:19 },
-      { n:'Colonial First State', t:223, p:61, u:159, g:3 },
-      { n:'Platinum Asset Management', t:97, p:14, u:52, g:31 },
+      { n:'BlackRock', t:21201, p:10799, u:8220, g:2182 },
+      { n:'Vanguard', t:15477, p:7217, u:6620, g:1640 },
+      { n:'UBS', t:11996, p:2872, u:8619, g:505 },
+      { n:'Partners Group', t:2873, p:2070, u:684, g:119 },
+      { n:'EQT', t:2656, p:1360, u:1282, g:14 },
+      { n:'Fidelity', t:1881, p:633, u:1236, g:12 },
+      { n:'Robeco', t:791, p:361, u:424, g:6 },
+      { n:'BetaShares', t:321, p:90, u:223, g:8 },
+      { n:'Magellan', t:118, p:55, u:54, g:9 },
+      { n:'ClearBridge', t:108, p:15, u:87, g:6 },
+      { n:'Pendal', t:83, p:3, u:80, g:0 },
+      { n:'Colonial First State', t:80, p:16, u:64, g:0 },
+      { n:'First Sentier Investors', t:451, p:64, u:387, g:0, us:true },
     ],
     q2: [
-      { n:'UBS', t:255478, p:79309, u:161388, g:14781 },
-      { n:'BlackRock', t:147196, p:66381, u:68421, g:12394 },
-      { n:'S&P Global', t:124785, p:31023, u:92307, g:1455 },
-      { n:'Vanguard', t:66739, p:33265, u:27716, g:5758 },
-      { n:'KKR', t:42442, p:14482, u:21484, g:6476 },
-      { n:'Macquarie Group', t:36652, p:9368, u:26431, g:853 },
-      { n:'EQT', t:28576, p:13156, u:13171, g:2249 },
-      { n:'T. Rowe Price', t:17177, p:6698, u:9937, g:542 },
-      { n:'PIMCO', t:12133, p:4156, u:7379, g:598 },
-      { n:'Schroders', t:11920, p:4713, u:6907, g:300 },
-      { n:'Partners Group', t:11278, p:4443, u:3693, g:3142 },
-      { n:'Fidelity International', t:6142, p:2163, u:3924, g:55 },
-      { n:'Federated Hermes', t:4011, p:1913, u:1923, g:175 },
-      { n:'Ardian', t:3236, p:2090, u:1116, g:30 },
-      { n:'Robeco', t:2621, p:1205, u:1360, g:56 },
-      { n:'IFM Investors', t:2348, p:831, u:1257, g:260 },
-      { n:'BetaShares', t:2244, p:791, u:1392, g:61 },
-      { n:'Fisher Investments', t:1686, p:1096, u:504, g:86 },
-      { n:'ClearBridge Investments', t:1506, p:311, u:1147, g:48 },
-      { n:'J.P. Morgan', t:1468, p:244, u:1222, g:2 },
-      { n:'Magellan Financial Group', t:1240, p:488, u:628, g:124 },
-      { n:'First Sentier Investors', t:875, p:137, u:733, g:5, us:true },
-      { n:'Colonial First State', t:464, p:94, u:368, g:2 },
-      { n:'Pendal Group', t:277, p:87, u:185, g:5 },
-      { n:'Platinum Asset Management', t:103, p:39, u:46, g:18 },
+      { n:'BlackRock', t:20204, p:11260, u:7133, g:1811 },
+      { n:'Vanguard', t:15511, p:8293, u:5721, g:1497 },
+      { n:'UBS', t:11876, p:3813, u:7742, g:321 },
+      { n:'EQT', t:2511, p:1386, u:1063, g:62 },
+      { n:'Partners Group', t:2374, p:1416, u:340, g:618 },
+      { n:'Fidelity', t:1303, p:475, u:798, g:30 },
+      { n:'Robeco', t:973, p:384, u:564, g:25 },
+      { n:'BetaShares', t:362, p:256, u:90, g:16 },
+      { n:'Colonial First State', t:322, p:65, u:257, g:0 },
+      { n:'ClearBridge', t:119, p:22, u:87, g:10 },
+      { n:'Magellan', t:112, p:63, u:26, g:23 },
+      { n:'Pendal', t:90, p:53, u:34, g:3 },
+      { n:'First Sentier Investors', t:360, p:21, u:339, g:0, us:true },
     ],
   },
   articles: [

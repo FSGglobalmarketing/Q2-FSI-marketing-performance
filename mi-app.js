@@ -552,11 +552,11 @@
     const sentPill = m => m==='positive' ? 'pos' : m==='negative' ? 'neg' : '';
     const list = state.pressComp==='All' ? arts : arts.filter(a=>a.c===state.pressComp);
     host.className='slide-scroll creative-grid'; host.style.padding='';
-    // Coverage is curated to genuine editorial pieces, so the biggest names by raw
-    // share of voice (diversified groups whose volume is mostly generic market and
-    // ETF newsflow) appear here less than their mention totals imply. Say so.
+    // Coverage is a curated sample of genuine editorial pieces on the same strategy
+    // topics as the share-of-voice chart, so the biggest names by volume will not
+    // always carry the most examples. Say so rather than leave it looking uneven.
     const covNote = state.pressComp==='All'
-      ? `<p class="muted-txt" style="grid-column:1/-1;font-size:12.5px;margin:0 0 2px">These are genuine editorial pieces on the tracked peer set. The names that top raw share of voice are diversified groups whose volume is mostly generic market and ETF newsflow, so they feature here less than their mention totals suggest.</p>`
+      ? `<p class="muted-txt" style="grid-column:1/-1;font-size:12.5px;margin:0 0 2px">These are genuine editorial pieces on the tracked peer set, scoped to the same strategy topics as the share-of-voice chart. It is a curated sample, so the largest names by volume will not always carry the most examples.</p>`
       : '';
     host.innerHTML = covNote + list.map(a=>`<div class="creative news-card">
         <div class="creative-body">
@@ -589,9 +589,9 @@
       return;
     }
     host.className='slide-scroll'; host.style.padding='6px 14px';
-    // Diversified groups dwarf a pure infra manager on total press volume, so say
-    // so next to the chart rather than letting the bars imply a like-for-like race.
-    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">The diversified giants in this peer set dwarf a specialist manager on raw press volume; read them as context, not as a like-for-like race.</p>
+    // Share of voice is scoped to our strategy topics (not raw press volume), so
+    // each peer is sized by its relevant coverage rather than its total newsflow.
+    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">Share of voice counts only mentions on our strategy topics, not total press volume, so each peer is sized by its relevant coverage rather than its overall newsflow.</p>
       <div class="chart-wrap" data-role="press-chart"></div>`;
     const el = host.querySelector('[data-role="press-chart"]');
     if(!el || !window.echarts) return;
@@ -1346,6 +1346,23 @@
       renderAlphix(root);
     });
   }
+  function renderLinkedIn(){
+    const li = D.linkedin();
+    const kpi = (v,l)=>`<div class="kpi"><b>${v}</b><div class="kl">${l}</div></div>`;
+    // Igneo replaced these KPI/table mounts with the real organic-vs-paid,
+    // audience and top-post widgets; other brands still carry them, so guard.
+    const org = $('#li-organic'), paid = $('#li-paid'), posts = $('#li-posts');
+    if(org)  org.innerHTML  = kpi(li.organic.impressions,'People reached') + kpi(li.organic.clicks,'Clicks') + kpi(li.organic.engRate,'Engagement rate');
+    if(paid) paid.innerHTML = kpi(li.paid.impressions,'People reached') + kpi(li.paid.conversions,'Leads') + kpi(li.paid.spend,'Spend');
+    if(!posts) return;
+    posts.innerHTML = `<table class="tbl"><thead><tr>
+      <th>Post</th><th>Type</th><th class="num">Reactions</th><th class="num">Comments</th><th class="num">Shares</th>
+      </tr></thead><tbody>${li.posts.map(p=>`<tr>
+        <td class="strong">${p.title}</td><td><span class="pill">${p.type}</span></td>
+        <td class="num">${D.fmtInt(p.reactions)}</td><td class="num">${p.comments}</td><td class="num">${p.shares}</td>
+      </tr>`).join('')}</tbody></table>`;
+  }
+
   /* ================= CONVERSION ================= */
   function renderEmailSummary(){
     $('#email-summary').innerHTML = D.EMAIL_SUMMARY.map(k=>`<div class="kpi on-dark"><b>${k.v}</b><div class="kl">${k.l}</div></div>`).join('');
@@ -1584,6 +1601,7 @@
   renderSearchVisibility(); renderSearchTable(); renderAllSeo(); renderSoV(); renderAllCreatives();
   renderVisits(); renderTopPages();
   renderAlphix();
+  renderLinkedIn();
   renderEmailSummary(); renderAllEmail();
   renderEvents(); renderResults();
   wire(); observers();
