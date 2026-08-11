@@ -124,7 +124,7 @@ html.flat-review .carousel-ui { display: none !important; }
 .p-head .tag { align-self: flex-start; }
 .page-inner.center .p-head { align-items: center; }
 .p-title { font-size: clamp(30px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.025em; font-weight: 600; color: var(--dark-ink); }
-.p-sub { font-size: clamp(16px, 1.5vw, 19px); color: var(--dark-ink-2); max-width: 62ch; line-height: 1.5; text-wrap: pretty; }
+.p-sub { font-size: clamp(16px, 1.5vw, 19px); color: var(--dark-ink-2); max-width: 120ch; line-height: 1.5; text-wrap: pretty; }
 
 .lead-sum { font-size: clamp(12px, 1.05vw, 13.5px); line-height: 1.55; color: var(--dark-ink-2); max-width: none; text-wrap: pretty; }
 
