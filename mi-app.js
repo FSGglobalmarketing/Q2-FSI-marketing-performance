@@ -1346,23 +1346,6 @@
       renderAlphix(root);
     });
   }
-  function renderLinkedIn(){
-    const li = D.linkedin();
-    const kpi = (v,l)=>`<div class="kpi"><b>${v}</b><div class="kl">${l}</div></div>`;
-    // Igneo replaced these KPI/table mounts with the real organic-vs-paid,
-    // audience and top-post widgets; other brands still carry them, so guard.
-    const org = $('#li-organic'), paid = $('#li-paid'), posts = $('#li-posts');
-    if(org)  org.innerHTML  = kpi(li.organic.impressions,'People reached') + kpi(li.organic.clicks,'Clicks') + kpi(li.organic.engRate,'Engagement rate');
-    if(paid) paid.innerHTML = kpi(li.paid.impressions,'People reached') + kpi(li.paid.conversions,'Leads') + kpi(li.paid.spend,'Spend');
-    if(!posts) return;
-    posts.innerHTML = `<table class="tbl"><thead><tr>
-      <th>Post</th><th>Type</th><th class="num">Reactions</th><th class="num">Comments</th><th class="num">Shares</th>
-      </tr></thead><tbody>${li.posts.map(p=>`<tr>
-        <td class="strong">${p.title}</td><td><span class="pill">${p.type}</span></td>
-        <td class="num">${D.fmtInt(p.reactions)}</td><td class="num">${p.comments}</td><td class="num">${p.shares}</td>
-      </tr>`).join('')}</tbody></table>`;
-  }
-
   /* ================= CONVERSION ================= */
   function renderEmailSummary(){
     $('#email-summary').innerHTML = D.EMAIL_SUMMARY.map(k=>`<div class="kpi on-dark"><b>${k.v}</b><div class="kl">${k.l}</div></div>`).join('');
@@ -1601,7 +1584,6 @@
   renderSearchVisibility(); renderSearchTable(); renderAllSeo(); renderSoV(); renderAllCreatives();
   renderVisits(); renderTopPages();
   renderAlphix();
-  renderLinkedIn();
   renderEmailSummary(); renderAllEmail();
   renderEvents(); renderResults();
   wire(); observers();

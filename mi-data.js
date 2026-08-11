@@ -113,30 +113,6 @@ window.MIDATA = (function () {
   const FIRMS_SUMMARY = { companies:212, newCompanies:34, tier1:68, topIndustry:'Asset Management' };
 
   // ============================================================
-  // LinkedIn — organic + paid + competitor benchmark
-  // ============================================================
-  function linkedin(){
-    const rnd = seed('li-q2');
-    const spark = (base) => Array.from({length:13}, (_,i)=> Math.round(base*(0.6+Math.abs(Math.sin(i/2))*0.9+(rnd()-0.5)*0.2)) );
-    return {
-      organic: { followers:'38,102', followerGain:'+312', impressions:'486.5k', clicks:'9,140', engRate:'4.2%', series:spark(40) },
-      paid:    { impressions:'1.2M', clicks:'8,900', spend:'$42,000', conversions:'584', series:spark(85) },
-      bench: [
-        { name:'Our brand', rate:4.2, us:true },
-        { name:'Blackstone', rate:3.1 },
-        { name:'BlackRock',  rate:2.7 },
-        { name:'Schroders',  rate:2.3 },
-        { name:'Peer average', rate:2.6 },
-      ],
-      posts: [
-        { title:'Why Asian infrastructure is the quiet compounder', reactions:1204, comments:96, shares:142, type:'Thought leadership' },
-        { title:'Meet the team behind our China strategy',          reactions:842,  comments:54, shares:61,  type:'People' },
-        { title:'Video: 90 seconds on quality growth',              reactions:2110, comments:118,shares:230, type:'Video' },
-      ],
-    };
-  }
-
-  // ============================================================
   // Competitor Ads — Google Ads Transparency creatives
   // ============================================================
   // Real AU-retail peer set from the BrightEdge SEO competitor register
@@ -663,7 +639,7 @@ window.MIDATA = (function () {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, KPI, RESULTS, CB,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, linkedin, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
+    channelSeries, visitsSeries, firmsByPage, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
   };
 })();
 
