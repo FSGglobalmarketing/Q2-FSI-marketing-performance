@@ -13,7 +13,7 @@
     sovQ: 'q2',              // competitor-ad chart: which quarter is shown (slider)
     platform: 'google',      // competitor tabs: 'google' | 'linkedin' | 'press'
     pressQ: 'q2',            // press tab: which quarter of the Signal snapshot
-    pressView: 'chart',     // press tab: 'chart' (share of voice) | 'cards' (coverage)
+    pressView: 'cards',     // press tab: 'cards' (coverage, shown first) | 'chart' (share of voice)
     pressComp: 'All',        // press cards: competitor filter
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)

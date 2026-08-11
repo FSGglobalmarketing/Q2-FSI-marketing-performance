@@ -139,11 +139,24 @@ window.MIDATA = (function () {
   // ============================================================
   // Competitor Ads — Google Ads Transparency creatives
   // ============================================================
+  // Real AU-retail peer set from the BrightEdge SEO competitor register
+  // (source of truth). Names match the Coverage cards in press-data.js and the
+  // real ad creatives in data.js; colours cycle the four accent tokens.
   const COMPETITORS = [
-    { name:'Blackstone', domain:'blackstone.com', color:'var(--c-a)' },
-    { name:'BlackRock',  domain:'blackrock.com',  color:'var(--c-b)' },
-    { name:'Schroders',  domain:'schroders.com',  color:'var(--c-c)' },
-    { name:'Nuveen',     domain:'nuveen.com',     color:'var(--c-d)' },
+    { name:'Fidelity',             domain:'fidelity.com.au',       color:'var(--c-a)' },
+    { name:'Pendal',               domain:'pendalgroup.com',       color:'var(--c-b)' },
+    { name:'Perpetual',            domain:'perpetual.com.au',      color:'var(--c-c)' },
+    { name:'Vanguard',             domain:'vanguard.com.au',       color:'var(--c-d)' },
+    { name:'UBS',                  domain:'ubs.com/au',            color:'var(--c-a)' },
+    { name:'BetaShares',           domain:'betashares.com.au',     color:'var(--c-b)' },
+    { name:'iShares',              domain:'blackrock.com/au',      color:'var(--c-c)' },
+    { name:'Colonial First State', domain:'cfs.com.au',            color:'var(--c-d)' },
+    { name:'Magellan',             domain:'magellangroup.com.au',  color:'var(--c-a)' },
+    { name:'ClearBridge',          domain:'clearbridge.com.au',    color:'var(--c-b)' },
+    { name:'Ausbil',               domain:'ausbil.com.au',         color:'var(--c-c)' },
+    { name:'Bennelong',            domain:'bennelongfunds.com',    color:'var(--c-d)' },
+    { name:'Resolution Capital',   domain:'resolutioncapital.com', color:'var(--c-a)' },
+    { name:'Hyperion',             domain:'hyperion.com.au',       color:'var(--c-b)' },
   ];
   const FORMATS = ['Image','Video','Text'];
   // Drop stale creatives whose images no longer load (2025 snapshot rows).
@@ -346,9 +359,9 @@ window.MIDATA = (function () {
       summary: 'We track our competitors\u2019 live advertising from public ad libraries. Vanguard and the big ETF issuers out-spend us on paid across cash, ETF and index terms; our edge is the specialist strategies and named-voice content we lead on through owned channels.',
       goals: ['Understand competitor positioning','Identify white-space themes','Benchmark creative volume'],
       activities: ['Weekly ad-library monitoring','Creative theme analysis','Share-of-voice tracking'],
-      results: [{v:'16.6%',l:'Paid share of voice',b:'13.0%',up:true},{v:'4',l:'Competitors tracked',b:'3',up:true},{v:'18.6%',l:'Search share (lead)',b:'15.5%',up:true}],
-      q2: ['Defend top infrastructure terms','Test a focused paid campaign'],
-      q3: ['Expand competitive set to five'],
+      results: [{v:'20',l:'Competitors advertising',d:'live in AU public ad libraries',up:true},{v:'14',l:'Peers tracked',d:'BrightEdge SEO register',up:true},{v:'Vanguard',l:'Top retail fund advertiser',d:'across ETF and index terms',up:true}],
+      q2: ['Defend top equities and income search terms','Test a focused paid campaign'],
+      q3: ['Broaden the tracked competitor set'],
     },
     website: {
       summary: [
