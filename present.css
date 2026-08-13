@@ -140,7 +140,7 @@ html.flat-review .carousel-ui { display: none !important; }
   font-weight: 400;
   text-wrap: pretty;
 }
-.exec-lede strong { font-weight: 600; color: #ffffff; }
+.exec-lede strong { font-weight: 600; color: var(--c-us); }
 /* Sales-pipeline match flag on targeting companies (Alphix / email / forms):
    this company is also a live RFP/RFI opportunity. */
 .pill.pipe {
@@ -375,7 +375,7 @@ html.flat-review .carousel-ui { display: none !important; }
   .cb-mount .lead-sum { font-size: 12.5px; }
   .cb-mount .lead-sum + .lead-sum { margin-top: 6px; }
 }
-.lead-sum strong { color: var(--dark-ink); font-weight: 600; }
+.lead-sum strong { color: var(--c-us); font-weight: 600; }
 
 /* ---------- FOCUS SLIDER (Q1 ⟷ Q2) ---------- */
 .focus-wrap { display: flex; flex-direction: column; gap: 40px; }
