@@ -743,3 +743,12 @@ body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
 .chart-q-slider{ width:200px; max-width:100%; margin-left:auto; gap:12px; flex:none; }
 .chart-q-slider .fs-track{ min-width:90px; }
 .chart-q-slider .q-end{ font-size:12px; padding:0; }
+
+/* Highlight photo galleries — make the whole strip an expandable card so the
+   expand button (top-right) and click-to-open both work; the gallery scrolls
+   inside, the wrapper stays put so the button anchors correctly. In the modal
+   the images wrap and grow to fill the panel (contain, so the full frame shows). */
+.hl-gallery-wrap { position: relative; }
+.lb-scroll .rj-gallery { flex-wrap: wrap; overflow: visible; justify-content: center; gap: 16px; }
+.lb-scroll .rj-gallery figure { height: auto; width: auto; max-width: min(100%, 900px); max-height: 80vh; }
+.lb-scroll .rj-gallery img { height: auto; width: auto; max-width: 100%; max-height: 80vh; object-fit: contain; }
