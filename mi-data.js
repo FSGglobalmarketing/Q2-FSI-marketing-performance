@@ -635,8 +635,18 @@ window.MIDATA = (function () {
   };
   function liChannel(){ return LI_CHANNEL; }
 
+  // Funnel-stage divider cards (Goals / Marketing activities / Focus for Q2 / Q3),
+  // auto-injected into the .divider pages by data-label. Reuse the doc-sourced
+  // goals/activities/focus already on the matching CB section: awareness = search,
+  // consideration = website, conversion = engagement.
+  const STAGES = {
+    awareness: CB.search,
+    consideration: CB.website,
+    conversion: CB.engagement,
+  };
+
   return {
-    PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, KPI, RESULTS, CB,
+    PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, KPI, RESULTS, CB, STAGES,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
     channelSeries, visitsSeries, firmsByPage, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
