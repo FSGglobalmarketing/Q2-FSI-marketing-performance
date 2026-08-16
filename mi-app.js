@@ -164,13 +164,25 @@
     if(!D.STAGES) return;
     $$('.page.divider').forEach(sec => {
       const key = (sec.dataset.label||'').toLowerCase().replace(/[^a-z]/g,'');
-      const s = D.STAGES[key]; if(!s) return;
-      const inner = sec.querySelector('.page-inner'); if(!inner || inner.querySelector('.stage-grid')) return;
+      const st = D.STAGES[key]; if(!st) return;
+      const inner = sec.querySelector('.page-inner'); if(!inner || inner.querySelector('.stage-mount')) return;
       sec.classList.add('has-stage');  // keep .center — big heading stays centred
       const mount = document.createElement('div');
       mount.className = 'stage-mount'; mount.setAttribute('data-anim','');
-      mount.innerHTML = stageBlock(s);
       inner.appendChild(mount);
+      // A stage is either one section (renders directly) or a pill-map: an object
+      // whose values are sections, keyed by the chapter's pill labels. For the
+      // latter, the tax-pills become tabs that swap the Goals/Activities/Focus.
+      const isSection = st.goals || st.activities || st.q2 || st.q3;
+      if(isSection){ mount.innerHTML = stageBlock(st); return; }
+      const pills = $$('.tax-pill', sec);
+      const show = label => { mount.innerHTML = stageBlock(st[label]); pills.forEach(p => p.classList.toggle('on', p.textContent.trim() === label)); };
+      let first = null;
+      pills.forEach(p => {
+        const label = p.textContent.trim();
+        if(st[label]){ if(!first) first = label; p.classList.add('tab'); p.addEventListener('click', () => show(label)); }
+      });
+      show(first || Object.keys(st)[0]);
     });
   }
 

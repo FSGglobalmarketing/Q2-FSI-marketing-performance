@@ -286,6 +286,11 @@ html.flat-review .carousel-ui { display: none !important; }
   border: 1px solid var(--glass-brd-2);
   color: var(--dark-ink);
 }
+/* Interactive chapter pills: some chapters carry two funnel elements (e.g.
+   Website + LinkedIn) and the pills tab between their Goals/Activities/Focus. */
+.tax-pill.tab { cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.tax-pill.tab:hover { background: rgba(255,255,255,.15); }
+.tax-pill.on { background: color-mix(in srgb, var(--c-us) 24%, transparent); border-color: color-mix(in srgb, var(--c-us) 60%, transparent); color: #fff; }
 
 /* Divider stays centred with the big heading; small cards sit under it */
 .divider.has-stage .page-inner { gap: 20px; }
@@ -310,11 +315,11 @@ html.flat-review .carousel-ui { display: none !important; }
   -webkit-backdrop-filter: blur(12px) saturate(1.05); backdrop-filter: blur(12px) saturate(1.05);
 }
 .glass-card h4 {
-  margin: 0 0 8px; font-family: var(--font-body); font-weight: 600;
-  font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--dark-ink-2);
+  margin: 0 0 9px; font-family: var(--font-body); font-weight: 600;
+  font-size: 11.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--dark-ink-2);
 }
-.glass-card ul, .glass-card ol { margin: 0; padding-left: 15px; display: flex; flex-direction: column; gap: 5px; }
-.glass-card li { font-size: 12px; line-height: 1.38; color: var(--dark-ink); }
+.glass-card ul, .glass-card ol { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
+.glass-card li { font-size: 14px; line-height: 1.45; color: var(--dark-ink); }
 .glass-card ol { counter-reset: g; padding-left: 0; }
 .glass-card ol li { list-style: none; display: flex; gap: 8px; }
 .glass-card ol li::before {
