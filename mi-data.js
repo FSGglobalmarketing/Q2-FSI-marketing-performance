@@ -350,14 +350,6 @@ window.MIDATA = (function () {
       q2: ['Refresh the homepage to funnel to campaign pages'],
       q3: ['Continue optimising key campaign pages for search rankings'],
     },
-    preview: {
-      summary: 'A redesigned website is in internal beta. The new information architecture, visual system and component-based CMS are on track for a Q3 public launch.',
-      goals: ['Ship the redesigned architecture','Modernise the visual system','Move to a component CMS'],
-      activities: ['Discovery and content audits','Design sprints','Internal beta programme'],
-      results: [{v:'36%',l:'Faster key journeys',b:'20%',up:true},{v:'+2.1',l:'Pilot satisfaction',b:'+1.0',up:true},{v:'94',l:'Performance score',b:'78',up:true}],
-      q2: ['Public launch: Q3, week 6','Sales enablement'],
-      q3: ['Ongoing A/B testing framework'],
-    },
     linkedin: {
       summary: [
         'May carried the quarter. The Buy Hold Sell World Cup post with Livewire drew over 6,000 clicks, more than every other post combined, and made May comfortably our strongest month. It is the clearest proof yet that recognisable media formats and personalities travel far further than standard fund content.',
