@@ -673,7 +673,9 @@
   // .glass-card look). Mounted via [data-hl="<key>"].
   function renderHighlightCards(){
     $$('[data-hl]').forEach(mount => {
-      const h = D.HIGHLIGHTS && D.HIGHLIGHTS[mount.dataset.hl]; if(!h) return;
+      // Igneo supplies a dedicated HIGHLIGHTS entry; other packs keep the same
+      // goals/activities on the CB block, so fall back to that.
+      const h = (D.HIGHLIGHTS && D.HIGHLIGHTS[mount.dataset.hl]) || (D.CB && D.CB[mount.dataset.hl]); if(!h) return;
       const li = a => a.map(x=>`<li>${x}</li>`).join('');
       // Takeaway boxes — rendered only when the highlight supplies the copy.
       const box = (title, cls, marker, arr) =>
