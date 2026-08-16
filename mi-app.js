@@ -290,8 +290,24 @@
   // Google ads and press mentions to the tens), so each channel is normalised to
   // its own share of voice — a rival's % of that channel's total — before
   // stacking. A bar's length is the sum of its three channel shares.
+  // The three channels label the same rival differently — Google's activity feed
+  // says "Janus", LinkedIn "Janus Henderson", press "GAM" vs "GAM Investments" —
+  // so fold every raw name onto its canonical COMPETITORS entry before summing,
+  // else one rival splits into several stubby bars. Unknown names (a channel-only
+  // advertiser like Fidelity on LinkedIn) pass through unchanged.
+  function canonComp(raw){
+    if(!raw) return null;
+    const comps = (D.COMPETITORS||[]).map(c=>c.name).filter(Boolean);
+    if(comps.includes(raw)) return raw;
+    const low = raw.toLowerCase();
+    let hit = comps.find(c => { const cl=c.toLowerCase(); return cl.startsWith(low) || low.startsWith(cl); });
+    if(hit) return hit;
+    const w = low.split(/\s+/)[0];
+    hit = comps.find(c => c.toLowerCase().split(/\s+/)[0] === w);
+    return hit || raw;
+  }
   function combinedSoV(q){
-    const acc = (arr, key) => { const m = {}; (arr||[]).forEach(r => { if(r.us) return; const n = r.name; if(!n) return; m[n] = (m[n]||0) + (+r[key]||0); }); return m; };
+    const acc = (arr, key) => { const m = {}; (arr||[]).forEach(r => { if(r.us) return; const n = canonComp(r.name); if(!n) return; m[n] = (m[n]||0) + (+r[key]||0); }); return m; };
     const g = acc(D.adSoV ? D.adSoV()[q] : [], 'v');
     const l = acc(D.liActivity ? D.liActivity() : [], 'v');
     const p = acc(D.press ? D.press(q) : [], 'total');
