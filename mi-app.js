@@ -284,20 +284,37 @@
     }, true);
     inst.resize(); bindResize(el, inst); return inst;
   }
-  // Competitor ad activity — real live-ad counts per advertiser, Q1 vs Q2.
-  // The slider (built into the card head) chooses the quarter.
-  // Activity chart is Google-only: LinkedIn ad counts conflate unrelated
-  // business units (the name search catches homonyms), so we don't chart them —
-  // the LinkedIn value is the theme-screened example gallery instead.
+  // Combined competitor share of voice across the three channels we track:
+  // Google ads (Ads Transparency), LinkedIn ads (Ad Library) and press mentions.
+  // Raw counts are orders of magnitude apart (LinkedIn ads run to the thousands,
+  // Google ads and press mentions to the tens), so each channel is normalised to
+  // its own share of voice — a rival's % of that channel's total — before
+  // stacking. A bar's length is the sum of its three channel shares.
+  function combinedSoV(q){
+    const acc = (arr, key) => { const m = {}; (arr||[]).forEach(r => { if(r.us) return; const n = r.name; if(!n) return; m[n] = (m[n]||0) + (+r[key]||0); }); return m; };
+    const g = acc(D.adSoV ? D.adSoV()[q] : [], 'v');
+    const l = acc(D.liActivity ? D.liActivity() : [], 'v');
+    const p = acc(D.press ? D.press(q) : [], 'total');
+    const tot = o => { const s = Object.values(o).reduce((a,b)=>a+b,0); return s || 1; };
+    const gT = tot(g), lT = tot(l), pT = tot(p);
+    const names = new Set([...Object.keys(g), ...Object.keys(l), ...Object.keys(p)]);
+    return [...names].map(n => {
+      const gv=g[n]||0, lv=l[n]||0, pv=p[n]||0;
+      return { name:n, g:gv, l:lv, p:pv, gs:gv/gT*100, ls:lv/lT*100, ps:pv/pT*100, total:(gv/gT+lv/lT+pv/pT)*100 };
+    }).filter(r => r.g || r.l || r.p).sort((a,b) => b.total - a.total);
+  }
+  // The chart card carries a Q1/Q2 slider; Google and press shares move with it,
+  // LinkedIn is a single Ad-Library snapshot so its segment is the same in both.
   function renderSoV(el, opts){
     el = el || $('#sov-chart'); if(!el) return;
     opts = opts || {};
     const q = opts.quarter || state.sovQ || 'q2';
     ensureSovSlider(el, q);
-    const rows = (D.adSoV()[q] || []).map(r=>({ name:r.name, v:r.v, color:r.color }));
-    if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No competitor ads recorded for this quarter.</p>'; return; }
-    if(window.echarts){ try { return echartsHBars(el, rows, Object.assign({ labelW:130, valUnit:' ads' }, opts)); } catch(e){ console.warn('echarts sov', e); } }
-    C.hbars(el, rows, { dark:true, labelW:120 });
+    let rows = combinedSoV(q);
+    if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No competitor activity recorded for this quarter.</p>'; return; }
+    rows = rows.slice(0, opts.modal ? 20 : 12);
+    if(window.echarts){ try { return echartsSoVStack(el, rows, Object.assign({ labelW: opts.modal?188:150 }, opts)); } catch(e){ console.warn('echarts sov', e); } }
+    C.hbars(el, rows.map(r=>({ name:r.name, v:+r.total.toFixed(1), color:'var(--c-us)' })), { dark:true, labelW:120 });
   }
   function removeSovSlider(chartEl){
     const card = chartEl.closest('.chart-card, .card'); if(!card) return;
@@ -629,7 +646,12 @@
     // the quarter slider belongs to Press only — drop it when we leave that tab
     const sl = card.querySelector('.chart-q-slider'); if(sl) sl.remove();
     const li = state.platform === 'linkedin';
-    const list = currentCreatives().filter(c=> state.comp.has(c.competitor) && (li || state.fmt.has(c.format)));
+    // The Google feed is "live adverts right now", so drop creatives that stopped
+    // before the report quarter (e.g. rivals who ran only in Q1) — that is what
+    // made a rival with zero Q2 activity still show stale ad examples. LinkedIn is
+    // theme-screened separately, so it keeps its own scoping.
+    const liveThisQuarter = c => !c.lastShown || c.lastShown >= '2026-04-01';
+    const list = currentCreatives().filter(c=> state.comp.has(c.competitor) && (li || (state.fmt.has(c.format) && liveThisQuarter(c))));
     if(!list.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No adverts match those filters.</p>`; return; }
     const dash = '<span class="muted">–</span>';
     // Name the destination — "View ad" gave no clue these open Google's public
@@ -1139,6 +1161,36 @@
         { name:'Impressions', type:'bar', stack:'t', data:rest, barWidth:14, itemStyle:{ color:cRest, borderRadius:[0,7,7,0] },
           label:{ show:true, position:'right', color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Mono', fontSize:11.5,
             formatter: p => { const r = rev[p.dataIndex]; return r.impr>=1000 ? (r.impr/1000).toFixed(1)+'k' : String(r.impr); } } },
+      ],
+    });
+    inst.resize(); bindResize(el, inst); return inst;
+  }
+  // Combined share-of-voice: one bar per rival, split into Google / LinkedIn /
+  // Press share segments (each already normalised to its channel). Legend names
+  // the channels; the number at the bar end is the summed share.
+  function echartsSoVStack(el, rows, opts){
+    opts=opts||{}; const dark=echDark(el);
+    const inst=echInit(el, opts.modal?(Math.max(rows.length,3)*44+96)+'px':((rows.length*(opts.rowH||34)+58)+'px'));
+    const rev = rows.slice().reverse();
+    const cat = rev.map(r=>r.name);
+    const cG = chartColor('--c-us','#ff5424'), cL = dark?'#5aa0e0':'#2f6fb0', cP = dark?'#d3a83f':'#b5852a';
+    const seg = (key,color,name,r) => ({ name, type:'bar', stack:'sov', barWidth:14,
+        data: rev.map(x=>+x[key].toFixed(1)), itemStyle:{ color, borderRadius:r } });
+    const totLabel = { label:{ show:true, position:'right', color:dark?'#f4f1ea':'#1c1b18',
+        fontFamily:'IBM Plex Mono', fontSize:11.5, formatter:p=>{ const r=rev[p.dataIndex]; return r.total>=1?Math.round(r.total)+'%':''; } } };
+    inst.setOption({ animationDuration:450,
+      legend:{ show:true, top:0, right:8, itemWidth:10, itemHeight:10, textStyle:{ color:dark?'#cfcabc':'#57534a', fontFamily:'IBM Plex Sans', fontSize:11 }, data:['Google','LinkedIn','Press'] },
+      grid:{ left:(opts.labelW||150), right:64, top:28, bottom:8 },
+      tooltip: Object.assign(echTipBase(dark), { trigger:'axis', axisPointer:{ type:'shadow' },
+        formatter: pr => { const r=rev[pr[0].dataIndex];
+          return `<b>${r.name}</b><br/>Google ${r.gs.toFixed(1)}% <span style="opacity:.6">(${r.g.toLocaleString()} ads)</span><br/>LinkedIn ${r.ls.toFixed(1)}% <span style="opacity:.6">(${r.l.toLocaleString()} ads)</span><br/>Press ${r.ps.toFixed(1)}% <span style="opacity:.6">(${r.p.toLocaleString()} mentions)</span>`; } }),
+      xAxis:{ type:'value', show:false, max:'dataMax' },
+      yAxis:{ type:'category', data:cat, axisTick:{show:false}, axisLine:{show:false},
+              axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5 } },
+      series:[
+        seg('gs',cG,'Google',[7,0,0,7]),
+        seg('ls',cL,'LinkedIn',[0,0,0,0]),
+        Object.assign(seg('ps',cP,'Press',[0,7,7,0]), totLabel),
       ],
     });
     inst.resize(); bindResize(el, inst); return inst;
