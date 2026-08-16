@@ -544,10 +544,10 @@ html.flat-review .carousel-ui { display: none !important; }
    showing the logo twice on the front page. */
 /* NB: scope the cover size by parent — do NOT add a `.cover` class here, mi.css
    already defines a generic `.cover` (min-height:96vh) that would blow it up. */
-.logo-img { height: 20px; width: auto; display: block; max-height: 30px; }
-.cover-brand .logo-img { height: 30px; }
+.logo-img { height: 40px; width: auto; display: block; max-height: 60px; }
+.cover-brand .logo-img { height: 60px; }
 .p-nav.on-cover .brandmark { opacity: 0; pointer-events: none; }
-@media (max-width: 720px){ .cover-brand .logo-img { height: 24px; } }
+@media (max-width: 720px){ .cover-brand .logo-img { height: 48px; } }
 
 .expand-btn:hover { background: rgba(255,255,255,.16); }
 .expand-btn svg { width: 15px; height: 15px; display: block; }
@@ -763,3 +763,13 @@ body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
 .rj-gallery figure { position: relative; }
 .rj-gallery .gal-tag { position: absolute; top: 8px; right: 8px; z-index: 2; max-width: 80%; text-align: right; font-size: 10.5px; font-weight: 600; letter-spacing: .01em; line-height: 1.25; color: #fff; background: rgba(18,16,14,.62); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); padding: 4px 9px; border-radius: 10px; }
 .lb-scroll .rj-gallery .gal-tag { font-size: 12.5px; top: 12px; right: 12px; }
+
+/* Focus for Q3 uses a + bullet (planned / not yet done), vs the Q2 tick (current). */
+.glass-card ul.plus, .hl-box ul.plus { padding-left: 0; }
+.glass-card ul.plus > li, .hl-box ul.plus > li { list-style: none; display: flex; gap: 8px; align-items: flex-start; }
+.glass-card ul.plus > li::before, .hl-box ul.plus > li::before {
+  content: ""; flex: 0 0 auto; width: 13px; height: 13px; margin-top: 1px; background: var(--c-us);
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+}

@@ -641,7 +641,7 @@ window.MIDATA = (function () {
   // consideration = website, conversion = engagement.
   const STAGES = {
     awareness: CB.search,
-    consideration: CB.website,
+    consideration: { 'LinkedIn (organic)': CB.linkedin, 'Website': CB.website },
     conversion: CB.engagement,
   };
 

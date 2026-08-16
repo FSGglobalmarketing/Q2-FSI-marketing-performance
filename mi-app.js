@@ -155,7 +155,7 @@
     if(s.goals&&s.goals.length)           cards.push(`<div class="glass-card"><h4>Goals</h4>${ol(s.goals)}</div>`);
     if(s.activities&&s.activities.length) cards.push(`<div class="glass-card"><h4>Marketing activities</h4>${ul(s.activities)}</div>`);
     if(s.q2&&s.q2.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q2</h4>${ul(s.q2,'ticks')}</div>`);
-    if(s.q3&&s.q3.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q3</h4>${ul(s.q3,'ticks')}</div>`);
+    if(s.q3&&s.q3.length)                 cards.push(`<div class="glass-card"><h4>Focus for Q3</h4>${ul(s.q3,'plus')}</div>`);
     return `<div class="stage-grid">${cards.join('')}</div>`;
   }
   // Injected by JS so no per-repo divider markup changes are needed: the stage
