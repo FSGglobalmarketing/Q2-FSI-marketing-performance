@@ -1628,7 +1628,7 @@
       { name:'Events', measures:['Distribution feedback'],           benchmark:'qualitative, no benchmark' },
       { name:'Email',  measures:['Click-to-open rate','Open rates'], benchmark:'vs industry average' },
     ] },
-    { idx:'04', name:'Service & loyalty', hue:'oklch(0.66 0.11 130)', activities:[
+    { idx:'04', name:'Service', hue:'oklch(0.66 0.11 130)', activities:[
       { name:'Data capture', measures:['Form completions'], benchmark:'vs 2-year internal average' },
     ] },
   ];
@@ -1654,11 +1654,16 @@
     const stats = wrap.querySelector('#fw-stats');
     if(stats) stats.innerHTML = `<span><b>${met}</b>of ${total} goals met</span><span><b>${watch}</b>to watch</span>`;
     host.innerHTML = SP_STAGES.map((s,i)=>{
-      const meta = (results[i]||{}).meta, oc = spineOutcomes(i), band = SP_BANDS[i];
-      const nm = (s.activities||[]).reduce((t,a)=>t+(a.measures||[]).length,0);
-      const count = `${s.activities.length} activit${s.activities.length===1?'y':'ies'} · ${nm} measure${nm===1?'':'s'}`;
-      const outHtml = oc.map(o=>`<span class="sp-out ${o.tone}"><i>${esc(o.label)}</i>${o.value?`<b>${esc(o.value)}</b>`:''}</span>`).join('');
-      const actHtml = (s.activities||[]).map(a=>`<div class="sp-act"><div class="sp-a-nm">${esc(a.name)}</div><div class="sp-a-m">${(a.measures||[]).map(m=>`<span>${esc(m)}</span>`).join('')}</div><div class="sp-a-b">${esc(a.benchmark)}</div></div>`).join('');
+      const meta = (results[i]||{}).meta, band = SP_BANDS[i];
+      const chans = ((D.KPI && D.KPI[i]) || {}).channels || [];
+      const nM = chans.reduce((t,c)=>t+((c.metrics||[]).length),0);
+      const count = `${chans.length} activit${chans.length===1?'y':'ies'} · ${nM} measure${nM===1?'':'s'}`;
+      const actHtml = chans.map(c=>`<div class="sp-act${c.off?' off':''}">
+        <div class="sp-a-nm">${esc(c.ch)}</div>
+        ${(c.metrics||[]).map(m=>{ const tone = c.off?'':(m.dir==='up'?'pos':m.dir==='down'?'neg':'');
+          const right = c.off ? `<em>${esc(m.cmp||'not run')}</em>` : `${m.v?esc(m.v):''}${m.cmp?` <em>${esc(m.cmp)}</em>`:''}`;
+          return `<div class="sp-a-row"><span class="sp-a-k">${esc(m.l)}</span><span class="sp-a-v ${tone}">${right}</span></div>`; }).join('')}
+      </div>`).join('');
       return `<div class="sp-col" style="--st:${s.hue}; --i:${i}">
         <div class="sp-band">
           <svg viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true">
@@ -1669,7 +1674,6 @@
           <div class="sp-lbl"><span class="sp-idx">${s.idx}</span><span class="sp-nm">${esc(s.name)}</span>${meta?`<span class="sp-meta">${esc(meta)}</span>`:''}</div>
         </div>
         <div class="sp-body">
-          ${outHtml?`<div class="sp-rule"><span>Outcome</span></div><div class="sp-outcome">${outHtml}</div>`:''}
           <div class="sp-rule"><span>Measured by</span><em>${count}</em></div>
           <div class="sp-acts">${actHtml}</div>
         </div>
