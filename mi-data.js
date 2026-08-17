@@ -18,7 +18,7 @@ window.MIDATA = (function () {
   // ============================================================
   const HEADLINE = [
     { v:'6,000+', l:'Clicks on the Buy Hold Sell post', d:'our best content of the quarter', up:true },
-    { v:'~50,000',l:'Website visitors',                d:'up a quarter on Q1', up:true },
+    { v:'~50,000',l:'Website visitors',                d:'up 25% on Q1', up:true },
     { v:'740',    l:'Organisations in the Cash ETF launch', d:'across 8 emails', up:true },
     { v:'1,500+', l:'GLIS clicks from Asian banks',    d:'our biggest engagement engine', up:true },
     { v:'145',    l:'Australian search terms',         d:'+40% vs a year ago', up:true },
@@ -228,7 +228,7 @@ window.MIDATA = (function () {
   // Events & sponsorships (Smartsheet key activities + geography)
   // ============================================================
   const EVENTS = [
-    { name:'ASX: FSCF launch & bell-ringing ceremony', city:'Sydney', region:'ANZ', status:'Delivered', x:0.885, y:0.79 },
+    { name:'ASX:FSCF launch & bell-ringing ceremony', city:'Sydney', region:'ANZ', status:'Delivered', x:0.885, y:0.79 },
     { name:'Infocus webinar with Ben Samuel', city:'Australia (virtual)', region:'ANZ', status:'Delivered', x:0.86, y:0.83 },
     { name:'Lonsec Conference', city:'Sydney', region:'ANZ', status:'Delivered', x:0.895, y:0.805 },
     { name:'Morningstar Conference', city:'Sydney', region:'ANZ', status:'Delivered', x:0.875, y:0.815 },
@@ -258,7 +258,7 @@ window.MIDATA = (function () {
         { v:'+181', l:'New followers in June', cmp:'June, best month', dir:'up' },
       ] },
       { ch:'Website', metrics:[
-        { v:'~50,000', l:'Website visitors', cmp:'up a quarter on Q1', dir:'up' },
+        { v:'~50,000', l:'Website visitors', cmp:'up 25% on Q1', dir:'up' },
         { v:'6,300+', l:'Cash Fund page', cmp:'ETF launch traffic', dir:'up' },
       ] },
     ] },
@@ -312,7 +312,7 @@ window.MIDATA = (function () {
     },
     highlight3: {
       summary: [
-        'We rolled out new creatives for the Geared Australian Share Fund (ASX: LEVR), supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.',
+        'We rolled out new creatives for the Geared Australian Share Fund (ASX:LEVR), supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.',
       ],
       goals: [],
       activities: ['New market-driven creative variants','Solus eDM via Investor Daily'],
@@ -341,12 +341,12 @@ window.MIDATA = (function () {
     },
     website: {
       summary: [
-        'The Australian site drew around 50,000 visitors in Q2, up a quarter on Q1, with the homepage, the RQI quant fund page and the Active Cash Fund the three most visited destinations. The Cash Fund page alone pulled over 6,300 visitors, evidence that the ETF launch campaign sent advisers straight to the right place.',
+        'The Australian site drew around 50,000 visitors in Q2, up 25% on Q1, with the homepage, the RQI landing page and the Active Cash Fund the three most visited destinations. The Cash Fund page alone pulled over 6,300 visitors, evidence that the ETF launch campaign sent advisers straight to the right place.',
         'Performance and literature pages held attention longest, at nearly a minute each, and email became a genuine traffic source for the first time as the launch sequence drove visitors onto fund pages. Visits from AI assistants edged up, led by ChatGPT.',
       ],
       goals: ['Prepare the ASX Cash page and optimise for search engines','Refresh the homepage to funnel traffic to campaign landing pages'],
       activities: ['Cash ETF launch sequence to fund pages','Homepage and campaign landing pages','Continued search-engine optimisation'],
-      results: [{v:'~50,000',l:'Visitors in Q2',d:'up a quarter on Q1',up:true},{v:'6,300+',l:'Active Cash Fund page',d:'ETF launch traffic',up:true},{v:'ChatGPT',l:'Leading AI referrer',up:true}],
+      results: [{v:'~50,000',l:'Visitors in Q2',d:'up 25% on Q1',up:true},{v:'6,300+',l:'Active Cash Fund page',d:'ETF launch traffic',up:true},{v:'ChatGPT',l:'Leading AI referrer',up:true}],
       q2: ['Refresh the homepage to funnel to campaign pages'],
       q3: ['Continue optimising key campaign pages for search rankings'],
     },

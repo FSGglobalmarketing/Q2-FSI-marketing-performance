@@ -229,8 +229,8 @@
     ]},
     { label: 'Q2 2026', items: [
       { t: 'Launch the Cash ETF (FSCF)', d: 'We launched the Active Cash Fund on the ASX on 7 May with a bell-ringing ceremony and a full campaign across the likes of AFR, Investor Daily and Morningstar with supported media appearances on Ausbiz and the Livewire income series.' },
-      { t: 'Livewire Markets’ World Cup edition of Buy Hold Sell', d: 'Dedicate a portion of marketing focus and activity to Dushko’s special World Cup episode of Livewire Markets’ Buy Hold Sell.' },
-      { t: 'ASX LEVR market messaging', d: 'We rolled out new creatives for the Geared Australian Share Fund, supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.' },
+      { t: 'Livewire Markets’ World Cup edition of Buy Hold Sell', d: 'Dedicated a portion of marketing focus and activity to Dushko’s special World Cup episode of Livewire Markets’ Buy Hold Sell.' },
+      { t: 'ASX:LEVR market messaging', d: 'We rolled out new creatives for the Geared Australian Share Fund, supported by editorial placements in Investor Daily. The refreshed messaging drove advisers to the fund page, which drew over 1,000 visitors in the quarter.' },
     ]},
   ];
   let fq = 1;
