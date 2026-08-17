@@ -1441,7 +1441,7 @@
       sumEl.innerHTML = [
         { v:s.companies, l:'companies identified' },
         { v:s.identifiedPct, l:'of views identified to a company', pct:true },
-        { v:s.topIndustry, l:'top industry' },
+        { v:s.topIndustry, l:'Sector with most number of views' },
         { v:s.newCompanies, l:'new this quarter', plus:true },
       ].filter(x => x.v !== undefined && x.v !== null && x.v !== '' && x.v !== 0)
        .map(x=>`<div><b style="font-size:24px;font-weight:600;display:block;letter-spacing:-.02em">${x.plus?'+':''}${x.v}${x.pct?'%':''}</b><span class="alx-sub">${x.l}</span></div>`).join('');
