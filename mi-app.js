@@ -1601,6 +1601,85 @@
       ] },
     ],
   };
+  // MEASUREMENT SPINE — the KPI framework and the quarter's results in one funnel.
+  // Four tapering stage bands; beneath each, the real outcomes (from D.KPI) and the
+  // framework it is measured against (activities · measures · benchmark, below).
+  // Band geometry is authored so each slice's right edge meets the next slice's
+  // left edge — across four columns the funnel reads as one unbroken taper.
+  const SP_BANDS = [
+    { poly:'0,8 100,19.5 100,120.5 0,132',      top:'M0 8 L100 19.5',    bot:'M0 132 L100 120.5' },
+    { poly:'0,19.5 100,30.2 100,109.8 0,120.5', top:'M0 19.5 L100 30.2', bot:'M0 120.5 L100 109.8' },
+    { poly:'0,30.2 100,40.8 100,99.2 0,109.8',  top:'M0 30.2 L100 40.8', bot:'M0 109.8 L100 99.2' },
+    { poly:'0,40.8 100,49 100,91 0,99.2',       top:'M0 40.8 L100 49',   bot:'M0 99.2 L100 91' },
+  ];
+  // The group KPI framework, curated to the measures that carry each stage. Shared
+  // across brands (the framework is the same); the numbers come from D.KPI/D.RESULTS.
+  const SP_STAGES = [
+    { idx:'01', name:'Awareness', hue:'oklch(0.62 0.15 45)', activities:[
+      { name:'SEM',              measures:['Total impressions','Av click-through rate'], benchmark:'vs industry average' },
+      { name:'Advertorials',     measures:['Total impressions','Dwell time'],           benchmark:'vs industry average' },
+      { name:'Search (organic)', measures:['Total searches','Brand ranking'],           benchmark:'vs competitor average' },
+    ] },
+    { idx:'02', name:'Consideration', hue:'oklch(0.60 0.11 245)', activities:[
+      { name:'LinkedIn (organic)', measures:['Impressions','Click-through rate','Engagement rate'], benchmark:'vs industry average' },
+      { name:'Website',            measures:['Active users','Dwell time'],                          benchmark:'vs QoQ average' },
+    ] },
+    { idx:'03', name:'Conversion', hue:'oklch(0.62 0.10 190)', activities:[
+      { name:'Events', measures:['Distribution feedback'],           benchmark:'qualitative, no benchmark' },
+      { name:'Email',  measures:['Click-to-open rate','Open rates'], benchmark:'vs industry average' },
+    ] },
+    { idx:'04', name:'Service & loyalty', hue:'oklch(0.66 0.11 130)', activities:[
+      { name:'Data capture', measures:['Form completions'], benchmark:'vs 2-year internal average' },
+    ] },
+  ];
+  // Outcome chips are the real per-stage metrics from D.KPI (value + label + tone),
+  // not the seeded RESULTS pills. Live channels only; blank-value markers dropped.
+  function spineOutcomes(i){
+    const st = (D.KPI && D.KPI[i]) || null; if(!st) return [];
+    const out = [];
+    (st.channels||[]).forEach(c=>{ if(c.off) return; (c.metrics||[]).forEach(m=>{ if(!m.v) return;
+      out.push({ label:m.l, value:m.v, tone: m.dir==='up'?'pos':m.dir==='down'?'neg':'' }); }); });
+    return out.slice(0,5);
+  }
+  function renderSpine(){
+    const wrap = $('.kpi-spine'); if(!wrap) return;
+    const host = wrap.querySelector('#spine'); if(!host) return;
+    const results = (D.RESULTS && Array.isArray(D.RESULTS)) ? D.RESULTS : [];
+    const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    // header tally, derived from the goal metas ("3 of 4 goals met" etc.)
+    let met=0, total=0, watch=0;
+    SP_STAGES.forEach((s,i)=>{ const mm=/(\d+)\s+of\s+(\d+)/.exec((results[i]||{}).meta||'');
+      if(mm){ met+=+mm[1]; total+=+mm[2]; if(+mm[1]<+mm[2]) watch++; }
+      else { const n=Math.max(spineOutcomes(i).length,1); met+=n; total+=n; } });
+    const stats = wrap.querySelector('#fw-stats');
+    if(stats) stats.innerHTML = `<span><b>${met}</b>of ${total} goals met</span><span><b>${watch}</b>to watch</span>`;
+    host.innerHTML = SP_STAGES.map((s,i)=>{
+      const meta = (results[i]||{}).meta, oc = spineOutcomes(i), band = SP_BANDS[i];
+      const nm = (s.activities||[]).reduce((t,a)=>t+(a.measures||[]).length,0);
+      const count = `${s.activities.length} activit${s.activities.length===1?'y':'ies'} · ${nm} measure${nm===1?'':'s'}`;
+      const outHtml = oc.map(o=>`<span class="sp-out ${o.tone}"><i>${esc(o.label)}</i>${o.value?`<b>${esc(o.value)}</b>`:''}</span>`).join('');
+      const actHtml = (s.activities||[]).map(a=>`<div class="sp-act"><div class="sp-a-nm">${esc(a.name)}</div><div class="sp-a-m">${(a.measures||[]).map(m=>`<span>${esc(m)}</span>`).join('')}</div><div class="sp-a-b">${esc(a.benchmark)}</div></div>`).join('');
+      return `<div class="sp-col" style="--st:${s.hue}; --i:${i}">
+        <div class="sp-band">
+          <svg viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true">
+            <polygon class="sp-fill" points="${band.poly}"/>
+            <path class="sp-edge" d="${band.top}" pathLength="1" vector-effect="non-scaling-stroke"/>
+            <path class="sp-edge" d="${band.bot}" pathLength="1" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="sp-lbl"><span class="sp-idx">${s.idx}</span><span class="sp-nm">${esc(s.name)}</span>${meta?`<span class="sp-meta">${esc(meta)}</span>`:''}</div>
+        </div>
+        <div class="sp-body">
+          ${outHtml?`<div class="sp-rule"><span>Outcome</span></div><div class="sp-outcome">${outHtml}</div>`:''}
+          <div class="sp-rule"><span>Measured by</span><em>${count}</em></div>
+          <div class="sp-acts">${actHtml}</div>
+        </div>
+      </div>`;
+    }).join('');
+    if(!wrap._spObs && 'IntersectionObserver' in window){
+      wrap._spObs = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) wrap.classList.add('sp-in'); }), { threshold:0.15 });
+      wrap._spObs.observe(wrap);
+    } else { wrap.classList.add('sp-in'); }
+  }
   // Vertical funnel: only the channels this brand actually used this quarter, each
   // filled with the real metric vs its benchmark. Per-brand data is D.KPI.
   // Horizontal funnel tree: a stage node branches to its framework channels.
@@ -1685,7 +1764,7 @@
   renderAlphix();
   renderLinkedIn();
   renderEmailSummary(); renderAllEmail();
-  renderEvents(); renderResults();
+  renderEvents(); renderResults(); renderSpine();
   wire(); observers();
   arrangeFilters();
 })();
