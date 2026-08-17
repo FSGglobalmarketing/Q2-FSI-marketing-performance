@@ -1021,16 +1021,55 @@
   function renderRiRequests(el, opts){
     el = el || $('#ri-requests'); if(!el) return;
     const R = D.HIGHLIGHTS && D.HIGHLIGHTS.riReport && D.HIGHLIGHTS.riReport.requests; if(!R) return;
-    const relColor = n => n==='Open Opportunity' ? '#e0a020' : n==='Competitor' ? 'var(--c-us)' : 'var(--c-a)';
-    const rows = (R.byRel||[]).map(r=>({ name:r.name, v:r.v, color: relColor(r.name) }));
-    if(window.echarts){ try { echartsHBars(el, rows, Object.assign({ labelW:150, valUnit:' requests', rowH:28 }, opts)); } catch(e){ console.warn('ri-requests', e); } }
-    else C.hbars(el, rows, { dark:true, labelW:140 });
-    const card = el.closest('.chart-card'); const list = card && card.querySelector('[data-role="ri-req-list"]');
-    if(list){
-      const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      const cls = r => r==='Open Opportunity'?'rq-open':r==='Competitor'?'rq-comp':r==='Lost Opportunity'?'rq-lost':r==='Client'?'rq-client':'';
-      list.innerHTML = (R.companies||[]).map(c=>`<div class="rq-row"><span class="rq-co">${esc(c.n)}</span><span class="rq-rel ${cls(c.r)}">${esc(c.r)}</span></div>`).join('');
-    }
+    const esc0 = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    const byRel = (R.byRel||[]).slice().sort((a,b)=>a.v-b.v);   // ascending -> largest bar on top
+    const cos = {}; (R.companies||[]).forEach(c=>{ (cos[c.r]=cos[c.r]||[]).push(c.n); });
+    const relColor = n => n==='Open Opportunity' ? '#e0a020' : n==='Competitor' ? '#c2543a' : chartColor('--c-a','#3b82f6');
+    if(!window.echarts){ if(typeof C!=='undefined' && C.hbars) C.hbars(el, byRel.map(r=>({ name:r.name, v:r.v, color:'var(--c-a)' })), { dark:true, labelW:150 }); return; }
+    const dark = echDark(el);
+    const inst = echInit(el, opts&&opts.modal?'56vh':((byRel.length*30)+30)+'px');
+    inst.setOption({ animationDuration:450,
+      grid:{ left:150, right:56, top:6, bottom:6 },
+      tooltip: Object.assign(echTipBase(dark), { trigger:'axis', axisPointer:{ type:'shadow' },
+        formatter: p => { const r=p[0], list=cos[r.name]||[]; return `<b>${esc0(r.name)}</b> · ${r.value} request${r.value===1?'':'s'}<br/><span style="opacity:.72">${list.map(esc0).join('<br/>')}</span>`; } }),
+      xAxis:{ type:'value', show:false, max:'dataMax' },
+      yAxis:{ type:'category', data:byRel.map(r=>r.name), axisTick:{show:false}, axisLine:{show:false},
+              axisLabel:{ color:dark?'#dcd7cc':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5 } },
+      series:[{ type:'bar', barWidth:15, data:byRel.map(r=>({ value:r.v, itemStyle:{ color:relColor(r.name), borderRadius:[0,7,7,0] } })),
+        label:{ show:true, position:'right', color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Mono', fontSize:12 } }],
+    });
+    inst.resize(); bindResize(el, inst); return inst;
+  }
+  // RI email click-to-open by fund (2024-2026): grouped horizontal bars with two
+  // dashed benchmark lines (industry + our historic average) named in the legend.
+  function renderRiCto(el, opts){
+    el = el || $('#ri-cto'); if(!el) return;
+    const R = D.HIGHLIGHTS && D.HIGHLIGHTS.riReport && D.HIGHLIGHTS.riReport.cto; if(!R || !window.echarts) return;
+    const dark = echDark(el), ax = echAxis(dark), funds = R.funds||[];
+    const inst = echInit(el, opts&&opts.modal?'58vh':((funds.length*46)+66)+'px');
+    const c24='#f3c9a9', c25='#ef7d4e', c26='#3a9bd8', cInd='#9a948a', cHist='#e0442a';
+    const mk = (key,name,color) => ({ name, type:'bar', data:funds.map(f=>+f[key]||0), barCategoryGap:'34%', itemStyle:{ color } });
+    inst.setOption({ animationDuration:450,
+      legend:{ show:true, top:0, left:'center', itemWidth:16, itemHeight:10, itemGap:14,
+        textStyle:{ color:dark?'#cfcabc':'#57534a', fontFamily:'IBM Plex Sans', fontSize:11 },
+        data:['CTO 2024','CTO 2025','CTO 2026','Industry benchmark','Our historic average'] },
+      grid:{ left:118, right:38, top:40, bottom:28 },
+      tooltip: Object.assign(echTipBase(dark), { trigger:'axis', axisPointer:{ type:'shadow' }, valueFormatter:v=>v+'%' }),
+      xAxis:{ type:'value', max:40, axisLabel:{ color:ax.label, formatter:'{value}%', fontFamily:'IBM Plex Mono', fontSize:11 }, splitLine:{ lineStyle:{ color:ax.split } } },
+      yAxis:{ type:'category', data:funds.map(f=>f.name), axisTick:{show:false}, axisLine:{ lineStyle:{ color:ax.line } },
+              axisLabel:{ color:dark?'#dcd7cc':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:11.5 } },
+      series:[
+        mk('y2024','CTO 2024',c24),
+        mk('y2025','CTO 2025',c25),
+        Object.assign(mk('y2026','CTO 2026',c26), { markLine:{ symbol:'none', silent:true, label:{show:false}, data:[
+          { xAxis:R.industry, lineStyle:{ color:cInd, type:'dashed', width:2 } },
+          { xAxis:R.historic, lineStyle:{ color:cHist, type:'dashed', width:2 } },
+        ] } }),
+        { name:'Industry benchmark', type:'line', data:[], lineStyle:{ type:'dashed', color:cInd, width:2 }, itemStyle:{ color:cInd } },
+        { name:'Our historic average', type:'line', data:[], lineStyle:{ type:'dashed', color:cHist, width:2 }, itemStyle:{ color:cHist } },
+      ],
+    });
+    inst.resize(); bindResize(el, inst); return inst;
   }
 
   /* ================= ENGAGEMENT ================= */
@@ -1266,6 +1305,7 @@
       if(key === 'ri-chapters') return renderRiChapters(el, opts);
       if(key === 'ri-companies')return renderRiCompanies(el, opts);
       if(key === 'ri-requests') return renderRiRequests(el, opts);
+      if(key === 'ri-cto') return renderRiCto(el, opts);
     } catch(e){ console.warn('MI_renderChart', key, e); }
   };
   // The GA4 top-pages come as country-specific URLs (/europe/…, /usa/…, …).
@@ -1776,7 +1816,7 @@
   /* ================= GO ================= */
   renderContentBlocks();
   renderHighlightCards();
-  renderAllSem(); renderAllSearchTerms(); renderAllLiChannel(); renderAllLiAudience(); renderAllLiPosts(); renderAllForms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies(); renderRiRequests();
+  renderAllSem(); renderAllSearchTerms(); renderAllLiChannel(); renderAllLiAudience(); renderAllLiPosts(); renderAllForms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies(); renderRiRequests(); renderRiCto();
   renderStages();
   heroSlider();
   renderKPIs();
