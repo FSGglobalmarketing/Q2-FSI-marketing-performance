@@ -1016,6 +1016,22 @@
     if(window.echarts){ try { return echartsHBars(el, rows, Object.assign({ labelW:190, valUnit:' clicks', rowH:42 }, opts)); } catch(e){ console.warn('ri-companies', e); } }
     C.hbars(el, rows, { dark:true, labelW:180 });
   }
+  // Website report requests: a bar chart by relationship to the firm + the list of
+  // requesting companies (with a relationship tag). Igneo-only mount.
+  function renderRiRequests(el, opts){
+    el = el || $('#ri-requests'); if(!el) return;
+    const R = D.HIGHLIGHTS && D.HIGHLIGHTS.riReport && D.HIGHLIGHTS.riReport.requests; if(!R) return;
+    const relColor = n => n==='Open Opportunity' ? '#e0a020' : n==='Competitor' ? 'var(--c-us)' : 'var(--c-a)';
+    const rows = (R.byRel||[]).map(r=>({ name:r.name, v:r.v, color: relColor(r.name) }));
+    if(window.echarts){ try { echartsHBars(el, rows, Object.assign({ labelW:150, valUnit:' requests', rowH:28 }, opts)); } catch(e){ console.warn('ri-requests', e); } }
+    else C.hbars(el, rows, { dark:true, labelW:140 });
+    const card = el.closest('.chart-card'); const list = card && card.querySelector('[data-role="ri-req-list"]');
+    if(list){
+      const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      const cls = r => r==='Open Opportunity'?'rq-open':r==='Competitor'?'rq-comp':r==='Lost Opportunity'?'rq-lost':r==='Client'?'rq-client':'';
+      list.innerHTML = (R.companies||[]).map(c=>`<div class="rq-row"><span class="rq-co">${esc(c.n)}</span><span class="rq-rel ${cls(c.r)}">${esc(c.r)}</span></div>`).join('');
+    }
+  }
 
   /* ================= ENGAGEMENT ================= */
   const cssv = (n, fb) => { const v = getComputedStyle(document.documentElement).getPropertyValue(n).trim(); return v || fb; };
@@ -1249,6 +1265,7 @@
       if(key === 'na-audience') return renderNaAudience(el, opts);
       if(key === 'ri-chapters') return renderRiChapters(el, opts);
       if(key === 'ri-companies')return renderRiCompanies(el, opts);
+      if(key === 'ri-requests') return renderRiRequests(el, opts);
     } catch(e){ console.warn('MI_renderChart', key, e); }
   };
   // The GA4 top-pages come as country-specific URLs (/europe/…, /usa/…, …).
@@ -1759,7 +1776,7 @@
   /* ================= GO ================= */
   renderContentBlocks();
   renderHighlightCards();
-  renderAllSem(); renderAllSearchTerms(); renderAllLiChannel(); renderAllLiAudience(); renderAllLiPosts(); renderAllForms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies();
+  renderAllSem(); renderAllSearchTerms(); renderAllLiChannel(); renderAllLiAudience(); renderAllLiPosts(); renderAllForms(); renderAllLiAds(); renderAllProspects(); renderRiChapters(); renderRiCompanies(); renderRiRequests();
   renderStages();
   heroSlider();
   renderKPIs();
