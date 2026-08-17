@@ -850,3 +850,11 @@ body.hints-seen .seg.ui-hint::before { animation: none; opacity: 0; }
 .rq-rel.rq-comp{ color:var(--c-us); opacity:1; }
 .rq-rel.rq-lost{ color:#c07a52; opacity:1; }
 .rq-rel.rq-client{ color:var(--c-a); opacity:1; }
+/* brighter, readable text on the KPI spine page */
+.kpi-spine .sp-a-k, .kpi-spine .fw-stats span{ color:#ddd8cd; }
+.kpi-spine .sp-nm{ color:#faf7f0; }
+.kpi-spine .sp-meta{ color:rgba(245,241,234,.72); }
+.kpi-spine .sp-rule span{ color:rgba(245,241,234,.8); }
+.kpi-spine .sp-rule em{ color:rgba(245,241,234,.62); }
+.kpi-spine .sp-a-v{ color:#faf7f0; }
+.kpi-spine .sp-a-v em{ color:rgba(245,241,234,.7); }
