@@ -288,8 +288,10 @@
   // Google ads (Ads Transparency), LinkedIn ads (Ad Library) and press mentions.
   // Raw counts are orders of magnitude apart (LinkedIn ads run to the thousands,
   // Google ads and press mentions to the tens), so each channel is normalised to
-  // its own share of voice — a rival's % of that channel's total — before
-  // stacking. A bar's length is the sum of its three channel shares.
+  // its own share of voice — a competitor's % of that channel's total. The three
+  // per-channel shares are then EQUAL-WEIGHTED (each channel = 1/3), so a bar's
+  // length is the competitor's share of the total peer group across the three
+  // channels (all competitors sum to 100%), not the sum of channel shares.
   // The three channels label the same rival differently — Google's activity feed
   // says "Janus", LinkedIn "Janus Henderson", press "GAM" vs "GAM Investments" —
   // so fold every raw name onto its canonical COMPETITORS entry before summing,
@@ -314,9 +316,10 @@
     const tot = o => { const s = Object.values(o).reduce((a,b)=>a+b,0); return s || 1; };
     const gT = tot(g), lT = tot(l), pT = tot(p);
     const names = new Set([...Object.keys(g), ...Object.keys(l), ...Object.keys(p)]);
+    const NCH = 3;  // Google, LinkedIn, press — equal-weighted so bars sum to 100% of the peer group
     return [...names].map(n => {
       const gv=g[n]||0, lv=l[n]||0, pv=p[n]||0;
-      return { name:n, g:gv, l:lv, p:pv, gs:gv/gT*100, ls:lv/lT*100, ps:pv/pT*100, total:(gv/gT+lv/lT+pv/pT)*100 };
+      return { name:n, g:gv, l:lv, p:pv, gs:gv/gT/NCH*100, ls:lv/lT/NCH*100, ps:pv/pT/NCH*100, total:(gv/gT+lv/lT+pv/pT)/NCH*100 };
     }).filter(r => r.g || r.l || r.p).sort((a,b) => b.total - a.total);
   }
   // The chart card carries a Q1/Q2 slider; Google and press shares move with it,
