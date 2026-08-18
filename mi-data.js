@@ -204,10 +204,10 @@ window.MIDATA = (function () {
   // Full-quarter totals from the global Pardot archive; the Q1 delta uses the
   // same source, so the comparison is finally like-for-like.
   const EMAIL_SUMMARY = [
-    { v:'1,730', l:'Contacts engaged' },
-    { v:'1,095', l:'Organisations' },
+    { v:'1,626', l:'Contacts engaged' },
+    { v:'1,045', l:'Organisations' },
     { v:'3,640', l:'Link clicks' },
-    { v:'-10%', l:'Contacts vs Q1 (1,917)' },
+    { v:'-15%', l:'Contacts vs Q1 (1,917)' },
   ];
   const DEALS = {
     pipeline:'$18.4M', won:'$4.2M', count:52,
@@ -271,8 +271,9 @@ window.MIDATA = (function () {
     ] },
     { stage:'Service & loyalty', color:'#a870ff', channels:[
       { ch:'Data capture', metrics:[
-        { v:'1,730', l:'Contacts engaged', cmp:'down 10% vs Q1', dir:'down' },
-        { v:'1,095', l:'Organisations · 3,640 clicks', cmp:'', dir:'flat' },
+        { v:'1,626', l:'Contacts engaged', cmp:'down 15% vs Q1', dir:'down' },
+        { v:'1,045', l:'Organisations · 3,640 clicks', cmp:'', dir:'flat' },
+        { v:'80', l:'Form conversions', cmp:'ACTA + website forms', dir:'up' },
       ] },
     ] },
   ];
@@ -280,7 +281,7 @@ window.MIDATA = (function () {
   const RESULTS = [
     { stage:'Awareness',  meta:'3 of 4 KPIs met', pills:[['Reach +18%','pos'],['Recall +12%','pos'],['Share of voice ↑','pos'],['Search rank −2','neg']] },
     { stage:'Engagement', meta:'All KPIs met',    pills:[['Web visits ↑','pos'],['LinkedIn 13.4%','pos'],['Avg time 1:52','pos']] },
-    { stage:'Conversion', meta:'2 of 3 KPIs met', pills:[['Replies 396','pos'],['Meetings 242','pos'],['Wins 52','']] },
+    { stage:'Conversion', meta:'2 of 3 KPIs met', pills:[['1,626 contacts','pos'],['1,045 orgs','pos'],['80 form conv.','pos']] },
     { stage:'Loyalty',    meta:'On track',         pills:[['Events 60%','pos'],['NPS ↑','pos'],['Renewals','']] },
   ];
 
