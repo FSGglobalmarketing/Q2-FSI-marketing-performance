@@ -305,8 +305,12 @@ window.MIDATA = (function () {
       summary: [
         'Dushko Bajic joined a special World Cup episode of Livewire Markets’ Buy Hold Sell. The post drew over 6,000 clicks, more than every other post this quarter combined, and made May comfortably our strongest month. It is the clearest proof yet that recognisable media formats and personalities travel far further than standard fund content.',
       ],
-      goals: [],
-      activities: ['Special World Cup episode of Livewire Markets’ Buy Hold Sell','LinkedIn organic'],
+      goals: [
+        'Capitalised on the opportunity to profile Dushko and share expertise, leaning on his reputation in the industry as a trusted Portfolio Manager and key Livewire contributor',
+        'Increase visibility in market by aligning the timing of the World Cup to share key insights and views',
+        'Utilise an engaging content format, with insights provided in a fun way',
+      ],
+      activities: ['Special World Cup episode of Livewire Markets’ Buy Hold Sell','LinkedIn organic posts amplifying content and linking through to Livewire','Livewire regular email to subscribers'],
       results: [{v:'57,071',l:'Impressions',d:'Livewire Buy Hold Sell',up:true},{v:'12,949',l:'Views',up:true},{v:'15,651',l:'Engagements',up:true}],
       q2: [],
       q3: [],
