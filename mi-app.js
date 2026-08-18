@@ -453,14 +453,14 @@
       host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.formDim=b.dataset.dim; renderAllForms(); });
     }
     const note = card.querySelector('[data-role="form-note"]');
-    if(note) note.innerHTML = `<strong>${F.total}</strong> enquiries came through our forms this quarter, split by ${F.dims[state.formDim].label.toLowerCase()}. Aggregate only, no personal details are published.`;
+    if(note) note.innerHTML = `<strong>${F.total}</strong> enquiries came through our website and landing pages this quarter, split by ${F.dims[state.formDim].label.toLowerCase()}. Aggregate only, no personal details are published.`;
   }
   function renderFormChart(card){
     const F = D.forms ? D.forms() : null; if(!F) return;
     const el = card.querySelector('[data-role="form-chart"]'); if(!el) return;
     const seg = F.dims[state.formDim]; if(!seg) return;
     const rows = seg.rows.map(r=>({ name:r.n, v:r.v, color:'var(--c-us)' }));
-    if(window.echarts){ try { echartsHBars(el, rows, { labelW:170, rowH:32, valUnit:' enquiries' }); }
+    if(window.echarts){ try { echartsHBars(el, rows, { labelW:210, rowH:32, valUnit:' enquiries' }); }
       catch(e){ console.warn('forms', e); } }
   }
 
@@ -1784,7 +1784,7 @@
     }
     $$('.plat-toggle button').forEach(b=> b.classList.toggle('on', b.dataset.plat===p));
     $$('[data-role="creatives-title"]').forEach(h=> h.textContent =
-      p==='press' ? 'Who is getting written about' : 'Their live adverts right now');
+      p==='press' ? 'Who is getting written about' : 'Competitor live adverts right now');
     $$('[data-role="creatives-sub"]').forEach(h=> h.textContent =
       p==='press' ? 'Press mentions this quarter, from Signal AI. The bright slice is positive coverage.'
                   : 'Real ad examples pulled from public ad libraries.');
