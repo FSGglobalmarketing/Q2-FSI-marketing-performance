@@ -278,9 +278,9 @@ window.MIDATA = (function () {
   ];
 
   const RESULTS = [
-    { stage:'Awareness',  meta:'3 of 4 goals met', pills:[['Reach +18%','pos'],['Recall +12%','pos'],['Share of voice ↑','pos'],['Search rank −2','neg']] },
-    { stage:'Engagement', meta:'All goals met',    pills:[['Web visits ↑','pos'],['LinkedIn 4.2%','pos'],['Avg time 1:52','pos']] },
-    { stage:'Conversion', meta:'2 of 3 goals met', pills:[['Replies 396','pos'],['Meetings 242','pos'],['Wins 52','']] },
+    { stage:'Awareness',  meta:'3 of 4 KPIs met', pills:[['Reach +18%','pos'],['Recall +12%','pos'],['Share of voice ↑','pos'],['Search rank −2','neg']] },
+    { stage:'Engagement', meta:'All KPIs met',    pills:[['Web visits ↑','pos'],['LinkedIn 4.2%','pos'],['Avg time 1:52','pos']] },
+    { stage:'Conversion', meta:'2 of 3 KPIs met', pills:[['Replies 396','pos'],['Meetings 242','pos'],['Wins 52','']] },
     { stage:'Loyalty',    meta:'On track',         pills:[['Events 60%','pos'],['NPS ↑','pos'],['Renewals','']] },
   ];
 

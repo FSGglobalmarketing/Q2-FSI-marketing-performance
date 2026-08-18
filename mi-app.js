@@ -956,7 +956,7 @@
       const g = A.groups.find(x=>x.id===state.liGroup);
       sub.textContent = g
         ? `${g.name}: ${g.impr.toLocaleString()} impressions and ${g.clicks.toLocaleString()} clicks (${(g.clicks/g.impr*100).toFixed(2)}% CTR) for £${g.spend.toLocaleString()}.`
-        : 'Every ad we ran, by impressions. Statics and Videos were a clean test: same objective, same bidding. Video bought a third of the reach for much the same money, but earned nearly three times the click rate.';
+        : '';
     }
   }
   function renderLiAds(card){
@@ -1703,13 +1703,13 @@
     const host = wrap.querySelector('#spine'); if(!host) return;
     const results = (D.RESULTS && Array.isArray(D.RESULTS)) ? D.RESULTS : [];
     const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    // header tally, derived from the goal metas ("3 of 4 goals met" etc.)
+    // header tally, derived from the goal metas ("3 of 4 KPIs met" etc.)
     let met=0, total=0, watch=0;
     SP_STAGES.forEach((s,i)=>{ const mm=/(\d+)\s+of\s+(\d+)/.exec((results[i]||{}).meta||'');
       if(mm){ met+=+mm[1]; total+=+mm[2]; if(+mm[1]<+mm[2]) watch++; }
       else { const n=Math.max(spineOutcomes(i).length,1); met+=n; total+=n; } });
     const stats = wrap.querySelector('#fw-stats');
-    if(stats) stats.innerHTML = `<span><b>${met}</b>of ${total} goals met</span><span><b>${watch}</b>to watch</span>`;
+    if(stats) stats.innerHTML = `<span><b>${met}</b>of ${total} KPIs met</span><span><b>${watch}</b>to watch</span>`;
     host.innerHTML = SP_STAGES.map((s,i)=>{
       const meta = (results[i]||{}).meta, band = SP_BANDS[i];
       const chans = ((D.KPI && D.KPI[i]) || {}).channels || [];
