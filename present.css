@@ -127,6 +127,7 @@ html.flat-review .carousel-ui { display: none !important; }
 .p-sub { font-size: clamp(16px, 1.5vw, 19px); color: var(--dark-ink-2); max-width: 120ch; line-height: 1.5; text-wrap: pretty; }
 
 .lead-sum { font-size: clamp(12px, 1.05vw, 13.5px); line-height: 1.55; color: var(--dark-ink-2); max-width: none; text-wrap: pretty; }
+.lead-sum + .lead-sum { margin-top: 11px; }
 
 /* ---------- EXECUTIVE SUMMARY (board page) ---------- */
 .exec-wrap { display: flex; flex-direction: column; gap: clamp(20px, 2.4vw, 34px); margin-top: clamp(14px, 1.8vw, 26px); }
