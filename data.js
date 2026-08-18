@@ -16,7 +16,7 @@ window.MI_REMOTE = {
     },
     {
       "path": "/au/en/adviser/our-funds/rqi-investors.html",
-      "title": "RQI Investors: Active quant funds | First Sentier Investors",
+      "title": "RQI landing page",
       "views": 9994,
       "prevViews": 8770,
       "users": 6670,
