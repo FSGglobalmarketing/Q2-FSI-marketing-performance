@@ -323,9 +323,9 @@ window.MIDATA = (function () {
     search: {
       summary: [
         'Across our Australian strategies, First Sentier ends June visible on around 145 search terms, holding flat on the quarter and up more than 40 per cent on a year ago. That steadiness came in a period when search coverage compressed across the market as Google answered more queries directly, so holding ground counted for something.',
-        'Australian Equities Growth was the clear gainer, moving from 20 terms to 28 on the back of the reporting-season campaign and now ahead of Betashares in that category. Global Listed Infrastructure and Short Term Investments both eased slightly, in line with the wider contraction, while Vanguard remains the volume leader across every category we track. We continue to appear for the terms that matter to us: quant, cash, listed infrastructure and Australian equities.',
+        'Australian Equities Growth was the clear gainer, moving from 20 terms to 28 on the back of the reporting-season campaign and now ahead of Betashares in that category. Global Listed Infrastructure and Short Term Investments both eased slightly, in line with the wider contraction, while Vanguard remains the volume leader across every category we track. We continue to appear for the terms that matter to us: cash, listed infrastructure and Australian equities.',
       ],
-      goals: ['Analyse competitor activities and incorporate them into our website','Position our brand to be included in more AI search results as technology pivots'],
+      goals: ['Analyse competitor activities and incorporate them into our website','Increase brand mentions and citations appearing in LLMs and AI search results'],
       activities: ['Paid search ads focusing on branded and ETF-related terms','Cross-promotions on LinkedIn with Duke and Xcel'],
       results: [{v:'145',l:'Search terms',d:'+40% YoY, flat on the quarter',up:true},{v:'20 → 28',l:'Australian Equities Growth terms',d:'now ahead of Betashares',up:true},{v:'Vanguard',l:'Volume leader across categories'}],
       q2: ['Hold ground as search coverage compresses'],
@@ -449,7 +449,7 @@ window.MIDATA = (function () {
         { name:'Nomura', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1] },
         { name:'Magellan', data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
       ] },
-      { key:'Short Term', label:'Short Term', series: [
+      { key:'Short Term', label:'Short Term (Cash)', series: [
         { name:'Vanguard', data:[95,94,99,118,140,143,147,152,150,154,161,163,162,160,158] },
         { name:'BetaShares', data:[46,49,49,54,69,72,73,75,89,95,93,100,92,86,82] },
         { name:'BlackRock', data:[44,44,49,51,53,56,59,60,65,69,70,72,67,70,74] },
