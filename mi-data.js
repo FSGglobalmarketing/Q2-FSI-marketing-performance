@@ -306,7 +306,7 @@ window.MIDATA = (function () {
       ],
       goals: [],
       activities: ['Special World Cup episode of Livewire Markets’ Buy Hold Sell','LinkedIn organic'],
-      results: [{v:'6,000+',l:'Clicks on the LinkedIn post',d:'more than every other post combined',up:true},{v:'May',l:'Strongest month of the year',up:true}],
+      results: [{v:'57,071',l:'Impressions',d:'Livewire Buy Hold Sell',up:true},{v:'12,949',l:'Views',up:true},{v:'15,651',l:'Engagements',up:true}],
       q2: [],
       q3: [],
     },
