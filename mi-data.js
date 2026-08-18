@@ -531,6 +531,31 @@ window.MIDATA = (function () {
   };
   function emailEng(){ return EMAIL_ENG; }
 
+  // Q2 2026 form conversions from the Salesforce "Form Conversions" export
+  // (Converted at Apr-Jun 2026), attributed to FSI by form name: the ACTA
+  // Conference competition, First Sentier website subscribe/contact forms and
+  // the AEQ campaign. Companies are self-entered on the form.
+  const FORMS = {
+    total: 80,
+    dims: {
+      strategy: { label:'Form', rows:[
+        { n:'ACTA Conference competition', v:59 },
+        { n:'First Sentier website & subscribe forms', v:17 },
+        { n:'AEQ campaign', v:4 },
+      ] },
+      company: { label:'Company', rows:[
+        { n:'QTC', v:2 },
+        { n:'Lendlease', v:2 },
+        { n:'Westpac', v:2 },
+        { n:'GWF', v:2 },
+        { n:'SEEK', v:1 },
+        { n:'Deloitte', v:1 },
+        { n:'Infrabuild', v:1 },
+      ] },
+    },
+  };
+  function forms(){ return FORMS; }
+
   // Press share-of-voice from Signal AI (press-data.js snapshot, or MI_REMOTE.PRESS
   // if the build ever fetches it live). Still NO seeded fallback: invented press
   // coverage would be indistinguishable from the real thing on the page, so no
@@ -641,7 +666,7 @@ window.MIDATA = (function () {
     PERIOD, HEADLINE, CHANNELS, COMPETITORS, FORMATS, FIRMS, KEY_PAGES, EVENTS, KPI, RESULTS, CB, STAGES,
     TOP_PAGES, SEARCH_QUERIES, EMAILS, EMAIL_SUMMARY, DEALS, CAMPAIGNS, FIRMS_SUMMARY,
     fmtInt, fmtK,
-    channelSeries, visitsSeries, firmsByPage, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng,
+    channelSeries, visitsSeries, firmsByPage, creatives, press, pressMeta, pressArticles, liChannel, liCreatives, liActivity, shareOfVoice, adSoV, searchVisibility, seoRankings, emailEng, forms,
   };
 })();
 
