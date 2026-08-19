@@ -873,11 +873,15 @@
   function sempSingle(){ return state.sempCountry!=='All' || sempCountries().length<=1; }
   function sempAds(){ const c=state.sempCountry, g=state.sempGroup;
     return (window.MI_SEM.ads||[]).filter(a=>(c==='All'||a.country===c)&&(g==='All'||a.topic===g)).slice().sort((x,y)=>y.impr-x.impr); }
+  const SEMP_MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // The two quarters overlay on one axis by week-of-quarter; label each tick with
+  // the Q2 (current-quarter) week-start date so the x-axis reads as calendar dates.
+  function sempWkLabel(wk){ const d=new Date(2026,3,1); d.setDate(d.getDate()+(wk-1)*7); return d.getDate()+' '+SEMP_MON[d.getMonth()]; }
   function sempWeeks(metric){
     const T=window.MI_SEM.timeline||{}, idx=arr=>{ const m={}; (arr||[]).forEach(r=>m[r.wk]=r); return m; };
     const q1=idx(T.q1), q2=idx(T.q2);
     const val=r=>!r?undefined:(metric==='ctr'?(r.impr?+(r.clk/r.impr*100).toFixed(2):undefined):r.impr);
-    const rows=[]; for(let w=1;w<=13;w++) rows.push({ label:'W'+w, q1:val(q1[w]), q2:val(q2[w]) }); return rows;
+    const rows=[]; for(let w=1;w<=13;w++) rows.push({ label:sempWkLabel(w), q1:val(q1[w]), q2:val(q2[w]) }); return rows;
   }
   function renderSempCard(card, opts){ renderSempFilters(card); renderSempTimeline(card, opts); renderSempBars(card, opts); }
   function renderAllSemPerf(){
