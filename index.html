@@ -14,6 +14,24 @@
 <!-- Flat review mode: add ?flat (or ?review / ?markup) to the URL to turn the
      slide deck into one long scrolling page for annotation tools (markup.io). -->
 <script>try{if(/(?:[?&]|#)(flat|review|markup)\b/i.test(location.search+location.hash))document.documentElement.classList.add('flat-review');}catch(e){}</script>
+<!-- ===== Password gate ===== -->
+<style>
+  html.pw-locked body > :not(#pw-gate){display:none!important;}
+  #pw-gate{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:24px;background:#0b0e12;color:#eceae4;font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;}
+  html.pw-locked #pw-gate{display:flex;}
+  #pw-gate .pw-card{width:min(380px,90vw);text-align:center;}
+  #pw-gate .pw-h{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8b867d;margin-bottom:14px;}
+  #pw-gate h1{font-size:22px;font-weight:600;margin:0 0 8px;line-height:1.25;}
+  #pw-gate p{font-size:13.5px;color:#a29d94;margin:0 0 22px;}
+  #pw-gate form{display:flex;gap:8px;}
+  #pw-gate input{flex:1;padding:12px 14px;border-radius:9px;border:1px solid #2b323b;background:#141a20;color:#eceae4;font-size:14px;outline:none;-webkit-appearance:none;}
+  #pw-gate input:focus{border-color:#4a86c6;}
+  #pw-gate button{padding:12px 18px;border-radius:9px;border:0;background:#eceae4;color:#0b0e12;font-weight:600;font-size:14px;cursor:pointer;}
+  #pw-gate button:hover{background:#fff;}
+  #pw-gate .pw-err{color:#e07a6f;font-size:12.5px;margin-top:14px;min-height:15px;visibility:hidden;}
+  #pw-gate .pw-err.show{visibility:visible;}
+</style>
+<script>(function(){try{if(sessionStorage.getItem('mi-unlocked')!=='1')document.documentElement.classList.add('pw-locked');}catch(e){document.documentElement.classList.add('pw-locked');}})();</script>
 <title>FSI · Global Marketing Impact Report · Q2 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +44,38 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
+<!-- ===== Password gate ===== -->
+<div id="pw-gate">
+  <div class="pw-card">
+    <div class="pw-h">Confidential</div>
+    <h1>Global Marketing Impact Report</h1>
+    <p>Please enter the password to view this report.</p>
+    <form id="pw-form" autocomplete="off">
+      <input id="pw-input" type="password" placeholder="Password" aria-label="Password" />
+      <button type="submit">Enter</button>
+    </form>
+    <div class="pw-err" id="pw-err">Incorrect password, please try again.</div>
+  </div>
+</div>
+<script>
+(function(){
+  if(!document.documentElement.classList.contains('pw-locked'))return;
+  var form=document.getElementById('pw-form'),input=document.getElementById('pw-input'),
+      gate=document.getElementById('pw-gate'),err=document.getElementById('pw-err'),
+      HASH='ab96776fe63720fab13d43a9987aeb76682d7d774a6e974bbce53724d8ef6281';
+  if(input)setTimeout(function(){input.focus();},60);
+  function unlock(){try{sessionStorage.setItem('mi-unlocked','1');}catch(e){}document.documentElement.classList.remove('pw-locked');if(gate&&gate.parentNode)gate.parentNode.removeChild(gate);}
+  function toHex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return('0'+x.toString(16)).slice(-2);}).join('');}
+  form&&form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(window.crypto&&crypto.subtle){
+      crypto.subtle.digest('SHA-256',new TextEncoder().encode(input.value||'')).then(function(buf){
+        if(toHex(buf)===HASH)unlock();else{err.classList.add('show');input.value='';input.focus();}
+      }).catch(function(){err.textContent='Unable to verify, please refresh and try again.';err.classList.add('show');});
+    }else{err.textContent='Unable to verify, please refresh and try again.';err.classList.add('show');}
+  });
+})();
+</script>
 
 <!-- ================= TOP NAV ================= -->
 <div class="p-nav" id="p-nav">
