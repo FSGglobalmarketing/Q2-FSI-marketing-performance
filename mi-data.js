@@ -340,7 +340,7 @@ window.MIDATA = (function () {
       summary: 'We track our competitors\u2019 live advertising from public ad libraries. Vanguard and the big ETF issuers out-spend us on paid across cash, ETF and index terms; our edge is the specialist strategies and named-voice content we lead on through owned channels.',
       goals: ['Understand competitor positioning','Identify white-space themes','Benchmark creative volume'],
       activities: ['Weekly ad-library monitoring','Creative theme analysis','Share-of-voice tracking'],
-      results: [{v:'20',l:'Competitors advertising',d:'live in AU public ad libraries',up:true},{v:'14',l:'Peers tracked',d:'BrightEdge SEO register',up:true},{v:'Vanguard',l:'Top retail fund advertiser',d:'across ETF and index terms',up:true}],
+      results: [{v:'14',l:'Competitors tracked',d:'across Google, LinkedIn and press',up:true},{v:'7',l:'Advertising on Google',d:'from public ad libraries',up:true},{v:'Vanguard',l:'Most active advertiser',d:'leads every category we track',up:true}],
       q2: ['Defend top equities and income search terms','Test a focused paid campaign'],
       q3: ['Broaden the tracked competitor set'],
     },
