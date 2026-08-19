@@ -879,9 +879,10 @@
     const val=r=>!r?undefined:(metric==='ctr'?(r.impr?+(r.clk/r.impr*100).toFixed(2):undefined):r.impr);
     const rows=[]; for(let w=1;w<=13;w++) rows.push({ label:'W'+w, q1:val(q1[w]), q2:val(q2[w]) }); return rows;
   }
+  function renderSempCard(card, opts){ renderSempFilters(card); renderSempTimeline(card, opts); renderSempBars(card, opts); }
   function renderAllSemPerf(){
     if(!window.MI_SEM) return;
-    semPerfCards().forEach(card=>{ renderSempFilters(card); renderSempTimeline(card); renderSempBars(card, card.closest('.lb-scroll')?{modal:true}:undefined); });
+    semPerfCards().forEach(card=>{ renderSempCard(card, card.closest('.lb-scroll')?{modal:true}:undefined); });
     if(window.MI_fitCarousels) window.MI_fitCarousels();
   }
   function renderSempFilters(card){
@@ -906,7 +907,7 @@
       grow.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.sempGroup=b.dataset.g; renderAllSemPerf(); });
     }
   }
-  function renderSempTimeline(card){
+  function renderSempTimeline(card, opts){
     const el=card.querySelector('[data-role="semp-timeline"]'); if(!el) return;
     const metric=state.sempMetric||'impr';
     const hasQ1=(((window.MI_SEM.timeline||{}).q1)||[]).length>0;
@@ -914,7 +915,7 @@
     const keys=[];
     if(hasQ1) keys.push({ key:'q1', name:'Q1', color:'#b6b0a3', dash:true });
     keys.push({ key:'q2', name:'Q2', color:'var(--c-us)', us:true });
-    if(window.echarts){ try { echartsLines(el, rows, keys, { height:206, pct: metric==='ctr' }); } catch(e){ console.warn('semp-tl', e); } }
+    if(window.echarts){ try { echartsLines(el, rows, keys, { height:206, pct: metric==='ctr', modal: !!(opts&&opts.modal) }); } catch(e){ console.warn('semp-tl', e); } }
     card.querySelectorAll('[data-role="semp-metric"] button').forEach(b=>{ b.classList.toggle('on', b.dataset.m===metric); b.onclick=()=>{ state.sempMetric=b.dataset.m; renderAllSemPerf(); }; });
     const lg=card.querySelector('[data-role="semp-legend"]');
     if(lg){ const key=(c,d,t)=>`<span style="display:inline-flex;align-items:center;gap:6px;margin-left:16px;font:600 11px/1 'IBM Plex Mono',monospace;opacity:.85"><i style="display:inline-block;width:18px;height:0;border-top:${d?'2px dashed':'3px solid'} ${c}"></i>${t}</span>`;
@@ -925,6 +926,15 @@
   function renderSempBars(card, opts){
     const el=card.querySelector('[data-role="semp-chart"]'); if(!el) return;
     const modal=!!(opts&&opts.modal), cnt=card.querySelector('[data-role="semp-count"]');
+    // No per-ad URL exists in the feed, and the Transparency Center's per-country
+    // filter drops campaigns once they end — so the live-ads link opens the
+    // advertiser's full set of currently-live ads (region=anywhere). Bars are not
+    // click-through: the card is click-to-expand, so a per-bar handler would fight
+    // the lightbox.
+    const dom=window.MI_SEM.domain||'';
+    const tvURL=dom?'https://adstransparency.google.com/?region=anywhere&domain='+encodeURIComponent(dom):'';
+    const live=card.querySelector('[data-role="semp-live"]');
+    if(live) live.innerHTML = tvURL ? `<a href="${tvURL}" target="_blank" rel="noopener" style="color:var(--c-us);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px">See these ads running live in Google's Ads Transparency Center &#8599;</a>` : '';
     const list=sempAds();
     if(!list.length){ el.innerHTML='<p class="muted-txt" style="padding:20px 4px">No ads match those filters.</p>'; if(cnt) cnt.textContent=''; return; }
     const single=sempSingle(), cap=modal?24:14;
@@ -932,17 +942,10 @@
     const rows=list.slice(0,cap).map(a=>({ name: trunc(single?a.topic:(a.country+' · '+a.topic)), impr:a.impr, clicks:a.clk, _a:a }));
     const cs=sempCountries(), scope = state.sempCountry!=='All' ? ` in ${state.sempCountry}` : (cs.length===1 ? ` in ${cs[0]}` : ' across all markets');
     if(cnt) cnt.textContent = `Showing ${Math.min(list.length,cap)} of ${list.length} ads`+scope+(state.sempGroup!=='All'?`  ·  ${state.sempGroup}`:'');
-    const dom=window.MI_SEM.domain||'';
-    // No per-ad URL exists in the feed, and the Transparency Center's per-country
-    // filter drops campaigns once they end — so every bar opens the advertiser's
-    // full set of currently-live ads (region=anywhere), the reliable public view.
-    const tvURL=dom?'https://adstransparency.google.com/?region=anywhere&domain='+encodeURIComponent(dom):'';
     const tipRows=r=>{ const a=r._a, ctr=a.impr?(a.clk/a.impr*100).toFixed(2):'0.00';
-      return `${a.country} &middot; ${a.type} search${a.lang==='Chinese'?' &middot; Chinese ad':''}<br/>Impressions ${a.impr.toLocaleString()}<br/>Clicks ${a.clk.toLocaleString()}<br/>CTR ${ctr}%`+(tvURL?`<br/><span style="color:var(--c-us)">Click to view live ads &#8599;</span>`:''); };
+      return `${a.country} &middot; ${a.type} search${a.lang==='Chinese'?' &middot; Chinese ad':''}<br/>Impressions ${a.impr.toLocaleString()}<br/>Clicks ${a.clk.toLocaleString()}<br/>CTR ${ctr}%`; };
     if(window.echarts){ try {
-      const inst=echartsStackedHBars(el, rows, Object.assign({ labelW: single?(modal?236:200):(modal?312:262), rowH:30, tipRows, modal }, opts));
-      if(inst && tvURL){ inst.off('click'); inst.on('click', ()=>window.open(tvURL,'_blank','noopener')); el.style.cursor='pointer'; }
-      return inst;
+      return echartsStackedHBars(el, rows, Object.assign({ labelW: single?(modal?236:200):(modal?312:262), rowH:30, tipRows, modal }, opts));
     } catch(e){ console.warn('semp-bars', e); } }
   }
   // LinkedIn reach against the real SF pipeline — same stacked treatment as SEM
@@ -1492,6 +1495,7 @@
       if(key === 'liposts'){ renderLiPostTabs(el); renderLiPosts(el); return; }
       if(key === 'forms'){ renderFormTabs(el); renderFormChart(el); return; }
       if(key === 'seo'){ renderSeoTabs(el); renderSeoChart(el); return; }
+      if(key === 'semperf'){ renderSempCard(el, { modal:true }); return; }
       if(key === 'email'){ renderEmailTabs(el); renderEmailChart(el); return; }
       if(key === 'liads'){ renderLiAdTabs(el); renderLiAds(el); return; }
       if(key === 'prospects'){ renderProspectTabs(el); renderNaAudience(el.querySelector('[data-chart="na-audience"]'), { modal:true }); return; }
