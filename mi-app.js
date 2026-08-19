@@ -32,6 +32,9 @@
     comp: new Set(D.creatives().map(c => c.competitor)),   // competitors actually running ads
     fmt: new Set(D.FORMATS),
     pagesCountry: 'all',
+    sempCountry: 'All',      // SEM (paid search): market/campaign filter (country)
+    sempGroup: 'All',        // SEM: ad-group filter (plain-english topic)
+    sempMetric: 'impr',      // SEM timeline metric: 'impr' | 'ctr'
   };
 
   const HUES = [12, 210, 160, 45, 275, 320, 95, 190];
@@ -854,6 +857,93 @@
     const rows = stRows(state.stTheme).slice(0, modal?16:12).map(t=>({ name:t.k, impr:t.i, clicks:t.c }));
     if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No queries in that theme.</p>'; return; }
     if(window.echarts){ try { return echartsStackedHBars(el, rows, Object.assign({ labelW: modal?330:250 }, opts)); } catch(e){ console.warn('searchterms', e); } }
+  }
+
+  /* --- Paid search (SEM) performance: account-wide Google Ads search from the
+     google-search-ads feed (window.MI_SEM). A Q1-vs-Q2 weekly timeline
+     (impressions or CTR), country and ad-group filters, and one horizontal bar
+     per ad — impressions with clicks stacked inside, so each bar reads as reach
+     and how much of it clicked (CTR). Each bar's tooltip links to that
+     advertiser's live ads in Google's public Ads Transparency Center. Self-
+     guarding: packs without MI_SEM or the section simply no-op, so the shared
+     bundle stays byte-identical across all four brands. --- */
+  function semPerfCards(){ return $$('[data-role="semp-chart"]').map(h=>h.closest('.chart-card')).filter(Boolean); }
+  function sempCountries(){ const m={}; (window.MI_SEM.ads||[]).forEach(a=>{ m[a.country]=(m[a.country]||0)+a.impr; }); return Object.keys(m).sort((a,b)=>m[b]-m[a]); }
+  function sempGroups(country){ const out=[], seen={}; (window.MI_SEM.ads||[]).filter(a=>country==='All'||a.country===country).slice().sort((a,b)=>b.impr-a.impr).forEach(a=>{ if(!seen[a.topic]){ seen[a.topic]=1; out.push(a.topic); } }); return out; }
+  function sempSingle(){ return state.sempCountry!=='All' || sempCountries().length<=1; }
+  function sempAds(){ const c=state.sempCountry, g=state.sempGroup;
+    return (window.MI_SEM.ads||[]).filter(a=>(c==='All'||a.country===c)&&(g==='All'||a.topic===g)).slice().sort((x,y)=>y.impr-x.impr); }
+  function sempWeeks(metric){
+    const T=window.MI_SEM.timeline||{}, idx=arr=>{ const m={}; (arr||[]).forEach(r=>m[r.wk]=r); return m; };
+    const q1=idx(T.q1), q2=idx(T.q2);
+    const val=r=>!r?undefined:(metric==='ctr'?(r.impr?+(r.clk/r.impr*100).toFixed(2):undefined):r.impr);
+    const rows=[]; for(let w=1;w<=13;w++) rows.push({ label:'W'+w, q1:val(q1[w]), q2:val(q2[w]) }); return rows;
+  }
+  function renderAllSemPerf(){
+    if(!window.MI_SEM) return;
+    semPerfCards().forEach(card=>{ renderSempFilters(card); renderSempTimeline(card); renderSempBars(card, card.closest('.lb-scroll')?{modal:true}:undefined); });
+    if(window.MI_fitCarousels) window.MI_fitCarousels();
+  }
+  function renderSempFilters(card){
+    const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+    const countries=sempCountries();
+    const crow=card.querySelector('[data-role="semp-country"]');
+    if(crow){
+      if(countries.length<=1){ crow.style.display='none'; state.sempCountry='All'; }
+      else { crow.style.display='';
+        const tabs=['All'].concat(countries);
+        if(!tabs.includes(state.sempCountry)) state.sempCountry='All';
+        crow.innerHTML=tabs.map(c=>`<button class="${state.sempCountry===c?'on':''}" data-c="${esc(c)}">${c==='All'?'All markets':esc(c)}</button>`).join('');
+        crow.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.sempCountry=b.dataset.c; state.sempGroup='All'; renderAllSemPerf(); });
+      }
+    }
+    const grow=card.querySelector('[data-role="semp-group"]');
+    if(grow){
+      const groups=sempGroups(state.sempCountry);
+      if(!groups.includes(state.sempGroup)) state.sempGroup='All';
+      const tabs=['All'].concat(groups);
+      grow.innerHTML=tabs.map(g=>`<button class="${state.sempGroup===g?'on':''}" data-g="${esc(g)}">${g==='All'?'All ad groups':esc(g)}</button>`).join('');
+      grow.querySelectorAll('button').forEach(b=>b.onclick=()=>{ state.sempGroup=b.dataset.g; renderAllSemPerf(); });
+    }
+  }
+  function renderSempTimeline(card){
+    const el=card.querySelector('[data-role="semp-timeline"]'); if(!el) return;
+    const metric=state.sempMetric||'impr';
+    const hasQ1=(((window.MI_SEM.timeline||{}).q1)||[]).length>0;
+    const rows=sempWeeks(metric);
+    const keys=[];
+    if(hasQ1) keys.push({ key:'q1', name:'Q1', color:'#b6b0a3', dash:true });
+    keys.push({ key:'q2', name:'Q2', color:'var(--c-us)', us:true });
+    if(window.echarts){ try { echartsLines(el, rows, keys, { height:206, pct: metric==='ctr' }); } catch(e){ console.warn('semp-tl', e); } }
+    card.querySelectorAll('[data-role="semp-metric"] button').forEach(b=>{ b.classList.toggle('on', b.dataset.m===metric); b.onclick=()=>{ state.sempMetric=b.dataset.m; renderAllSemPerf(); }; });
+    const lg=card.querySelector('[data-role="semp-legend"]');
+    if(lg){ const key=(c,d,t)=>`<span style="display:inline-flex;align-items:center;gap:6px;margin-left:16px;font:600 11px/1 'IBM Plex Mono',monospace;opacity:.85"><i style="display:inline-block;width:18px;height:0;border-top:${d?'2px dashed':'3px solid'} ${c}"></i>${t}</span>`;
+      lg.innerHTML=(hasQ1?key('#b6b0a3',true,'Q1'):'')+key('var(--c-us)',false,'Q2'); }
+    const note=card.querySelector('[data-role="semp-tl-note"]');
+    if(note) note.textContent = hasQ1 ? '' : 'Paid search launched in Q2; there was no Q1 activity.';
+  }
+  function renderSempBars(card, opts){
+    const el=card.querySelector('[data-role="semp-chart"]'); if(!el) return;
+    const modal=!!(opts&&opts.modal), cnt=card.querySelector('[data-role="semp-count"]');
+    const list=sempAds();
+    if(!list.length){ el.innerHTML='<p class="muted-txt" style="padding:20px 4px">No ads match those filters.</p>'; if(cnt) cnt.textContent=''; return; }
+    const single=sempSingle(), cap=modal?24:14;
+    const trunc=s=>s.length>40?s.slice(0,39)+'…':s;
+    const rows=list.slice(0,cap).map(a=>({ name: trunc(single?a.topic:(a.country+' · '+a.topic)), impr:a.impr, clicks:a.clk, _a:a }));
+    const cs=sempCountries(), scope = state.sempCountry!=='All' ? ` in ${state.sempCountry}` : (cs.length===1 ? ` in ${cs[0]}` : ' across all markets');
+    if(cnt) cnt.textContent = `Showing ${Math.min(list.length,cap)} of ${list.length} ads`+scope+(state.sempGroup!=='All'?`  ·  ${state.sempGroup}`:'');
+    const dom=window.MI_SEM.domain||'';
+    // No per-ad URL exists in the feed, and the Transparency Center's per-country
+    // filter drops campaigns once they end — so every bar opens the advertiser's
+    // full set of currently-live ads (region=anywhere), the reliable public view.
+    const tvURL=dom?'https://adstransparency.google.com/?region=anywhere&domain='+encodeURIComponent(dom):'';
+    const tipRows=r=>{ const a=r._a, ctr=a.impr?(a.clk/a.impr*100).toFixed(2):'0.00';
+      return `${a.country} &middot; ${a.type} search${a.lang==='Chinese'?' &middot; Chinese ad':''}<br/>Impressions ${a.impr.toLocaleString()}<br/>Clicks ${a.clk.toLocaleString()}<br/>CTR ${ctr}%`+(tvURL?`<br/><span style="color:var(--c-us)">Click to view live ads &#8599;</span>`:''); };
+    if(window.echarts){ try {
+      const inst=echartsStackedHBars(el, rows, Object.assign({ labelW: single?(modal?236:200):(modal?312:262), rowH:30, tipRows, modal }, opts));
+      if(inst && tvURL){ inst.off('click'); inst.on('click', ()=>window.open(tvURL,'_blank','noopener')); el.style.cursor='pointer'; }
+      return inst;
+    } catch(e){ console.warn('semp-bars', e); } }
   }
   // LinkedIn reach against the real SF pipeline — same stacked treatment as SEM
   // (bar = impressions served, clicks stacked inside).
@@ -1823,7 +1913,7 @@
   renderStages();
   heroSlider();
   renderKPIs();
-  renderSearchVisibility(); renderSearchTable(); renderAllSeo(); renderSoV(); renderAllCreatives();
+  renderSearchVisibility(); renderSearchTable(); renderAllSeo(); renderAllSemPerf(); renderSoV(); renderAllCreatives();
   renderVisits(); renderTopPages();
   renderAlphix();
   renderLinkedIn();
