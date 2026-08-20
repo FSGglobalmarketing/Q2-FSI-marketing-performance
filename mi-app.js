@@ -12,9 +12,9 @@
     sov: 'search',
     sovQ: 'q2',              // competitor-ad chart: which quarter is shown (slider)
     platform: 'google',      // competitor tabs: 'google' | 'linkedin' | 'press'
-    pressQ: 'q2',            // press tab: which quarter of the Signal snapshot
-    pressView: 'cards',     // press tab: 'cards' (coverage, shown first) | 'chart' (share of voice)
+    pressQ: 'q2',            // press: which quarter of coverage the Q1/Q2 slider shows
     pressComp: 'All',        // press cards: competitor filter
+    pressSent: new Set(['positive','neutral','negative']),  // press cards: sentiment filter (all on)
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
     seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
@@ -562,22 +562,25 @@
     card = card || creativeCards()[0]; if(!card) return;
     const compHost = card.querySelector('[data-role="comp-chips"]'), fmtHost = card.querySelector('[data-role="fmt-chips"]');
     if(state.platform === 'press'){
-      // Share of voice ranks every rival at once (nothing to filter); the card
-      // view is a feed, so it gets a competitor filter like the ad galleries.
+      // Coverage is a per-quarter feed: a competitor filter and a sentiment filter,
+      // both scoped to the quarter the Q1/Q2 slider is on.
+      const arts = (D.pressArticles ? D.pressArticles() : []).filter(a=>pressArtQ(a.d)===state.pressQ);
+      const brands = ['All', ...new Set(arts.map(a=>a.c))];
+      if(!brands.includes(state.pressComp)) state.pressComp = 'All';
       if(compHost){
-        const arts = D.pressArticles ? D.pressArticles() : [];
-        compHost.innerHTML = state.pressView !== 'cards' ? '' :
-          ['All', ...new Set(arts.map(a=>a.c))].map(n=>{
-            const col = n==='All' ? 'var(--c-us)' : ((D.COMPETITORS.find(c=>c.name===n)||{}).color || 'var(--c-muted)');
-            const cnt = n==='All' ? arts.length : arts.filter(a=>a.c===n).length;
-            return `<button class="chip ${state.pressComp===n?'on':'off'}" data-pcomp="${n}"><span class="dot" style="background:${col}"></span>${n} ${cnt}</button>`;
-          }).join('');
+        compHost.innerHTML = brands.map(n=>{
+          const col = n==='All' ? 'var(--c-us)' : ((D.COMPETITORS.find(c=>c.name===n)||{}).color || 'var(--c-muted)');
+          const cnt = n==='All' ? arts.length : arts.filter(a=>a.c===n).length;
+          return `<button class="chip ${state.pressComp===n?'on':'off'}" data-pcomp="${n}"><span class="dot" style="background:${col}"></span>${n} ${cnt}</button>`;
+        }).join('');
         compHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressComp=b.dataset.pcomp; renderAllCreatives(); });
       }
       if(fmtHost){
-        fmtHost.innerHTML = ['chart','cards'].map(v=>
-          `<button class="chip ${state.pressView===v?'on':'off'}" data-pview="${v}">${v==='chart'?'Share of voice':'Coverage'}</button>`).join('');
-        fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressView=b.dataset.pview; renderAllCreatives(); });
+        const SENT = [['positive','Positive','var(--pos)'],['neutral','Neutral','var(--c-muted)'],['negative','Negative','var(--neg)']];
+        fmtHost.innerHTML = SENT.map(([key,label,col])=>{ const on = state.pressSent.has(key);
+          return `<button class="chip ${on?'on':'off'}" data-psent="${key}"${on?` style="color:${col};border-color:${col}"`:''}><span class="dot" style="background:${col}"></span>${label}</button>`; }).join('');
+        fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ const k=b.dataset.psent; state.pressSent.has(k)?state.pressSent.delete(k):state.pressSent.add(k); if(!state.pressSent.size)state.pressSent.add(k); renderAllCreatives(); });
+        const lbl = fmtHost.closest('.filter-group') && fmtHost.closest('.filter-group').querySelector('.filter-lbl'); if(lbl) lbl.textContent = 'Filter by sentiment';
       }
       return;
     }
@@ -589,28 +592,37 @@
     if(fmtHost){
       fmtHost.innerHTML = state.platform==='linkedin' ? '' : D.FORMATS.map(f=>`<button class="chip ${state.fmt.has(f)?'on':'off'}" data-fmt="${f}">${f}</button>`).join('');
       fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ const n=b.dataset.fmt; state.fmt.has(n)?state.fmt.delete(n):state.fmt.add(n); if(!state.fmt.size)state.fmt.add(n); renderAllCreatives(); });
+      const lbl = fmtHost.closest('.filter-group') && fmtHost.closest('.filter-group').querySelector('.filter-lbl'); if(lbl) lbl.textContent = 'Filter by format';
     }
   }
-  // Press is competitor share-of-voice, not ad creatives — same tab strip, a
-  // different shape of answer. Total mentions per rival with the positive slice
-  // called out; the full sentiment split rides in the tooltip.
-  // Coverage cards. No screenshot and no outbound link — Signal's search response
-  // carries neither, and its one URL is a per-user gated reader link. So the card
-  // leads on what we do have: the headline, who ran it, and how it read.
+  // Coverage cards, tied to the Q1/Q2 slider and the sentiment filter. No
+  // screenshot and no guaranteed outbound link — Signal's search response carries
+  // neither reliably — so the card leads on what we have: the headline, who ran
+  // it, when, and how it read (positive / neutral / negative).
+  // Quarter of an article, from its date; only 2026 Q1/Q2 map to the slider, so
+  // out-of-window coverage (2025, or Q3+) simply doesn't show under either.
+  function pressArtQ(d){ const s=String(d||''); if(s.slice(0,4)!=='2026') return null; const m=+s.slice(5,7); return m>=1&&m<=3?'q1':m>=4&&m<=6?'q2':null; }
   function renderPressCards(card, host){
     // brands without a press snapshot get the honest empty state, not a crash
-    const arts = D.pressArticles ? D.pressArticles() : [];
-    if(!arts.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No press coverage is wired into this pack yet.</p>`; return; }
+    const arts0 = D.pressArticles ? D.pressArticles() : [];
+    if(!arts0.length){ host.className=''; host.innerHTML = `<p class="muted-txt">No press coverage is wired into this pack yet.</p>`; return; }
     const escT = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     const compColor = n => (D.COMPETITORS.find(c=>c.name===n)||{}).color || 'var(--c-muted)';
     const sentPill = m => m==='positive' ? 'pos' : m==='negative' ? 'neg' : '';
-    const list = state.pressComp==='All' ? arts : arts.filter(a=>a.c===state.pressComp);
+    const qL = state.pressQ.toUpperCase();
+    const inQ = arts0.filter(a=>pressArtQ(a.d)===state.pressQ);
+    const list = inQ.filter(a => (state.pressComp==='All' || a.c===state.pressComp) && state.pressSent.has(a.m||'neutral'));
     host.className='slide-scroll creative-grid'; host.style.padding='';
-    // Coverage is a curated sample of genuine editorial pieces on the same strategy
-    // topics as the share-of-voice chart, so the biggest names by volume will not
-    // always carry the most examples. Say so rather than leave it looking uneven.
+    if(!list.length){
+      const active = ['positive','neutral','negative'].filter(s=>state.pressSent.has(s));
+      const only = active.length===1 ? active[0]+' ' : '';
+      host.innerHTML = `<p class="muted-txt" style="grid-column:1/-1">No ${only}press coverage on our strategy topics for ${qL}${state.pressComp!=='All'?' ('+escT(state.pressComp)+')':''}.</p>`;
+      return;
+    }
+    // A curated sample of genuine editorial pieces on our strategy topics, so the
+    // biggest names by volume will not always carry the most examples.
     const covNote = state.pressComp==='All'
-      ? `<p class="muted-txt" style="grid-column:1/-1;font-size:12.5px;margin:0 0 2px">These are genuine editorial pieces on the tracked peer set, scoped to the same strategy topics as the share-of-voice chart. It is a curated sample, so the largest names by volume will not always carry the most examples.</p>`
+      ? `<p class="muted-txt" style="grid-column:1/-1;font-size:12.5px;margin:0 0 2px">Genuine editorial pieces on the tracked peer set in ${qL}, scoped to our strategy topics. A curated sample, so the largest names by volume will not always carry the most examples.</p>`
       : '';
     host.innerHTML = covNote + list.map(a=>`<div class="creative news-card">
         <div class="creative-body">
@@ -629,40 +641,10 @@
   }
   function renderPress(card){
     const host = card.querySelector('[data-role="creatives"]'); if(!host) return;
-    // Coverage cards span the whole tracked window on purpose — Q2 alone yields
-    // only 8 in-context articles, so the quarter slider belongs to the chart.
-    if(state.pressView === 'cards'){
-      const sl0 = card.querySelector('.chart-q-slider'); if(sl0) sl0.remove();
-      return renderPressCards(card, host);
-    }
+    // Coverage is tied to the Q1/Q2 slider now (share-of-voice moved off press) —
+    // mount the slider and show the selected quarter's cards.
     ensureCardQuarterSlider(card, state.pressQ, nq => { state.pressQ = nq; renderAllCreatives(); });
-    const rows = D.press ? D.press(state.pressQ) : [];
-    if(!rows.length){
-      host.className=''; host.style.padding='';
-      host.innerHTML = `<p class="muted-txt">No press data for that quarter.</p>`;
-      return;
-    }
-    host.className='slide-scroll'; host.style.padding='6px 14px';
-    // Share of voice is scoped to our strategy topics (not raw press volume), so
-    // each peer is sized by its relevant coverage rather than its total newsflow.
-    host.innerHTML = `<p class="muted-txt" style="font-size:12.5px;margin:0 0 10px">Share of voice counts only mentions on our strategy topics, not total press volume, so each peer is sized by its relevant coverage rather than its overall newsflow.</p>
-      <div class="chart-wrap" data-role="press-chart"></div>`;
-    const el = host.querySelector('[data-role="press-chart"]');
-    if(!el || !window.echarts) return;
-    const modal = !!card.closest('.lb-scroll');
-    const sorted = rows.slice().sort((a,b)=>(b.total||0)-(a.total||0));
-    const top = sorted.slice(0, modal?22:14);
-    // our own brand must never fall off the chart — the bigger BrightEdge peer
-    // sets (RQI 19 rows, FSI 25) push it below the cap, so swap it in last.
-    const usRow = sorted.find(r=>r.us);
-    if(usRow && !top.includes(usRow)) top[top.length-1] = usRow;
-    const bars = top
-      .map(r=>({ name:r.name, impr:r.total||0, clicks:r.positive||0,
-                 _p:r.positive||0, _n:r.neutral||0, _g:r.negative||0 }));
-    const tipRows = r => { const pct = r.impr ? (r._p/r.impr*100).toFixed(0) : '0';
-      return `Mentions ${r.impr.toLocaleString()}<br/>Positive ${r._p.toLocaleString()} (${pct}%)<br/>Neutral ${r._n.toLocaleString()}<br/>Negative ${r._g.toLocaleString()}`; };
-    try { echartsStackedHBars(el, bars, { labelW: modal?280:214, hitName:'Positive', tipRows, modal }); }
-    catch(e){ console.warn('press', e); }
+    return renderPressCards(card, host);
   }
   function renderCreatives(card){
     card = card || creativeCards()[0]; if(!card) return;
@@ -1623,6 +1605,11 @@
     });
   }
   function renderLinkedIn(){
+    // Legacy organic/paid KPI + top-posts mounts. Packs on the newer LinkedIn
+    // widgets (renderAllLiChannel etc.) may not ship a D.linkedin() data function
+    // at all — skip rather than throw, which would halt the rest of boot (wire(),
+    // filters, sliders) after this call.
+    if(typeof D.linkedin !== 'function') return;
     const li = D.linkedin();
     const kpi = (v,l)=>`<div class="kpi"><b>${v}</b><div class="kl">${l}</div></div>`;
     // Igneo replaced these KPI/table mounts with the real organic-vs-paid,
@@ -1920,7 +1907,7 @@
     $$('[data-role="creatives-title"]').forEach(h=> h.textContent =
       p==='press' ? 'Who is getting written about' : 'Competitor live adverts right now');
     $$('[data-role="creatives-sub"]').forEach(h=> h.textContent =
-      p==='press' ? 'Press mentions this quarter, from Signal AI. The bright slice is positive coverage.'
+      p==='press' ? 'Editorial coverage of the peer set, from Signal AI. Slide between Q1 and Q2, and filter by sentiment.'
                   : 'Real ad examples pulled from public ad libraries.');
     renderAllCreatives();   // activity chart stays Google-only
   }
