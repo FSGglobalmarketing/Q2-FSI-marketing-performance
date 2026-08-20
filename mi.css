@@ -752,3 +752,14 @@ table.kpi-fw tbody tr:last-child td { border-bottom: 0; }
 .chan.ch-email > i          { background: oklch(0.65 0.13 90); }
 .chan.ch-organic-social > i { background: oklch(0.62 0.13 200); }
 .chan.ch-display > i        { background: oklch(0.62 0.14 20); }
+
+/* ---- Highlight campaign gallery (rj-gallery): horizontal filmstrip of creatives / event photos ---- */
+.rj-gallery { display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; padding-bottom: 8px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; margin-top: 14px; }
+.rj-gallery figure { margin: 0; flex: 0 0 auto; height: clamp(200px, 32vh, 320px); scroll-snap-align: start; border-radius: 12px; overflow: hidden; border: 1px solid var(--dark-hair); background: var(--glass); box-shadow: 0 8px 24px -14px rgba(0,0,0,.6); }
+.rj-gallery img { display: block; height: 100%; width: auto; object-fit: cover; transition: transform .4s ease; }
+.rj-gallery figure:hover img { transform: scale(1.04); }
+.rj-gallery::-webkit-scrollbar { height: 8px; }
+.rj-gallery::-webkit-scrollbar-thumb { background: var(--dark-hair); border-radius: 8px; }
+.rj-gallery::-webkit-scrollbar-track { background: transparent; }
+html.flat-review .rj-gallery { flex-wrap: wrap; overflow: visible; }
+@media (max-width: 720px){ .rj-gallery figure { height: 240px; } }
