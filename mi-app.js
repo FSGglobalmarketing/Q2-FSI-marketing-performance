@@ -315,15 +315,18 @@
     const acc = (arr, key) => { const m = {}; (arr||[]).forEach(r => { if(r.us) return; const n = canonComp(r.name); if(!n) return; m[n] = (m[n]||0) + (+r[key]||0); }); return m; };
     const g = acc(D.adSoV ? D.adSoV()[q] : [], 'v');
     const l = acc(D.liActivity ? D.liActivity() : [], 'v');
-    const p = acc(D.press ? D.press(q) : [], 'total');
-    const tot = o => { const s = Object.values(o).reduce((a,b)=>a+b,0); return s || 1; };
-    const gT = tot(g), lT = tot(l), pT = tot(p);
-    const names = new Set([...Object.keys(g), ...Object.keys(l), ...Object.keys(p)]);
-    const NCH = 3;  // Google, LinkedIn, press — equal-weighted so bars sum to 100% of the peer group
+    const sum = o => Object.values(o).reduce((a,b)=>a+b,0);
+    const gSum = sum(g), lSum = sum(l), gT = gSum||1, lT = lSum||1;
+    const names = new Set([...Object.keys(g), ...Object.keys(l)]);
+    // Google + LinkedIn ads only (press is excluded — it lives in its own press-
+    // coverage widget). Weight equally across the channels that actually have
+    // activity this quarter, so bars still sum to ~100% of the peer group when a
+    // channel is silent (e.g. no competitor LinkedIn ad data this quarter).
+    const NCH = ((gSum>0?1:0) + (lSum>0?1:0)) || 1;
     return [...names].map(n => {
-      const gv=g[n]||0, lv=l[n]||0, pv=p[n]||0;
-      return { name:n, g:gv, l:lv, p:pv, gs:gv/gT/NCH*100, ls:lv/lT/NCH*100, ps:pv/pT/NCH*100, total:(gv/gT+lv/lT+pv/pT)/NCH*100 };
-    }).filter(r => r.g || r.l || r.p).sort((a,b) => b.total - a.total);
+      const gv=g[n]||0, lv=l[n]||0;
+      return { name:n, g:gv, l:lv, gs:gv/gT/NCH*100, ls:lv/lT/NCH*100, total:(gv/gT+lv/lT)/NCH*100 };
+    }).filter(r => r.g || r.l).sort((a,b) => b.total - a.total);
   }
   // The chart card carries a Q1/Q2 slider; Google and press shares move with it,
   // LinkedIn is a single Ad-Library snapshot so its segment is the same in both.
@@ -335,7 +338,7 @@
     let rows = combinedSoV(q);
     if(!rows.length){ el.innerHTML = '<p class="muted-txt" style="padding:20px 4px">No competitor activity recorded for this quarter.</p>'; return; }
     rows = rows.slice(0, opts.modal ? 20 : 12);
-    if(window.echarts){ try { return echartsSoVStack(el, rows, Object.assign({ labelW: opts.modal?188:150 }, opts)); } catch(e){ console.warn('echarts sov', e); } }
+    if(window.echarts){ try { return echartsSoVStack(el, rows, Object.assign({ labelW: opts.modal?210:186 }, opts)); } catch(e){ console.warn('echarts sov', e); } }
     C.hbars(el, rows.map(r=>({ name:r.name, v:+r.total.toFixed(1), color:'var(--c-us)' })), { dark:true, labelW:120 });
   }
   function removeSovSlider(chartEl){
@@ -1271,7 +1274,34 @@
   function echTip(dark, fmt){ return Object.assign(echTipBase(dark), { trigger:'axis',
     axisPointer:{ type:'line', lineStyle:{ color:dark?'rgba(255,255,255,.42)':'rgba(0,0,0,.28)', width:1, type:'dashed' } },
     valueFormatter: fmt }); }
-  function bindResize(el, inst){ if(!el._miResize){ el._miResize=true; window.addEventListener('resize', ()=>{ try{ inst.resize(); }catch(e){} }); } }
+  // Every chart registers here so a single deterministic pass (on load and just
+  // after boot) can re-fit any chart whose canvas drifted from its container —
+  // the belt to the ResizeObserver's braces, since timers fire even when rAF /
+  // observer delivery is paused in a background or non-compositing tab.
+  const MI_CHARTS = [];
+  function resizeAllCharts(){ MI_CHARTS.forEach(c=>{ try{ const w=c.el.clientWidth; if(w && Math.abs(c.inst.getWidth()-w)>1) c.inst.resize(); }catch(e){} }); }
+  if(typeof window!=='undefined') window.MI_resizeCharts = resizeAllCharts;
+  function bindResize(el, inst){
+    if(!el._miTracked){ el._miTracked=true; MI_CHARTS.push({ el, inst }); }
+    if(el._miResize) return; el._miResize=true;
+    const doResize=()=>{ try{ inst.resize(); }catch(e){} };
+    window.addEventListener('resize', doResize);
+    // A chart can initialise while its container is briefly narrow (an off-screen
+    // page, a not-yet-laid-out carousel, or an embedding pane that resizes without
+    // firing window.resize — e.g. review tools / iframes). window.resize alone
+    // never corrects that and the chart stays clipped. A ResizeObserver tracks the
+    // container's real width and re-fits on any change, including the first
+    // measure once layout settles.
+    if(window.ResizeObserver && !el._miRO){
+      // Resize synchronously in the observer (NOT via rAF, which is paused in
+      // background / non-compositing tabs — exactly when a chart gets stuck at a
+      // wrong initial width). Fire whenever the canvas drifts from the container
+      // width, so a chart that initialised too narrow also self-corrects; it is a
+      // no-op once the two match, so it cannot loop.
+      const ro=new ResizeObserver(()=>{ const w=el.clientWidth; if(w && Math.abs(inst.getWidth()-w)>1) doResize(); });
+      try{ ro.observe(el); el._miRO=ro; }catch(e){}
+    }
+  }
 
   function echartsLines(el, data, keys, opts){
     opts=opts||{}; const dark=echDark(el), t=echAxis(dark); const inst=echInit(el, opts.modal?'52vh':((opts.height||230)+'px'));
@@ -1344,24 +1374,24 @@
     const inst=echInit(el, opts.modal?(Math.max(rows.length,3)*44+96)+'px':((rows.length*(opts.rowH||34)+58)+'px'));
     const rev = rows.slice().reverse();
     const cat = rev.map(r=>r.name);
-    const cG = chartColor('--c-us','#ff5424'), cL = dark?'#5aa0e0':'#2f6fb0', cP = dark?'#d3a83f':'#b5852a';
+    const cG = chartColor('--c-us','#ff5424'), cL = dark?'#5aa0e0':'#2f6fb0';
+    const lw = opts.labelW||150;
     const seg = (key,color,name,r) => ({ name, type:'bar', stack:'sov', barWidth:14,
         data: rev.map(x=>+x[key].toFixed(1)), itemStyle:{ color, borderRadius:r } });
     const totLabel = { label:{ show:true, position:'right', color:dark?'#f4f1ea':'#1c1b18',
         fontFamily:'IBM Plex Mono', fontSize:11.5, formatter:p=>{ const r=rev[p.dataIndex]; return r.total>=1?Math.round(r.total)+'%':''; } } };
     inst.setOption({ animationDuration:450,
-      legend:{ show:true, top:0, right:8, itemWidth:10, itemHeight:10, textStyle:{ color:dark?'#cfcabc':'#57534a', fontFamily:'IBM Plex Sans', fontSize:11 }, data:['Google','LinkedIn','Press'] },
-      grid:{ left:(opts.labelW||150), right:64, top:28, bottom:8 },
+      legend:{ show:true, top:0, right:8, itemWidth:10, itemHeight:10, textStyle:{ color:dark?'#cfcabc':'#57534a', fontFamily:'IBM Plex Sans', fontSize:11 }, data:['Google','LinkedIn'] },
+      grid:{ left:lw, right:64, top:28, bottom:8 },
       tooltip: Object.assign(echTipBase(dark), { trigger:'axis', axisPointer:{ type:'shadow' },
         formatter: pr => { const r=rev[pr[0].dataIndex];
-          return `<b>${r.name}</b><br/>Google ${r.gs.toFixed(1)}% <span style="opacity:.6">(${r.g.toLocaleString()} ads)</span><br/>LinkedIn ${r.ls.toFixed(1)}% <span style="opacity:.6">(${r.l.toLocaleString()} ads)</span><br/>Press ${r.ps.toFixed(1)}% <span style="opacity:.6">(${r.p.toLocaleString()} mentions)</span>`; } }),
+          return `<b>${r.name}</b><br/>Google ${r.gs.toFixed(1)}% <span style="opacity:.6">(${r.g.toLocaleString()} ads)</span><br/>LinkedIn ${r.ls.toFixed(1)}% <span style="opacity:.6">(${r.l.toLocaleString()} ads)</span>`; } }),
       xAxis:{ type:'value', show:false, max:'dataMax' },
       yAxis:{ type:'category', data:cat, axisTick:{show:false}, axisLine:{show:false},
-              axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12.5 } },
+              axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12, width:lw-8, overflow:'truncate', ellipsis:'…' } },
       series:[
         seg('gs',cG,'Google',[7,0,0,7]),
-        seg('ls',cL,'LinkedIn',[0,0,0,0]),
-        Object.assign(seg('ps',cP,'Press',[0,7,7,0]), totLabel),
+        Object.assign(seg('ls',cL,'LinkedIn',[0,7,7,0]), totLabel),
       ],
     });
     inst.resize(); bindResize(el, inst); return inst;
@@ -1929,4 +1959,12 @@
   renderEvents(); renderResults(); renderSpine();
   wire(); observers();
   arrangeFilters();
+  // Deterministic re-fit passes: correct any chart that initialised while its
+  // container was briefly narrow (off-screen page, unsettled carousel, or an
+  // embedding pane sized without a window.resize event). Timers fire even when
+  // rAF/observer delivery is paused, so these catch what those miss.
+  resizeAllCharts();
+  window.addEventListener('load', resizeAllCharts);
+  setTimeout(resizeAllCharts, 300);
+  setTimeout(resizeAllCharts, 1200);
 })();
