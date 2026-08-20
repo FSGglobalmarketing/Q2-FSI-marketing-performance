@@ -390,7 +390,15 @@ window.MIDATA = (function () {
   function liActivity(){
     const L = (typeof window !== 'undefined' && window.MI_LINKEDIN) || {};
     if (Array.isArray(L.activity) && L.activity.length) return L.activity;
-    return liCreatives().map(c=>({ name:c.competitor, v:c.totalAds||0, color:c.color })).sort((a,b)=>b.v-a.v);
+    // No explicit activity feed: derive it from the live creatives themselves so
+    // the share-of-voice matches the ad gallery. An explicit per-competitor total
+    // wins when present; otherwise count the captured ads (one creative = one unit
+    // of voice).
+    const m = {};
+    liCreatives().forEach(c=>{ if(!c.competitor) return;
+      const e = m[c.competitor] || (m[c.competitor] = { name:c.competitor, v:0, color:c.color, _t:false });
+      if(c.totalAds!=null){ e.v=c.totalAds; e._t=true; } else if(!e._t){ e.v++; } });
+    return Object.values(m).map(({name,v,color})=>({ name, v, color })).sort((a,b)=>b.v-a.v);
   }
   // Live competitor ad counts per quarter (Google Ads Transparency, via data.js);
   // the chart's Q1/Q2 slider picks one. Falls back to a seeded estimate.
