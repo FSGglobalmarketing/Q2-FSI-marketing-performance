@@ -14,7 +14,7 @@
     platform: 'google',      // competitor tabs: 'google' | 'linkedin' | 'press'
     pressQ: 'q2',            // press: which quarter of coverage the Q1/Q2 slider shows
     pressComp: 'All',        // press cards: competitor filter
-    pressSent: new Set(['positive','neutral','negative']),  // press cards: sentiment filter (all on)
+    pressSent: 'all',        // press cards: sentiment filter, single-select tab: all|positive|neutral|negative
     semChannel: 'search',    // NA campaign SEM: 'search' | 'display'
     semBucket: 'All',        // ad-group bucket tab (single-select)
     seoScope: null,          // SEO rankings scope (country/strategy); defaults to first
@@ -576,10 +576,10 @@
         compHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressComp=b.dataset.pcomp; renderAllCreatives(); });
       }
       if(fmtHost){
-        const SENT = [['positive','Positive','var(--pos)'],['neutral','Neutral','var(--c-muted)'],['negative','Negative','var(--neg)']];
-        fmtHost.innerHTML = SENT.map(([key,label,col])=>{ const on = state.pressSent.has(key);
+        const SENT = [['all','All','var(--c-us)'],['positive','Positive','var(--pos)'],['neutral','Neutral','var(--c-muted)'],['negative','Negative','var(--neg)']];
+        fmtHost.innerHTML = SENT.map(([key,label,col])=>{ const on = state.pressSent===key;
           return `<button class="chip ${on?'on':'off'}" data-psent="${key}"${on?` style="color:${col};border-color:${col}"`:''}><span class="dot" style="background:${col}"></span>${label}</button>`; }).join('');
-        fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ const k=b.dataset.psent; state.pressSent.has(k)?state.pressSent.delete(k):state.pressSent.add(k); if(!state.pressSent.size)state.pressSent.add(k); renderAllCreatives(); });
+        fmtHost.querySelectorAll('.chip').forEach(b=> b.onclick=()=>{ state.pressSent=b.dataset.psent; renderAllCreatives(); });
         const lbl = fmtHost.closest('.filter-group') && fmtHost.closest('.filter-group').querySelector('.filter-lbl'); if(lbl) lbl.textContent = 'Filter by sentiment';
       }
       return;
@@ -611,11 +611,10 @@
     const sentPill = m => m==='positive' ? 'pos' : m==='negative' ? 'neg' : '';
     const qL = state.pressQ.toUpperCase();
     const inQ = arts0.filter(a=>pressArtQ(a.d)===state.pressQ);
-    const list = inQ.filter(a => (state.pressComp==='All' || a.c===state.pressComp) && state.pressSent.has(a.m||'neutral'));
+    const list = inQ.filter(a => (state.pressComp==='All' || a.c===state.pressComp) && (state.pressSent==='all' || (a.m||'neutral')===state.pressSent));
     host.className='slide-scroll creative-grid'; host.style.padding='';
     if(!list.length){
-      const active = ['positive','neutral','negative'].filter(s=>state.pressSent.has(s));
-      const only = active.length===1 ? active[0]+' ' : '';
+      const only = state.pressSent!=='all' ? state.pressSent+' ' : '';
       host.innerHTML = `<p class="muted-txt" style="grid-column:1/-1">No ${only}press coverage on our strategy topics for ${qL}${state.pressComp!=='All'?' ('+escT(state.pressComp)+')':''}.</p>`;
       return;
     }
