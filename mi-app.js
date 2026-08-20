@@ -1384,8 +1384,14 @@
       legend:{ show:true, top:0, right:8, itemWidth:10, itemHeight:10, textStyle:{ color:dark?'#cfcabc':'#57534a', fontFamily:'IBM Plex Sans', fontSize:11 }, data:['Google','LinkedIn'] },
       grid:{ left:lw, right:64, top:28, bottom:8 },
       tooltip: Object.assign(echTipBase(dark), { trigger:'axis', axisPointer:{ type:'shadow' },
+        // Lead with the overall share of voice (the peer-group figure the bar
+        // length shows), then the channel split that composes it — each channel
+        // is already equal-weighted, so the two add up to the total.
         formatter: pr => { const r=rev[pr[0].dataIndex];
-          return `<b>${r.name}</b><br/>Google ${r.gs.toFixed(1)}% <span style="opacity:.6">(${r.g.toLocaleString()} ads)</span><br/>LinkedIn ${r.ls.toFixed(1)}% <span style="opacity:.6">(${r.l.toLocaleString()} ads)</span>`; } }),
+          return `<b>${r.name}</b>`
+            + `<br/><span style="font-size:14px;font-weight:600">${Math.round(r.total)}%</span> <span style="opacity:.75">share of voice</span>`
+            + `<br/><span style="opacity:.9">= Google ${Math.round(r.gs)}% + LinkedIn ${Math.round(r.ls)}%</span>`
+            + `<br/><span style="opacity:.55;font-size:11px">${r.g.toLocaleString()} Google ad${r.g===1?'':'s'} &middot; ${r.l.toLocaleString()} LinkedIn ad${r.l===1?'':'s'}</span>`; } }),
       xAxis:{ type:'value', show:false, max:'dataMax' },
       yAxis:{ type:'category', data:cat, axisTick:{show:false}, axisLine:{show:false},
               axisLabel:{ color:dark?'#f4f1ea':'#1c1b18', fontFamily:'IBM Plex Sans', fontSize:12, width:lw-8, overflow:'truncate', ellipsis:'…' } },
