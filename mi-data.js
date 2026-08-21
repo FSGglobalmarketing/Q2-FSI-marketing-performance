@@ -346,7 +346,7 @@ window.MIDATA = (function () {
     },
     website: {
       summary: [
-        'The Australian site drew around 50,000 visitors in Q2, up 25% on Q1, with the homepage, the RQI landing page and the Active Cash Fund the three most visited destinations. The Cash Fund page alone pulled over 6,300 visitors, evidence that the ETF launch campaign sent advisers straight to the right place.',
+        'The Australian site drew around 50,000 visitors in Q2, up 25% on Q1, with the homepage and the Active Cash Fund the two most visited destinations. The Cash Fund page alone pulled over 6,300 visitors, evidence that the ETF launch campaign sent advisers straight to the right place.',
         'Performance and literature pages held attention longest, at nearly a minute each, and email became a genuine traffic source for the first time as the launch sequence drove visitors onto fund pages. Visits from AI assistants edged up, led by ChatGPT.',
       ],
       goals: ['Prepare the ASX Cash page and optimise for search engines','Refresh the homepage to funnel traffic to campaign landing pages'],

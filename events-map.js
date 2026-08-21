@@ -3,7 +3,7 @@
    quarter. The map repeats/fills (no letterbox) and pins stay aligned. Clicking a
    schedule row opens a modal with the pin meta (plus photos/write-up where set). */
 (function () {
-  var DEFAULT_Q = 'q1';
+  var DEFAULT_Q = 'q2';
   var HOME = { center: [-15, 140], zoom: 3 };
   var EV = [
     { q:'q1', name:'Reporting season & XX20 launch roundtable', start:'1 Mar 2026', end:'', city:'Sydney', status:'Committed', host:'FSI', format:'Boardroom lunch', audience:'Broker / LGT Wealth', speaking:'', speaker:'Dushko / David', asset:'AEQ', brand:'FSI', ll:[-33.8688,151.2093] },
@@ -20,6 +20,14 @@
     { q:'q1', name:'Reporting season & XX20 launch roundtable', start:'16 Mar 2026', end:'', city:'Mooloolaba', status:'Committed', host:'FSI', format:'Roundtable Lunch', audience:'WS adviser', speaking:'', speaker:'Dushko / David', asset:'AEQ', brand:'FSI', ll:[-26.6819,153.1189] },
     { q:'q1', name:'Reporting season & XX20 launch roundtable', start:'19 Mar 2026', end:'', city:'Toowoomba', status:'Committed', host:'FSI', format:'Roundtable Lunch', audience:'WS adviser', speaking:'', speaker:'Dushko / David', asset:'AEQ', brand:'FSI', ll:[-27.5598,151.9507] },
     { q:'q1', name:'Cathay / GLIS media roundtable', start:'31 Mar 2026', end:'', city:'Taipei', status:'Committed', host:'FSI', format:'Roundtable', audience:'Wholesale and institutional', speaking:'', speaker:'Edmund Leung', asset:'GLIS', brand:'FSI', ll:[25.0330,121.5654] },
+    { q:'q2', name:'ASX: FSCF Launch event and Bell Ringing ceremony', start:'7 May 2026', end:'', city:'Sydney', status:'Delivered', host:'FSI', format:'ASX listing ceremony', audience:'Advisers / media', speaking:'', speaker:'Tony Togher', asset:'CASH', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Infocus webinar with Ben Samuel', start:'13 May 2026', end:'', city:'Australia (virtual)', status:'Delivered', host:'Infocus', format:'Webinar', audience:'WS adviser', speaking:'', speaker:'Ben Samuel', asset:'CASH', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Lonsec Conference', start:'14 May 2026', end:'', city:'Sydney', status:'Delivered', host:'Lonsec', format:'Conference', audience:'WS adviser', speaking:'', speaker:'', asset:'All strategies', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Morningstar Conference', start:'20 May 2026', end:'', city:'Sydney', status:'Delivered', host:'Morningstar', format:'Conference', audience:'WS adviser', speaking:'', speaker:'', asset:'All strategies', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Entireti webinar with Rebecca Sherlock', start:'20 May 2026', end:'', city:'Australia (virtual)', status:'Delivered', host:'Entireti', format:'Webinar', audience:'WS adviser', speaking:'', speaker:'Rebecca Sherlock', asset:'GLIS', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Lifespan PD Day with Dushko Bajic', start:'21 May 2026', end:'', city:'Australia', status:'Delivered', host:'Lifespan', format:'PD Day', audience:'WS adviser', speaking:'', speaker:'Dushko Bajic', asset:'AEQ Growth', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'Count Virtual PD Day with Tony Togher', start:'21 May 2026', end:'', city:'Australia (virtual)', status:'Delivered', host:'Count', format:'Virtual PD Day', audience:'WS adviser', speaking:'', speaker:'Tony Togher', asset:'CASH', brand:'FSI', ll:[-33.8688,151.2093] },
+    { q:'q2', name:'ACTA Conference with Tony Togher & Ben Samuel', start:'27 May 2026', end:'29 May 2026', city:'Australia', status:'Delivered', host:'ACTA', format:'Conference', audience:'Corporate treasury', speaking:'', speaker:'Tony Togher & Ben Samuel', asset:'CASH', brand:'FSI', ll:[-33.8688,151.2093] },
   ];
 
   var COL = { q1: '#7aa7ff', q2: '#ff6a3d' };
